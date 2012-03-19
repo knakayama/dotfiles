@@ -1,0 +1,87 @@
+i see archwiki about urxvt
+
+! restart
+! xrdb -merge .Xdefaults
+
+! name
+URxvt.termName: rxvt-unicode
+
+! color
+URxvt.foreground: snow
+URxvt.background: Gray10
+URxvt.color4: #5566FF
+URxvt.color12: #7799FF
+URxvt.color11: #BBBB22
+
+! scrollback buffer
+URxvt.saveLines: 20000
+
+! scroll
+! scrollbar style - rxvt(default), plain, next, or xterm
+URxvt.scrollBar: False
+!URxvt.scrollstyle: plain
+!URxvt.scrollBar_right: true
+
+!URxvt.geometry: 100x35
+
+! font
+!URxvt.font: xft:Osaka-Mono:bold:size=11 antialias=true
+URxvt.font: xft:Ricty-Regular:bold:size=13 antialias=true
+!URxvt.font:\
+!    xft:Bitstream Vera Sans Mono:size=11:antialias=true, \
+!    xft:Hiragino Maru Gothic Pro:antialias=true, \
+!    xft:LiHei Pro:antialias=true, \
+!    xft:STHeiti:antialias=true, \
+!    xft:Apple Gothic:antialias=true
+!URxvt.boldFont:\
+!    xft:Bitstream Vera Sans Mono:bold:antialias=true, \
+!    xft:Hiragino Maru Gothic Pro:bold:antialias=true, \
+!    xft:LiHei Pro:bold:antialias=true, \
+!    xft:STHeiti:bold:antialias=true, \
+!    xft:Apple Gothic:bold:antialias=true
+!URxvt.italicFont:\
+!    xft:Bitstream Vera Sans Mono:italic:antialias=true, \
+!    xft:Hiragino Maru Gothic Pro:italic:antialias=true, \
+!    xft:LiHei Pro:italic:antialias=true, \
+!    xft:STHeiti:italic:antialias=true, \
+!    xft:Apple Gothic:italic:antialias=true
+!URxvt.bold.ItalicFont:\
+!    xft:Bitstream Vera Sans Mono:bold:italic:antialias=true, \
+!    xft:Hiragino Maru Gothic Pro:bold:italic:antialias=true, \
+!    xft:LiHei Pro:italic:bold:antialias=true, \
+!    xft:STHeiti:italic:bold:antialias=true, \
+!    xft:Apple Gothic:bold:italic:antialias=true
+
+Xft*antialias: true
+
+URxvt.shading: 10
+
+! clickable urls -> matcher
+! tabs -> tabbed
+! clipboard -> clipboard
+URxvt.perl-ext-common: default,matcher,clipboard,x-selection
+URxvt.urlLauncher: /usr/bin/firefox
+URxvt.matcher.button: 1
+
+! to control tabs use:
+! Shift + PgDn -> new tab
+! Shift + Home -> go to left tab
+! Shift + End  -> go to right tab
+! Ctrl  + Home -> move tab to the left
+! Ctrl  + End  -> move tab to the right
+! Ctrl  + d    -> close tab
+
+! you can change tabs color
+
+! yankable urls(not work orz...)
+! need urxvt-url-select in Arch Linux
+!RUxvt.perl-ext: default,url-select
+!URxvt.keysym.M-u: perl:url-select:select_next
+!URxvt.urlLauncher: /usr/bin/firefox
+!URxvt.underlineURLs: true
+
+! x-selection
+URxvt.perl-lib: /home/unk/.urxvt/
+URxvt.keysym.C-M-v: perl:x-selection:paste_primary
+!URxvt.keysym.C-M-v: perl:x-selection:paste_clipboard
+

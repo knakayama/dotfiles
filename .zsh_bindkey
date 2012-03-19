@@ -1,0 +1,7 @@
+# default keybinding is ^X^F
+bindkey '^]' 'vi-find-next-char'
+bindkey '^[^]' 'vi-find-prev-char'
+
+bindkey '^R' history-incremental-pattern-search-backward
+bindkey '^S' history-incremental-pattern-search-forward
+
