@@ -4,3 +4,18 @@
 [submodule ".vim/bundle/gist-vim"]
 	path = .vim/bundle/gist-vim
 	url = git://github.com/mattn/gist-vim.git
+[submodule ".vim/bundle/vundle"]
+	path = .vim/bundle/vundle
+	url = git://github.com/gmarik/vundle.git
+[submodule ".vim/bundle/Wombat"]
+	path = .vim/bundle/Wombat
+	url = git://github.com/vim-scripts/Wombat.git
+[submodule ".vim/bundle/vimproc"]
+	path = .vim/bundle/vimproc
+	url = git://github.com/Shougo/vimproc.git
+[submodule ".vim/bundle/vimfiler"]
+	path = .vim/bundle/vimfiler
+	url = git://github.com/Shougo/vimfiler.git
+[submodule ".vim/bundle/neco-look"]
+	path = .vim/bundle/neco-look
+	url = git://github.com/ujihisa/neco-look.git
