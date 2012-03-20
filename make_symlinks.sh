@@ -48,7 +48,7 @@ for fname in $(ls -A); do
     fi
 
     is_git_file "$fname"
-    if [ "$?" -ne 0 ]; then
+    if [ "$?" -eq 0 ]; then
         continue
     fi
 
