@@ -17,6 +17,7 @@ usage() {
 
 backup() {
     mv "$1" "${1}.bak"
+    echo "backuped $1 to ${1}.bak"
 }
 
 while getopts inh flag; do
@@ -54,7 +55,7 @@ for fname in $(ls -A); do
 
     is_exist "$source_path"
     if [ "$?" -eq 0 ]; then
-        [ -z "$n_flag" ] && backup "$dotfile_path"
+        [ -z "$n_flag" -a -f "$dotfile_path" ] && backup "$dotfile_path"
     fi
 
     if [ -n "$i_flag" ]; then
