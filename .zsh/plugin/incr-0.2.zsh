@@ -1,5 +1,6 @@
 # Incremental completion for zsh
 # by y.fujii <y-fujii at mimosa-pudica.net>, public domain
+# http://mimosa-pudica.net/zsh-incremental.html
 
 
 autoload -U compinit
