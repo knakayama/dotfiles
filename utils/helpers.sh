@@ -18,15 +18,6 @@ is_exist() {
     fi
 }
 
-is_git_file() {
-    echo "$1" | grep -E '^\.git*' >/dev/null
-    if [ "$?" -eq 0 ]; then
-        return 0
-    else
-        return 1
-    fi
-}
-
 yesno() {
     local answer
     echo -n "$1 (Yes/No): "
