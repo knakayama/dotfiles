@@ -63,6 +63,8 @@ for fname in $(ls -A); do
         yesno "make symbolic link $fname -> ${REL_DNAME_PATH}/$fname?"
         if [ "$?" -eq 0 ]; then
             ln -s "$FORCE" "$source_path" "$dotfile_path"
+        else
+            continue
         fi
     else
         ln -s "$FORCE" "$source_path" "$dotfile_path"
@@ -71,4 +73,6 @@ for fname in $(ls -A); do
     if [ "$?" -eq 0 ]; then
         echo "created symbolic link $fname -> ${REL_DNAME_PATH}/$fname"
     fi
+
+    echo
 done
