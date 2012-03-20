@@ -3,14 +3,6 @@
 
 . utils.sh
 
-is_exist() {
-    if [ -f "$1" ]; then
-        return 1
-    else
-        return 0
-    fi
-}
-
 backup() {
     mv "${HOME}/$1" "${HOME}/${1}.bak"
 }
