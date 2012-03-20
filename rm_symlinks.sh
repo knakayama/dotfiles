@@ -11,24 +11,6 @@ usage() {
     echo
 }
 
-yesno() {
-    local answer
-    echo -n "$1 (Yes/No): "
-    while read answer; do
-        case "$answer" in
-            Y|y|[Yy][Ee][Ss])
-                return 0
-            ;;
-            N|n|[Nn][Oo])
-                return 1
-            ;;
-            *)
-                echo -n "Please select Yes or No: "
-            ;;
-        esac
-    done
-}
-
 while getopts ih flag; do
     case "$flag" in
         i)
