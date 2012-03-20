@@ -45,6 +45,4 @@ for fname in $(ls -A); do
 
         rm "$fname" && echo "removed $symlink_name"
     fi
-
-    echo
 done

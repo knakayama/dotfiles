@@ -72,6 +72,4 @@ for fname in $(ls -A); do
     if [ "$?" -eq 0 ]; then
         echo "created symbolic link $fname -> ${REL_DNAME_PATH}/$fname"
     fi
-
-    echo
 done
