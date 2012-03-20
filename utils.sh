@@ -12,9 +12,18 @@ is_dotfile() {
 
 is_exist() {
     if [ -f "$1" ]; then
-        return 1
-    else
         return 0
+    else
+        return 1
+    fi
+}
+
+is_git_file() {
+    echo "$1" | grep -E '^\.git*' >/dev/null
+    if [ "$?" -eq 0 ]; then
+        return 0
+    else
+        return 1
     fi
 }
 

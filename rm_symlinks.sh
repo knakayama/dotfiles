@@ -6,7 +6,7 @@
 usage() {
     echo
     echo "options supported by $(basename $0)"
-    echo "-i prompt before remove"
+    echo "-i prompt before removing"
     echo "-h this help"
     echo
 }
