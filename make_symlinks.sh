@@ -5,6 +5,7 @@
 
 ABS_DNAME_PATH="$(pwd)"
 REL_DNAME_PATH="$(basename "$(pwd)")"
+FORCE="-f"
 
 usage() {
     echo
@@ -26,6 +27,7 @@ while getopts inh flag; do
         ;;
         n)
             n_flag="$flag"
+            unset "$FORCE"
         ;;
         h)
             usage
@@ -60,10 +62,10 @@ for fname in $(ls -A); do
     if [ -n "$i_flag" ]; then
         yesno "make symbolic link $fname -> ${REL_DNAME_PATH}/$fname?"
         if [ "$?" -eq 0 ]; then
-            ln -s "$source_path" "$dotfile_path"
+            ln -s "$FORCE" "$source_path" "$dotfile_path"
         fi
     else
-        ln -s "$source_path" "$dotfile_path"
+        ln -s "$FORCE" "$source_path" "$dotfile_path"
     fi
 
     if [ "$?" -eq 0 ]; then
