@@ -1,0 +1,14 @@
+.Xdefaults
+.tmux.conf
+.xinitrc
+.ratpoisonrc
+.exrc
+.vimrc
+.vim
+.bashrc
+.bash_aliases
+.bash_profile
+.zsh
+.zsh_aliases
+.zsh_bindkey
+.zshrc
