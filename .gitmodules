@@ -43,6 +43,3 @@
 [submodule ".vim/bundle/vim-surround"]
 	path = .vim/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
-[submodule ".vim/bundle/open-browser"]
-	path = .vim/bundle/open-browser
-	url = git://github.com/tyru/open-browser.vim.git
