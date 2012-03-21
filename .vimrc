@@ -128,7 +128,7 @@ Bundle 'pythoncomplete'
 "Bundle 'Raimondi/delimitMate'
 Bundle 'majutsushi/tagbar'
 " not work
-Bundle 'PySmell'
+"Bundle 'PySmell'
 Bundle 'mrtazz/simplenote.vim'
 " colorscheme
 Bundle 'desert.vim'
