@@ -138,8 +138,10 @@ if [ -s $HOME/.pip_cache ]; then
 fi
 
 # Virtualenvwrapper settings
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/bin/virtualenvwrapper.sh
+if [ -f "${HOME}/.virtualenvs" ]; then
+    export WORKON_HOME=$HOME/.virtualenvs
+    source /usr/bin/virtualenvwrapper.sh
+fi
 
 ##########
 # Misc Load Functions
