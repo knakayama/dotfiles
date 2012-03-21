@@ -6,5 +6,5 @@ uim-xim &
 export XMODIFIERS=@im='uim'
 
 # execute ratpoison
-exec ratpoison
+exec /usr/bin/ratpoison
 
