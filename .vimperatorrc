@@ -1,0 +1,99 @@
+" pre
+command! -nargs=+ lazy autocmd VimperatorEnter .*  <args>
+
+" try to stay in normal mode after loading a web page 
+set focuscontent
+
+" editor
+set editor="urxvt -e /usr/bin/vim -f"
+
+"Change browser title to firefox
+set titlestring=Firefox
+
+"j/kでのスクロール幅を1行から5行に変更
+noremap j 5j
+noremap k 5k
+
+" h -> forward
+" l -> backward
+nnoremap h <A-Left>
+nnoremap l <A-Right>
+
+"エラー時のビープ音をビジュアルベルに
+set visualbell
+highlight Bell display:none
+
+"詳細表示行数(最大値=9)
+set verbose=9
+
+" show tabnumbers
+set tabnumbers
+
+" Use alphabet for hintchars without word l used in skk
+set hintchars=abcdefghijkmnopqrstuvwxyz
+
+" show tab
+set gui=tabs
+
+" items which are completed at the :open prompts
+" s search engines and keyword URLs
+" l firefox location bar entries (bookmarks and history sorted in an inteligent wary)
+" b bookmarks
+set complete=sl
+" set suggestengines=google
+
+" add bookmark with dialog
+nnoremap ,a <esc>:dialog addbookmark<CR>
+
+" switch css style sheet with ! command
+nnoremap ! :set invusermode<CR>
+
+" reload .vimperatorrc
+nnoremap ,s :so ~/.vimperatorrc<CR>
+
+" ignore case
+set ignorecase
+
+"ウィンドウサイズを変更するようなページを開く際は
+"新しいウィンドウで開く
+set popups=2
+
+" colorscheme
+colorscheme sweets
+
+"qmark
+qmark m http://mail.google.com/mail/
+qmark r http://www.google.co.jp/reader/view/?hl=ja&tab=wy#stream/user%2F16696736605437985519%2Fstate%2Fcom.google%2Freading-list
+
+" bookmarkletを登録
+command! gl :open javascript:var%20b=document.body;var%20GR________bookmarklet_domain='http://www.google.com';if(b&&!document.xmlVersion){void(z=document.createElement('script'));void(z.src='http://www.google.com/reader/ui/subscribe-bookmarklet.js');void(b.appendChild(z));}else{location='http://www.google.com/reader/view/feed/'+encodeURIComponent(location.href)}
+
+" Define which commands should output in a new tab by default
+" => all
+set newtab=all
+
+"]]や[[で次のページに行ったりする
+"日本語のページにも対応しやすいようにする
+"set nextpattern=\bnext\b,\bmore\b,next,^次(の)?ページ,\b次.*,→\b,^>$,^(>>|≫)$,^(>|≫),(>|≫)$
+"set previouspattern=\bprev|previous\b,prev,^前(の)?ページ,\b前.*,\b←,^<$,^(<<|≪)$,^(<|≪),(<|≪)$ 
+
+" nextlink.js
+let g:nextlink_follow =”true"
+
+" feedSomeKeys_3
+
+" Gmail
+lazy fmaps -u='mail\.google\.com/mail' c / j k n p o u e x s r a # [ ] ? gi gs gt gd ga gc
+lazy fmaps -u='mail\.google\.com/mail/.*/[0-9a-f]+$' c / j,n k,p n,j p,k o u e x s r a # [ ] ? gi gs gt gd ga gc
+
+" Google Reader
+lazy fmaps -u='www\.google\.co\.jp/reader' -events=vkeypress j k n p m s v A r S N P X O gh ga gs gt gu u / ? J K
+
+" text areaでvim風の操作ができる
+"set noinsertmode
+
+" statuslinetoolbar
+" identity-box -> SSL Certification
+" not work?
+set statuslinetoolbar=greasemonkey-tbb,noscript-tbb,identity-box
+
