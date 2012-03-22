@@ -25,9 +25,10 @@ URxvt.scrollBar: False
 !URxvt.geometry: 100x35
 
 ! font
-URxvt.font: xft:Inconsolata.otf:size=14 antialias=true
+!URxvt.font: xft:Inconsolata.otf:size=14 antialias=true
 !URxvt.font: xft:Osaka-Mono:bold:size=11 antialias=true
 !URxvt.font: xft:Ricty-Regular:bold:size=13 antialias=true
+URxvt.font: xft:Ricty-Bold:size=13 antialias=true
 !URxvt.font:\
 !    xft:Bitstream Vera Sans Mono:size=11:antialias=true, \
 !    xft:Hiragino Maru Gothic Pro:antialias=true, \
