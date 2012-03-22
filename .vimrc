@@ -129,9 +129,9 @@ Bundle 'pythoncomplete'
 Bundle 'majutsushi/tagbar'
 " not work
 "Bundle 'PySmell'
-Bundle 'mrtazz/simplenote.vim'
+"Bundle 'mrtazz/simplenote.vim'
 " colorscheme
-Bundle 'desert.vim'
+"Bundle 'desert.vim'
 Bundle 'Wombat'
 filetype plugin on
 
