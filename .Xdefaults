@@ -1,4 +1,4 @@
-i see archwiki about urxvt
+! see archwiki about urxvt
 
 ! restart
 ! xrdb -merge .Xdefaults
@@ -83,7 +83,7 @@ URxvt.matcher.button: 1
 !URxvt.underlineURLs: true
 
 ! x-selection
-URxvt.perl-lib: /home/unk/.urxvt/
+URxvt.perl-lib: $HOME/.urxvt/
 URxvt.keysym.C-M-v: perl:x-selection:paste_primary
 !URxvt.keysym.C-M-v: perl:x-selection:paste_clipboard
 
