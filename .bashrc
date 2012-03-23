@@ -63,7 +63,9 @@ unset workdir
 
 # editor
 # for C-xC-e
-export EDITOR=/usr/bin/vim
+if [ -x /usr/bin/vim ]; then
+    export EDITOR=/usr/bin/vim
+fi
 
 # perlbrew
 # source /home/g009c1148/perl5/perlbrew/etc/bashrc
@@ -88,7 +90,6 @@ export EDITOR=/usr/bin/vim
 #fi
 
 # path
-export PATH=$PATH:/home/unk/bin
-
-#export JPY="${HOME}/Dropbox/scripts/python/j2/j2/j.py"
-#. "${HOME}/Dropbox/scripts/python/j2/j2/j.sh"
+if [ -d "$HOME/bin" ]; then
+    export PATH=$PATH:"$HOME/bin"
+fi
