@@ -30,8 +30,7 @@ bind f exec firefox --remote "openurl(`$RATPOISON -c getsel`,new-tab)"
 exec unclutter -idle 1 -jitter 2 -root
 
 # set background image
-exec nitrogen --restore /home/unk/memos/android.jpg
-#exec nitrogen --restore /home/unk/random/imgs/inran.jpg
+#exec nitrogen --restore /path/to/img.jpg
 
 # execute urxvt on startup
 exec urxvt 
