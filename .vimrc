@@ -104,7 +104,7 @@ set nowb
 "" Vundle
 " http://vim-users.jp/2011/04/hack215/
 filetype off
-set rtp+=$HOME/.vim/vundle.git/
+set rtp+=$HOME/.vim/bundle/vundle/
 call vundle#rc()
 " plugin
 Bundle 'gmarik/vundle'
@@ -160,11 +160,11 @@ let g:necomplcache_enable_camel_case_completion = 1
 " Use underbar completion
 let g:neocomplcache_enable_underbar_completion = 1
 " Define dictionary
-let g:neocomplcache_dictionary_filetype_lists = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME. '/.vimshell_hist',
-    \ }
-
+"let g:neocomplcache_dictionary_filetype_lists = {
+"    \ 'default' : '',
+"    \ 'vimshell' : $HOME. '/.vimshell_hist',
+"    \ }
+"
 " Plugin key-mappings
 "imap <C-k> <Plug>(neocomplcache_snippets_expand)
 "smap <C-k> <Plug>(neocomplcache_snippets_expand)
