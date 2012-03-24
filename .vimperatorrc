@@ -63,7 +63,7 @@ colorscheme sweets
 
 "qmark
 qmark m http://mail.google.com/mail/
-qmark r http://www.google.co.jp/reader/view/?hl=ja&tab=wy#stream/user%2F16696736605437985519%2Fstate%2Fcom.google%2Freading-list
+qmark r http://www.google.com/reader/
 
 " bookmarkletを登録
 command! gl :open javascript:var%20b=document.body;var%20GR________bookmarklet_domain='http://www.google.com';if(b&&!document.xmlVersion){void(z=document.createElement('script'));void(z.src='http://www.google.com/reader/ui/subscribe-bookmarklet.js');void(b.appendChild(z));}else{location='http://www.google.com/reader/view/feed/'+encodeURIComponent(location.href)}
