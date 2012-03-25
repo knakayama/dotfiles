@@ -89,7 +89,3 @@ fi
     #source $HOME/.pythonbrew/etc/bashrc
 #fi
 
-# path
-if [ -d "$HOME/bin" ]; then
-    export PATH=$PATH:"$HOME/bin"
-fi
