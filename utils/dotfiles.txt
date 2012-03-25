@@ -12,3 +12,4 @@
 .zsh_aliases
 .zsh_bindkey
 .zshrc
+.zshenv
