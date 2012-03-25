@@ -1,13 +1,13 @@
 # enable color support of ls and also add handly aliases
 if [ -x /bin/dircolors ]; then
     eval "`dircolors -b`"
-    alias ls='ls --color=auto'
-    alias dir='dir --color=auto'
-    alias vdir='vdir --color=auto'
+    alias ls="ls --color=auto"
+    alias dir="dir --color=auto"
+    alias vdir="vdir --color=auto"
 
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
+    alias grep="grep --color=auto"
+    alias fgrep="fgrep --color=auto"
+    alias egrep="egrep --color=auto"
 fi
 
 # miscellaneous aliases
@@ -15,39 +15,45 @@ fi
 # nocorrect は zsh の予約語で、以降のコマンドにおける訂正を抑制する効果がある。 
 # cp なんかでは新しくファイルを作ることが多いから、いちいち訂正を出されるよりはこのようにするといい。
 # ほかにも mv、mkdir、touchなどもそうだろう
-alias mv='nocorrect mv'
-alias cp='nocorrect cp'
-alias mkdir='nocorrect mkdir'
-alias ..='cd ..'
-#alias crontab='crontab -i' 
+alias mv="nocorrect mv"
+alias cp="nocorrect cp"
+alias mkdir="nocorrect mkdir"
+alias ..="cd .."
+#alias crontab="crontab -i" 
 # less.sh is vi like less command
-alias vless='/usr/share/vim/vim71/macros/less.sh'
+#alias vless="/usr/share/vim/vim71/macros/less.sh"
 # open perl module by vim
-alias vipm='PERLDOC_PAGER=vim perldoc -m $@'
+#alias vipm="PERLDOC_PAGER=vim perldoc -m $@"
 
 # global alias
-alias -g M='| more'
-alias -g L='| less'
-alias -g H='| head'
-alias -g T='| tail'
-alias -g G='| grep'
-alias -g GI='| grep -i'
+alias -g M="| more"
+alias -g L="| less"
+alias -g H="| head"
+alias -g T="| tail"
+alias -g G="| grep"
+alias -g GI="| grep -i"
 
 
 # ls aliases
-alias ll='ls -l'
-alias la='ls -A'
-alias lla='ls -lA'
-alias l='ls -CF'
-alias lld='ls -ld'
+alias ll="ls -l"
+alias la="ls -A"
+alias lla="ls -lA"
+alias l="ls -CF"
+alias lld="ls -ld"
 # display only dot files
-alias lsa='ls -ld .*' 
+alias lsa="ls -ld .*" 
 # display only directory and directory alias
-alias lsd='ls -ld *(-/DN)'
+alias lsd="ls -ld *(-/DN)"
 
 # trash-cli
 # http://code.google.com/p/trash-cli/
-alias rmp='trash-put'
-alias rml='trash-list'
-alias rmr='restore-trash'
-alias rme='trash-empty'
+#alias rmp="trash-put"
+#alias rml="trash-list"
+#alias rmr="restore-trash"
+#alias rme="trash-empty"
+
+# firefox
+if [ -x /usr/bin/firefox ]; then
+    alias f="/usr/bin/firefox &"
+fi
+
