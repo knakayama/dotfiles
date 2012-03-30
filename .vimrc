@@ -142,11 +142,11 @@ filetype plugin on
 " start insert mode
 let g:unite_enable_start_insert=1
 nnoremap <silent> <leader>ub :<C-u>Unite buffer<CR>
-nnoremap <silent> <leader>uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <silent> <leader>uf :<C-u>UniteWithBufferDir -buffer-name=files file file/new<CR>
 nnoremap <silent> <leader>ur :<C-u>Unite -buffer-name=register register<CR>
 nnoremap <silent> <leader>um :<C-u>Unite file_mru<CR>
 nnoremap <silent> <leader>uu :<C-u>Unite buffer file_mru<CR>
-nnoremap <silent> <leader>ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
+nnoremap <silent> <leader>ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file/new<CR>
 " Unite and vim-ref
 " :Unite ref/(source-name)
 
