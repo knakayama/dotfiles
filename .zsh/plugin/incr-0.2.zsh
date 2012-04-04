@@ -27,6 +27,7 @@ compdef -d java
 compdef -d svn
 compdef -d cvs
 compdef -d git
+compdef -d rake
 
 # TODO:
 #     cp dir/
