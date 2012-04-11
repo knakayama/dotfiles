@@ -1,8 +1,6 @@
 #!/bin/bash
 
-
 . helpers.sh
-
 
 for target in $(ls -A "$HOME"); do
     abs_target_path="${HOME}/$target"
@@ -16,7 +14,7 @@ for target in $(ls -A "$HOME"); do
     fi
 
     symlink_name="$(ls -l "$abs_target_path" | cut -d' ' -f10-)"
-    yesno "remove $symlink_name?"
+    yesno "remove ${symlink_name}?"
     if [ "$?" -eq 0 ]; then
         rm "$abs_target_path" && echo "removed $target"
     fi

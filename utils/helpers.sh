@@ -10,14 +10,6 @@ is_dotfile() {
     fi
 }
 
-is_exist() {
-    if [ -f "$1" ]; then
-        return 0
-    else
-        return 1
-    fi
-}
-
 yesno() {
     local answer
     echo -n "$1 (Yes/No): "

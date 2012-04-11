@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 . helpers.sh
 
 ABS_DNAME="$(dirname "$(pwd)")"
@@ -21,8 +20,7 @@ for dotfile in $(cat "$DOTFILES_LIST"); do
     source_path="${ABS_DNAME}/$dotfile"
     dotfile_path="${HOME}/$dotfile"
 
-    is_exist "$dotfile_path"
-    if [ "$?" -eq 0 ]; then
+    if [ -f "$dotfile_path" ]; then
         backup "$dotfile_path"
     fi
 
