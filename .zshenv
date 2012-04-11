@@ -12,8 +12,8 @@ if [ -d "$HOME/.rbenv/bin" ]; then
 fi
 
 # auto-fu.zsh
-if [ -f "$HOME/.zsh/plugin/auto-fu.zsh" ]; then
-    source "$HOME/.zsh/plugin/auto-fu.zsh"
+if [ -f "$HOME/.zsh/plugin/auto-fu.zsh/auto-fu.zsh" ]; then
+    source "$HOME/.zsh/plugin/auto-fu.zsh/auto-fu.zsh"
     zle-line-init() {
         auto-fu-init
     }
