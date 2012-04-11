@@ -40,3 +40,6 @@
 [submodule ".vim/bundle/unite.vim"]
 	path = .vim/bundle/unite.vim
 	url = git://github.com/Shougo/unite.vim.git
+[submodule ".zsh/plugin/auto-fu.zsh"]
+	path = .zsh/plugin/auto-fu.zsh
+	url = git://github.com/hchbaw/auto-fu.zsh.git
