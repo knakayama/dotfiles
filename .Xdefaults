@@ -77,9 +77,9 @@ URxvt.matcher.button: 1
 
 ! yankable urls(not work orz...)
 ! need urxvt-url-select in Arch Linux
-!RUxvt.perl-ext: default,url-select
+!URxvt.perl-ext: default,url-select
 !URxvt.keysym.M-u: perl:url-select:select_next
-!URxvt.urlLauncher: /usr/bin/firefox
+!URxvt.urlLauncher: firefox
 !URxvt.underlineURLs: true
 
 ! x-selection
