@@ -83,7 +83,7 @@ URxvt.matcher.button: 1
 !URxvt.underlineURLs: true
 
 ! x-selection
-URxvt.perl-lib: $HOME/.urxvt/
+URxvt.perl-lib: .urxvt
 URxvt.keysym.C-M-v: perl:x-selection:paste_primary
 !URxvt.keysym.C-M-v: perl:x-selection:paste_clipboard
 
