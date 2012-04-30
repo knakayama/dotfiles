@@ -1,4 +1,5 @@
 .Xdefaults
+.urxvt
 .tmux.conf
 .xinitrc
 .ratpoisonrc
@@ -13,3 +14,4 @@
 .zsh_bindkey
 .zshrc
 .zshenv
+.vimperatorrc
