@@ -10,6 +10,11 @@ set editor="urxvt -e /usr/bin/vim -f"
 "Change browser title to firefox
 set titlestring=Firefox
 
+" C-h for firefox 1.2
+noremap <C-h> <BS>
+inoremap <C-h> <BS>
+cnoremap <C-h> <BS>
+
 "j/kでのスクロール幅を1行から5行に変更
 noremap j 5j
 noremap k 5k
