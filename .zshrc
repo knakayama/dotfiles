@@ -13,6 +13,8 @@ fi
 autoload -U compinit
 compinit # compinit -uというのもある
 
+zstyle ':completion:*' completer _oldlist _complete
+
 # ファイル名補完をするとき、除外したいパターンを指定
 # fignore=(.sh)
 
