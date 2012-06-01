@@ -67,24 +67,3 @@ if [ -x /usr/bin/vim ]; then
     export EDITOR=/usr/bin/vim
 fi
 
-# perlbrew
-# source /home/g009c1148/perl5/perlbrew/etc/bashrc
-
-# perl-completion
-# complete -C perldoc-complete -o nospace -o default perldoc
-
-# bashDirB
-#if [ -s $HOME/.bashDirB ]; then
-#    source $HOME/.bashDirB
-#fi
-
-# rvm
-# enable rvm command
-# if [ -s $HOME/.rvm/scripts/rvm ]; then
-#    source $HOME/.rvm/scripts/rvm
-# fi
-
-# pythonbrew
-#if [ -s $HOME/.pythonbrew/etc/bashrc ]; then
-    #source $HOME/.pythonbrew/etc/bashrc
-#fi
