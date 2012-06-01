@@ -224,8 +224,3 @@ setopt numeric_glob_sort
 # [ -n $(alias run-help) ] && unalias run-help
 # autoload run-help
 
-# for z
-#. "${HOME}/Dropbox/scripts/shell/z/z.sh"
-#function precmd () {
-#    _z --add "$(pwd -P)"
-#}
