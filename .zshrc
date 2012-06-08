@@ -140,9 +140,12 @@ if [ -s $HOME/.pip_cache ]; then
 fi
 
 # Virtualenvwrapper settings
-if [ -f "${HOME}/.virtualenvs" ]; then
-    export WORKON_HOME=$HOME/.virtualenvs
-    source /usr/bin/virtualenvwrapper.sh
+wrapper_path=$(which virtualenvwrapper.sh)
+if [ -x "$wrapper_path" ]; then
+    export WORKON_HOME="$HOME/.virtualenvs"
+    source "$wrapper_path"
+else
+    unset wrapper_path
 fi
 
 ##########
