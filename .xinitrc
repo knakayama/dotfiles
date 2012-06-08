@@ -7,4 +7,6 @@ export XMODIFIERS=@im='uim'
 
 # execute ratpoison
 exec /usr/bin/ratpoison
+#exec /usr/bin/xmonad
+
 
