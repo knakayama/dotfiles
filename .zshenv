@@ -20,3 +20,11 @@ if [ -f "$HOME/.zsh/plugin/auto-fu.zsh/auto-fu.zsh" ]; then
     zle -N zle-line-init
 fi
 
+# xmonad-config
+if [ -d "$HOME/.cabal" ]; then
+    PATH="$PATH":"$HOME/.cabal/bin"
+fi
+if [ -d "$HOME/xmonad" ]; then
+    PATH="$PATH":"$HOME/.xmonad/bin"
+fi
+
