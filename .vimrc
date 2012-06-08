@@ -150,6 +150,7 @@ nnoremap <silent> <leader>ua :<C-u>UniteWithBufferDir -buffer-name=files buffer 
 " Unite and vim-ref
 " :Unite ref/(source-name)
 
+let g:neocomplcache_lock_imninset = 1
 " http://vim-users.jp/tag/neocomplcache/
 "" neocomplcache
 let g:neocomplcache_enable_at_startup = 1
@@ -185,11 +186,11 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd Filetype python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-"" vimfiler 
+"" vimfiler
 " use vimfiler as default filer
 let g:vimfiler_as_default_explorer = 1
 
-"" taglist 
+"" taglist
 "nnoremap T :TlistToggle<CR>
 
 "" tagbar
@@ -369,7 +370,7 @@ set autoread
 " fast tabnew
 nnoremap <silent><leader>t :tabnew<CR>
 
-"fast editing .vimrc 
+"fast editing .vimrc
 nnoremap <silent><leader>et :tabnew $MYVIMRC<CR>
 nnoremap <silent><leader>en :new $MYVIMRC<CR>
 nnoremap <leader>es :source $MYVIMRC<CR>
@@ -468,7 +469,7 @@ nnoremap <leader>m :<C-u>MemoFile<CR>
 "        execute 'silent ' . l:fname
 "        execute 'mes'
 "        execute 'redir END'
-"        execute 'edit ' . l:fname 
+"        execute 'edit ' . l:fname
 "        " editした後にdeleteしたいのだけと
 "        call delete(l:fname)
 "    endif
@@ -476,7 +477,7 @@ nnoremap <leader>m :<C-u>MemoFile<CR>
 
 " http://vim-users.jp/2011/02/hack203/
 " show all mappings
-command! 
+command!
             \ -nargs=* -complete=mapping
             \ AllMaps
             \ map <args> | map! <args> | lmap <args>
@@ -511,4 +512,10 @@ nnoremap <leader>ls :<C-u>!ls -F<CR>
 " template
 autocmd! BufNewFile *.py silent! 0r $HOME/.vim/skel/python.txt:e
 autocmd! BufNewFile *.sh silent! 0r $HOME/.vim/skel/shell.txt:e
+
+" remove trailing space
+autocmd! BufWritePre * :%s/\s\+$//ge
+
+" wrap
+"setlocal textwidth=80
 
