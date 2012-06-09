@@ -57,3 +57,6 @@ if [ -x "$(which firefox)" ]; then
     alias f="firefox &"
 fi
 
+# shutdown
+alias s="sudo shutdown -h now"
+
