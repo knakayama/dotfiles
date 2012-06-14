@@ -1,7 +1,25 @@
+" plugin loader
+let g:plugin_loader_roots = "/home/kanakayama/.vimperator/vimp-plugins"
+js <<EOF
+liberator.globalVariables.plugin_loader_plugins = <>
+    _libly
+    feedSomeKeys_3
+    ime_controller
+    migemo_completion
+    migemo_hint
+    multi_requester
+    slideshare
+    readitlater
+    statusline-toolbar
+    escape-from-iframe
+    copy
+</>.toString().split(/\s+/).filter(function(n) n);
+EOF
+
 " pre
 command! -nargs=+ lazy autocmd VimperatorEnter .*  <args>
 
-" try to stay in normal mode after loading a web page 
+" try to stay in normal mode after loading a web page
 set focuscontent
 
 " editor
@@ -56,6 +74,10 @@ nnoremap ! :set invusermode<CR>
 " reload .vimperatorrc
 nnoremap ,s :so ~/.vimperatorrc<CR>
 
+" slideshare.js
+nnoremap -urls=www\\.slideshare\\.net l :slideshare next<CR>
+nnoremap -urls=www\\.slideshare\\.net h :slideshare prev<CR>
+
 " ignore case
 set ignorecase
 
@@ -81,7 +103,7 @@ set newtab=all
 "]]や[[で次のページに行ったりする
 "日本語のページにも対応しやすいようにする
 "set nextpattern=\bnext\b,\bmore\b,next,^次(の)?ページ,\b次.*,→\b,^>$,^(>>|≫)$,^(>|≫),(>|≫)$
-"set previouspattern=\bprev|previous\b,prev,^前(の)?ページ,\b前.*,\b←,^<$,^(<<|≪)$,^(<|≪),(<|≪)$ 
+"set previouspattern=\bprev|previous\b,prev,^前(の)?ページ,\b前.*,\b←,^<$,^(<<|≪)$,^(<|≪),(<|≪)$
 
 " nextlink.js
 let g:nextlink_follow =”true"
@@ -102,4 +124,8 @@ lazy fmaps -u='www\.google\.com/reader' -events=vkeypress j k n p m s v A r S N 
 " identity-box -> SSL Certification
 " not work?
 set statuslinetoolbar=greasemonkey-tbb,noscript-tbb,identity-box
+
+" ime_controller.js
+let g:ex_ime_mode = "inactive"
+let g:textarea_ime_mode = "inactive"
 
