@@ -28,3 +28,8 @@ if [ -d "$HOME/xmonad" ]; then
     PATH="$PATH":"$HOME/.xmonad/bin"
 fi
 
+# w3m
+if [ -x "$(which w3m)" ]; then
+    export HTTP_HOME="http://www.google.co.jp"
+fi
+
