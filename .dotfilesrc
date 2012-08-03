@@ -1,4 +1,4 @@
 [dotfiles]
 repository = ~/dotfiles
-ignore = [".git", ".gitignore", ".gitmodules"]
+ignore = [".git", ".gitignore", ".gitmodules", ".README.rst"]
 
