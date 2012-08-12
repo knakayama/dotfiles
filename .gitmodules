@@ -46,6 +46,6 @@
 [submodule ".vimperator/vimperator-plugins"]
 	path = .vimperator/vimperator-plugins
 	url = git://github.com/vimpr/vimperator-plugins.git
-[submodule ".vim/bundle/minibufexplorerpp"]
-	path = .vim/bundle/minibufexplorerpp
-	url = git://github.com/vim-scripts/minibufexplorerpp.git
+[submodule ".vim/bundle/minibufexpl.vim"]
+	path = .vim/bundle/minibufexpl.vim
+	url = git://github.com/fholgado/minibufexpl.vim.git
