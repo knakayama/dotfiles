@@ -33,3 +33,8 @@ if [ -x "$(which w3m)" ]; then
     export HTTP_HOME="http://www.google.co.jp"
 fi
 
+# aws cli tools
+if [ -x "${HOME}/aws/bin/setting_aws_paths.sh" ]; then
+    source "${HOME}/aws/bin/setting_aws_paths.sh"
+fi
+
