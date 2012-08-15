@@ -61,9 +61,12 @@ URxvt.shading: 10
 ! clickable urls -> matcher
 ! tabs -> tabbed
 ! clipboard -> clipboard
-URxvt.perl-ext-common: default,matcher,clipboard,x-selection
+URxvt.perl-ext-common: default,matcher,x-selection
 URxvt.urlLauncher: /usr/bin/firefox
 URxvt.matcher.button: 1
+URxvt.keysym.C-M-v: perl:x-selection:paste_primary
+URxvt.keysym.C-M-v: perl:x-selection:paste_clipboard
+
 
 ! to control tabs use:
 ! Shift + PgDn -> new tab
@@ -77,13 +80,8 @@ URxvt.matcher.button: 1
 
 ! yankable urls(not work orz...)
 ! need urxvt-url-select in Arch Linux
-!URxvt.perl-ext: default,url-select
-!URxvt.keysym.M-u: perl:url-select:select_next
-!URxvt.urlLauncher: firefox
-!URxvt.underlineURLs: true
-
-! x-selection
-URxvt.perl-lib: .urxvt
-URxvt.keysym.C-M-v: perl:x-selection:paste_primary
-!URxvt.keysym.C-M-v: perl:x-selection:paste_clipboard
+URxvt.perl-ext: default,url-select
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.urlLauncher: firefox
+URxvt.underlineURLs: true
 
