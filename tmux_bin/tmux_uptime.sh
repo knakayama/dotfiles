@@ -1,4 +1,4 @@
 #!/bin/bash
 
-uptime | tr -s ' ' | cut -d' ' -f3-5 | sed 's/,//'
+uptime | cut -d, -f1 | tr -s ' ' | cut -d' ' -f3-
 
