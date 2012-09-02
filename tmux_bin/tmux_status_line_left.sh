@@ -1,12 +1,12 @@
 #!/bin/bash
 
-FG_BG_COLOR="#[fg=white,bg=black,bold]"
-PREFIX="#[default]"
+source ~/dotfiles/tmux_bin/libs.sh
+
 KEYS=("wan_ip")
 STATUS_LINE_LEFT=()
 
 declare -A outputs
-outputs["wan_ip"]=$(~/dotfiles/tmux_bin/get_wan_ip.sh)
+outputs["wan_ip"]=$(~/dotfiles/tmux_bin/tmux_get_wan_ip.sh)
 
 for key in ${KEYS[@]}; do
     if [[ "$key" == "wan_ip" ]]; then

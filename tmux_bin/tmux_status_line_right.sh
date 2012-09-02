@@ -1,7 +1,7 @@
 #!/bin/bash
 
-FG_BG_COLOR="#[fg=white,bg=black,bold]"
-PREFIX="#[default]"
+source ~/dotfiles/tmux_bin/libs.sh
+
 KEYS=("uptime" "loadaverage" "mem" "date")
 STATUS_LINE_RIGHT=()
 
