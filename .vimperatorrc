@@ -1,5 +1,5 @@
 " plugin loader
-let g:plugin_loader_roots = "/home/kanakayama/.vimperator/vimp-plugins"
+let g:plugin_loader_roots = "/home/knakayama/.vimperator/vimperator-plugins"
 js <<EOF
 liberator.globalVariables.plugin_loader_plugins = <>
     _libly
