@@ -61,9 +61,9 @@ URxvt.shading: 10
 ! clickable urls -> matcher
 ! tabs -> tabbed
 ! clipboard -> clipboard
-URxvt.perl-ext-common: default,matcher,x-selection
+URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select,x-selection
 URxvt.urlLauncher: /usr/bin/firefox
-URxvt.matcher.button: 1
+!URxvt.matcher.button: 1
 URxvt.keysym.C-M-v: perl:x-selection:paste_primary
 URxvt.keysym.C-M-v: perl:x-selection:paste_clipboard
 
