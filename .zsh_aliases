@@ -57,3 +57,16 @@ if [ -x "$(which firefox)" ]; then
     alias f="firefox &"
 fi
 
+alias pu="pushd"
+alias po="popd"
+alias pu1="pushd +1"
+alias pu2="pushd +2"
+alias pu3="pushd +3"
+alias pu4="pushd +4"
+alias pu5="pushd +5"
+alias pu6="pushd +6"
+alias pu7="pushd +7"
+alias pu8="pushd +8"
+alias pu9="pushd +9"
+alias dirs="dirs -vl"
+
