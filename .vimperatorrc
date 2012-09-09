@@ -5,8 +5,8 @@ liberator.globalVariables.plugin_loader_plugins = <>
     _libly
     feedSomeKeys_3
     ime_controller
-    migemo_completion
-    migemo_hint
+    "migemo_completion
+    "migemo_hint
     multi_requester
     slideshare
     readitlater
