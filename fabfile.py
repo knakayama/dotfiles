@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from fabric.api import local, cd
+from fabric.api import local
 
 
 def git_diff(targets):
