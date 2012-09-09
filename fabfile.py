@@ -15,16 +15,19 @@ def git_add(targets):
     local("git add {}".format(targets))
 
 
-def git_commit(targets):
-    local("git commit {}".format(targets))
+def git_commit(targets, message=None):
+    if message:
+        local("git commit {0} -m {1}".format(targets, message))
+    else:
+        local("git commit {}".format(targets))
 
 
 def git_push():
     local("git push git@github.com:knakayama/dotfiles.git")
 
 
-def deploy(targets):
+def deploy(targets, message):
     git_add(targets)
-    git_commit(targets)
+    git_commit(targets, message)
     git_push()
 
