@@ -116,6 +116,7 @@ Bundle 'Shougo/vimproc'
 Bundle 'thinca/vim-quickrun'
 Bundle 'thinca/vim-ref'
 Bundle 'mattn/gist-vim'
+Bundle 'mattn/webapi-vim'
 Bundle 'tyru/open-browser.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-surround'
@@ -205,9 +206,6 @@ let g:tagbar_compact=1
 "let g:tagbar_usearrows=1
 nnoremap T :TagbarToggle<CR>
 
-"" ctags path
-"let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
-
 "" VimShell
 " key mappings
 nnoremap <leader>vt :VimShellTab<CR>
@@ -239,6 +237,10 @@ else
     "call vimshell#set_execute_file('tbz,bz2', 'bzcat')
 endif
 
+"" gist-vim
+let g:gist_open_browser_after_post = 1
+let g:gist_detect_filetype = 1
+
 autocmd FileType vimshell
             \ call vimshell#altercmd#define('g', 'git')
             \| call vimshell#altercmd#define('i', 'iexe')
@@ -259,17 +261,6 @@ autocmd FileType vimshell
 " Otherwise, search word under the cursor
 nmap <leader>w <Plug>(openbrowser-smart-search)
 vmap <leader>w <Plug>(openbroswer-smart-search)
-
-"" textmanip.vim
-" move text anywhere
-vmap <C-h> <Plug>(Textmanip.move_selection_left)
-vmap <C-j> <Plug>(Textmanip.move_selection_down)
-vmap <C-k> <Plug>(Textmanip.move_selection_up)
-vmap <C-l> <Plug>(Textmanip.move_selection_right)
-" duplicate line
-" <M-d>: Alt + d
-"vmap <M-d> <Plug>(Textmanip.duplicate_selection_v)
-"nmap <M-d> <Plug>(Textmanip.duplicate_selection_n)
 
 "" quickrun
 " horizontal split
