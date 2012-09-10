@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import argparse
 import os
 
 from fabric.api import local, lcd
@@ -32,24 +33,3 @@ def deploy(targets, message=None):
     git_add(targets)
     git_commit(targets, message)
     git_push()
-
-
-def create_symlinks():
-    with lcd(os.path.expanduser("~/dotfiles")):
-        exclude_files = [".gitmodules", ".gitignore", "README.rst"]
-        for f_name in os.listdir(os.getcwd()):
-            if f_name not in exclude_files:
-                os.symlink(os.path.abspath(f_name),
-                        os.path.join(os.path.expanduser("~"), f_name))
-
-
-def create_symlink():
-    pass
-
-
-def delete_symlinks():
-    pass
-
-
-def delete_symlink():
-    pass
