@@ -1,6 +1,9 @@
 #!/bin/bash
 
 EXCLUDE_TARGETS="
+.git
+.gitignore
+.gitmodules
 README.rst
 fabfile.py
 tmux_bin
