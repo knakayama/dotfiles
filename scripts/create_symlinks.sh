@@ -22,7 +22,7 @@ Usage: $prog_name [Options]
 
 Options:
 
-    -f force to create symlinks (no backup)
+    -f no backup
 EOF
 }
 
