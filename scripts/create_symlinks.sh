@@ -39,10 +39,16 @@ create_symlinks() {
         if [[ "$?" -eq 0 ]]; then
             continue
         else
-            #echo "$target"
-            local source_file="${HOME}/dotfiles/${target}"
+            local source_file="${PWD}/${target}"
             local target_file="${HOME}/${target}"
-            ln -s "$source_file" "$target_file"
+            if [[ "$1" ]]; then
+                if [[ -f "$target_file" ]]; then
+                    mv "$target_file" "${target_file}.${NOW}"
+                fi
+                ln -s "$source_file" "$target_file"
+            else
+                ln -fs "$source_file" "$target_file"
+            fi
         fi
     done
 }
