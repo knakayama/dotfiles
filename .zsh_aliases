@@ -1,5 +1,5 @@
 # enable color support of ls and also add handly aliases
-if [ -x "$(type -p dircolors | cut -d" " -f3)" ]; then
+if [[ -x "$(type -p dircolors | cut -d' ' -f3)" ]]; then
     eval "`dircolors -b`"
     alias ls="ls --color=auto"
     alias dir="dir --color=auto"
@@ -53,20 +53,20 @@ alias lsd="ls -ld *(-/DN)"
 #alias rme="trash-empty"
 
 # firefox
-if [ -x "$(which firefox)" ]; then
+if [[ -x "$(which firefox)" ]]; then
     alias f="firefox &"
 fi
 
-alias pu="pushd"
 alias po="popd"
-alias pu1="pushd +1"
-alias pu2="pushd +2"
-alias pu3="pushd +3"
-alias pu4="pushd +4"
-alias pu5="pushd +5"
-alias pu6="pushd +6"
-alias pu7="pushd +7"
-alias pu8="pushd +8"
-alias pu9="pushd +9"
-alias dirs="dirs -vl"
+alias p="pushd"
+alias p1="pushd +1"
+alias p2="pushd +2"
+alias p3="pushd +3"
+alias p4="pushd +4"
+alias p5="pushd +5"
+alias p6="pushd +6"
+alias p7="pushd +7"
+alias p8="pushd +8"
+alias p9="pushd +9"
+alias d="dirs -vl"
 

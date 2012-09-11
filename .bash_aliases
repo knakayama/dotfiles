@@ -1,5 +1,5 @@
 # enable color support of ls and also add handly aliases
-if [ -x /bin/dircolors ]; then
+if [[ -x "/bin/dircolors" ]]; then
     eval "`dircolors -b`"
     alias ls="ls --color=auto"
     alias dir="dir --color=auto"

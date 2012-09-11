@@ -1,8 +1,8 @@
 ####################
 # Alias
 ####################
-if [ -f $HOME/.zsh_aliases ]; then
-    source $HOME/.zsh_aliases
+if [[ -f "${HOME}/.zsh_aliases" ]]; then
+    source "${HOME}/.zsh_aliases"
 fi
 
 ####################
@@ -26,7 +26,7 @@ zstyle ':completion:*' completer _oldlist _complete
 cdpath=(~)
 
 # autoloadされるfunctionを検索するpath
-fpath=($fpath $HOME/.zfunc)
+fpath=($fpath "${HOME}/.zfunc")
 
 # パスを格納する変数や配列に、重複するディレクトリを
 # 登録しても自動で削除
@@ -78,7 +78,7 @@ setopt hist_ignore_space
 setopt hist_no_store
 
 # history file
-HISTFILE=~/.zhistory
+HISTFILE="~/.zhistory"
 
 # history file size
 HISTSIZE=40000
@@ -112,8 +112,8 @@ setopt append_history
 # Plugin
 ####################
 
-if [ -d $HOME/.zsh/plugin ]; then
-    source $HOME/.zsh/plugin/*
+if [[ -d "${HOME}/.zsh/plugin" ]]; then
+    source ${HOME}/.zsh/plugin/*
 fi
 
 ####################
@@ -121,28 +121,28 @@ fi
 ####################
 
 # editor
-export EDITOR=/usr/bin/vim
+export EDITOR="/usr/bin/vim"
 
 # emacs binding
 bindkey -e
 
 # load bindkey
-if [ -f $HOME/.zsh_bindkey ]; then
-    source $HOME/.zsh_bindkey
+if [[ -f "${HOME}/.zsh_bindkey" ]]; then
+    source "${HOME}/.zsh_bindkey"
 fi
 
 # pipで一回インストールしたものをもう一度
 # インストールしなくても済む
 # pip installした時に.pip_cacheが無かったら
 # 勝手に作る
-if [ -s $HOME/.pip_cache ]; then
-    export PIP_DOWNLOAD_CACHE=$HOME/.pip_cache
+if [[ -s "${HOME}/.pip_cache" ]]; then
+    export PIP_DOWNLOAD_CACHE="${HOME}/.pip_cache"
 fi
 
 # Virtualenvwrapper settings
 wrapper_path=$(which virtualenvwrapper.sh)
-if [ -x "$wrapper_path" ]; then
-    export WORKON_HOME="$HOME/.virtualenvs"
+if [[ -x "$wrapper_path" ]]; then
+    export WORKON_HOME="${HOME}/.virtualenvs"
     source "$wrapper_path"
 else
     unset wrapper_path
@@ -157,7 +157,7 @@ autoload zed
 
 # use zmv
 autoload zmv
-alias zmv='noglob zmv'
+alias zmv="noglob zmv"
 
 # use zargs
 autoload zargs
