@@ -45,7 +45,7 @@ create_symlinks() {
         else
             local source_file="${PWD}/${target}"
             local target_file="${HOME}/${target}"
-            if [[ "$1" ]]; then
+            if [[ "$1" -eq 1 ]]; then
                 if [[ -f "$target_file" ]]; then
                     mv "$target_file" "${target_file}.${NOW}"
                 fi
