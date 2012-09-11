@@ -5,15 +5,14 @@ EXCLUDE_TARGETS="
 .gitignore
 .gitmodules
 README.rst
-fabfile.py
-fabfile.pyc
+fabfile.py*
 tmux_bin
 scripts
 "
 
 # default settings
 BACKUP=1
-NOW=$(date '+%m%d%H%M%S')
+NOW=$(date '+%Y%m%d%H%M%S')
 
 usage() {
     prog_name="$(basename "$0")"
