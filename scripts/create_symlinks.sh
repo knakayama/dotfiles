@@ -6,6 +6,7 @@ EXCLUDE_TARGETS="
 .gitmodules
 README.rst
 fabfile.py
+fabfile.pyc
 tmux_bin
 scripts
 "
