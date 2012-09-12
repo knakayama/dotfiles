@@ -78,7 +78,7 @@ setopt hist_ignore_space
 setopt hist_no_store
 
 # history file
-HISTFILE="~/.zhistory"
+HISTFILE="${HOME}/.zhistory"
 
 # history file size
 HISTSIZE=40000
