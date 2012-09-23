@@ -15,7 +15,7 @@ echo -n "< "
 for key in ${KEYS[@]}; do
     if [[ "$key" == "uptime" ]]; then
         STATUS_LINE_RIGHT+="${FG_BG_COLOR}${outputs["$key"]}${PREFIX} < "
-    elif [ "$key" == "loadaverage" ]; then
+    elif [[ "$key" == "loadaverage" ]]; then
         STATUS_LINE_RIGHT+="${FG_BG_COLOR}Avg:${outputs["$key"]}${PREFIX} < "
     elif [[ "$key" == "mem" ]]; then
         STATUS_LINE_RIGHT+="${FG_BG_COLOR}Mem:${outputs["$key"]}${PREFIX} < "
