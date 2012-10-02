@@ -2,15 +2,15 @@
 # ~/.bash_profile
 #
 
-[[ -f ~/.bashrc ]] && . ~/.bashrc
+[[ -f "${HOME}/.bashrc" ]] && . "${HOME}/.bashrc"
 
 # autologin
-if [[ -z $DISPLAY && $(tty) = /dev/tty1 ]]; then
+if [[ -z "$DISPLAY" && $(tty) = "/dev/tty1" ]]; then
     exec startx
 fi
 
 # use zsh
-if [ -f /bin/zsh ]; then
+if [[ -f "/bin/zsh" ]]; then
     exec /bin/zsh
 fi
 
