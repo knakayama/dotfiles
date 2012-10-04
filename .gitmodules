@@ -52,3 +52,6 @@
 [submodule ".vim/bundle/vim-template"]
 	path = .vim/bundle/vim-template
 	url = git://github.com/thinca/vim-template.git
+[submodule ".vim/bundle/syntastic"]
+	path = .vim/bundle/syntastic
+	url = git://github.com/scrooloose/syntastic.git

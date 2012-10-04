@@ -101,6 +101,7 @@ set nowb
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin section
 """"""""""""""""""""""""""""""""""""""""""""""""""
+
 "" Vundle
 " http://vim-users.jp/2011/04/hack215/
 filetype off
@@ -120,6 +121,7 @@ Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'tyru/open-browser.vim'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-surround'
 "Bundle 'taglist.vim'
 "Bundle 'eregex.vim'
@@ -206,6 +208,12 @@ let g:tagbar_autofocus=1
 let g:tagbar_compact=1
 "let g:tagbar_usearrows=1
 nnoremap T :TagbarToggle<CR>
+
+"" syntastic
+let g:syntastic_enable_signs = 1
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
 "" VimShell
 " key mappings
