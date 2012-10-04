@@ -49,3 +49,6 @@
 [submodule ".vim/bundle/webapi-vim"]
 	path = .vim/bundle/webapi-vim
 	url = git://github.com/mattn/webapi-vim.git
+[submodule ".vim/bundle/vim-template"]
+	path = .vim/bundle/vim-template
+	url = git://github.com/thinca/vim-template.git
