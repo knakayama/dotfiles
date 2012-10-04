@@ -110,11 +110,12 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/unite.vim'
-Bundle 'Shougo/vimshell'
+"Bundle 'Shougo/vimshell'
 Bundle 'Shougo/vimfiler'
 Bundle 'Shougo/vimproc'
 Bundle 'thinca/vim-quickrun'
 Bundle 'thinca/vim-ref'
+Bundle 'thinca/vim-template'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'tyru/open-browser.vim'
@@ -208,54 +209,54 @@ nnoremap T :TagbarToggle<CR>
 
 "" VimShell
 " key mappings
-nnoremap <leader>vt :VimShellTab<CR>
-nnoremap <leader>vv :VimShell<CR>
-nnoremap <leader>vp :VimShellPop<CR>
-nnoremap <leader>vi :VimShellInteractive ipython<CR>
+"nnoremap <leader>vt :VimShellTab<CR>
+"nnoremap <leader>vv :VimShell<CR>
+"nnoremap <leader>vp :VimShellPop<CR>
+"nnoremap <leader>vi :VimShellInteractive ipython<CR>
 " Initialize execute file list
-let g:vimshell_execute_file_list = {}
+"let g:vimshell_execute_file_list = {}
 " error occured
 "call vimshell#set_execute_file('text,vim,c,h,cpp,d,xml,java,py', 'vim')
-let g:vimshell_execute_file_list['rb'] = 'ruby'
-let g:vimshell_execute_file_list['pl'] = 'perl'
-let g:vimshell_execute_file_list['py'] = 'python'
+"let g:vimshell_execute_file_list['rb'] = 'ruby'
+"let g:vimshell_execute_file_list['pl'] = 'perl'
+"let g:vimshell_execute_file_list['py'] = 'python'
 "call vimshell#set_execute_file('html,xhtml', 'gexe firefox')
 " settings
-let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
-let g:vimshell_max_command_history = 10000
-let g:vimshell_enable_smart_case = 1
-if has('win32') || has('win64')
-    " Display user name on Windows
-    let g:vimshell_prompt = $USERNAME."% "
-else
-    " Display user name on Linux.
-    let g:vimshell_prompt = $USER."% "
-    "call vimshell#set_execute_file('bmp,jpg,png,gif', 'gexe gqview')
-    "call vimshell#set_execute_file('mp3,m4a,ogg', 'gexe amarok')
-    let g:vimshell_execute_file_list['zip'] = 'zipinfo'
-    "call vimshell#set_execute_file('tgz,gz', 'gzcat')
-    "call vimshell#set_execute_file('tbz,bz2', 'bzcat')
-endif
+"let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
+"let g:vimshell_max_command_history = 10000
+"let g:vimshell_enable_smart_case = 1
+"if has('win32') || has('win64')
+"    " Display user name on Windows
+"    let g:vimshell_prompt = $USERNAME."% "
+"else
+"    " Display user name on Linux.
+"    let g:vimshell_prompt = $USER."% "
+"    "call vimshell#set_execute_file('bmp,jpg,png,gif', 'gexe gqview')
+"    "call vimshell#set_execute_file('mp3,m4a,ogg', 'gexe amarok')
+"    let g:vimshell_execute_file_list['zip'] = 'zipinfo'
+"    "call vimshell#set_execute_file('tgz,gz', 'gzcat')
+"    "call vimshell#set_execute_file('tbz,bz2', 'bzcat')
+"endif
 
 "" gist-vim
 let g:gist_open_browser_after_post = 1
 let g:gist_detect_filetype = 1
 
-autocmd FileType vimshell
-            \ call vimshell#altercmd#define('g', 'git')
-            \| call vimshell#altercmd#define('i', 'iexe')
-            \| call vimshell#altercmd#define('l', 'll')
-            \| call vimshell#altercmd#define('ll', 'ls -l')
-            \| call vimshell#hook#add('chpwd', 'my_chpwd', 'g:my_chpwd')
-
-            function! g:my_chpwd(args, context)
-                call vimshell#execute('ls')
-            endfunction
-
-            autocmd FileType int-* call s:interactive_settings()
-            function! s:interactive_settings()
-            endfunction
-
+"autocmd FileType vimshell
+"            \ call vimshell#altercmd#define('g', 'git')
+"            \| call vimshell#altercmd#define('i', 'iexe')
+"            \| call vimshell#altercmd#define('l', 'll')
+"            \| call vimshell#altercmd#define('ll', 'ls -l')
+"            \| call vimshell#hook#add('chpwd', 'my_chpwd', 'g:my_chpwd')
+"
+"            function! g:my_chpwd(args, context)
+"                call vimshell#execute('ls')
+"            endfunction
+"
+"            autocmd FileType int-* call s:interactive_settings()
+"            function! s:interactive_settings()
+"            endfunction
+"
 "" open-browser
 " If it looks like URI, open URI under the cursor
 " Otherwise, search word under the cursor
@@ -501,8 +502,8 @@ nnoremap <Space>cd :<C-u>cd %:h<CR>
 nnoremap <leader>ls :<C-u>!ls -F<CR>
 
 " template
-autocmd! BufNewFile *.py silent! 0r $HOME/.vim/skel/python.txt:e
-autocmd! BufNewFile *.sh silent! 0r $HOME/.vim/skel/shell.txt:e
+"autocmd! BufNewFile *.py silent! 0r $HOME/.vim/skel/python.txt:e
+"autocmd! BufNewFile *.sh silent! 0r $HOME/.vim/skel/shell.txt:e
 
 " remove trailing space
 autocmd! BufWritePre * :%s/\s\+$//ge
