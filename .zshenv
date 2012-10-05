@@ -12,7 +12,7 @@ if [[ -d "${HOME}/.rbenv/bin" ]]; then
 fi
 
 # auto-fu.zsh
-if [ -f "${HOME}/.zsh/plugin/auto-fu.zsh/auto-fu.zsh" ]; then
+if [[ -f "${HOME}/.zsh/plugin/auto-fu.zsh/auto-fu.zsh" ]]; then
     source "${HOME}/.zsh/plugin/auto-fu.zsh/auto-fu.zsh"
     function zle-line-init() {
         auto-fu-init
@@ -21,20 +21,20 @@ if [ -f "${HOME}/.zsh/plugin/auto-fu.zsh/auto-fu.zsh" ]; then
 fi
 
 # xmonad-config
-if [ -d "${HOME}/.cabal" ]; then
+if [[ -d "${HOME}/.cabal" ]]; then
     PATH="${PATH}:${HOME}/.cabal/bin"
 fi
-if [ -d "${HOME}/xmonad" ]; then
+if [[ -d "${HOME}/xmonad" ]]; then
     PATH="${PATH}:${HOME}/.xmonad/bin"
 fi
 
 # w3m
-if [ -x "$(which w3m)" ]; then
+if [[ -x "$(which w3m)" ]]; then
     export HTTP_HOME="http://www.google.co.jp"
 fi
 
 # aws cli tools
-if [ -x "${HOME}/aws/bin/setting_aws_paths.sh" ]; then
+if [[ -x "${HOME}/aws/bin/setting_aws_paths.sh" ]]; then
     source "${HOME}/aws/bin/setting_aws_paths.sh"
 fi
 

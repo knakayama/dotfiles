@@ -34,18 +34,18 @@ shopt -s checkwinsize
 # alias
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 if [[ -f "${HOME}/.bash_aliases" ]]; then
-    . "${HOME}/.bash_aliases"
+    source "${HOME}/.bash_aliases"
 fi
 
 # enable programmable completion features
 if [[ -f "/etc/bash_completion" ]]; then
-    . "/etc/bash_completion"
+    source "/etc/bash_completion"
 fi
 
 # same as above
 if [[ -d "/etc/bash_completion.d/" ]]; then
     for completion in /etc/bash_completion.d/*; do
-        . "$completion"
+        source "$completion"
     done
 fi
 
