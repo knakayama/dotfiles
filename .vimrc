@@ -207,7 +207,7 @@ let g:tagbar_autofocus=1
 " in order to save screen real estate.
 let g:tagbar_compact=1
 "let g:tagbar_usearrows=1
-nnoremap T :TagbarToggle<CR>
+nnoremap <leader>T :TagbarToggle<CR>
 
 "" syntastic
 let g:syntastic_enable_signs=1
