@@ -30,7 +30,7 @@ fi
 
 # w3m
 if [[ -x "$(which w3m)" ]]; then
-    export HTTP_HOME="http://www.google.co.jp"
+    export HTTP_HOME="http://www.google.com"
 fi
 
 # aws cli tools
