@@ -1,12 +1,12 @@
 #!/bin/bash
 
-source ~/dotfiles/tmux_bin/libs.sh
+source ~/dotfiles/tmux_scripts/libs.sh
 
 KEYS=("wan_ip")
 STATUS_LINE_LEFT=()
 
 declare -A outputs
-outputs["wan_ip"]=$(~/dotfiles/tmux_bin/tmux_get_wan_ip.sh)
+outputs["wan_ip"]=$(~/dotfiles/tmux_scripts/tmux_get_wan_ip.sh)
 
 for key in ${KEYS[@]}; do
     if [[ "$key" == "wan_ip" ]]; then

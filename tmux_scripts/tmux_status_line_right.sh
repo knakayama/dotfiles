@@ -1,15 +1,15 @@
 #!/bin/bash
 
-source ~/dotfiles/tmux_bin/libs.sh
+source ~/dotfiles/tmux_scripts/libs.sh
 
 KEYS=("uptime" "loadaverage" "mem" "date")
 STATUS_LINE_RIGHT=()
 
 declare -A outputs
-outputs["uptime"]=$(~/dotfiles/tmux_bin/tmux_uptime.sh)
-outputs["loadaverage"]=$(~/dotfiles/tmux_bin/tmux_loadaverage.sh)
-outputs["mem"]=$(~/dotfiles/tmux_bin/tmux_mem.sh)
-outputs["date"]=$(~/dotfiles/tmux_bin/tmux_date.sh)
+outputs["uptime"]=$(~/dotfiles/tmux_scripts/tmux_uptime.sh)
+outputs["loadaverage"]=$(~/dotfiles/tmux_scripts/tmux_loadaverage.sh)
+outputs["mem"]=$(~/dotfiles/tmux_scripts/tmux_mem.sh)
+outputs["date"]=$(~/dotfiles/tmux_scripts/tmux_date.sh)
 
 echo -n "< "
 for key in ${KEYS[@]}; do
