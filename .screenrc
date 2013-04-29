@@ -1,0 +1,53 @@
+## Basic Settings
+
+# don't display the copyright page
+startup_message off
+
+# detach on hagup
+autodetach on
+
+deflogin off
+
+# No visible bell
+vbell off
+
+# No multiuser mode
+multiuser off
+
+# move to home directory
+chdir
+
+# define scroll buffer
+defscrollback 5000
+
+# Messages
+msgwait 1
+msgminwait 2
+#sorendition "+rb .G"
+
+## Keys
+
+escape ^Tt
+zombie kr
+
+# resize splited window with j k keys
+bind r eval 'echo "Resize window"' 'command -c resize'
+bind -c resize j eval 'resize +1' 'command -c resize'
+bind -c resize k eval 'resize -1' 'command -c resize'
+
+# reload screenrc
+bind s eval 'echo "~/.screenrc reloaded!"' 'source $HOME/.screenrc'
+
+# focus
+#bind j eval 'focus down'
+#bind k eval 'focus up'
+
+## Status line
+
+# hardstatus
+hardstatus alwayslastline "%{= kw} %-w%{=bu kc}%n %t%{-}%+w"
+
+# caption
+#caption always "%{= km} %-w%{=bu dr}%n %t%{-}%+w %= %{=b wb}%y/%m/%d(%D) %{=b wb}%c"
+caption splitonly "%{=u kw}"
+
