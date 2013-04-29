@@ -227,3 +227,17 @@ setopt numeric_glob_sort
 # [ -n $(alias run-help) ] && unalias run-help
 # autoload run-help
 
+ssh_tmux() {
+    ssh_cmd="ssh $@"
+    tmux new-window -n "$*" "$ssh_cmd"
+    #tmux new-session -n "$*" "$ssh_cmd"
+}
+
+if [[ "$TERM" == "screen" ]]; then
+    setopt complete_aliases
+    tmux lsw >/dev/null
+    if [[ "$?" -eq 0 ]]; then
+        alias ssh=ssh_tmux
+    fi
+fi
+
