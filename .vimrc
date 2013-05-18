@@ -303,7 +303,7 @@ endif
 " Fonts
 " font_name:font_size(not windows platform)
 if has('gui_running')
-    set guifont=Ricty\ bold\ 13
+    set guifont=Ricty\ bold\ 15
 endif
 
 " GUI settings
