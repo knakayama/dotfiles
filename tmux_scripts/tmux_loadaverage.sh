@@ -1,5 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
-#uptime | tr -s ' ' | cut -d' ' -f9- | sed 's/, / /g'
-uptime | tr -s ' ' | cut -d' ' -f9- | sed -e 's/.*://' -e 's/ //g'
+uptime | egrep -o '([0-9]*\.[0-9]{2}\, ){2}[0-9]*\.[0-9]{2}' | sed 's/  *//g' | awk '{print "Avg:" $0}'
 

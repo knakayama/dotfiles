@@ -1,11 +1,12 @@
-#!/bin/bash
+#!/bin/sh
 
 EXCLUDE_TARGETS="
 .git
 .gitignore
 .gitmodules
 README.rst
-fabfile.py*
+fabfile.py
+fabfile.pyc
 tmux_bin
 scripts
 "
@@ -26,8 +27,9 @@ EOF
 }
 
 is_exclude_target() {
-    for exclude_target in ${EXCLUDE_TARGETS[*]}; do
-        if [[ "$1" =~ "$exclude_target" ]]; then
+    for exclude_target in $(echo $EXCLUDE_TARGETS); do
+        #if [ "$1" =~ "$exclude_target" ]; then
+        if [ "$1" = "$exclude_target" ]; then
             return 0
         fi
     done
@@ -39,18 +41,21 @@ create_symlinks() {
     cd "${HOME}/dotfiles"
     for target in $(ls -A); do
         is_exclude_target "$target"
-        if [[ "$?" -eq 0 ]]; then
+        if [ "$?" -eq 0 ]; then
             continue
         else
             local source_file="${PWD}/${target}"
             local target_file="${HOME}/${target}"
-            if [[ "$1" -eq 1 ]]; then
-                if [[ -f "$target_file" ]]; then
-                    mv "$target_file" "${target_file}.${NOW}"
+            if [ "$1" -eq 1 ]; then
+                if [ -f "$target_file" ]; then
+                    #mv "$target_file" "${target_file}.${NOW}"
+                    echo "mv $target_file ${target_file}.${NOW}"
                 fi
-                ln -s "$source_file" "$target_file"
+                #ln -s "$source_file" "$target_file"
+                echo "ln -s $source_file $target_file"
             else
-                ln -fs "$source_file" "$target_file"
+                #ln -fs "$source_file" "$target_file"
+                echo "ln -fs $source_file $target_file"
             fi
         fi
     done

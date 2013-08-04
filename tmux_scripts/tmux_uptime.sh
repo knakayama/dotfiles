@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
-uptime | cut -d, -f1 | tr -s ' ' | cut -d' ' -f3-
+uptime | cut -d, -f1 | sed 's/^  *//g' | tr -s ' ' | cut -d' ' -f2-
 

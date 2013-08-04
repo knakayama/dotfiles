@@ -79,7 +79,7 @@ let g:mapleader = ","
 "http://blog.remora.cx/2011/04/show-invisible-spaces-in-vim.html
 " display unprintable character
 set list
-set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+"set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Files and backups

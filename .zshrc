@@ -229,20 +229,23 @@ setopt numeric_glob_sort
 
 # mosh
 s() {
-    if [[ ! -x "$(which mosh)" ]]; then
-        echo "mosh is not installed"
-        exit 1
-    fi
+    #if [[ ! -x "$(which mosh)" ]]; then
+    #    echo "mosh is not installed"
+    #    exit 1
+    #fi
     if [[ ! -x "$(which tmux)" ]]; then
         echo "tmux is not installed"
         exit 1
     fi
     if [[ -n "$2" ]]; then
-        tmux new-window -n "$1" "mosh $1 -p $2"
+        #tmux new-window -n "$1" "mosh $1 -p $2"
+        tmux new-window -n "$1" "ssh $1"
     else
-        tmux new-window -n "$1" "mosh $1 -p 60001"
+        #tmux new-window -n "$1" "mosh $1 -p 60001"
+        tmux new-window -n "$1" "ssh $1"
     fi
 }
 
 compdef s=ssh
+
 
