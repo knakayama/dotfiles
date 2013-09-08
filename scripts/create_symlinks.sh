@@ -7,7 +7,7 @@ EXCLUDE_TARGETS="
 README.rst
 fabfile.py
 fabfile.pyc
-tmux_bin
+tmux_scripts
 scripts
 "
 
