@@ -38,3 +38,8 @@ if [[ -x "${HOME}/aws/bin/setting_aws_paths.sh" ]]; then
     source "${HOME}/aws/bin/setting_aws_paths.sh"
 fi
 
+# perlbrew
+if [[ -x "${HOME}/perl5/perlbrew/bin/perlbrew" ]]; then
+   source "${HOME}/perl5/perlbrew/etc/bashrc"
+fi
+
