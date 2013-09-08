@@ -19,5 +19,5 @@ for script in $(ls -A "$DIR_NAME"); do
     fi
 done
 
-echo -n "$(echo $STATUS_LINE_RIGHT | sed 's/ \<$/ /')"
+echo -n "$(echo $STATUS_LINE_RIGHT | sed 's/ <$/ /')"
 
