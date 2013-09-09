@@ -53,7 +53,7 @@ alias lsd="ls -ld *(-/DN)"
 #alias rme="trash-empty"
 
 # firefox
-if [[ -x "$(which firefox)" ]]; then
+if [[ -x "$(which firefox >/dev/null 2>&1)" ]]; then
     alias f="firefox &"
 fi
 

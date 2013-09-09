@@ -140,7 +140,7 @@ if [[ -s "${HOME}/.pip_cache" ]]; then
 fi
 
 # Virtualenvwrapper settings
-wrapper_path=$(which virtualenvwrapper.sh)
+wrapper_path=$(which virtualenvwrapper.sh >/dev/null 2>&1)
 if [[ -x "$wrapper_path" ]]; then
     export WORKON_HOME="${HOME}/.virtualenvs"
     source "$wrapper_path"
@@ -229,11 +229,11 @@ setopt numeric_glob_sort
 
 # mosh
 s() {
-    #if [[ ! -x "$(which mosh)" ]]; then
+    #if [[ ! -x "$(which mosh >/dev/null 2>&1)" ]]; then
     #    echo "mosh is not installed"
     #    exit 1
     #fi
-    if [[ ! -x "$(which tmux)" ]]; then
+    if [[ ! -x "$(which tmux >/dev/null 2>&1)" ]]; then
         echo "tmux is not installed"
         exit 1
     fi
