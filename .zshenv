@@ -29,7 +29,7 @@ if [[ -d "${HOME}/xmonad" ]]; then
 fi
 
 # w3m
-if [[ -x "$(which w3m)" ]]; then
+if [[ -x "$(which w3m >/dev/null 2>&1)" ]]; then
     export HTTP_HOME="http://www.google.com"
 fi
 
