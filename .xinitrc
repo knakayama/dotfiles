@@ -1,5 +1,5 @@
 # for japanese settings
-if [[ -x "$(which uim-xim >/dev/null 2>&1)" ]]; then
+if [[ -x "$(which uim-xim 2>/dev/null)" ]]; then
     setxkbmap jp
     export GTK_IM_MODULE='uim'
     export QT_IM_MODULE='uim'
@@ -7,12 +7,12 @@ if [[ -x "$(which uim-xim >/dev/null 2>&1)" ]]; then
     export XMODIFIERS=@im='uim'
 fi
 
-if [[ -e ~/.xmodmap && -x "$(which xmodmap >/dev/null 2>&1)" ]]; then
+if [[ -e ~/.xmodmap && -x "$(which xmodmap 2>/dev/null)" ]]; then
     xmodmap ~/.xmodmap
 fi
 
 # execute ratpoison
-if [[ -x "$(which ratpoison >/dev/null 2>&1)" ]]; then
-    exec "$(which ratpoison >/dev/null 2>&1)"
+if [[ -x "$(which ratpoison 2>/dev/null)" ]]; then
+    exec "$(which ratpoison 2>/dev/null)"
 fi
 
