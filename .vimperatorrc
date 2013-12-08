@@ -23,7 +23,7 @@ command! -nargs=+ lazy autocmd VimperatorEnter .*  <args>
 set focuscontent
 
 " editor
-set editor="urxvt -e /usr/bin/vim -f"
+set editor="xterm -e /usr/bin/vim -f"
 
 "Change browser title to firefox
 set titlestring=Firefox
