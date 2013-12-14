@@ -1,4 +1,6 @@
 #!/usr/bin/env perl
+use strict;
+use warnings;
 
 =head1 NAME
 
@@ -28,35 +30,38 @@ create/remove symbolic links
 
 =cut
 
-use strict;
-use warnings;
+#GetOptions(
+#    \my %opts, qw/
+#    create
+#    remove
+#    force
+#    help
+#    /) or pod2usage(1);
+#
 
+package File::SymLink;
 use FindBin;
 use File::Basename 'basename';
 use File::Copy 'move';
 use File::Spec 'catfile';
 use Time::Piece 'localtime';
-use Getopt::Long qw/:config no_ignore_case gnu_compat/;
-use Pod::Usage 'pod2usage';
 
-GetOptions(
-    \my %opts, qw/
-    create
-    remove
-    force
-    help
-    /) or pod2usage(1);
+sub new {
+    my $class = shift;
+    my $self = {
+        excludes => [qw/.git .gitignore .gitmodules README.rst tmux_scripts symlink.pl/],
+        src_base_path => $FindBin::Bin,
+        #dst_base_path => $ENV{HOME}
+        dst_base_path => "$ENV{HOME}/test"
+    };
 
-
-my @EXCLUDES = qw/.git .gitignore .gitmodules README.rst tmux_scripts symlink.pl/;
-my $SRC_BASE_PATH = $FindBin::Bin;
-#my $DEST_BASE_PATH = $ENV{HOME};
-my $DEST_BASE_PATH = "$ENV{HOME}/test";
+    bless $self, $class;
+}
 
 sub is_exclude {
-    my $file_or_dir = shift;
+    my ($self, $file_or_dir) = @_;
 
-    foreach my $exclude (@EXCLUDES) {
+    foreach my $exclude (@{$self->{excludes}}) {
         return 1 if $file_or_dir =~ /$exclude/;
     }
 
@@ -64,14 +69,15 @@ sub is_exclude {
 }
 
 sub create_targets {
+    my $self = shift;
     my @targets = ();
 
-    opendir my $dh, $SRC_BASE_PATH
-            or die "Can't open $SRC_BASE_PATH: $!";
+    opendir my $dh, $self->{src_base_path}
+            or die "Can't open $self->{src_base_path}: $!";
 
     while (my $file_or_dir = readdir $dh) {
         next if $file_or_dir eq '.' || $file_or_dir eq '..';
-        push @targets, $file_or_dir unless is_exclude $file_or_dir;
+        push @targets, $file_or_dir unless $self->is_exclude($file_or_dir);
     }
     closedir $dh;
 
@@ -79,57 +85,69 @@ sub create_targets {
 }
 
 sub create_symlinks {
-    my @targets = create_targets();
+    my $self = shift;
+    my $force = shift || '';
+    my @targets = $self->create_targets();
     my $time = localtime->new->strftime('%Y%m%d%H%M%S');
 
     foreach my $target (@targets) {
-        my $src = File::Spec->catfile($SRC_BASE_PATH, $target);
-        my $dest = File::Spec->catfile($DEST_BASE_PATH, $target);
-        my $dest_backup = '';
-        if (-e $dest) {
-            if (defined $opts{force}) {
-                printf "%s: %s\n", 'remove', $dest;
-                unlink($dest) or die "Can't remove $dest; $!";
+        my $src = File::Spec->catfile($self->{src_base_path}, $target);
+        my $dst = File::Spec->catfile($self->{dst_base_path}, $target);
+        my $dst_backup = '';
+        if (-e $dst) {
+            if ($force) {
+                printf "%s: %s\n", 'remove', $dst;
+                unlink($dst) or die "Can't remove $dst; $!";
             }
             else {
-                $dest_backup = $dest . '_' . $time;
-                printf "%s: %s -> %s\n", 'move', $dest, $dest_backup;
-                move($dest, $dest_backup) or die "Can't backup $dest: $!";
+                $dst_backup = $dst . '_' . $time;
+                printf "%s: %s -> %s\n", 'move', $dst, $dst_backup;
+                move($dst, $dst_backup) or die "Can't backup $dst: $!";
             }
         }
-        printf "%s: %s -> %s\n", 'symlink', $src, $dest;
-        symlink($src, $dest) or die "Can't create symlink: $!";
+        printf "%s: %s -> %s\n", 'symlink', $src, $dst;
+        symlink($src, $dst) or die "Can't create symlink: $!";
     }
 }
 
 sub remove_symlinks {
-    my @targets = create_targets();
+    my $self = shift;
+    my @targets = $self->create_targets();
     my $time = localtime->new->strftime('%Y%m%d%H%M%S');
 
     foreach my $target (@targets) {
-        my $dest = File::Spec->catfile($DEST_BASE_PATH, $target);
-        my $dest_backup = '';
-        if (-e $dest) {
-            if (defined $opts{force}) {
-                printf "%s: %s\n", 'remove', $dest;
-                unlink($dest) or die "Can't remove $dest; $!";
-            }
-            else {
-                $dest_backup = $dest . '_' . $time;
-                printf "%s: %s -> %s\n", 'move', $dest, $dest_backup;
-                move($dest, $dest_backup) or die "Can't backup $dest: $!";
-            }
+        my $dst = File::Spec->catfile($self->{dst_base_path}, $target);
+        my $dst_backup = '';
+        if (-e $dst) {
+            printf "%s: %s\n", 'remove', $dst;
+            unlink($dst) or die "Can't remove $dst; $!";
         }
     }
 }
 
-if ($opts{create}) {
-    create_symlinks();
-}
-elsif ($opts{remove}) {
-    remove_symlinks();
-}
-elsif ($opts{help}) {
-    pod2usage(0);
+package main;
+use Getopt::Long qw/:config no_ignore_case gnu_compat/;
+use Pod::Usage 'pod2usage';
+
+main();exit;
+
+sub main {
+    my $force = '';
+    my $opt_parser = Getopt::Long::Parser->new(
+        config => [qw/posix_default no_ignore_case auto_help/]
+    );
+    $opt_parser->getoptions(
+        'c|create' => \my $create,
+        'r|remove' => \my $remove,
+        'f|force'  => \$force
+    ) or pod2usage(1);
+
+    my $symlink_obj = File::SymLink->new();
+    if ($create) {
+        $symlink_obj->create_symlinks($force);
+    }
+    elsif ($remove) {
+        $symlink_obj->remove_symlinks();
+    }
 }
 
