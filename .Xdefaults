@@ -1,7 +1,7 @@
 ! see archwiki about urxvt
 
 ! restart
-! xrdb -merge .Xdefaults
+! xrdb -merge ~/.Xdefaults
 
 ! name
 URxvt.termName: rxvt-unicode
@@ -24,67 +24,27 @@ URxvt.scrollBar: False
 
 !URxvt.geometry: 100x35
 
-! font
-!URxvt.font: xft:Inconsolata.otf:size=14 antialias=true
-!URxvt.font: xft:Osaka-Mono:bold:size=11 antialias=true
-!URxvt.font: xft:Ricty-Regular:bold:size=13 antialias=true
-URxvt.font: xft:Ricty-Bold:size=13 antialias=true
-!URxvt.font:\
-!    xft:Bitstream Vera Sans Mono:size=11:antialias=true, \
-!    xft:Hiragino Maru Gothic Pro:antialias=true, \
-!    xft:LiHei Pro:antialias=true, \
-!    xft:STHeiti:antialias=true, \
-!    xft:Apple Gothic:antialias=true
-!URxvt.boldFont:\
-!    xft:Bitstream Vera Sans Mono:bold:antialias=true, \
-!    xft:Hiragino Maru Gothic Pro:bold:antialias=true, \
-!    xft:LiHei Pro:bold:antialias=true, \
-!    xft:STHeiti:bold:antialias=true, \
-!    xft:Apple Gothic:bold:antialias=true
-!URxvt.italicFont:\
-!    xft:Bitstream Vera Sans Mono:italic:antialias=true, \
-!    xft:Hiragino Maru Gothic Pro:italic:antialias=true, \
-!    xft:LiHei Pro:italic:antialias=true, \
-!    xft:STHeiti:italic:antialias=true, \
-!    xft:Apple Gothic:italic:antialias=true
-!URxvt.bold.ItalicFont:\
-!    xft:Bitstream Vera Sans Mono:bold:italic:antialias=true, \
-!    xft:Hiragino Maru Gothic Pro:bold:italic:antialias=true, \
-!    xft:LiHei Pro:italic:bold:antialias=true, \
-!    xft:STHeiti:italic:bold:antialias=true, \
-!    xft:Apple Gothic:bold:italic:antialias=true
-
+! Font
+URxvt.font: xft:Ricty-Bold:size=12 antialias=true
 Xft*antialias: true
-
 URxvt.shading: 10
 
-! clickable urls -> matcher
-! tabs -> tabbed
-! clipboard -> clipboard
-URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select,x-selection
+! Perl extensions
+URxvt.perl-lib: $HOME/urxvt-perls
+URxvt.perl-ext-common: default,matcher,clipboard
 URxvt.urlLauncher: /usr/bin/firefox
-!URxvt.matcher.button: 1
-URxvt.keysym.C-M-v: perl:x-selection:paste_primary
-URxvt.keysym.C-M-v: perl:x-selection:paste_clipboard
+URxvt.matcher.button: 1
+URxvt.colorUL: $4682B4
+URxvt.keysym.C-c: perl:clipboard:copy
+URxvt.keysym.C-v: perl:clipboard:paste
+URxvt.keysym.C-M-v: perl:clipboard:paste_escape
+! Yankable URLs
+!URxvt.perl-ext: default,url-select
+!URxvt.keysym.M-u: perl:url-select:select_next
+!URxvt.urlLauncher: firefox
+!URxvt.underlineURLs: true
 
-
-! to control tabs use:
-! Shift + PgDn -> new tab
-! Shift + Home -> go to left tab
-! Shift + End  -> go to right tab
-! Ctrl  + Home -> move tab to the left
-! Ctrl  + End  -> move tab to the right
-! Ctrl  + d    -> close tab
-
-! you can change tabs color
-
-! yankable urls(not work orz...)
-! need urxvt-url-select in Arch Linux
-URxvt.perl-ext: default,url-select
-URxvt.keysym.M-u: perl:url-select:select_next
-URxvt.urlLauncher: firefox
-URxvt.underlineURLs: true
-
+! ibus settings
 URxvt.inputMethod: ibus
 URxvt.preeditType: OverTheSpot
 
