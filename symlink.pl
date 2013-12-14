@@ -30,15 +30,6 @@ create/remove symbolic links
 
 =cut
 
-#GetOptions(
-#    \my %opts, qw/
-#    create
-#    remove
-#    force
-#    help
-#    /) or pod2usage(1);
-#
-
 package File::SymLink;
 use FindBin;
 use File::Basename 'basename';

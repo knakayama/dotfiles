@@ -16,5 +16,5 @@ for script in $(ls -A "$DIR_NAME"); do
     is_exclude "$script" || STATUS_LINE_RIGHT="${STATUS_LINE_RIGHT}${FG_BG_COLOR}$(${DIR_NAME}/${script})${PREFIX} < "
 done
 
-echo -n "$(echo $STATUS_LINE_RIGHT | sed 's/ <$/ /')"
+echo -n "$(echo $STATUS_LINE_RIGHT | perl -wlpe 's/(\s)<$/\1/')"
 
