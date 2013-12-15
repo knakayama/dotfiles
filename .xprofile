@@ -1,18 +1,22 @@
+#!/bin/sh
+
 # for japanese settings
-if [[ -x "$(which uim-xim 2>/dev/null)" ]]; then
-    setxkbmap jp
-    export GTK_IM_MODULE='uim'
-    export QT_IM_MODULE='uim'
-    uim-xim &
-    export XMODIFIERS=@im='uim'
+if [ -x "$(which ibus-daemon 2>/dev/null)" ]; then
+    export GTK_IM_MODULE="ibus"
+    export XMODIFIERS=@im="ibus"
+    export QT_IM_MODULE="xim"
+    # -d: run ibus as background process
+    # -r: if there is an old ibus-daemon is running, it will be replaced
+    # -x: excute ibus XIM server
+    ibus-daemon -drx
 fi
 
-if [[ -e ~/.xmodmap && -x "$(which xmodmap 2>/dev/null)" ]]; then
-    xmodmap ~/.xmodmap
+if [ -f "${HOME}/.xmodmap" -a -x "$(which xmodmap 2>/dev/null)" ]; then
+    xmodmap "${HOME}/.xmodmap"
 fi
 
 # execute ratpoison
-if [[ -x "$(which ratpoison 2>/dev/null)" ]]; then
+if [ -x "$(which ratpoison 2>/dev/null)" ]; then
     exec "$(which ratpoison 2>/dev/null)"
 fi
 
