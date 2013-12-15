@@ -30,19 +30,24 @@ Xft*antialias: true
 URxvt.shading: 10
 
 ! Perl extensions
-URxvt.perl-lib: $HOME/urxvt-perls
-URxvt.perl-ext-common: default,matcher,clipboard
-URxvt.urlLauncher: /usr/bin/firefox
-URxvt.matcher.button: 1
+URxvt.perl-lib: /home/knakayama/urxvt-perls/
+!URxvt.perl-ext-common: default,matcher,clipboard,keyboard-select
+!URxvt.urlLauncher: /usr/bin/firefox
+!URxvt.matcher.button: 1
+URxvt.perl-ext-common: default,url-select,clipboard,keyboard-select
 URxvt.colorUL: $4682B4
-URxvt.keysym.C-c: perl:clipboard:copy
-URxvt.keysym.C-v: perl:clipboard:paste
-URxvt.keysym.C-M-v: perl:clipboard:paste_escape
-! Yankable URLs
-!URxvt.perl-ext: default,url-select
-!URxvt.keysym.M-u: perl:url-select:select_next
-!URxvt.urlLauncher: firefox
-!URxvt.underlineURLs: true
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/firefox
+URxvt.url-select.autocopy: true
+URxvt.url-select.underline: true
+! Alt + Shift + c -> copy
+! Alt + Shift + v -> paste
+! Control + Shift + Alt + v -> paste escape
+URxvt.keysym.M-C: perl:clipboard:copy
+URxvt.keysym.M-V: perl:clipboard:paste
+!URxvt.keysym.C-M-v: perl:clipboard:paste_escape
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
 
 ! ibus settings
 URxvt.inputMethod: ibus
