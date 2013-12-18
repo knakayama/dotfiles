@@ -42,8 +42,8 @@ sub new {
     my $self = {
         excludes => [qw/.git .gitignore .gitmodules README.rst tmux_scripts symlink.pl/],
         src_base_path => $FindBin::Bin,
-        #dst_base_path => $ENV{HOME}
-        dst_base_path => "$ENV{HOME}/test"
+        dst_base_path => $ENV{HOME}
+        #dst_base_path => "$ENV{HOME}/test"
     };
 
     bless $self, $class;
@@ -117,7 +117,7 @@ sub remove_symlinks {
 }
 
 package main;
-use Getopt::Long qw/:config no_ignore_case gnu_compat/;
+use Getopt::Long;
 use Pod::Usage 'pod2usage';
 
 main();exit;
