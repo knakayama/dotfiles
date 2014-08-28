@@ -52,6 +52,10 @@ set modeline
 " show line number
 set number
 
+" Vim interprets numerals with a leading zero to be in octal notation rather than in decimal.
+" Above will cause Vim to treat all numerals as decimal, regardless of whether they are padded with zeros.
+set nrformats=
+
 " line space
 "set linespace=4
 
@@ -78,7 +82,7 @@ let g:mapleader = ","
 
 "http://blog.remora.cx/2011/04/show-invisible-spaces-in-vim.html
 " display unprintable character
-set list
+"set list
 "set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -115,7 +119,7 @@ Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'tyru/open-browser.vim'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/syntastic'
+"Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-surround'
 "Bundle 'taglist.vim'
 "Bundle 'eregex.vim'
@@ -125,6 +129,7 @@ Bundle 'neco-look'
 Bundle 'pythoncomplete'
 "Bundle 'Raimondi/delimitMate'
 Bundle 'majutsushi/tagbar'
+Bundle 'kannokanno/previm'
 " not work
 "Bundle 'PySmell'
 "Bundle 'mrtazz/simplenote.vim'
@@ -204,11 +209,11 @@ let g:tagbar_compact=1
 nnoremap <leader>T :TagbarToggle<CR>
 
 "" syntastic
-let g:syntastic_enable_signs=1
+"let g:syntastic_enable_signs=1
 "let g:syntastic_auto_loc_list=2
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
 "" VimShell
 " key mappings
@@ -278,9 +283,6 @@ let g:quickrun_config['markdown'] = {
 "" delimitMate
 "autocmd FileType html,htmldjango,jinjahtml,mako let b:closetab_html_style=1
 
-"" simplete.vim
-let g:SimplenoteUsername = "metamosco@gmail.com"
-let g:SimplenotePassword = "uTLftTPtnu"
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " colors , fonts and gui settings
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -410,10 +412,10 @@ set backspace=2
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " encoding
 """"""""""""""""""""""""""""""""""""""""""""""""""
-set encoding=utf-8
+"set encoding=euc-jp
 "utf-8以外の文字コードも読み込む
-set fileencodings=utf-8,euc-jp,cp932
-set fileformat=unix
+"set fileencodings=utf-8,euc-jp,cp932
+"set fileformat=unix
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " key mappings
