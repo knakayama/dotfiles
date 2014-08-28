@@ -64,7 +64,42 @@ promptinit
 # %n -> user name
 # %~ -> current directory(home directory is ~)
 # %(1,#,$)
-PROMPT="%n %{${fg[blue]}%}%~%{${reset_color}%}%(!,#,$) "
+PROMPT="%n@%m %{${fg[blue]}%}%~%{${reset_color}%}%(!,#,$) "
+
+autoload -U colors; colors
+autoload -Uz VCS_INFO_get_data_git
+VCS_INFO_get_data_git 2> /dev/null
+compinit -u
+# End of lines added by compinstall
+RPROMPT='[%~]'
+function rprompt_git_current_branch {
+    local branch_name git_status color gitdir action
+
+    [[ "$PWD" =~ '/\.git(/.*)?$' ]] && return 0
+
+    branch_name="$(git rev-parse --abbrev-ref=loose HEAD 2> /dev/null)"
+    [[ -z "$branch_name" ]] && return 0
+
+    gitdir="$(git rev-parse --git-dir 2> /dev/null)"
+    action="$(VCS_INFO_git_getaction "$gitdir")" && action="($action)"
+    git_status="$(git status 2> /dev/null)"
+
+    if [[ "$git_status" =~ "(?m)^nothing to" ]]; then
+        color="%F{green}"
+    elif [[ "$git_status" =~ "(?m)^nothing added" ]]; then
+        color="%F{yellow}"
+    elif [[ "$git_status" =~ "(?m)^# Untracked" ]]; then
+        color="%B%F{red}"
+    else
+        color="%F{red}"
+    fi
+    echo "${color}${branch_name}${action}%f%b "
+}
+# PCRE ¸ß´¹¤ÎÀµµ¬É½¸½¤ò»È¤¦
+setopt re_match_pcre
+# ¥×¥í¥ó¥×¥È¤¬É½¼¨¤µ¤ì¤ë¤¿¤Ó¤Ë¥×¥í¥ó¥×¥ÈÊ¸»úÎó¤òÉ¾²Á, ÃÖ´¹¤¹¤ë
+setopt prompt_subst
+RPROMPT='[`rprompt_git_current_branch`%~]'
 
 ####################
 # history
@@ -112,9 +147,9 @@ setopt append_history
 # Plugin
 ####################
 
-if [[ -d "${HOME}/.zsh/plugin" ]]; then
-    source ${HOME}/.zsh/plugin/*
-fi
+#if [[ -d "${HOME}/.zsh/plugin" ]]; then
+#    source ${HOME}/.zsh/plugin/*
+#fi
 
 ####################
 # Misc Settings
@@ -198,9 +233,6 @@ setopt cdable_vars
 # å³å´ã¾ã§å…¥åŠ›ãŒããŸã‚‰æ™‚é–“ã‚’æ¶ˆã™
 #setopt transient_rprompt
 
-# convenient
-setopt prompt_subst
-
 # display packed list
 setopt list_packed
 
@@ -227,25 +259,67 @@ setopt numeric_glob_sort
 # [ -n $(alias run-help) ] && unalias run-help
 # autoload run-help
 
-# mosh
-s() {
-    #if [[ ! -x "$(which mosh 2>/dev/null)" ]]; then
-    #    echo "mosh is not installed"
-    #    exit 1
-    #fi
-    if [[ ! -x "$(which tmux 2>/dev/null)" ]]; then
-        echo "tmux is not installed"
-        exit 1
-    fi
-    if [[ -n "$2" ]]; then
-        #tmux new-window -n "$1" "mosh $1 -p $2"
-        tmux new-window -n "$1" "ssh $1"
-    else
-        #tmux new-window -n "$1" "mosh $1 -p 60001"
-        tmux new-window -n "$1" "ssh $1"
-    fi
-}
 
-compdef s=ssh
+# path
+if [[ -d "${HOME}/bin" ]]; then
+    export PATH="${PATH}:${HOME}/bin"
+fi
 
+# auto-fu.zsh
+if [[ -f "${HOME}/.zsh/plugin/auto-fu.zsh/auto-fu.zsh" ]]; then
+    source "${HOME}/.zsh/plugin/auto-fu.zsh/auto-fu.zsh"
+    function zle-line-init() {
+        auto-fu-init
+    }
+    zle -N zle-line-init
+fi
+
+# w3m
+if [[ -x "$(which w3m 2>/dev/null)" ]]; then
+    export HTTP_HOME="http://www.google.com"
+fi
+
+# package update
+if [[ -d "/home/gotoh/bin" ]]; then
+    export PATH="${PATH}:/home/gotoh/bin"
+fi
+
+if [[ -x "${HOME}/bin/peco" ]]; then
+    # sheet and peco settings
+    # http://blog.glidenote.com/blog/2014/06/26/snippets-peco-percol/
+    function peco-snippets() {
+        local SNIPPETS="$(cat ~/.sheets/* | peco --query "$LBUFFER")"
+        zle clear-screen
+    }
+
+    zle -N peco-snippets
+    bindkey '^x^s' peco-snippets
+
+    # select history
+    # http://k0kubun.hatenablog.com/entry/2014/07/06/033336
+    #function peco-select-history() {
+    #    typeset tac
+    #    if which tac > /dev/null 2>&1; then
+    #      tac=tac
+    #    else
+    #      tac='tail -r'
+    #    fi
+    #    BUFFER=$(fc -l -n 1 | eval $tac | peco --query "$LBUFFER")
+    #    CURSOR=$#BUFFER
+    #    zle -R -c
+    #}
+    #zle -N peco-select-history
+    #bindkey '^r' peco-select-history
+fi
+
+# perlbrew
+if [[ -d "${HOME}/perl5/perlbrew/etc/bashrc" ]]; then
+    source "${HOME}/perl5/perlbrew/etc/bashrc"
+fi
+
+# rbenv
+if [[ -d "${HOME}/.rbenv" ]]; then
+    export PATH="${PATH}:${HOME}/.rbenv/bin"
+    eval "$(rbenv init -)"
+fi
 
