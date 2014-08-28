@@ -10,30 +10,6 @@ if [[ -x "$(type -p dircolors | cut -d' ' -f3)" ]]; then
     alias egrep="egrep --color=auto"
 fi
 
-# miscellaneous aliases
-# http://www.jmuk.org/diary/index.php/2007/02/23/2/
-# nocorrect は zsh の予約語で、以降のコマンドにおける訂正を抑制する効果がある。
-# cp なんかでは新しくファイルを作ることが多いから、いちいち訂正を出されるよりはこのようにするといい。
-# ほかにも mv、mkdir、touchなどもそうだろう
-alias mv="nocorrect mv"
-alias cp="nocorrect cp"
-alias mkdir="nocorrect mkdir"
-#alias ..="cd .."
-#alias crontab="crontab -i"
-# less.sh is vi like less command
-#alias vless="/usr/share/vim/vim71/macros/less.sh"
-# open perl module by vim
-#alias vipm="PERLDOC_PAGER=vim perldoc -m $@"
-
-# global alias
-alias -g M="| more"
-alias -g L="| less"
-alias -g H="| head"
-alias -g T="| tail"
-alias -g G="| grep"
-alias -g GI="| grep -i"
-
-
 # ls aliases
 alias l="ls -CF"
 alias ll="ls -l"
@@ -44,30 +20,4 @@ alias lld="ls -ld"
 alias lsa="ls -ld .*"
 # display only directory and directory alias
 alias lsd="ls -ld *(-/DN)"
-
-# trash-cli
-# http://code.google.com/p/trash-cli/
-#alias rmp="trash-put"
-#alias rml="trash-list"
-#alias rmr="restore-trash"
-#alias rme="trash-empty"
-
-# firefox
-if [[ -x "$(which firefox 2>/dev/null)" ]]; then
-    alias f="firefox &"
-fi
-
-# directory stack
-alias po="popd"
-alias p="pushd"
-alias p1="pushd +1"
-alias p2="pushd +2"
-alias p3="pushd +3"
-alias p4="pushd +4"
-alias p5="pushd +5"
-alias p6="pushd +6"
-alias p7="pushd +7"
-alias p8="pushd +8"
-alias p9="pushd +9"
-alias d="dirs -vl"
 
