@@ -1,0 +1,9 @@
+[user]
+	name = knakayama
+	email = knakayama.sh@gmail.com
+[alias]
+	st = status
+	sts = status -s
+	merge = merge --no-ff
+[color]
+	ui = auto
