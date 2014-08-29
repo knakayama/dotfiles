@@ -516,3 +516,7 @@ autocmd! BufWritePre * :%s/\s\+$//ge
 " wrap
 "setlocal textwidth=80
 
+" set filetype to markdown when opening .md file.
+" why not default? default syntax is modula2...
+autocmd BufNewFile,BufRead *.md set filetype=markdown
+
