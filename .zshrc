@@ -323,3 +323,8 @@ if [[ -d "${HOME}/.rbenv" ]]; then
     eval "$(rbenv init -)"
 fi
 
+# aws
+if [[ -f "${HOME}/aws-cli/bin/aws_zsh_completer.sh" ]]; then
+    source "${HOME}/aws-cli/bin/aws_zsh_completer.sh"
+fi
+
