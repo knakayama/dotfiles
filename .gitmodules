@@ -58,6 +58,6 @@
 [submodule "urxvt-perls"]
 	path = urxvt-perls
 	url = git://github.com/muennich/urxvt-perls.git
-[submodule "bin/aws-cli"]
+[submodule "aws-cli"]
 	path = aws-cli
 	url = git://github.com/aws/aws-cli.git
