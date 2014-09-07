@@ -324,12 +324,12 @@ if [[ -d "${HOME}/.rbenv" ]]; then
 fi
 
 # aws
-if [[ -f "${HOME}/.aws/config" ]]; then
-    export AWS_ACCESS_KEY_ID="$(awk '/\[default\]/,/^$/' "${HOME}/.aws/config" | \
-        awk '$1 ~ /^aws_access_key_id/ {print $NF}')"
-    export AWS_SECRET_ACCESS_KEY_ID="$(awk '/\[default\]/,/^$/' "${HOME}/.aws/config" | \
-        awk '$1 ~ /^aws_secret_access_key/ {print $NF}')"
-fi
+#if [[ -f "${HOME}/.aws/config" ]]; then
+#    export AWS_ACCESS_KEY_ID="$(awk '/\[default\]/,/^$/' "${HOME}/.aws/config" | \
+#        awk '$1 ~ /^aws_access_key_id/ {print $NF}')"
+#    export AWS_SECRET_ACCESS_KEY_ID="$(awk '/\[default\]/,/^$/' "${HOME}/.aws/config" | \
+#        awk '$1 ~ /^aws_secret_access_key/ {print $NF}')"
+#fi
 if [[ -f "${HOME}/aws-cli/bin/aws_zsh_completer.sh" ]]; then
     source "${HOME}/aws-cli/bin/aws_zsh_completer.sh"
 fi
