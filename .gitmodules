@@ -2,7 +2,7 @@
 	path = .vim/bundle/gist-vim
 	url = git://github.com/mattn/gist-vim.git
 [submodule ".vim/bundle/neobundle"]
-	path = .vim/bundle/neobundle
+	path = .vim/bundle/neobundle.vim
 	url = git@github.com:Shougo/neobundle.vim.git
 [submodule ".vim/bundle/Wombat"]
 	path = .vim/bundle/Wombat
