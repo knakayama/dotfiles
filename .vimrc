@@ -117,6 +117,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'thinca/vim-template'
@@ -147,12 +148,14 @@ NeoBundleCheck
 " http://d.hatena.ne.jp/ruedap/20110117/vim_unite_plugin_1_week
 " start insert mode
 let g:unite_enable_start_insert=1
-nnoremap <silent> <leader>ub :<C-u>Unite buffer<CR>
-nnoremap <silent> <leader>uf :<C-u>UniteWithBufferDir -buffer-name=files file file/new<CR>
-nnoremap <silent> <leader>ur :<C-u>Unite -buffer-name=register register<CR>
-nnoremap <silent> <leader>um :<C-u>Unite file_mru<CR>
-nnoremap <silent> <leader>uu :<C-u>Unite buffer file_mru<CR>
-nnoremap <silent> <leader>ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file/new<CR>
+nnoremap [unite] <Nop>
+nmap <leader>u [unite]
+nnoremap [unite]b :<C-u>Unite buffer<CR>
+nnoremap [unite]f :<C-u>UniteWithBufferDir -buffer-name=files file file/new<CR>
+nnoremap [unite]r :<C-u>Unite -buffer-name=register register<CR>
+nnoremap [unite]m :<C-u>Unite file_mru<CR>
+nnoremap [unite]u :<C-u>Unite buffer file_mru<CR>
+nnoremap [unite]a :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file/new<CR>
 " Unite and vim-ref
 " :Unite ref/(source-name)
 
