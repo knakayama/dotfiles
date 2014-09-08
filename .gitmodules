@@ -50,10 +50,10 @@
 	path = .vim/bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
 [submodule "urxvt-perls"]
-	path = urxvt-perls
+	path = bin/urxvt-perls
 	url = git://github.com/muennich/urxvt-perls.git
 [submodule "aws-cli"]
-	path = aws-cli
+	path = bin/aws-cli
 	url = git://github.com/aws/aws-cli.git
 [submodule ".vim/bundle/open-browser.vim"]
 	path = .vim/bundle/open-browser.vim
@@ -62,5 +62,5 @@
 	path = .vim/bundle/neomru.vim
 	url = git@github.com:Shougo/neomru.vim.git
 [submodule "direnv"]
-	path = direnv
+	path = bin/direnv
 	url = git@github.com:zimbatm/direnv.git

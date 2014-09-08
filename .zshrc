@@ -319,12 +319,12 @@ if [[ -d "${HOME}/.rbenv" ]]; then
 fi
 
 # aws
-if [[ -f "${HOME}/aws-cli/bin/aws_zsh_completer.sh" ]]; then
+if [[ -d "${HOME}/bin/aws-cli" ]]; then
     source "${HOME}/aws-cli/bin/aws_zsh_completer.sh"
 fi
 
 # direnv
-if [[ -x "/usr/local/bin/direnv" ]]; then
+if [[ -d "${HOME}/bin/direnv" ]]; then
     eval "$(direnv hook zsh)"
 fi
 
