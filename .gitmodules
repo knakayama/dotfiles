@@ -61,3 +61,6 @@
 [submodule ".vim/bundle/neomru.vim"]
 	path = .vim/bundle/neomru.vim
 	url = git@github.com:Shougo/neomru.vim.git
+[submodule "direnv"]
+	path = direnv
+	url = git@github.com:zimbatm/direnv.git
