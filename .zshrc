@@ -320,7 +320,7 @@ fi
 
 # aws
 if [[ -d "${HOME}/bin/aws-cli" ]]; then
-    source "${HOME}/aws-cli/bin/aws_zsh_completer.sh"
+    source "${HOME}/bin/aws-cli/bin/aws_zsh_completer.sh"
 fi
 
 # direnv
