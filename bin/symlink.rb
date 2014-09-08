@@ -13,7 +13,7 @@ opt.parse!(ARGV)
 
 def create_target_list
     target_list = []
-    excludes = Regexp.new('^(\.git(ignore|modules)?|README\.md|tmux-scripts|symlink\.rb)$')
+    excludes = Regexp.new('^(\.git(ignore|modules)?|README\.md|tmux-scripts)$')
 
     Dir.open(File.expand_path("~/dotfiles")) do |dir|
         dir.each do |target|
