@@ -64,3 +64,18 @@
 [submodule "direnv"]
 	path = bin/direnv
 	url = git@github.com:zimbatm/direnv.git
+[submodule ".tmux/plugins/tpm"]
+	path = .tmux/plugins/tpm
+	url = git@github.com:tmux-plugins/tpm.git
+[submodule ".tmux/plugins/tmux-resurrect"]
+	path = .tmux/plugins/tmux-resurrect
+	url = git@github.com:tmux-plugins/tmux-resurrect.git
+[submodule ".tmux/plugins/tmux-copycat"]
+	path = .tmux/plugins/tmux-copycat
+	url = git@github.com:tmux-plugins/tmux-copycat.git
+[submodule ".tmux/plugins/tmux-open"]
+	path = .tmux/plugins/tmux-open
+	url = git@github.com:tmux-plugins/tmux-open.git
+[submodule ".tmux/plugins/tmux-sidebar"]
+	path = .tmux/plugins/tmux-sidebar
+	url = git@github.com:tmux-plugins/tmux-sidebar.git

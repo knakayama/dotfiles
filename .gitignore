@@ -1,1 +1,3 @@
 .vim/bundle/.neobundle/
+.tmux/*
+!.tmux/plugins
