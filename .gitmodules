@@ -79,3 +79,12 @@
 [submodule ".tmux/plugins/tmux-sidebar"]
 	path = .tmux/plugins/tmux-sidebar
 	url = git@github.com:tmux-plugins/tmux-sidebar.git
+[submodule ".tmux/plugins/tmux-avg"]
+	path = .tmux/plugins/tmux-avg
+	url = git@github.com:knakayama/tmux-avg.git
+[submodule ".tmux/plugins/tmux-mem"]
+	path = .tmux/plugins/tmux-mem
+	url = git@github.com:knakayama/tmux-mem.git
+[submodule ".tmux/plugins/tmux-uptime"]
+	path = .tmux/plugins/tmux-uptime
+	url = git@github.com:knakayama/tmux-uptime.git
