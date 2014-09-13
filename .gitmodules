@@ -88,3 +88,6 @@
 [submodule ".tmux/plugins/tmux-uptime"]
 	path = .tmux/plugins/tmux-uptime
 	url = git@github.com:knakayama/tmux-uptime.git
+[submodule ".rbenv"]
+	path = .rbenv
+	url = git@github.com:sstephenson/rbenv.git
