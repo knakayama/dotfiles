@@ -156,7 +156,9 @@ setopt append_history
 ####################
 
 # editor
-export EDITOR="/usr/bin/vim"
+if [[ -x "/usr/bin/vim" ]]; then
+    export EDITOR="/usr/bin/vim"
+fi
 
 # emacs binding
 bindkey -e
