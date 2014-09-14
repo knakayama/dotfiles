@@ -7,5 +7,6 @@
 	merge = merge --no-ff
 	co = commit
 	com = commit -m
+	coam = commit -am
 [color]
 	ui = auto
