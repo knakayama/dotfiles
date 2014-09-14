@@ -91,3 +91,12 @@
 [submodule ".rbenv"]
 	path = .rbenv
 	url = git@github.com:sstephenson/rbenv.git
+[submodule ".vim/bundle/neosnippet.vim"]
+	path = .vim/bundle/neosnippet.vim
+	url = git@github.com:Shougo/neosnippet.vim.git
+[submodule ".vim/bundle/neosnippet-snippets"]
+	path = .vim/bundle/neosnippet-snippets
+	url = git@github.com:Shougo/neosnippet-snippets.git
+[submodule ".vim/bundle/serverspec-snippets"]
+	path = .vim/bundle/serverspec-snippets
+	url = git@github.com:glidenote/serverspec-snippets.git
