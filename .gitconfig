@@ -4,7 +4,6 @@
 [alias]
 	st = status
 	sts = status -s
-	merge = merge --no-ff
 	co = commit
 	com = commit -m
 	coam = commit -am
