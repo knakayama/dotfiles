@@ -405,85 +405,6 @@ set backspace=2
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " key mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""
-" http://vim-users.jp/2010/11/hack181/
-" Open junk file. "{{{
-"command! -nargs=0 JunkFile call s:open_junk_file()
-"" s: cannote be accessed from outside of the scripts, thus are local to the script.
-"function! s:open_junk_file()
-"    " l: local-variable
-"    let l:junk_dir = $HOME . '/.vim_junk' . strftime('/%Y/%m')
-"    if !isdirectory(l:junk_dir)
-"        call mkdir(l:junk_dir, 'p')
-"    endif
-"
-"    let l:filename = input('Junk Code: ', l:junk_dir.strftime('/%Y-%m-%d-%H%M%S.'))
-"    if l:filename != ''
-"        execute 'edit ' . l:filename
-"    endif
-"endfunction"}}}
-"" keymap
-"nnoremap <leader>j :JunkFile<CR>
-
-" Open memo file "{{{
-command! -nargs=0 MemoFile call s:open_memo_file()
-function! s:open_memo_file()
-    let l:memo_dir = $HOME . '/memos'
-    if !isdirectory(l:memo_dir)
-        call mkdir(l:memo_dir)
-    endif
-
-    let l:filename = input('Memo File Name: ', l:memo_dir . ('/'))
-    if l:filename != ''
-        execute 'edit ' . l:filename
-    endif
-endfunction "}}}
-" keymap
-nnoremap <leader>m :<C-u>MemoFile<CR>
-
-" Store messages "{{{
-" http://vim-users.jp/2011/06/hack220/
-"command! -nargs=0 StoreCommand call s:store_command()
-"function! s:store_command()
-"    let l:fname = '/tmp' . strftime('/%H%M%S')
-"    if l:fname != ''
-"        "execute 'edit ' . l:fname
-"        execute 'redir > ' . l:fname
-"        execute 'silent ' . l:fname
-"        execute 'mes'
-"        execute 'redir END'
-"        execute 'edit ' . l:fname
-"        " editした後にdeleteしたいのだけと
-"        call delete(l:fname)
-"    endif
-"endfunction"}}}
-
-" http://vim-users.jp/2011/02/hack203/
-" show all mappings
-command!
-            \ -nargs=* -complete=mapping
-            \ AllMaps
-            \ map <args> | map! <args> | lmap <args>
-
-" Usage
-" :AllMaps -> show all mappings
-" :AllMap <buffer> -> show mappings defined in current buffer
-" :verbose AllMaps <buffer> same above, but include script file names
-
-command! -nargs=0 GetCWD call s:get_cwd()
-function! s:get_cwd()
-    let l:cwd = getcwd()
-    "cd l:cwd
-    echo l:cwd
-endfunction
-
-nnoremap <leader>cd :GetCWD<CR>
-
-" toggle wrap
-" wrap! -> toggle wrap
-" wrap? -> confirm current wrap mode
-nnoremap <Space>ow
-\   :<C-u>setlocal wrap!
-\   \|    setlocal wrap?<CR>
 
 nnoremap <Space>m :<C-u>marks<CR>
 nnoremap <Space>r :<C-u>registers<CR>
@@ -491,15 +412,16 @@ nnoremap <Space>l :<C-u>ls<CR>
 nnoremap <Space>cd :<C-u>cd %:h<CR>
 nnoremap <leader>ls :<C-u>!ls -F<CR>
 
-" template
-"autocmd! BufNewFile *.py silent! 0r $HOME/.vim/skel/python.txt:e
-"autocmd! BufNewFile *.sh silent! 0r $HOME/.vim/skel/shell.txt:e
+" Tip 34: Recall Commands from History
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" auto
+""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " remove trailing space
 autocmd! BufWritePre * :%s/\s\+$//ge
-
-" wrap
-"setlocal textwidth=80
 
 " set filetype to markdown when opening .md file.
 " why not default? default syntax is modula2...
