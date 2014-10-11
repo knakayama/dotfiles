@@ -426,4 +426,5 @@ autocmd! BufWritePre * :%s/\s\+$//ge
 " set filetype to markdown when opening .md file.
 " why not default? default syntax is modula2...
 autocmd BufNewFile,BufRead *.md set filetype=markdown
+autocmd BufNewFile,BufRead *.rb set tabstop=2 shiftwidth=2
 
