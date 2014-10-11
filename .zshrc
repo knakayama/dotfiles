@@ -41,38 +41,19 @@ typeset -U path cdpath fpath manpath
 # PROMPT2 -> 2行以上のコマンドを入力する際に表示されるプロンプト
 # SPROMPT -> コマンドを打ち間違えたときのプロンプト
 
-# color format
-# %{${fg[文字色]}${bg[背景色]%}}
-# sample
-# %{${fg[blue]}%} %~ %{${fg[green]}%}%# %{${fg[black]}%}
-# 文字色を青         文字色を緑         文字色を黒
-
 # enable color prompt
-autoload -U colors
-colors
-
+autoload -U colors; colors
 # prompt theme
-autoload -U promptinit
-promptinit
+autoload -U promptinit; promptinit
 # see prompt preview -> prompt -p <theme>
 # see current theme -> prompt -c
 #prompt walters
 
-# prompt
-#PROMPT="[@${HOST%%.*} %1~]%(!.#.$)"
-#PROMPT=%n@:%/%%
-# %n -> user name
-# %~ -> current directory(home directory is ~)
-# %(1,#,$)
-PROMPT="%n@%m %{${fg[blue]}%}%~%{${reset_color}%}%(!,#,$) "
-
-autoload -U colors; colors
 autoload -Uz VCS_INFO_get_data_git
 VCS_INFO_get_data_git 2> /dev/null
 compinit -u
-# End of lines added by compinstall
-RPROMPT='[%~]'
-function rprompt_git_current_branch {
+
+function get_git_current_branch {
     local branch_name git_status color gitdir action
 
     [[ "$PWD" =~ '/\.git(/.*)?$' ]] && return 0
@@ -93,13 +74,20 @@ function rprompt_git_current_branch {
     else
         color="%F{red}"
     fi
-    echo "${color}${branch_name}${action}%f%b "
+    echo " ${color}@${branch_name}${action}%f%b"
 }
-# PCRE 互換の正規表現を使う
+# use pcre-compatible regexp
 setopt re_match_pcre
-# プロンプトが表示されるたびにプロンプト文字列を評価, 置換する
+# eval prompt when showing prompt
 setopt prompt_subst
-RPROMPT='[`rprompt_git_current_branch`%~]'
+# prompt
+#PROMPT="[@${HOST%%.*} %1~]%(!.#.$)"
+#PROMPT=%n@:%/%%
+# %n -> user name
+# %~ -> current directory(home directory is ~)
+# %(1,#,$)
+# %f%b same as %{${reset_color}%}?
+PROMPT='%n@%m %F{blue}%~%f%b$(get_git_current_branch) %(!,#,$) '
 
 ####################
 # history
