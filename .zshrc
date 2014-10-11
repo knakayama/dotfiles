@@ -95,9 +95,9 @@ function rprompt_git_current_branch {
     fi
     echo "${color}${branch_name}${action}%f%b "
 }
-# PCRE �ߴ�������ɽ����Ȥ�
+# PCRE 互換の正規表現を使う
 setopt re_match_pcre
-# �ץ���ץȤ�ɽ������뤿�Ӥ˥ץ���ץ�ʸ�����ɾ��, �ִ�����
+# プロンプトが表示されるたびにプロンプト文字列を評価, 置換する
 setopt prompt_subst
 RPROMPT='[`rprompt_git_current_branch`%~]'
 
@@ -105,7 +105,7 @@ RPROMPT='[`rprompt_git_current_branch`%~]'
 # history
 ####################
 
-# 行頭がスペースで始まるコマンドラインは
+# 茵がスペースで始まるコマンドラインは
 # ヒストリに記録しない
 setopt hist_ignore_space
 
