@@ -85,8 +85,9 @@ let g:mapleader = ","
 
 "http://blog.remora.cx/2011/04/show-invisible-spaces-in-vim.html
 " display unprintable character
-"set list
+set list
 "set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+set listchars=trail:_
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Files and backups
@@ -421,7 +422,7 @@ cnoremap <C-n> <Down>
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 " remove trailing space
-autocmd! BufWritePre * :%s/\s\+$//ge
+"autocmd! BufWritePre * :%s/\s\+$//ge
 
 " set filetype to markdown when opening .md file.
 " why not default? default syntax is modula2...
