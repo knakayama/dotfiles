@@ -1,5 +1,9 @@
+"""""""""""""""""
+" Plugin Settings
+"""""""""""""""""
+
 " plugin loader
-let g:plugin_loader_roots = "/home/knakayama/.vimperator/vimperator-plugins"
+let g:plugin_loader_roots = %USERPROFILE%\Documents\GitHub\dotfiles\vimperator-plugins
 js <<EOF
 liberator.globalVariables.plugin_loader_plugins = <>
     _libly
@@ -16,17 +20,82 @@ liberator.globalVariables.plugin_loader_plugins = <>
 </>.toString().split(/\s+/).filter(function(n) n);
 EOF
 
+" slideshare.js
+nnoremap -urls=www\\.slideshare\\.net l :slideshare next<CR>
+nnoremap -urls=www\\.slideshare\\.net h :slideshare prev<CR>
+
+" nextlink.js
+let g:nextlink_follow =”true"
+
 " pre
 command! -nargs=+ lazy autocmd VimperatorEnter .*  <args>
+
+" ime_controller.js
+let g:ex_ime_mode = "inactive"
+let g:textarea_ime_mode = "inactive"
+
+" IME off on command-mode
+style! -name=commandline-ime chrome://* #liberator-commandline-command input {ime-mode: inactive;}
+
+"""""""""""""""""
+" Normal Settings
+"""""""""""""""""
 
 " try to stay in normal mode after loading a web page
 set focuscontent
 
 " editor
-set editor="xterm -e /usr/bin/vim -f"
+"set editor = "xterm -e /usr/bin/vim -f"
 
 "Change browser title to firefox
 set titlestring=Firefox
+
+" use visualbell when error occur
+set visualbell
+highlight Bell display:none
+
+" max showing line
+set verbose=9
+
+" show tabnumbers
+set tabnumbers
+
+" Use alphabet for hintchars
+set hintchars=abcdefghijklmnopqrstuvwxyz
+
+" show tab
+set gui=tabs
+
+" items which are completed at the :open prompts
+" s search engines and keyword URLs
+" l firefox location bar entries (bookmarks and history sorted in an inteligent wary)
+" b bookmarks
+set complete = sl
+" set suggestengines=google
+
+" colorscheme
+colorscheme sweets
+
+" ignore case
+set ignorecase
+
+" open new window when you open web page which change your current window size
+set popups=2
+
+" Define which commands should output in a new tab by default => all
+set newtab=all
+
+" use vim like editing mode on text area?
+"set noinsertmode
+
+" statuslinetoolbar
+" identity-box -> SSL Certification
+" not work?
+set statuslinetoolbar=greasemonkey-tbb,noscript-tbb,identity-box
+
+""""""""""""""""""
+" Key Map Settings
+""""""""""""""""""
 
 " C-h for firefox 1.2
 noremap <C-h> <BS>
@@ -42,28 +111,8 @@ noremap k 5k
 nnoremap h <A-Left>
 nnoremap l <A-Right>
 
-"エラー時のビープ音をビジュアルベルに
-set visualbell
-highlight Bell display:none
-
-"詳細表示行数(最大値=9)
-set verbose=9
-
-" show tabnumbers
-set tabnumbers
-
-" Use alphabet for hintchars without word l used in skk
-set hintchars=abcdefghijkmnopqrstuvwxyz
-
-" show tab
-set gui=tabs
-
-" items which are completed at the :open prompts
-" s search engines and keyword URLs
-" l firefox location bar entries (bookmarks and history sorted in an inteligent wary)
-" b bookmarks
-set complete=sl
-" set suggestengines=google
+" open web in undoes
+nnoremap U :undo<Space>
 
 " add bookmark with dialog
 nnoremap ,a <esc>:dialog addbookmark<CR>
@@ -74,58 +123,11 @@ nnoremap ! :set invusermode<CR>
 " reload .vimperatorrc
 nnoremap ,s :so ~/.vimperatorrc<CR>
 
-" slideshare.js
-nnoremap -urls=www\\.slideshare\\.net l :slideshare next<CR>
-nnoremap -urls=www\\.slideshare\\.net h :slideshare prev<CR>
-
-" ignore case
-set ignorecase
-
-"ウィンドウサイズを変更するようなページを開く際は
-"新しいウィンドウで開く
-set popups=2
-
-" colorscheme
-colorscheme sweets
-
 "qmark
 qmark m http://mail.google.com/mail/
-qmark r http://www.google.com/reader/
 qmark e http://www.google.com/
-
-" bookmarkletを登録
-command! gl :open javascript:var%20b=document.body;var%20GR________bookmarklet_domain='http://www.google.com';if(b&&!document.xmlVersion){void(z=document.createElement('script'));void(z.src='http://www.google.com/reader/ui/subscribe-bookmarklet.js');void(b.appendChild(z));}else{location='http://www.google.com/reader/view/feed/'+encodeURIComponent(location.href)}
-
-" Define which commands should output in a new tab by default
-" => all
-set newtab=all
-
-"]]や[[で次のページに行ったりする
-"日本語のページにも対応しやすいようにする
-"set nextpattern=\bnext\b,\bmore\b,next,^次(の)?ページ,\b次.*,→\b,^>$,^(>>|≫)$,^(>|≫),(>|≫)$
-"set previouspattern=\bprev|previous\b,prev,^前(の)?ページ,\b前.*,\b←,^<$,^(<<|≪)$,^(<|≪),(<|≪)$
-
-" nextlink.js
-let g:nextlink_follow =”true"
-
-" feedSomeKeys_3
 
 " Gmail
 lazy fmaps -u='mail\.google\.com/mail' c / j k n p o u e x s r a # [ ] ? gi gs gt gd ga gc
 lazy fmaps -u='mail\.google\.com/mail/.*/[0-9a-f]+$' c / j,n k,p n,j p,k o u e x s r a # [ ] ? gi gs gt gd ga gc
-
-" Google Reader
-lazy fmaps -u='www\.google\.com/reader' -events=vkeypress j k n p m s v A r S N P X O gh ga gs gt gu u / ? J K
-
-" text areaでvim風の操作ができる
-"set noinsertmode
-
-" statuslinetoolbar
-" identity-box -> SSL Certification
-" not work?
-set statuslinetoolbar=greasemonkey-tbb,noscript-tbb,identity-box
-
-" ime_controller.js
-let g:ex_ime_mode = "inactive"
-let g:textarea_ime_mode = "inactive"
 
