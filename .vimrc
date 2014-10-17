@@ -429,7 +429,7 @@ cnoremap <C-n> <Down>
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 " remove trailing space
-"autocmd! BufWritePre * :%s/\s\+$//ge
+autocmd! BufWritePre * :%s/\s\+$//ge
 
 " set filetype to markdown when opening .md file.
 " why not default? default syntax is modula2...
