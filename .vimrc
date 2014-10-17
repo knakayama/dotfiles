@@ -269,6 +269,13 @@ let g:quickrun_config['markdown'] = {
     \ 'cmdopt': '-e UTF8',
     \ }
 
+" http://tech.toshiya240.com/articles/2014/06/matchit-vim/
+source $VIMRUNTIME/macros/matchit.vim
+augroup matchit
+  autocmd!
+  autocmd FileType ruby let b:match_words = '\<\(module\|class\|def\|begin\|do\|if\|unless\|case\)\>:\<\(elsif\|when\|rescue\)\>:\<\(else\|ensure\)\>:\<end\>'
+augroup END
+
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " colors , fonts and gui settings
 """"""""""""""""""""""""""""""""""""""""""""""""""
