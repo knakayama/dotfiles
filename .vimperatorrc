@@ -3,7 +3,7 @@
 """""""""""""""""
 
 " plugin loader
-let g:plugin_loader_roots = %USERPROFILE%\Documents\GitHub\dotfiles\vimperator-plugins
+let g:plugin_loader_roots = "~/.vimperator/plugin/vimperator-plugins"
 js <<EOF
 liberator.globalVariables.plugin_loader_plugins = <>
     _libly
@@ -111,7 +111,7 @@ nnoremap ,a <esc>:dialog addbookmark<CR>
 nnoremap ! :set invusermode<CR>
 
 " reload .vimperatorrc
-nnoremap ,r :source %USERPROFILE%/.vimperatorrc<CR>
+nnoremap ,r :source ~/.vimperatorrc<CR>
 
 "qmark
 qmark m http://mail.google.com/mail/
