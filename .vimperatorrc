@@ -12,7 +12,6 @@ liberator.globalVariables.plugin_loader_plugins = <>
     "migemo_completion
     "migemo_hint
     multi_requester
-    slideshare
     readitlater
     statusline-toolbar
     escape-from-iframe
@@ -20,12 +19,8 @@ liberator.globalVariables.plugin_loader_plugins = <>
 </>.toString().split(/\s+/).filter(function(n) n);
 EOF
 
-" slideshare.js
-nnoremap -urls=www\\.slideshare\\.net l :slideshare next<CR>
-nnoremap -urls=www\\.slideshare\\.net h :slideshare prev<CR>
-
 " nextlink.js
-let g:nextlink_follow =”true"
+let g:nextlink_follow = "true"
 
 " pre
 command! -nargs=+ lazy autocmd VimperatorEnter .*  <args>
@@ -55,23 +50,23 @@ set visualbell
 highlight Bell display:none
 
 " max showing line
-set verbose=9
+set verbose = 9
 
 " show tabnumbers
 set tabnumbers
 
 " Use alphabet for hintchars
-set hintchars=abcdefghijklmnopqrstuvwxyz
+set hintchars = abcdefghijklmnopqrstuvwxyz
 
 " show tab
-set gui=tabs
+set gui=noaddons,nobookmarks,nomenu,navigation,tabs
 
 " items which are completed at the :open prompts
 " s search engines and keyword URLs
 " l firefox location bar entries (bookmarks and history sorted in an inteligent wary)
 " b bookmarks
 set complete = sl
-" set suggestengines=google
+" set suggestengines = google
 
 " colorscheme
 colorscheme sweets
@@ -80,18 +75,13 @@ colorscheme sweets
 set ignorecase
 
 " open new window when you open web page which change your current window size
-set popups=2
+set popups = 2
 
 " Define which commands should output in a new tab by default => all
-set newtab=all
+set newtab = all
 
 " use vim like editing mode on text area?
 "set noinsertmode
-
-" statuslinetoolbar
-" identity-box -> SSL Certification
-" not work?
-set statuslinetoolbar=greasemonkey-tbb,noscript-tbb,identity-box
 
 """"""""""""""""""
 " Key Map Settings
@@ -121,13 +111,12 @@ nnoremap ,a <esc>:dialog addbookmark<CR>
 nnoremap ! :set invusermode<CR>
 
 " reload .vimperatorrc
-nnoremap ,s :so ~/.vimperatorrc<CR>
+nnoremap ,r :source %USERPROFILE%/.vimperatorrc<CR>
 
 "qmark
 qmark m http://mail.google.com/mail/
-qmark e http://www.google.com/
 
 " Gmail
-lazy fmaps -u='mail\.google\.com/mail' c / j k n p o u e x s r a # [ ] ? gi gs gt gd ga gc
+lazy fmaps -u = 'mail\.google\.com/mail' c / j k n p o u e x s r a # [ ] ? gi gs gt gd ga gc
 lazy fmaps -u='mail\.google\.com/mail/.*/[0-9a-f]+$' c / j,n k,p n,j p,k o u e x s r a # [ ] ? gi gs gt gd ga gc
 
