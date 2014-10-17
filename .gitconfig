@@ -9,3 +9,5 @@
 	coam = commit -am
 [color]
 	ui = auto
+[grep]
+	lineNumber = true
