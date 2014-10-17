@@ -3,9 +3,9 @@
 """""""""""""""""
 
 " plugin loader
-let g:plugin_loader_roots = "~/.vimperator/plugin/vimperator-plugins"
+let g:plugin_loader_roots="~/.vimperator/plugin/vimperator-plugins"
 js <<EOF
-liberator.globalVariables.plugin_loader_plugins = <>
+liberator.globalVariables.plugin_loader_plugins=<>
     _libly
     feedSomeKeys_3
     ime_controller
@@ -20,14 +20,14 @@ liberator.globalVariables.plugin_loader_plugins = <>
 EOF
 
 " nextlink.js
-let g:nextlink_follow = "true"
+let g:nextlink_follow="true"
 
 " pre
 command! -nargs=+ lazy autocmd VimperatorEnter .*  <args>
 
 " ime_controller.js
-let g:ex_ime_mode = "inactive"
-let g:textarea_ime_mode = "inactive"
+let g:ex_ime_mode="inactive"
+let g:textarea_ime_mode="inactive"
 
 " IME off on command-mode
 style! -name=commandline-ime chrome://* #liberator-commandline-command input {ime-mode: inactive;}
@@ -40,7 +40,7 @@ style! -name=commandline-ime chrome://* #liberator-commandline-command input {im
 set focuscontent
 
 " editor
-"set editor = "xterm -e /usr/bin/vim -f"
+"set editor="xterm -e /usr/bin/vim -f"
 
 "Change browser title to firefox
 set titlestring=Firefox
@@ -50,13 +50,13 @@ set visualbell
 highlight Bell display:none
 
 " max showing line
-set verbose = 9
+set verbose=9
 
 " show tabnumbers
 set tabnumbers
 
 " Use alphabet for hintchars
-set hintchars = abcdefghijklmnopqrstuvwxyz
+set hintchars=abcdefghijklmnopqrstuvwxyz
 
 " show tab
 set gui=noaddons,nobookmarks,nomenu,navigation,tabs
@@ -65,8 +65,8 @@ set gui=noaddons,nobookmarks,nomenu,navigation,tabs
 " s search engines and keyword URLs
 " l firefox location bar entries (bookmarks and history sorted in an inteligent wary)
 " b bookmarks
-set complete = sl
-" set suggestengines = google
+set complete=sl
+" set suggestengines=google
 
 " colorscheme
 colorscheme sweets
@@ -75,10 +75,10 @@ colorscheme sweets
 set ignorecase
 
 " open new window when you open web page which change your current window size
-set popups = 2
+set popups=2
 
 " Define which commands should output in a new tab by default => all
-set newtab = all
+set newtab=all
 
 " use vim like editing mode on text area?
 "set noinsertmode
@@ -117,6 +117,6 @@ nnoremap ,r :source ~/.vimperatorrc<CR>
 qmark m http://mail.google.com/mail/
 
 " Gmail
-lazy fmaps -u = 'mail\.google\.com/mail' c / j k n p o u e x s r a # [ ] ? gi gs gt gd ga gc
+lazy fmaps -u='mail\.google\.com/mail' c / j k n p o u e x s r a # [ ] ? gi gs gt gd ga gc
 lazy fmaps -u='mail\.google\.com/mail/.*/[0-9a-f]+$' c / j,n k,p n,j p,k o u e x s r a # [ ] ? gi gs gt gd ga gc
 
