@@ -59,7 +59,7 @@ set tabnumbers
 set hintchars=abcdefghijklmnopqrstuvwxyz
 
 " show tab
-set gui=noaddons,nobookmarks,nomenu,navigation,tabs
+set gui=noaddons,nomenu,bookmarks,navigation,tabs
 
 " items which are completed at the :open prompts
 " s search engines and keyword URLs
