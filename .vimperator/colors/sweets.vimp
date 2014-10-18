@@ -32,39 +32,39 @@ hi Object color: Khaki;
 hi Function color: SkyBlue;
 hi URL color: LightGreen;
 
-hi TabNumber color: white; font-weight: bold; font-size: 10pt;
-
-style -name tab chrome://* <<EOM
-#content { background-color: #ccc; } /* tabbar */
-.tabs-alltabs-button { padding: 0 !important; }
-.tabs-container > stack { display: none; } /* remove tab selection menu */
-/*.tabs-container .box-inherit.scrollbox-innerbox { border-bottom: 1px solid #404040; } /* tab bar position: top */
-.tabs-container scrollbox {
-background-color: #adadad;
-border-bottom: 1px solid #000;
-}
-.tabbrowser-tab {
--moz-apperance: none !important;
-margin: 0 !important;
-padding: 0 !important;
--moz-border-radius-topleft: 0 !important;
--moz-border-radius-topright: 0 !important;
--moz-border-radius-bottomright: 0 !important;
--moz-border-radius-bottomleft: 0 !important;
-border-bottom: 1px solid #000 !important;
-background-image: none !important;
-background-color: #ff69b4 !important;
-text-align: left !important;
-}
-.tabbrowser-tab[selected=false] { background: #999 !important; }
-.tabbrowser-tab[selected=true] .tab-text { color: #ddd !important; }
-.tab-icon-image { margin-bottom: -4px; }
-.tab-image-left,
-.tab-image-middle,
-.tab-image-right {
-background-image: none !important;
-}
-EOM
+#hi TabNumber color: white; font-weight: bold; font-size: 10pt;
+#
+#style -name tab chrome://* <<EOM
+##content { background-color: #ccc; } /* tabbar */
+#.tabs-alltabs-button { padding: 0 !important; }
+#.tabs-container > stack { display: none; } /* remove tab selection menu */
+#/*.tabs-container .box-inherit.scrollbox-innerbox { border-bottom: 1px solid #404040; } /* tab bar position: top */
+#.tabs-container scrollbox {
+#background-color: #adadad;
+#border-bottom: 1px solid #000;
+#}
+#.tabbrowser-tab {
+#-moz-apperance: none !important;
+#margin: 0 !important;
+#padding: 0 !important;
+#-moz-border-radius-topleft: 0 !important;
+#-moz-border-radius-topright: 0 !important;
+#-moz-border-radius-bottomright: 0 !important;
+#-moz-border-radius-bottomleft: 0 !important;
+#border-bottom: 1px solid #000 !important;
+#background-image: none !important;
+#background-color: #ff69b4 !important;
+#text-align: left !important;
+#}
+#.tabbrowser-tab[selected=false] { background: #999 !important; }
+#.tabbrowser-tab[selected=true] .tab-text { color: #ddd !important; }
+#.tab-icon-image { margin-bottom: -4px; }
+#.tab-image-left,
+#.tab-image-middle,
+#.tab-image-right {
+#background-image: none !important;
+#}
+#EOM
 
 style -name statusbar chrome://* <<EOM
 #status-bar statusbarpanel { padding: 0 1px !important; }
