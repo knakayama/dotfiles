@@ -103,3 +103,6 @@
 [submodule ".zfunc/zfs-completions"]
 	path = .zfunc/zsh-completions
 	url = git@github.com:zsh-users/zsh-completions.git
+[submodule "bin/tmuxinator"]
+	path = bin/tmuxinator
+	url = git@github.com:tmuxinator/tmuxinator.git

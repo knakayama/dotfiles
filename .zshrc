@@ -318,3 +318,8 @@ if [[ -d "${HOME}/bin/direnv" ]]; then
     eval "$(direnv hook zsh)"
 fi
 
+# tmuxinator
+if [[ -x "${HOME}/bin/tmuxinator/completion/tmuxinator.zsh" ]]; then
+    source "${HOME}/bin/tmuxinator/completion/tmuxinator.zsh"
+fi
+
