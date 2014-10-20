@@ -87,7 +87,7 @@ setopt prompt_subst
 # %~ -> current directory(home directory is ~)
 # %(1,#,$)
 # %f%b same as %{${reset_color}%}?
-PROMPT='%n@%m %F{blue}%~%f%b$(get_git_current_branch) %(!,#,$) '
+PROMPT='%n@%m %F{blue}%~%f%b$(get_git_current_branch)'$'\n''%(!,#,$) '
 
 ####################
 # history
