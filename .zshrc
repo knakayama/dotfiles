@@ -252,7 +252,9 @@ setopt numeric_glob_sort
 
 # path
 if [[ -d "${HOME}/bin" ]]; then
-    export PATH="${PATH}:${HOME}/bin"
+    if ! echo "$PATH" | grep -q "${HOME}/bin"; then
+        export PATH="${PATH}:${HOME}/bin"
+    fi
 fi
 
 # auto-fu.zsh
@@ -304,8 +306,10 @@ fi
 
 # rbenv
 if [[ -d "${HOME}/.rbenv" ]]; then
-    export PATH="${PATH}:${HOME}/.rbenv/bin"
-    eval "$(rbenv init -)"
+    if ! echo "$PATH" | grep -q "${HOME}/.rbenv/bin"; then
+        export PATH="${PATH}:${HOME}/.rbenv/bin"
+        eval "$(rbenv init -)"
+    fi
 fi
 
 # aws
