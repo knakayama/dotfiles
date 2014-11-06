@@ -21,3 +21,6 @@ alias lsa="ls -ld .*"
 # display only directory and directory alias
 alias lsd="ls -ld *(-/DN)"
 
+# Print recently used docker image id
+alias dl="sudo docker ps -l -q"
+
