@@ -11,3 +11,5 @@
 	ui = auto
 [grep]
 	lineNumber = true
+[github]
+	user = knakayama
