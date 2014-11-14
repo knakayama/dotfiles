@@ -327,3 +327,9 @@ if [[ -x "${HOME}/bin/tmuxinator/completion/tmuxinator.zsh" ]]; then
     source "${HOME}/bin/tmuxinator/completion/tmuxinator.zsh"
 fi
 
+# hub
+# not work...
+#if [[ -x "${HOME}/bin/hub/etc/hub.zsh_completion" ]]; then
+#    source "${HOME}/bin/hub/etc/hub.zsh_completion"
+#fi
+
