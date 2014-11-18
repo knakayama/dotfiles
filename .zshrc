@@ -333,3 +333,10 @@ fi
 #    source "${HOME}/bin/hub/etc/hub.zsh_completion"
 #fi
 
+# go
+if [[ -x "/usr/bin/go" ]]; then
+    export GOPATH="${HOME}/go/vendor:${HOME}/go/me"
+    [[ -d "${HOME}/go" ]] || mkdir "${HOME}/go"
+    echo "$PATH" | grep -qE "${HOME}/go/vendor:${HOME}/go/me" || export PATH="${PATH}:${GOPATH}"
+fi
+
