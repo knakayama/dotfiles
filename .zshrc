@@ -340,3 +340,11 @@ if [[ -x "/usr/bin/go" ]]; then
     echo "$PATH" | grep -qE "${HOME}/go/vendor:${HOME}/go/me" || export PATH="${PATH}:${GOPATH}"
 fi
 
+# nvm
+if [[ -f "${HOME}/.nvm/nvm.sh" ]]; then
+    source "${HOME}/.nvm/nvm.sh"
+fi
+if [[ -f "${HOME}/.nvm/bash_completion" ]]; then
+    source "${HOME}/.nvm/bash_completion"
+fi
+
