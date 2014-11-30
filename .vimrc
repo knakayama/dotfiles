@@ -441,6 +441,12 @@ autocmd! BufWritePre * :call RTrim()
 
 " set filetype to markdown when opening .md file.
 " why not default? default syntax is modula2...
-autocmd BufNewFile,BufRead *.md set filetype=markdown
-autocmd BufNewFile,BufRead *.rb set tabstop=2 shiftwidth=2
+autocmd BufNewFile,BufRead,BufReadPre *.md set filetype=markdown
+
+" ruby
+autocmd FileType ruby setlocal tabstop=2 shiftwidth=2
+
+" coffee
+autocmd BufNewFile,BufRead,BufReadPre *.coffee set filetype=coffee
+autocmd FileType coffee setlocal tabstop=2 shiftwidth=2
 
