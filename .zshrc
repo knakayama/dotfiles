@@ -348,3 +348,8 @@ if [[ -f "${HOME}/.nvm/bash_completion" ]]; then
     source "${HOME}/.nvm/bash_completion"
 fi
 
+# heroku
+if [[ -x "/usr/bin/heroku" ]]; then
+    echo "$PATH" | grep -qF '/usr/local/heroku/bin/' || export PATH="/usr/local/heroku/bin:${PATH}"
+fi
+
