@@ -131,6 +131,7 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'Wombat'
 NeoBundle 'glidenote/serverspec-snippets'
+NeoBundle 'kchmck/vim-coffee-script'
 
 " You can specify revision/branch/tag.
 "NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
