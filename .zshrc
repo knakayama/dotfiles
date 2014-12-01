@@ -318,7 +318,7 @@ if [[ -d "${HOME}/bin/aws-cli" ]]; then
 fi
 
 # direnv
-if [[ -d "${HOME}/bin/direnv" ]]; then
+if [[ -x "/usr/local/bin/direnv" ]]; then
     eval "$(direnv hook zsh)"
 fi
 
