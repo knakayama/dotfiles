@@ -1,3 +1,5 @@
 .vim/bundle/.neobundle/
 .tmux/*
 !.tmux/plugins
+.vim/.netrwhist
+
