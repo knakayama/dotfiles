@@ -103,9 +103,6 @@
 [submodule ".zfunc/zfs-completions"]
 	path = .zfunc/zsh-completions
 	url = git@github.com:zsh-users/zsh-completions.git
-[submodule "bin/tmuxinator"]
-	path = bin/tmuxinator
-	url = git@github.com:tmuxinator/tmuxinator.git
 [submodule ".vim/bundle/vim-coffee-script"]
 	path = .vim/bundle/vim-coffee-script
 	url = git@github.com:kchmck/vim-coffee-script.git
