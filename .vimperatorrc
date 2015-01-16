@@ -117,6 +117,8 @@ nnoremap ,r :source ~/.vimperatorrc<CR>
 qmark m http://mail.google.com/mail/
 
 " Gmail
-lazy fmaps -u='mail\.google\.com/mail' c / j k n p o u e x s r a # [ ] ? gi gs gt gd ga gc
-lazy fmaps -u='mail\.google\.com/mail/.*/[0-9a-f]+$' c / j,n k,p n,j p,k o u e x s r a # [ ] ? gi gs gt gd ga gc
+ignorekeys add mail\.google\.com -except <C-h>,<C-p>j,k,o,d,:
+
+" remember the milk
+ignorekeys add www\.rememberthemilk\.com -except <C-h>,<C-p>j,k,o,d,:
 
