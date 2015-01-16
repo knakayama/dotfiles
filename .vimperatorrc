@@ -117,8 +117,8 @@ nnoremap ,r :source ~/.vimperatorrc<CR>
 qmark m http://mail.google.com/mail/
 
 " Gmail
-ignorekeys add mail\.google\.com -except <C-h>,<C-p>j,k,o,d,:
+ignorekeys add mail\.google\.com -except <C-n>,<C-p>,j,k,o,d,t,f,:
 
 " remember the milk
-ignorekeys add www\.rememberthemilk\.com -except <C-h>,<C-p>j,k,o,d,:
+ignorekeys add www\.rememberthemilk\.com -except <C-n>,<C-p>,j,k,o,d,t,f,:
 
