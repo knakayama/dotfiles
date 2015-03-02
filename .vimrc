@@ -454,6 +454,7 @@ autocmd FileType ruby setlocal tabstop=2 shiftwidth=2
 autocmd BufNewFile,BufRead,BufReadPre *.coffee set filetype=coffee
 autocmd FileType coffee setlocal tabstop=2 shiftwidth=2
 
-" yaml
-autocmd FileType yaml setlocal tabstop=2 shiftwidth=2
+" ansible-yaml
+autocmd BufNewFile,BufRead,BufReadPre *.yml set filetype=ansible
+autocmd FileType ansible setlocal tabstop=2 shiftwidth=2
 
