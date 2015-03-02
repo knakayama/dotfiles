@@ -106,3 +106,6 @@
 [submodule "bin/hub"]
 	path = bin/hub
 	url = git@github.com:github/hub.git
+[submodule ".vim/bundle/vim-ansible-yaml"]
+	path = .vim/bundle/vim-ansible-yaml
+	url = git@github.com:chase/vim-ansible-yaml.git

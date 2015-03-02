@@ -132,6 +132,7 @@ NeoBundle 'majutsushi/tagbar'
 NeoBundle 'Wombat'
 NeoBundle 'glidenote/serverspec-snippets'
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'chase/vim-ansible-yaml'
 
 " You can specify revision/branch/tag.
 "NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
@@ -275,6 +276,9 @@ augroup matchit
   autocmd!
   autocmd FileType ruby let b:match_words = '\<\(module\|class\|def\|begin\|do\|if\|unless\|case\)\>:\<\(elsif\|when\|rescue\)\>:\<\(else\|ensure\)\>:\<end\>'
 augroup END
+
+" vim-ansible-yaml
+let g:ansible_options = {'ignore_blank_lines': 0}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " colors , fonts and gui settings
@@ -449,4 +453,7 @@ autocmd FileType ruby setlocal tabstop=2 shiftwidth=2
 " coffee
 autocmd BufNewFile,BufRead,BufReadPre *.coffee set filetype=coffee
 autocmd FileType coffee setlocal tabstop=2 shiftwidth=2
+
+" yaml
+autocmd FileType yaml setlocal tabstop=2 shiftwidth=2
 
