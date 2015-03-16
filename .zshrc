@@ -313,7 +313,7 @@ if [[ -d "${HOME}/.rbenv" ]]; then
 fi
 
 # aws
-if [[ -d "${HOME}/bin/aws-cli" ]]; then
+if [[ -f "${HOME}/bin/aws-cli/bin/aws_zsh_completer.sh" ]]; then
     source "${HOME}/bin/aws-cli/bin/aws_zsh_completer.sh"
 fi
 
