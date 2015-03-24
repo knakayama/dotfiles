@@ -26,7 +26,7 @@ zstyle ':completion:*' completer _oldlist _complete
 cdpath=(~)
 
 # autoloadされるfunctionを検索するpath
-fpath=("${HOME}/.zfunc/zsh-completions/src" $fpath)
+fpath=("${HOME}/.zfunc/zsh-completions" $fpath)
 
 # パスを格納する変数や配列に、重複するディレクトリを
 # 登録しても自動で削除
