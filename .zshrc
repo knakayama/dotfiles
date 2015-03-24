@@ -353,3 +353,8 @@ if [[ -x "/usr/bin/heroku" ]]; then
     echo "$PATH" | grep -qF '/usr/local/heroku/bin/' || export PATH="/usr/local/heroku/bin:${PATH}"
 fi
 
+# ghq
+if [[ -f "${HOME}/.ghq/github.com/motemen/ghq/zsh/_ghq" ]]; then
+    fpath=("${HOME}/.zfunc/zsh-completions" "${HOME}/.ghq/github.com/motemen/ghq/zsh" $fpath)
+fi
+
