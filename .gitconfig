@@ -7,6 +7,7 @@
 	co = commit
 	com = commit -m
 	coam = commit -am
+	l = log --graph --oneline --all --branches --decorate
 [color]
 	ui = auto
 [grep]
