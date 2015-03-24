@@ -335,9 +335,9 @@ fi
 
 # go
 if [[ -x "/usr/bin/go" ]]; then
-    export GOPATH="${HOME}/go/vendor:${HOME}/go/me"
+    export GOPATH="${HOME}/go/vendor"
     [[ -d "${HOME}/go" ]] || mkdir "${HOME}/go"
-    echo "$PATH" | grep -qE "${HOME}/go/vendor:${HOME}/go/me" || export PATH="${PATH}:${GOPATH}"
+    echo "$PATH" | grep -q "${GOPATH}/bin" || export PATH="${PATH}:${GOPATH}/bin"
 fi
 
 # nvm
