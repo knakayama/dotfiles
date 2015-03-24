@@ -271,7 +271,7 @@ if [[ -x "$(which w3m 2>/dev/null)" ]]; then
     export HTTP_HOME="http://www.google.com"
 fi
 
-if [[ -x "${HOME}/bin/peco" ]]; then
+if [[ -x "/usr/local/bin/peco" ]]; then
     # sheet and peco settings
     # http://blog.glidenote.com/blog/2014/06/26/snippets-peco-percol/
     function peco-snippets() {
