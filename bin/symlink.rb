@@ -15,7 +15,7 @@ def create_target_list
     target_list = []
     excludes = Regexp.new('^(\.git(ignore|modules)?|README\.md|tmux-scripts)$')
 
-    Dir.open(File.expand_path("~/dotfiles")) do |dir|
+    Dir.open(File.expand_path("~/.ghq/github.com/knakayama/dotfiles")) do |dir|
         dir.each do |target|
             next if target == '.' || target == '..'
             next if excludes =~ target
@@ -31,7 +31,7 @@ def create_symlink(force=nil)
 
     target_list.each do |target|
         target_home_path = File.expand_path("~/#{target}")
-        target_dotfiles_path = File.expand_path("~/dotfiles/#{target}")
+        target_dotfiles_path = File.expand_path("~/.ghq/github.com/knakayama/dotfiles/#{target}")
 
         puts "create symlink #{target}"
         if force
