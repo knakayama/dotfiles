@@ -49,9 +49,6 @@
 [submodule ".vim/bundle/syntastic"]
 	path = .vim/bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
-[submodule "aws-cli"]
-	path = bin/aws-cli
-	url = git://github.com/aws/aws-cli.git
 [submodule ".vim/bundle/open-browser.vim"]
 	path = .vim/bundle/open-browser.vim
 	url = git@github.com:tyru/open-browser.vim.git
