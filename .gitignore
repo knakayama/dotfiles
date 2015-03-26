@@ -2,4 +2,5 @@
 .tmux/*
 !.tmux/plugins
 .vim/.netrwhist
+bin/tssh.conf
 
