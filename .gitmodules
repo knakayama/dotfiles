@@ -49,9 +49,6 @@
 [submodule ".vim/bundle/syntastic"]
 	path = .vim/bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
-[submodule "urxvt-perls"]
-	path = bin/urxvt-perls
-	url = git://github.com/muennich/urxvt-perls.git
 [submodule "aws-cli"]
 	path = bin/aws-cli
 	url = git://github.com/aws/aws-cli.git
