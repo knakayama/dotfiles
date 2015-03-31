@@ -3,4 +3,4 @@
 !.tmux/plugins
 .vim/.netrwhist
 bin/tssh.conf
-
+.vimperator/info
