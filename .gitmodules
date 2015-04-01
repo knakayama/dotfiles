@@ -94,9 +94,6 @@
 [submodule ".vim/bundle/vim-coffee-script"]
 	path = .vim/bundle/vim-coffee-script
 	url = git@github.com:kchmck/vim-coffee-script.git
-[submodule "bin/hub"]
-	path = bin/hub
-	url = git@github.com:github/hub.git
 [submodule ".vim/bundle/vim-ansible-yaml"]
 	path = .vim/bundle/vim-ansible-yaml
 	url = git@github.com:chase/vim-ansible-yaml.git
