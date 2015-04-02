@@ -436,7 +436,7 @@ cnoremap <C-n> <Down>
 " remap key for english keyboard except using darwin
 if has("unix")
     let s:uname = system("uname -s")
-    if s:uname != "Darwin"
+    if s:uname == "Linux"
         nnoremap ; :
         nnoremap : ;
     endif
