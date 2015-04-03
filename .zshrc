@@ -84,10 +84,11 @@ setopt prompt_subst
 #PROMPT="[@${HOST%%.*} %1~]%(!.#.$)"
 #PROMPT=%n@:%/%%
 # %n -> user name
+# %m -> hostname
 # %~ -> current directory(home directory is ~)
 # %(1,#,$)
 # %f%b same as %{${reset_color}%}?
-PROMPT='%n@%m %F{blue}%~%f%b$(get_git_current_branch)'$'\n''%(!,#,$) '
+PROMPT='%n %F{blue}%~%f%b$(get_git_current_branch)'$'\n''%(!,#,$) '
 
 ####################
 # history
