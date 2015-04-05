@@ -17,5 +17,13 @@ if [[ -x "/usr/local/bin/peco" ]]; then
     }
     zle -N peco-select-history
     bindkey '^r' peco-select-history
+
+    # http://blog.glidenote.com/blog/2014/06/26/snippets-peco-percol/
+    #function peco-snippets() {
+    #    BUFFER=$(grep -Eh '^\$ ' ~/.common-cmds/file/* | sed 's/^\$ //' | peco --query "$LBUFFER")
+    #    zle clear-screen
+    #}
+    #zle -N peco-snippets
+    #bindkey '^e' peco-snippets
 fi
 
