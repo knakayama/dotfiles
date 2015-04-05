@@ -149,9 +149,6 @@ if [[ -x "/usr/bin/vim" ]]; then
     export EDITOR="/usr/bin/vim"
 fi
 
-# emacs binding
-bindkey -e
-
 # load bindkey
 if [[ -f "${HOME}/.zsh_bindkey" ]]; then
     source "${HOME}/.zsh_bindkey"
@@ -270,34 +267,6 @@ fi
 # w3m
 if [[ -x "$(which w3m 2>/dev/null)" ]]; then
     export HTTP_HOME="http://www.google.com"
-fi
-
-if [[ -x "/usr/local/bin/peco" ]]; then
-    # sheet and peco settings
-    # http://blog.glidenote.com/blog/2014/06/26/snippets-peco-percol/
-    function peco-snippets() {
-        local SNIPPETS="$(cat ~/.sheets/* | peco --query "$LBUFFER")"
-        zle clear-screen
-    }
-
-    zle -N peco-snippets
-    bindkey '^x^s' peco-snippets
-
-    # select history
-    # http://k0kubun.hatenablog.com/entry/2014/07/06/033336
-    #function peco-select-history() {
-    #    typeset tac
-    #    if which tac > /dev/null 2>&1; then
-    #      tac=tac
-    #    else
-    #      tac='tail -r'
-    #    fi
-    #    BUFFER=$(fc -l -n 1 | eval $tac | peco --query "$LBUFFER")
-    #    CURSOR=$#BUFFER
-    #    zle -R -c
-    #}
-    #zle -N peco-select-history
-    #bindkey '^r' peco-select-history
 fi
 
 # perlbrew
