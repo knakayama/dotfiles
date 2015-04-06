@@ -433,15 +433,6 @@ nnoremap <leader>ls :<C-u>!ls -F<CR>
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
-" remap key for english keyboard except using darwin
-if has("unix")
-    let s:uname = system("uname -s")
-    if s:uname == "Linux"
-        nnoremap ; :
-        nnoremap : ;
-    endif
-endif
-
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " auto
 """"""""""""""""""""""""""""""""""""""""""""""""""
