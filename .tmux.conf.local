@@ -1,2 +1,4 @@
 bind-key S command-prompt -p "hostname:" "run-shell '${HOME}/bin/s %1'"
+bind-key K run-shell "${HOME}/bin/k"
+bind-key C run-shell "${HOME}/bin/c"
 

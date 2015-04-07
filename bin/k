@@ -1,0 +1,4 @@
+#!/bin/sh
+
+tmux new-window -n "kero" "ssh -i /home/k-nakayama/.ssh/k-nakayama-kerberos k-nakayama@kero"
+

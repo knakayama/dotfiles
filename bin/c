@@ -1,0 +1,4 @@
+#!/bin/sh
+
+tmux new-window -n "config" "ssh -i /home/k-nakayama/.ssh/k-nakayama-config k-nakayama@config"
+
