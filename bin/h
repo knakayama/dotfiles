@@ -1,0 +1,6 @@
+#!/bin/sh
+
+HOST_NAME="$1"
+
+tmux split-window -h "ssh -i /home/k-nakayama/.ssh/k-nakayama-kerberos -t kero 'sudo ssh $HOST_NAME'"
+
