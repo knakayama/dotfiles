@@ -14,3 +14,5 @@
 	lineNumber = true
 [github]
 	user = knakayama
+[core]
+	excludesfile = ~/.gitignore.global
