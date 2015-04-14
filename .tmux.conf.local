@@ -3,4 +3,5 @@ bind-key H command-prompt -p "hostname:" "run-shell '${HOME}/bin/h %1'"
 bind-key V command-prompt -p "hostname:" "run-shell '${HOME}/bin/v %1'"
 bind-key K run-shell "${HOME}/bin/k"
 bind-key C run-shell "${HOME}/bin/c"
+bind-key O run-shell "${HOME}/bin/o"
 
