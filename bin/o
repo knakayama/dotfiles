@@ -1,4 +1,0 @@
-#!/bin/sh
-
-tmux new-window -n "ops1" "ssh -i /home/k-nakayama/.ssh/k-nakayama-ops1 k-nakayama@ops1"
-
