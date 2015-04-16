@@ -42,13 +42,11 @@ case "$ACTION" in
             pipe-pane "cat >> ${LOG_DIR}/$(date '+%H:%M:%S').log"
         ;;
     c)
-        tmux new-window -n "config" \
-            "ssh -i /home/k-nakayama/.ssh/k-nakayama-config k-nakayama@config" \; \
+        tmux new-window -n "config" "ssh config" \; \
             pipe-pane "cat >> ${LOG_DIR}/$(date '+%H:%M:%S').log"
         ;;
     o)
-        tmux new-window -n "ops1" \
-            "ssh -i /home/k-nakayama/.ssh/k-nakayama-ops1 k-nakayama@ops1" \; \
+        tmux new-window -n "ops1" "ssh ops1" \; \
             pipe-pane "cat >> ${LOG_DIR}/$(date '+%H:%M:%S').log"
         ;;
     h)
