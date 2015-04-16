@@ -2,7 +2,7 @@
 
 ARG="$@"
 
-usage() {
+error() {
     tmux display-message "Unknown Argument: $ARG"
     exit 0
 }
@@ -17,13 +17,13 @@ if [[ $(echo "$ARG" | grep -cE '[[:space:]]') -eq 0 ]]; then
     elif echo "$ACTION" | grep -qE '^o$'; then
         HOST_NAME="ops1"
     else
-        usage
+        error
     fi
 elif [[ $(echo "$ARG" | grep -cE '[[:space:]]') -eq 1 ]]; then
     ACTION="$(echo "$ARG" | awk '{print $1}')"
     HOST_NAME="$(echo "$ARG" | awk '{print $2}')"
 else
-    usage
+    error
 fi
 
 LOG_DIR="${HOME}/.tmuxlog/${HOST_NAME}/$(date '+%Y-%m/%d')"
@@ -62,7 +62,7 @@ case "$ACTION" in
             pipe-pane "cat >> ${LOG_DIR}/$(date '+%H:%M:%S').log"
         ;;
     *)
-        usage
+        error
         ;;
 esac
 
