@@ -1,6 +1,12 @@
 #!/bin/sh
 
 HOST_NAME="$1"
+LOG_DIR="${HOME}/.tmuxlog/${HOST_NAME}/$(date '+%Y-%m/%d')"
 
-tmux new-window -n "$(echo "$HOST_NAME" | cut -d. -f1)" "ssh -i /home/k-nakayama/.ssh/k-nakayama-kerberos -t kero 'sudo ssh $HOST_NAME'"
+[ -d "$LOG_DIR" ] || mkdir -p "$LOG_DIR"
+[ "$?" -eq 0 ] || { echo "Can not create $LOG_DIR" 2>&1; exit 1; }
+
+tmux new-window -n "$(echo "$HOST_NAME" | cut -d. -f1)" \
+    "ssh -i /home/k-nakayama/.ssh/k-nakayama-kerberos -t kero 'sudo ssh $HOST_NAME'" \; \
+    pipe-pane "cat >> ${LOG_DIR}/$(date '+%H:%M:%S').log"
 
