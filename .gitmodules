@@ -94,3 +94,6 @@
 [submodule ".vim/bundle/vim-ansible-yaml"]
 	path = .vim/bundle/vim-ansible-yaml
 	url = git@github.com:chase/vim-ansible-yaml.git
+[submodule ".tmux/plugins/tmux-online-status"]
+	path = .tmux/plugins/tmux-online-status
+	url = git@github.com:tmux-plugins/tmux-online-status.git
