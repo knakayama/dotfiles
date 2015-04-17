@@ -67,9 +67,6 @@
 [submodule ".tmux/plugins/tmux-open"]
 	path = .tmux/plugins/tmux-open
 	url = git@github.com:tmux-plugins/tmux-open.git
-[submodule ".tmux/plugins/tmux-sidebar"]
-	path = .tmux/plugins/tmux-sidebar
-	url = git@github.com:tmux-plugins/tmux-sidebar.git
 [submodule ".tmux/plugins/tmux-avg"]
 	path = .tmux/plugins/tmux-avg
 	url = git@github.com:knakayama/tmux-avg.git
