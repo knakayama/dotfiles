@@ -85,9 +85,6 @@
 [submodule ".vim/bundle/serverspec-snippets"]
 	path = .vim/bundle/serverspec-snippets
 	url = git@github.com:glidenote/serverspec-snippets.git
-[submodule ".zfunc/zfs-completions"]
-	path = .zfunc/zsh-completions
-	url = git@github.com:zsh-users/zsh-completions.git
 [submodule ".vim/bundle/vim-coffee-script"]
 	path = .vim/bundle/vim-coffee-script
 	url = git@github.com:kchmck/vim-coffee-script.git
