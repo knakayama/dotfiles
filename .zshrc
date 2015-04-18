@@ -78,6 +78,29 @@ function get_git_current_branch {
     fi
     echo " ${color}@${branch_name}${action}%f%b"
 }
+
+# http://d.hatena.ne.jp/pasela/20110216/git_not_pushed
+function get_git_remote_push() {
+    local head remotes x
+
+    # When the current working directory is inside the work tree of the repository print "true", otherwise "false".
+    if [[ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" == "true" ]]; then
+        # Verify that exactly one parameter is provided, and that it can be turned into a raw 20-byte SHA-1 that can be used to access the object database. If so, emit it
+        # to the standard output; otherwise, error out.
+        head="$(git rev-parse --verify -q HEAD 2>/dev/null)"
+        if [[ $? -eq 0 ]]; then
+            remotes=($(git rev-parse --remotes))
+            if [[ -n "${remotes[@]}" ]]; then
+                for x in ${remotes[@]}; do
+                    [[ "$head" == "$x" ]] && return 0
+                done
+                echo " %F{red}@not-pushed%f%b"
+            fi
+        fi
+    fi
+    return 0
+}
+
 # use pcre-compatible regexp
 setopt re_match_pcre
 # eval prompt when showing prompt
@@ -90,7 +113,7 @@ setopt prompt_subst
 # %~ -> current directory(home directory is ~)
 # %(1,#,$)
 # %f%b same as %{${reset_color}%}?
-PROMPT='%n %F{blue}%~%f%b$(get_git_current_branch)'$'\n''%(!,#,$) '
+PROMPT='%n %F{blue}%~%f%b$(get_git_current_branch)$(get_git_remote_push)'$'\n''%(!,#,$) '
 
 ####################
 # history
