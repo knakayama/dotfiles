@@ -94,7 +94,7 @@ function get_git_remote_push() {
                 for x in ${remotes[@]}; do
                     [[ "$head" == "$x" ]] && return 0
                 done
-                echo " %F{red}@not-pushed%f%b"
+                echo " %F{red}@not_pushed%f%b"
             fi
         fi
     fi
