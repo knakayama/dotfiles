@@ -58,25 +58,26 @@ compinit -u
 function get_git_current_branch {
     local branch_name git_status color gitdir action
 
-    [[ "$PWD" =~ '/\.git(/.*)?$' ]] && return 0
+    if [[ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" == "true" ]]; then
+        branch_name="$(git rev-parse --abbrev-ref=loose HEAD 2> /dev/null)"
+        [[ -z "$branch_name" ]] && return 0
 
-    branch_name="$(git rev-parse --abbrev-ref=loose HEAD 2> /dev/null)"
-    [[ -z "$branch_name" ]] && return 0
+        gitdir="$(git rev-parse --git-dir 2> /dev/null)"
+        action="$(VCS_INFO_git_getaction "$gitdir")" && action="($action)"
+        git_status="$(git status 2> /dev/null)"
 
-    gitdir="$(git rev-parse --git-dir 2> /dev/null)"
-    action="$(VCS_INFO_git_getaction "$gitdir")" && action="($action)"
-    git_status="$(git status 2> /dev/null)"
-
-    if [[ "$git_status" =~ "(?m)^nothing to" ]]; then
-        color="%F{green}"
-    elif [[ "$git_status" =~ "(?m)^nothing added" ]]; then
-        color="%F{yellow}"
-    elif [[ "$git_status" =~ "(?m)^# Untracked" ]]; then
-        color="%B%F{red}"
-    else
-        color="%F{red}"
+        if [[ "$git_status" =~ "(?m)^nothing to" ]]; then
+            color="%F{green}"
+        elif [[ "$git_status" =~ "(?m)^nothing added" ]]; then
+            color="%F{yellow}"
+        elif [[ "$git_status" =~ "(?m)^# Untracked" ]]; then
+            color="%B%F{red}"
+        else
+            color="%F{red}"
+        fi
+        echo " ${color}@${branch_name}${action}%f%b"
     fi
-    echo " ${color}@${branch_name}${action}%f%b"
+    return 0
 }
 
 # http://d.hatena.ne.jp/pasela/20110216/git_not_pushed
