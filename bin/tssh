@@ -2,7 +2,12 @@
 
 # https://github.com/y-uuki/opstools
 
-[ -f "${HOME}/bin/tssh.conf" ] && . "${HOME}/bin/tssh.conf" || { echo "no tssh.conf found."; exit 1; }
+if [[ -f "${HOME}/bin/tssh.conf" ]]; then
+    source "${HOME}/bin/tssh.conf"
+else
+    echo "tssh.conf not found"
+    exit 1
+fi
 
 hosts=("$@")
 session_name="tmux-ssh-$$"
