@@ -97,3 +97,6 @@
 [submodule ".tmux/plugins/tmux-online-status"]
 	path = .tmux/plugins/tmux-online-status
 	url = git@github.com:tmux-plugins/tmux-online-status.git
+[submodule ".tmux/plugins/tmux-battery"]
+	path = .tmux/plugins/tmux-battery
+	url = git@github.com:tmux-plugins/tmux-battery.git
