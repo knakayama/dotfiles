@@ -28,8 +28,8 @@ fi
 
 LOG_DIR="${HOME}/.tmuxlog/${HOST_NAME}/$(date '+%Y-%m/%d')"
 
-[ -d "$LOG_DIR" ] || mkdir -p "$LOG_DIR"
-[ "$?" -eq 0 ] || { tmux display-message "Can not create $LOG_DIR"; exit 0; }
+[[ -d "$LOG_DIR" ]] || mkdir -p "$LOG_DIR"
+[[ "$?" -eq 0 ]] || { tmux display-message "Can not create $LOG_DIR"; exit 0; }
 
 case "$ACTION" in
     s)
