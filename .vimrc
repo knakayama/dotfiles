@@ -138,6 +138,7 @@ NeoBundle 'Wombat'
 NeoBundle 'glidenote/serverspec-snippets'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'chase/vim-ansible-yaml'
+NeoBundle 'kannokanno/previm'
 
 " You can specify revision/branch/tag.
 "NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
@@ -284,6 +285,12 @@ augroup END
 
 " vim-ansible-yaml
 let g:ansible_options = {'ignore_blank_lines': 0}
+
+" previm
+"2. Attempt open browser with openbrowser#open()
+let g:previm_open_cmd = 'open -a Firefox'
+"let g:previm_enable_realtime = 1
+noremap <leader>m :PrevimOpen<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " colors , fonts and gui settings

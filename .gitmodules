@@ -97,3 +97,6 @@
 [submodule ".tmux/plugins/tmux-battery"]
 	path = .tmux/plugins/tmux-battery
 	url = git@github.com:tmux-plugins/tmux-battery.git
+[submodule ".vim/bundle/previm"]
+	path = .vim/bundle/previm
+	url = git@github.com:kannokanno/previm.git
