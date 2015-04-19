@@ -23,7 +23,7 @@ zstyle ':completion:*' completer _oldlist _complete
 
 # cdコマンドの引数に指定したディレクトリが見つからないときは
 # この変数に格納されたディレクトリ以下も検索する
-cdpath=(~)
+#cdpath=(~)
 
 # autoloadされるfunctionを検索するpath
 if [[ -x "$(which brew 2>/dev/null)" ]]; then
