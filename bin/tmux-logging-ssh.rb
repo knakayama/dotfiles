@@ -1,66 +1,69 @@
-#!/bin/bash
+#!/usr/bin/env ruby
 
-ARG="$@"
+require "fileutils"
+require "date"
 
-error() {
-    tmux display-message "Unknown Argument: $ARG"
-    exit 0
-}
+def error_msg
+  `tmux display-message "Unknown Argument: #{ARGV.to_s}"`
+  exit 0
+end
 
-if [[ $(echo "$ARG" | grep -cE '[[:space:]]') -eq 0 ]]; then
-    ACTION="$ARG"
+def validate_argv_length
+  case ARGV.length
+  when 1
+    ary = validate_arg1 ARGV[0]
+  when 2
+    ary = validate_arg2 ARGV[0]
+  else
+    error_msg
+  end
 
-    if echo "$ACTION" | grep -qE '^k$'; then
-        HOST_NAME="kero"
-    elif echo "$ACTION" | grep -qE '^c$'; then
-        HOST_NAME="config"
-    elif echo "$ACTION" | grep -qE '^o$'; then
-        HOST_NAME="ops1"
-    else
-        error
-    fi
-elif [[ $(echo "$ARG" | grep -cE '[[:space:]]') -eq 1 ]]; then
-    ACTION="$(echo "$ARG" | awk '{print $1}')"
-    HOST_NAME="$(echo "$ARG" | awk '{print $2}')"
+  return ary
+end
+
+def validate_arg1(arg)
+  case arg
+  when "k"
+    return ["k", "kero"]
+  when "c"
+    return ["c", "config"]
+  when "o"
+    return ["o", "ops1"]
+  else
+    error_msg
+  end
+end
+
+def validate_arg2(arg)
+  case arg
+  when "s", "v", "h"
+    return ARGV
+  else
+    error_msg
+  end
+end
+
+ary      = validate_argv_length
+t        = DateTime.now
+log_dir  = "#{ENV['HOME']}/.tmuxlog/#{ary[1]}/#{t.strftime('%Y-%m-%d')}"
+log_file = "#{log_dir}/#{t.strftime('%H:%M:%S')}.log"
+key      = "#{ENV['HOME']}/.ssh/k"
+
+begin
+  FileUtils.mkdir_p(log_dir)
+rescue
+  `tmux display-message "Can not create #{log_dir}"`
+  exit 0
+end
+
+case ary[0]
+when "k", "c", "o"
+  `tmux new-window -n "#{ary[1]}" "ssh #{ary[1]}" \\; pipe-pane "cat >> #{log_file}"`
+when "s"
+  `tmux new-window -n "#{ary[1].split(/\./)[0]}" "ssh -i #{key} -t kero 'sudo ssh #{ary[1]}'" \\; pipe-pane "cat >> #{log_file}"`
+when "v", "h"
+  `tmux split-window "-#{ary[0]}" "ssh -i #{key} -t kero 'sudo ssh #{ary[1]}'" \\; pipe-pane "cat >> #{log_file}"`
 else
-    error
-fi
-
-LOG_DIR="${HOME}/.tmuxlog/${HOST_NAME}/$(date '+%Y-%m/%d')"
-
-[[ -d "$LOG_DIR" ]] || mkdir -p "$LOG_DIR"
-[[ "$?" -eq 0 ]] || { tmux display-message "Can not create $LOG_DIR"; exit 0; }
-
-case "$ACTION" in
-    s)
-        tmux new-window -n "$(echo "$HOST_NAME" | cut -d. -f1)" \
-            "ssh -i /home/k-nakayama/.ssh/k-nakayama-kerberos -t kero 'sudo ssh $HOST_NAME'" \; \
-            pipe-pane "cat >> ${LOG_DIR}/$(date '+%H:%M:%S').log"
-        ;;
-    k)
-        tmux new-window -n "kero" "ssh kero" \; \
-            pipe-pane "cat >> ${LOG_DIR}/$(date '+%H:%M:%S').log"
-        ;;
-    c)
-        tmux new-window -n "config" "ssh config" \; \
-            pipe-pane "cat >> ${LOG_DIR}/$(date '+%H:%M:%S').log"
-        ;;
-    o)
-        tmux new-window -n "ops1" "ssh ops1" \; \
-            pipe-pane "cat >> ${LOG_DIR}/$(date '+%H:%M:%S').log"
-        ;;
-    h)
-        tmux split-window -h \
-            "ssh -i /home/k-nakayama/.ssh/k-nakayama-kerberos -t kero 'sudo ssh $HOST_NAME'" \; \
-            pipe-pane "cat >> ${LOG_DIR}/$(date '+%H:%M:%S').log"
-        ;;
-    v)
-        tmux split-window -v \
-            "ssh -i /home/k-nakayama/.ssh/k-nakayama-kerberos -t kero 'sudo ssh $HOST_NAME'" \; \
-            pipe-pane "cat >> ${LOG_DIR}/$(date '+%H:%M:%S').log"
-        ;;
-    *)
-        error
-        ;;
-esac
+  error_msg
+end
 

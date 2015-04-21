@@ -1,1 +1,1 @@
-bind-key S command-prompt -p "hostname:" "run-shell '${HOME}/bin/tmux-logging-ssh.sh %%'"
+bind-key S command-prompt -p "hostname:" "run-shell '${HOME}/bin/tmux-logging-ssh.rb %%'"
