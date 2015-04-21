@@ -2,10 +2,12 @@
 
 # https://github.com/y-uuki/opstools
 
-if [[ -f "${HOME}/bin/tssh.conf" ]]; then
-    source "${HOME}/bin/tssh.conf"
+CONF_FILE="${HOME}/bin/tmux-sync-ssh.conf"
+
+if [[ -f "$CONF_FILE" ]]; then
+    source "$CONF_FILE"
 else
-    echo "tssh.conf not found"
+    echo "$CONF_FILE not found"
     exit 1
 fi
 
