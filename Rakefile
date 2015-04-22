@@ -2,7 +2,7 @@
 
 require 'rake/clean'
 
-HOME = ENV['HOME']
+HOME  = ENV['HOME']
 PWD   = File.dirname(__FILE__)
 FILES = Dir.glob('*[a-z]', File::FNM_DOTMATCH).grep(/(?:\.(?!md)|bin)/)
 
