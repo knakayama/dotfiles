@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 
 require "fileutils"
-require "date"
 
 def error_msg
   `tmux display-message "Unknown Argument: #{ARGV.to_s}"`
@@ -44,7 +43,7 @@ def validate_arg2(arg)
 end
 
 ary      = validate_argv_length
-t        = DateTime.now
+t        = Time.now
 log_dir  = "#{ENV['HOME']}/.tmuxlog/#{ary[1]}/#{t.strftime('%Y-%m-%d')}"
 log_file = "#{log_dir}/#{t.strftime('%H:%M:%S')}.log"
 key      = "#{ENV['HOME']}/.ssh/k"
