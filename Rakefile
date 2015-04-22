@@ -20,7 +20,7 @@ task :symlink do
     src_file = File.join(PWD, file_name)
     dst_file = File.join(HOME, file_name)
 
-    # if dst_file already exists and is symlink, then backup it
+    # if dst_file already exists and is not symlink, then backup it
     if File.exist?(dst_file) && !File.symlink?(dst_file)
       mv dst_file, dst_file + '.' + Time.now.strftime('%Y-%m-%d-%H:%M:%S')
     end
