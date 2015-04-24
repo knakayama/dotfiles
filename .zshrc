@@ -88,7 +88,7 @@ function get_git_remote_push() {
     if [[ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" == "true" ]]; then
         # Verify that exactly one parameter is provided, and that it can be turned into a raw 20-byte SHA-1 that can be used to access the object database. If so, emit it
         # to the standard output; otherwise, error out.
-        head="$(git rev-parse --verify -q HEAD 2>/dev/null)"
+        head="$(git rev-parse --verify --quite HEAD 2>/dev/null)"
         if [[ $? -eq 0 ]]; then
             remotes=($(git rev-parse --remotes))
             if [[ -n "${remotes[@]}" ]]; then
