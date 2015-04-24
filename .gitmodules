@@ -100,3 +100,6 @@
 [submodule ".vim/bundle/previm"]
 	path = .vim/bundle/previm
 	url = git@github.com:kannokanno/previm.git
+[submodule ".vim/bundle/vim-puppet"]
+	path = .vim/bundle/vim-puppet
+	url = git@github.com:rodjek/vim-puppet.git

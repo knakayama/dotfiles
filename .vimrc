@@ -139,6 +139,7 @@ NeoBundle 'glidenote/serverspec-snippets'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'chase/vim-ansible-yaml'
 NeoBundle 'kannokanno/previm'
+NeoBundle 'rodjek/vim-puppet'
 
 " You can specify revision/branch/tag.
 "NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
