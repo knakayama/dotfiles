@@ -8,3 +8,6 @@ unbind-key ]
 #bind-key ] run-shell "reattach-to-user-namespace pbpaste | tmux load-buffer - && tmux paste-buffer"
 bind-key ] run-shell "${HOME}/bin/tmux-newline-detecter.sh"
 
+# peek clipboard
+bind-key P split-window 'reattach-to-user-namespace pbpaste | less'
+
