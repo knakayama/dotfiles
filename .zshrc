@@ -102,24 +102,6 @@ function get_git_remote_push() {
     return 0
 }
 
-# check whether local repository is out of date
-# unko
-#function get_git_remote_commit() {
-#    local remote_head local_head
-#
-#    if [[ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" == "true" ]]; then
-#        remote_head="$(git ls-remote origin HEAD | awk '{print $1}')"
-#        local_head="$(git rev-parse --verify --quite HEAD)"
-#        if [[ "$remote_head" != "$local_head" ]]; then
-#            echo " %F{red}@not_pulled%f%b"
-#        else
-#            return 0
-#        fi
-#    else
-#        return 0
-#    fi
-#}
-
 # use pcre-compatible regexp
 setopt re_match_pcre
 # eval prompt when showing prompt
