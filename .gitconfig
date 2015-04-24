@@ -16,3 +16,5 @@
 	user = knakayama
 [core]
 	excludesfile = ~/.gitignore.global
+[init]
+	templatedir = ~/.gittemplates

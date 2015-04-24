@@ -1,0 +1,11 @@
+#!/bin/bash
+
+git rev-parse --verify --quite HEAD >/dev/null 2>&1 || exit 0
+
+if git ls-remote origin HEAD | awk '{print $1}' | grep -q "$(git rev-parse --verify --quite HEAD)"; then
+    exit 0
+else
+    echo "Looks like local branch out of data, git pull first."
+    exit 1
+fi
+
