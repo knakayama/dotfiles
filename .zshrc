@@ -302,8 +302,7 @@ fi
 
 # rbenv
 if [[ -d "${HOME}/.rbenv" ]]; then
-    if ! echo "$PATH" | grep -q "${HOME}/.rbenv/bin"; then
-        export PATH="${PATH}:${HOME}/.rbenv/bin"
+    if ! echo "$PATH" | grep -qE "^${HOME}/.rbenv/shims"; then
         eval "$(rbenv init -)"
     fi
 fi
