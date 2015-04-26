@@ -24,3 +24,6 @@ alias lsd="ls -ld *(-/DN)"
 # Print recently used docker image id
 alias dl="sudo docker ps -l -q"
 
+# create tmp dir and cd into it
+alias m="mkdir $(date '+%Y%m%d') && cd $(date '+%Y%m%d')"
+
