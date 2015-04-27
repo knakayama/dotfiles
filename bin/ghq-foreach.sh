@@ -50,7 +50,6 @@ ghq list --full-path | while read -r repo; do
             git "$GIT_CMD"
         else
             $SHELL_CMD
-            :
         fi
     )
 done
