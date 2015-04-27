@@ -115,7 +115,6 @@ call neobundle#begin(expand('~/.vim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " plugin list
-NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimproc', {
         \ 'build' : {
@@ -171,35 +170,7 @@ nnoremap [unite]u :<C-u>Unite buffer file_mru<CR>
 nnoremap [unite]a :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file/new<CR>
 " Unite and vim-ref
 " :Unite ref/(source-name)
-
-let g:neocomplcache_lock_imninset = 1
-" http://vim-users.jp/tag/neocomplcache/
-"" neocomplcache
-let g:neocomplcache_enable_at_startup = 1
-" User startcase
-let g:neocomplcache_enable_smart_case = 1
-" Use camel case completion
-let g:necomplcache_enable_camel_case_completion = 1
-" Use underbar completion
-let g:neocomplcache_enable_underbar_completion = 1
-" Define dictionary
-"let g:neocomplcache_dictionary_filetype_lists = {
-"    \ 'default' : '',
-"    \ 'vimshell' : $HOME. '/.vimshell_hist',
-"    \ }
-"
-" Plugin key-mappings
-"imap <C-k> <Plug>(neocomplcache_snippets_expand)
-"smap <C-k> <Plug>(neocomplcache_snippets_expand)
 nnoremap <silent><buffer><expr> <C-k> unite#do_action('preview')
-inoremap <expr><C-g> neocomplcache#undo_completion()
-inoremap <expr><C-l> neocomplcache#complete_common_string()
-" <CR>: close popup and save indent
-inoremap <expr><CR> neocomplcache#smart_close_popup() . "\<CR>"
-" <C-h>: close popup and delete backword char
-inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y> neocomplcache#smart_close_popup()
-inoremap <expr><C-e> neocomplcache#cancel_popup()
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
