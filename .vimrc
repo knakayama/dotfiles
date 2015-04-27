@@ -218,6 +218,7 @@ NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-endwise'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'Wombat'
 NeoBundle 'glidenote/serverspec-snippets'
