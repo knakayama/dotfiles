@@ -177,6 +177,15 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
+" enable omni completion when pressing . or ::
+if !exists('g:neocomplete#force_omni_input_patterns')
+  let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+
+" set path
+let g:neocomplete#sources#rsense#home_directory = '/usr/local/bin/rsense'
+
 " Enable heavy omni completion.
 if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
@@ -227,6 +236,10 @@ NeoBundle 'chase/vim-ansible-yaml'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'rodjek/vim-puppet'
 NeoBundle 'godlygeek/tabular'
+NeoBundleLazy 'supermomonga/neocomplete-rsense.vim', { 'autoload' : {
+        \ 'insert' : 1,
+        \ 'filetypes': 'ruby',
+        \ }}
 
 " You can specify revision/branch/tag.
 "NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
