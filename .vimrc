@@ -393,8 +393,8 @@ nnoremap <leader>es :source $MYVIMRC<CR>
 " Text, tab and indent related
 """"""""""""""""""""""""""""""""""""""""""""""""""
 set expandtab
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 set smarttab
 
 set lbr
@@ -461,14 +461,9 @@ autocmd! BufWritePre * :call RTrim()
 " why not default? default syntax is modula2...
 autocmd BufNewFile,BufRead,BufReadPre *.md set filetype=markdown
 
-" ruby
-autocmd FileType ruby setlocal tabstop=2 shiftwidth=2
-
 " coffee
 autocmd BufNewFile,BufRead,BufReadPre *.coffee set filetype=coffee
-autocmd FileType coffee setlocal tabstop=2 shiftwidth=2
 
 " ansible-yaml
 autocmd BufNewFile,BufRead,BufReadPre *.yml set filetype=ansible
-autocmd FileType ansible setlocal tabstop=2 shiftwidth=2
 
