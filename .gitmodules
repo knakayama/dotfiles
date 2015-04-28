@@ -4,6 +4,3 @@
 [submodule ".vimperator/vimperator-plugins"]
 	path = .vimperator/vimperator-plugins
 	url = git://github.com/vimpr/vimperator-plugins.git
-[submodule ".vim/bundle/neobundle.vim"]
-	path = .vim/bundle/neobundle.vim
-	url = https://github.com/Shougo/neobundle.vim.git
