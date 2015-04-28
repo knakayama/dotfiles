@@ -4,3 +4,4 @@
 bin/tssh.conf
 .vimperator/info
 .vim/bundle/*
+bin/rsense*

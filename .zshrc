@@ -353,3 +353,7 @@ if [[ -f "${HOME}/.ghq/github.com/motemen/ghq/zsh/_ghq" ]]; then
     fpath=($fpath "${HOME}/.ghq/github.com/motemen/ghq/zsh")
 fi
 
+# rsense
+if [[ -d "${HOME}/bin/rsense-0.3/bin" ]] && [[ "$(uname)" == "Linux" ]]; then
+  echo "$PATH" | grep -q "${HOME}/bin/rsense-0.3/bin" || export PATH="${PATH}:${HOME}/bin/rsense-0.3/bin"
+fi
