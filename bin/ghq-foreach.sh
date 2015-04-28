@@ -37,6 +37,9 @@ while getopts :g:c:h opts; do
     esac
 done
 
+[[ -z "$GIT_CMD" && -z "$SHELL_CMD" ]] && { usage; exit 1; }
+[[ -n "$GIT_CMD" && -n "$SHELL_CMD" ]] && { usage; exit 1; }
+
 if ! which ghq >/dev/null 2>&1; then
     echo "ghq command not found in your ${PATH}." 1>&2
     exit 1
