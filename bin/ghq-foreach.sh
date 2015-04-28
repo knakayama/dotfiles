@@ -11,9 +11,9 @@ usage(){
   cat <<EOT 1>&2
 Usage: $(basename "$0") (-g <git-cmd>|-c <shell-cmd>) [-h]
 
-  -h           print this help.
+  -h               print this help.
   -g <git-cmd>     execute git command.
-  -c <shell-cmd>     execute shell command.
+  -c <shell-cmd>   execute shell command.
 
 EOT
 }
