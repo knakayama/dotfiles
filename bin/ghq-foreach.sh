@@ -9,11 +9,11 @@ DEFAULT="[${_DEFAULT}m"
 
 usage(){
     cat <<EOT 1>&2
-Usage: $(basename "$0") {-g <git-cmd> | -c <shell-cmd>} [-h]
+Usage: $(basename "$0") (-g <git-cmd>|-c <shell-cmd>) [-h]
 
     -h                   print this help.
-    -g <git command>     execute git command.
-    -c <shell command>   execute shell command.
+    -g <git-cmd>         execute git command.
+    -c <shell-cmd>       execute shell command.
 
 EOT
 }
