@@ -1,8 +1,6 @@
 .vim/bundle/.neobundle/
 .tmux/*
-!.tmux/plugins/tpm
 .vim/.netrwhist
 bin/tssh.conf
 .vimperator/info
 .vim/bundle/*
-!.vim/bundle/neobundle.vim
