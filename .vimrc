@@ -328,6 +328,9 @@ nnoremap <leader>T :TagbarToggle<CR>
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
+if executable('rubocop')
+  let g:syntastic_ruby_checkers = ['rubocop']
+endif
 
 "" gist-vim
 let g:gist_open_browser_after_post = 1
