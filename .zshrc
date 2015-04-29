@@ -276,9 +276,7 @@ setopt numeric_glob_sort
 
 # path
 if [[ -d "${HOME}/bin" ]]; then
-    if ! echo "$PATH" | grep -q "${HOME}/bin"; then
-        export PATH="${PATH}:${HOME}/bin"
-    fi
+    echo "$PATH" | grep -q "${HOME}/bin" || export PATH="${PATH}:${HOME}/bin"
 fi
 
 # auto-fu.zsh
