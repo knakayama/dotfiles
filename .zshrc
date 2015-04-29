@@ -305,26 +305,10 @@ if [[ -d "${HOME}/.rbenv" ]]; then
     fi
 fi
 
-# aws
-if [[ -f "${HOME}/bin/aws-cli/bin/aws_zsh_completer.sh" ]]; then
-    source "${HOME}/bin/aws-cli/bin/aws_zsh_completer.sh"
-fi
-
 # direnv
 if [[ -x "/usr/local/bin/direnv" ]]; then
     eval "$(direnv hook zsh)"
 fi
-
-# tmuxinator
-if [[ -x "${HOME}/bin/tmuxinator/completion/tmuxinator.zsh" ]]; then
-    source "${HOME}/bin/tmuxinator/completion/tmuxinator.zsh"
-fi
-
-# hub
-# not work...
-#if [[ -x "${HOME}/bin/hub/etc/hub.zsh_completion" ]]; then
-#    source "${HOME}/bin/hub/etc/hub.zsh_completion"
-#fi
 
 # go
 if [[ -x "/usr/bin/go" || -x "/usr/local/bin/go" ]]; then
