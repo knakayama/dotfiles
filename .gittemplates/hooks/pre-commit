@@ -4,13 +4,13 @@ git rev-parse --verify --quite HEAD >/dev/null 2>&1 || exit 0
 _remote="$(git remote show)"
 
 if [[ -n "$_remote" ]]; then
-    if git log "$(git ls-remote "$_remote" HEAD | awk '{print $1}')" --oneline --no-color -1 >/dev/null 2>&1; then
-        exit 0
-    else
-        echo "Looks like local branch out of data, git pull first."
-        exit 1
-    fi
-else
+  if git log "$(git ls-remote "$_remote" HEAD | awk '{print $1}')" --oneline --no-color -1 >/dev/null 2>&1; then
     exit 0
+  else
+    echo "Looks like local branch out of data, git pull first."
+    exit 1
+  fi
+else
+  exit 0
 fi
 
