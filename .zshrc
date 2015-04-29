@@ -2,7 +2,7 @@
 # Alias
 ####################
 if [[ -f "${HOME}/.zsh_aliases" ]]; then
-    source "${HOME}/.zsh_aliases"
+  source "${HOME}/.zsh_aliases"
 fi
 
 ####################
@@ -27,7 +27,7 @@ zstyle ':completion:*' completer _oldlist _complete
 
 # autoloadされるfunctionを検索するpath
 if [[ -x "$(which brew 2>/dev/null)" ]]; then
-    fpath=("$(brew --prefix)/share/zsh-completions" $fpath)
+  fpath=("$(brew --prefix)/share/zsh-completions" $fpath)
 fi
 
 # パスを格納する変数や配列に、重複するディレクトリを
@@ -56,50 +56,50 @@ VCS_INFO_get_data_git 2> /dev/null
 compinit -u
 
 function get_git_current_branch {
-    local branch_name git_status color gitdir action
+  local branch_name git_status color gitdir action
 
-    if [[ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" == "true" ]]; then
-        branch_name="$(git rev-parse --abbrev-ref=loose HEAD 2> /dev/null)"
-        [[ -z "$branch_name" ]] && return 0
+  if [[ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" == "true" ]]; then
+    branch_name="$(git rev-parse --abbrev-ref=loose HEAD 2> /dev/null)"
+    [[ -z "$branch_name" ]] && return 0
 
-        gitdir="$(git rev-parse --git-dir 2> /dev/null)"
-        action="$(VCS_INFO_git_getaction "$gitdir")" && action="($action)"
-        git_status="$(git status 2> /dev/null)"
+    gitdir="$(git rev-parse --git-dir 2> /dev/null)"
+    action="$(VCS_INFO_git_getaction "$gitdir")" && action="($action)"
+    git_status="$(git status 2> /dev/null)"
 
-        if [[ "$git_status" =~ "(?m)^nothing to" ]]; then
-            color="%F{green}"
-        elif [[ "$git_status" =~ "(?m)^nothing added" ]]; then
-            color="%F{yellow}"
-        elif [[ "$git_status" =~ "(?m)^# Untracked" ]]; then
-            color="%B%F{red}"
-        else
-            color="%F{red}"
-        fi
-        echo " ${color}@${branch_name}${action}%f%b"
+    if [[ "$git_status" =~ "(?m)^nothing to" ]]; then
+      color="%F{green}"
+    elif [[ "$git_status" =~ "(?m)^nothing added" ]]; then
+      color="%F{yellow}"
+    elif [[ "$git_status" =~ "(?m)^# Untracked" ]]; then
+      color="%B%F{red}"
+    else
+      color="%F{red}"
     fi
-    return 0
+    echo " ${color}@${branch_name}${action}%f%b"
+  fi
+  return 0
 }
 
 # http://d.hatena.ne.jp/pasela/20110216/git_not_pushed
 function get_git_remote_push() {
-    local head remotes x
+  local head remotes x
 
-    # When the current working directory is inside the work tree of the repository print "true", otherwise "false".
-    if [[ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" == "true" ]]; then
-        # Verify that exactly one parameter is provided, and that it can be turned into a raw 20-byte SHA-1 that can be used to access the object database. If so, emit it
-        # to the standard output; otherwise, error out.
-        head="$(git rev-parse --verify --quite HEAD 2>/dev/null)"
-        if [[ $? -eq 0 ]]; then
-            remotes=($(git rev-parse --remotes))
-            if [[ -n "${remotes[@]}" ]]; then
-                for x in ${remotes[@]}; do
-                    [[ "$head" == "$x" ]] && return 0
-                done
-                echo " %F{red}@not_pushed%f%b"
-            fi
-        fi
+  # When the current working directory is inside the work tree of the repository print "true", otherwise "false".
+  if [[ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" == "true" ]]; then
+    # Verify that exactly one parameter is provided, and that it can be turned into a raw 20-byte SHA-1 that can be used to access the object database. If so, emit it
+    # to the standard output; otherwise, error out.
+    head="$(git rev-parse --verify --quite HEAD 2>/dev/null)"
+    if [[ $? -eq 0 ]]; then
+      remotes=($(git rev-parse --remotes))
+      if [[ -n "${remotes[@]}" ]]; then
+        for x in ${remotes[@]}; do
+          [[ "$head" == "$x" ]] && return 0
+        done
+        echo " %F{red}@not_pushed%f%b"
+      fi
     fi
-    return 0
+  fi
+  return 0
 }
 
 # use pcre-compatible regexp
@@ -163,7 +163,7 @@ setopt append_history
 ####################
 
 #if [[ -d "${HOME}/.zsh/plugin" ]]; then
-#    source ${HOME}/.zsh/plugin/*
+#  source ${HOME}/.zsh/plugin/*
 #fi
 
 ####################
@@ -172,12 +172,12 @@ setopt append_history
 
 # editor
 if [[ -x "/usr/bin/vim" ]]; then
-    export EDITOR="/usr/bin/vim"
+  export EDITOR="/usr/bin/vim"
 fi
 
 # load bindkey
 if [[ -f "${HOME}/.zsh_bindkey" ]]; then
-    source "${HOME}/.zsh_bindkey"
+  source "${HOME}/.zsh_bindkey"
 fi
 
 # pipで一回インストールしたものをもう一度
@@ -185,16 +185,16 @@ fi
 # pip installした時に.pip_cacheが無かったら
 # 勝手に作る
 if [[ -s "${HOME}/.pip_cache" ]]; then
-    export PIP_DOWNLOAD_CACHE="${HOME}/.pip_cache"
+  export PIP_DOWNLOAD_CACHE="${HOME}/.pip_cache"
 fi
 
 # Virtualenvwrapper settings
 wrapper_path=$(which virtualenvwrapper.sh 2>/dev/null)
 if [[ -x "$wrapper_path" ]]; then
-    export WORKON_HOME="${HOME}/.virtualenvs"
-    source "$wrapper_path"
+  export WORKON_HOME="${HOME}/.virtualenvs"
+  source "$wrapper_path"
 else
-    unset wrapper_path
+  unset wrapper_path
 fi
 
 ##########
@@ -276,63 +276,63 @@ setopt numeric_glob_sort
 
 # path
 if [[ -d "${HOME}/bin" ]]; then
-    echo "$PATH" | grep -q "${HOME}/bin" || export PATH="${PATH}:${HOME}/bin"
+  echo "$PATH" | grep -q "${HOME}/bin" || export PATH="${PATH}:${HOME}/bin"
 fi
 
 # auto-fu.zsh
 if [[ -f "${HOME}/.zsh/plugin/auto-fu.zsh/auto-fu.zsh" ]]; then
-    source "${HOME}/.zsh/plugin/auto-fu.zsh/auto-fu.zsh"
-    function zle-line-init() {
-        auto-fu-init
-    }
-    zle -N zle-line-init
+  source "${HOME}/.zsh/plugin/auto-fu.zsh/auto-fu.zsh"
+  function zle-line-init() {
+    auto-fu-init
+  }
+  zle -N zle-line-init
 fi
 
 # w3m
 if [[ -x "$(which w3m 2>/dev/null)" ]]; then
-    export HTTP_HOME="http://www.google.com"
+  export HTTP_HOME="http://www.google.com"
 fi
 
 # perlbrew
 if [[ -d "${HOME}/perl5/perlbrew/etc/bashrc" ]]; then
-    source "${HOME}/perl5/perlbrew/etc/bashrc"
+  source "${HOME}/perl5/perlbrew/etc/bashrc"
 fi
 
 # rbenv
 if [[ -d "${HOME}/.rbenv" ]]; then
-    if ! echo "$PATH" | grep -qE "^${HOME}/.rbenv/shims"; then
-        eval "$(rbenv init -)"
-    fi
+  if ! echo "$PATH" | grep -qE "^${HOME}/.rbenv/shims"; then
+    eval "$(rbenv init -)"
+  fi
 fi
 
 # direnv
 if [[ -x "/usr/local/bin/direnv" ]]; then
-    eval "$(direnv hook zsh)"
+  eval "$(direnv hook zsh)"
 fi
 
 # go
 if [[ -x "/usr/bin/go" || -x "/usr/local/bin/go" ]]; then
-    export GOPATH="${HOME}/go/vendor"
-    [[ -d "${HOME}/go" ]] || mkdir "${HOME}/go"
-    echo "$PATH" | grep -q "${GOPATH}/bin" || export PATH="${PATH}:${GOPATH}/bin"
+  export GOPATH="${HOME}/go/vendor"
+  [[ -d "${HOME}/go" ]] || mkdir "${HOME}/go"
+  echo "$PATH" | grep -q "${GOPATH}/bin" || export PATH="${PATH}:${GOPATH}/bin"
 fi
 
 # nvm
 if [[ -f "${HOME}/.nvm/nvm.sh" ]]; then
-    source "${HOME}/.nvm/nvm.sh"
+  source "${HOME}/.nvm/nvm.sh"
 fi
 if [[ -f "${HOME}/.nvm/bash_completion" ]]; then
-    source "${HOME}/.nvm/bash_completion"
+  source "${HOME}/.nvm/bash_completion"
 fi
 
 # heroku
 if [[ -x "/usr/bin/heroku" ]]; then
-    echo "$PATH" | grep -qF '/usr/local/heroku/bin/' || export PATH="/usr/local/heroku/bin:${PATH}"
+  echo "$PATH" | grep -qF '/usr/local/heroku/bin/' || export PATH="/usr/local/heroku/bin:${PATH}"
 fi
 
 # ghq
 if [[ -f "${HOME}/.ghq/github.com/motemen/ghq/zsh/_ghq" ]]; then
-    fpath=($fpath "${HOME}/.ghq/github.com/motemen/ghq/zsh")
+  fpath=($fpath "${HOME}/.ghq/github.com/motemen/ghq/zsh")
 fi
 
 # rsense
