@@ -1,2 +1,4 @@
-AsciiComments:
+Stlye/AsciiComments:
+  Enabled: false
+Metrics/LineLength:
   Enabled: false
