@@ -9,21 +9,21 @@ bindkey '^[^]' 'vi-find-prev-char'
 #bindkey '^S' history-incremental-pattern-search-forward
 
 if [[ -x "/usr/local/bin/peco" ]]; then
-    # http://qiita.com/comutt/items/f54e755f22508a6c7d78
-    function peco-select-history() {
-        BUFFER=$(history 1 | sort -k1,1nr | perl -ne 'BEGIN { my @lines = (); } s/^\s*\d+\s*//; $in=$_; if (!(grep {$in eq $_} @lines)) { push(@lines, $in); print $in; }' | peco --query "$LBUFFER")
-        CURSOR=${#BUFFER}
-        zle clear-screen
-    }
-    zle -N peco-select-history
-    bindkey '^r' peco-select-history
+  # http://qiita.com/comutt/items/f54e755f22508a6c7d78
+  function peco-select-history() {
+    BUFFER=$(history 1 | sort -k1,1nr | perl -ne 'BEGIN { my @lines = (); } s/^\s*\d+\s*//; $in=$_; if (!(grep {$in eq $_} @lines)) { push(@lines, $in); print $in; }' | peco --query "$LBUFFER")
+    CURSOR=${#BUFFER}
+    zle clear-screen
+  }
+  zle -N peco-select-history
+  bindkey '^r' peco-select-history
 
-    # http://blog.glidenote.com/blog/2014/06/26/snippets-peco-percol/
-    #function peco-snippets() {
-    #    BUFFER=$(grep -Eh '^\$ ' ~/.common-cmds/file/* | sed 's/^\$ //' | peco --query "$LBUFFER")
-    #    zle clear-screen
-    #}
-    #zle -N peco-snippets
-    #bindkey '^e' peco-snippets
+  # http://blog.glidenote.com/blog/2014/06/26/snippets-peco-percol/
+  #function peco-snippets() {
+  #  BUFFER=$(grep -Eh '^\$ ' ~/.common-cmds/file/* | sed 's/^\$ //' | peco --query "$LBUFFER")
+  #  zle clear-screen
+  #}
+  #zle -N peco-snippets
+  #bindkey '^e' peco-snippets
 fi
 
