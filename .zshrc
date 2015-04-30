@@ -247,9 +247,7 @@ fi
 
 # rbenv
 if [[ -d "${HOME}/.rbenv" ]]; then
-  if ! echo "$PATH" | grep -qE "^${HOME}/.rbenv/shims"; then
-    eval "$(rbenv init -)"
-  fi
+  echo "$PATH" | grep -qE "^${HOME}/.rbenv/shims" || eval "$(rbenv init -)"
 fi
 
 # direnv
