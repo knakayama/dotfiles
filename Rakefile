@@ -28,4 +28,3 @@ task :symlink do
     create_symlink(src_file, dst_file)
   end
 end
-
