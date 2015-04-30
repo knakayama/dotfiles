@@ -171,7 +171,9 @@ setopt append_history
 ####################
 
 # editor
-if [[ -x "/usr/bin/vim" ]]; then
+if [[ -x "/usr/local/bin/vim" ]]; then
+  export EDITOR="/usr/local/bin/vim"
+elif [[ -x "/usr/bin/vim" ]]; then
   export EDITOR="/usr/bin/vim"
 fi
 
