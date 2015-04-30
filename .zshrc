@@ -11,37 +11,34 @@ fi
 
 # enable completion
 autoload -U compinit
-compinit # compinit -uというのもある
+compinit # also compinit -u
 
 zstyle ':completion:*' completer _oldlist _complete
 
-# ファイル名補完をするとき、除外したいパターンを指定
+# specify ignored patterns whene completing
 # fignore=(.sh)
 
-# 補完候補がいくつ以上あれば確認メッセージを表示するか
+# specify confirm message when completing
 # LISTMAX=20
 
-# cdコマンドの引数に指定したディレクトリが見つからないときは
-# この変数に格納されたディレクトリ以下も検索する
 #cdpath=(~)
 
-# autoloadされるfunctionを検索するpath
+# autoload func path
 if [[ -x "$(which brew 2>/dev/null)" ]]; then
   fpath=("$(brew --prefix)/share/zsh-completions" $fpath)
 fi
 
-# パスを格納する変数や配列に、重複するディレクトリを
-# 登録しても自動で削除
+# remove duplicate path
 typeset -U path cdpath fpath manpath
 
 ####################
 # PROMPT
 ####################
 
-# PROMPT -> left prompt
+# PROMPT  -> left prompt
 # RPROMPT -> right prompt
-# PROMPT2 -> 2行以上のコマンドを入力する際に表示されるプロンプト
-# SPROMPT -> コマンドを打ち間違えたときのプロンプト
+# PROMPT2 -> prompt when displaying 2 line
+# SPROMPT -> prompt when entering error command
 
 # enable color prompt
 autoload -U colors; colors
@@ -120,8 +117,7 @@ PROMPT='%n %F{blue}%~%f%b$(get_git_current_branch)$(get_git_remote_push)'$'\n''%
 # history
 ####################
 
-# 茵がスペースで始まるコマンドラインは
-# ヒストリに記録しない
+# not history command prefixed with space
 setopt hist_ignore_space
 
 # no history history command
@@ -145,26 +141,17 @@ setopt hist_reduce_blanks
 # share history file
 setopt share_history
 
-# cdコマンドだけでディレクトリスタックにpushdする
-# cd - [Tab]を押すとディレクトリスタックが表示される
+# automatical register current directory in directory stack
 setopt auto_pushd
 
-# ディレクトリスタックに重複するディレクトリを登録しない
+# not register duplicate directory name in directory stack
 setopt pushd_ignore_dups
 
-# zshの開始終了を記録
+# history zsh start and end
 setopt EXTENDED_HISTORY
 
-# 複数のzshを同時に使う時などにhistoryファイルを上書きせず追加する
+# append history file
 setopt append_history
-
-####################
-# Plugin
-####################
-
-#if [[ -d "${HOME}/.zsh/plugin" ]]; then
-#  source ${HOME}/.zsh/plugin/*
-#fi
 
 ####################
 # Misc Settings
@@ -182,27 +169,6 @@ if [[ -f "${HOME}/.zsh_bindkey" ]]; then
   source "${HOME}/.zsh_bindkey"
 fi
 
-# pipで一回インストールしたものをもう一度
-# インストールしなくても済む
-# pip installした時に.pip_cacheが無かったら
-# 勝手に作る
-if [[ -s "${HOME}/.pip_cache" ]]; then
-  export PIP_DOWNLOAD_CACHE="${HOME}/.pip_cache"
-fi
-
-# Virtualenvwrapper settings
-wrapper_path=$(which virtualenvwrapper.sh 2>/dev/null)
-if [[ -x "$wrapper_path" ]]; then
-  export WORKON_HOME="${HOME}/.virtualenvs"
-  source "$wrapper_path"
-else
-  unset wrapper_path
-fi
-
-##########
-# Misc Load Functions
-##########
-
 # use zed
 autoload zed
 
@@ -213,70 +179,49 @@ alias zmv="noglob zmv"
 # use zargs
 autoload zargs
 
-##########
-# Misc Set Options
-##########
-
-# defaultから変更されたoptionは
-# setoptで確認できる
-# 現在無効にセットされているoptionは
-# unsetoptで確認できる
-# 何々optionが有効とno何々optionが無効は同じ意味
-# 全てのoptionの設定状態を確認するには
-# set -o( | sort)
-# optionは大文字小文字_があってもなくても同じ
-# optionを無効にするには2つの方法がある
-# unsetopt hoge
-# setopt nohoge
-# コマンドラインから有効無効を変更する
-# set -o hoge -> 有効
-# set +o hoge -> 無効
-
-# directory名を入力しただけで移動
+# change directory when entering directory name only
 setopt auto_cd
 
 # extended globbing
 setopt extended_glob
 
-# マッチした値をsortする
+# sort matched value
 setopt numericglobsort
 
 setopt correct
 
-# 絶対パスが入った変数をディレクトリと見なす
+# recognize variable contained abs path as directory name
 setopt cdable_vars
 
-# 右側まで入力がきたら時間を消す
+# remove rprompt
 #setopt transient_rprompt
 
 # display packed list
 setopt list_packed
 
-# 保管一覧ファイル別表示
 setopt list_types
 
-# 補完候補を表示するたびにプロンプトを下に表示しない
+# not display prompt when completing command
 setopt always_last_prompt
 
-# Tabキーを押す回数を1回分減らす
+# one tab key
 #setopt menu_complete
 
-# ファイルグロブで大文字小文字を区別しない
+# ignore case-sensitive matches when globbing
 #unsetopt case_glob
 
-# ドットで始まるファイルもファイルグロブでマッチさせる
+# match dotted files when globbing
 #setopt glob_dots
 
-# ファイルグロブで数値パターンがマッチすれば数値でソートする
+# sort matched value whne globbing
 setopt numeric_glob_sort
 
-# Esc + hした時に内部コマンドも表示するようにする
+# run-help builtin command
 # not work?
-# [ -n $(alias run-help) ] && unalias run-help
+# [[ -n $(alias run-help) ]] && unalias run-help
 # autoload run-help
 
-
-# path
+# add path
 if [[ -d "${HOME}/bin" ]]; then
   echo "$PATH" | grep -q "${HOME}/bin" || export PATH="${PATH}:${HOME}/bin"
 fi
@@ -291,7 +236,7 @@ if [[ -f "${HOME}/.zsh/plugin/auto-fu.zsh/auto-fu.zsh" ]]; then
 fi
 
 # w3m
-if [[ -x "$(which w3m 2>/dev/null)" ]]; then
+if [[ -x "$(which w3m >/dev/null 2>&1)" ]]; then
   export HTTP_HOME="http://www.google.com"
 fi
 
