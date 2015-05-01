@@ -19,17 +19,17 @@ tmux start-server
 is_first="true"
 for host in ${hosts[@]}; do
   cmd="ssh $SSH_OPTION 'sudo ssh $host'"
-  if [ "${is_first}" == "true" ]; then
-    tmux new-session -d -s $session_name "$cmd"
+  if [[ "$is_first" == "true" ]]; then
+    tmux new-session -d -s "$session_name" "$cmd"
 
     is_first="false"
   else
-    tmux split-window  -t $session_name "$cmd"
-    tmux select-layout -t $session_name tiled >/dev/null
+    tmux split-window  -t "$session_name" "$cmd"
+    tmux select-layout -t "$session_name" tiled >/dev/null
   fi
 done
 
-tmux set-window-option -t $session_name synchronize-panes on
+tmux set-window-option -t "$session_name" synchronize-panes on
 tmux select-pane -t 0
-tmux attach-session -t $session_name
+tmux attach-session -t "$session_name"
 
