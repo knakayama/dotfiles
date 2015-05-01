@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require "fileutils"
+require 'fileutils'
 
 def error_msg
   `tmux display-message "Unknown Argument: #{ARGV.to_s}"`
@@ -17,17 +17,17 @@ def validate_argv_length
     error_msg
   end
 
-  return ary
+  ary
 end
 
 def validate_arg1(arg)
   case arg
-  when "k"
-    return ["k", "kero"]
-  when "c"
-    return ["c", "config"]
-  when "o"
-    return ["o", "ops1"]
+  when 'k'
+    %w('k', 'kero')
+  when 'c'
+    %w('c', 'config')
+  when 'o'
+    %w('o', 'ops1')
   else
     error_msg
   end
@@ -35,8 +35,8 @@ end
 
 def validate_arg2(arg)
   case arg
-  when "s", "v", "h"
-    return ARGV
+  when 's', 'v', 'h'
+    ARGV
   else
     error_msg
   end
@@ -56,13 +56,12 @@ rescue
 end
 
 case ary[0]
-when "k", "c", "o"
+when 'k', 'c', 'o'
   `tmux new-window -n "#{ary[1]}" "ssh #{ary[1]}" \\; pipe-pane "cat >> #{log_file}"`
-when "s"
+when 's'
   `tmux new-window -n "#{ary[1].split(/\./)[0]}" "ssh -i #{key} -t kero 'sudo ssh #{ary[1]}'" \\; pipe-pane "cat >> #{log_file}"`
-when "v", "h"
+when 'v', 'h'
   `tmux split-window "-#{ary[0]}" "ssh -i #{key} -t kero 'sudo ssh #{ary[1]}'" \\; pipe-pane "cat >> #{log_file}"`
 else
   error_msg
 end
-
