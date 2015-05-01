@@ -4,7 +4,7 @@ require 'rake/clean'
 
 HOME          = ENV['HOME']
 PWD           = File.dirname(__FILE__)
-FILES         = Dir.glob('*[a-z]', File::FNM_DOTMATCH).grep(/(?:\.(?!(?:md|git(?:ignore)?)$)|bin)/)
+FILES         = Dir.glob('*[a-z]', File::FNM_DOTMATCH).grep(/(?:\.(?!(?:md|git(?:ignore|modules)?)$)|bin)/)
 NEOBUNDLE_DIR = "#{ENV['HOME']}/.vim/bundle/neobundle.vim"
 TPM_DIR       = "#{ENV['HOME']}/.tmux/plugins/tpm"
 
