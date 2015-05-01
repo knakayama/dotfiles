@@ -1,7 +1,6 @@
 .vim/bundle/.neobundle/
 .tmux/*
 .vim/.netrwhist
-bin/tssh.conf
 .vimperator/info
 .vim/bundle/*
 bin/rsense*
