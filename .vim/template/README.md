@@ -7,7 +7,7 @@ Name
 
 ## VS.
 
-## Requirement
+## Requirements
 
 ## Usage
 
