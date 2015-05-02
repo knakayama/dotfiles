@@ -368,6 +368,9 @@ let g:previm_open_cmd = 'open -a Firefox'
 "let g:previm_enable_realtime = 1
 noremap <leader>m :PrevimOpen<CR>
 
+" tabular
+vnoremap <leader>t :'<,'>Tabularize /=<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " colors , fonts and gui settings
 """"""""""""""""""""""""""""""""""""""""""""""""""
