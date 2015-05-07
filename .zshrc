@@ -1,4 +1,15 @@
 ####################
+# key binding
+####################
+
+# emacs binding
+bindkey -e
+
+# default keybinding is ^X^F
+bindkey '^]' 'vi-find-next-char'
+bindkey '^[^]' 'vi-find-prev-char'
+
+####################
 # Alias
 ####################
 if [[ -f "${HOME}/.zsh_aliases" ]]; then
@@ -154,6 +165,27 @@ setopt EXTENDED_HISTORY
 setopt append_history
 
 ####################
+# antigen
+####################
+
+if [[ -f "${HOME}/.zsh/plugin/antigen.zsh/antigen.zsh" ]]; then
+  source "${HOME}/.zsh/plugin/antigen.zsh/antigen.zsh"
+fi
+
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle mollifier/anyframe
+antigen apply
+
+# mollifier/anyframe settings
+zstyle ":anyframe:selector:" use peco
+if [[ -f "${HOME}/.peco_config.json" ]]; then
+  zstyle ":anyframe:selector:peco:" command "peco --rcfile=${HOME}/.peco_config.json"
+fi
+
+bindkey '^xr' anyframe-widget-execute-history
+bindkey '^xg' anyframe-widget-cd-ghq-repository
+
+####################
 # Misc Settings
 ####################
 
@@ -162,11 +194,6 @@ if [[ -x "/usr/local/bin/vim" ]]; then
   export EDITOR="/usr/local/bin/vim"
 elif [[ -x "/usr/bin/vim" ]]; then
   export EDITOR="/usr/bin/vim"
-fi
-
-# load bindkey
-if [[ -f "${HOME}/.zsh_bindkey" ]]; then
-  source "${HOME}/.zsh_bindkey"
 fi
 
 # use zed

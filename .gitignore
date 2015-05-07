@@ -4,3 +4,4 @@
 .vimperator/info
 .vim/bundle/*
 bin/rsense*
+.zsh/plugin/antigen.zsh

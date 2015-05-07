@@ -7,6 +7,7 @@ PWD           = File.dirname(__FILE__)
 FILES         = Dir.glob('*[a-z]', File::FNM_DOTMATCH).grep(/(?:\.(?!(?:md|git(?:ignore|modules)?)$)|bin)/)
 NEOBUNDLE_DIR = "#{ENV['HOME']}/.vim/bundle/neobundle.vim"
 TPM_DIR       = "#{ENV['HOME']}/.tmux/plugins/tpm"
+ANTIGEN_DIR   = "#{ENV['HOME']}/.zsh/plugin/antigen.zsh"
 
 def create_symlink(src_file, dst_file)
   File.symlink(src_file, dst_file) unless File.exist?(dst_file)
@@ -38,4 +39,6 @@ task :git_clone do
     unless File.exist?(NEOBUNDLE_DIR)
   sh "git clone https://github.com/tmux-plugins/tpm.git #{TPM_DIR}" \
     unless File.exist?(TPM_DIR)
+  sh "git clone https://github.com/mollifier/anyframe.git #{ANTIGEN_DIR}" \
+    unless File.exist?(ANTIGEN_DIR)
 end
