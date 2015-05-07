@@ -172,7 +172,8 @@ if [[ -f "${HOME}/.zsh/plugin/antigen.zsh/antigen.zsh" ]]; then
   source "${HOME}/.zsh/plugin/antigen.zsh/antigen.zsh"
 fi
 
-antigen bundle zsh-users/zsh-syntax-highlighting
+# too slow
+#antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle mollifier/anyframe
 antigen apply
 
