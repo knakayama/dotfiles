@@ -168,6 +168,8 @@ setopt append_history
 # antigen
 ####################
 
+autoload -Uz add-zsh-hook
+
 if [[ -f "${HOME}/.zsh/plugin/antigen.zsh/antigen.zsh" ]]; then
   source "${HOME}/.zsh/plugin/antigen.zsh/antigen.zsh"
 
@@ -186,8 +188,14 @@ if [[ -f "${HOME}/.zsh/plugin/antigen.zsh/antigen.zsh" ]]; then
   bindkey '^xr' anyframe-widget-execute-history
   bindkey '^xg' anyframe-widget-cd-ghq-repository
   bindkey '^xt' anyframe-widget-tmux-attach
+  bindkey '^xb' anyframe-widget-cdr
 
 fi
+
+# cdr
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+add-zsh-hook chpwd chpwd_recent_dirs
+zstyle ':chpwd:*' recent-dirs-max 200
 
 ####################
 # Misc Settings
