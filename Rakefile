@@ -33,7 +33,7 @@ task :symlink do
   end
 end
 
-desc 'Clone some repogitories'
+desc 'Clone some repositories'
 task :git_clone do
   sh "git clone https://github.com/Shougo/neobundle.vim #{NEOBUNDLE_DIR}" \
     unless File.exist?(NEOBUNDLE_DIR)
