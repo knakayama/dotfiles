@@ -170,21 +170,22 @@ setopt append_history
 
 if [[ -f "${HOME}/.zsh/plugin/antigen.zsh/antigen.zsh" ]]; then
   source "${HOME}/.zsh/plugin/antigen.zsh/antigen.zsh"
+
+  # too slow
+  #antigen bundle zsh-users/zsh-syntax-highlighting
+  antigen bundle mollifier/anyframe
+  antigen apply
+
+  # mollifier/anyframe settings
+  zstyle ":anyframe:selector:" use peco
+  if [[ -f "${HOME}/.peco_config.json" ]]; then
+    zstyle ":anyframe:selector:peco:" command "peco --rcfile=${HOME}/.peco_config.json"
+  fi
+
+  bindkey '^xr' anyframe-widget-execute-history
+  bindkey '^xg' anyframe-widget-cd-ghq-repository
+
 fi
-
-# too slow
-#antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle mollifier/anyframe
-antigen apply
-
-# mollifier/anyframe settings
-zstyle ":anyframe:selector:" use peco
-if [[ -f "${HOME}/.peco_config.json" ]]; then
-  zstyle ":anyframe:selector:peco:" command "peco --rcfile=${HOME}/.peco_config.json"
-fi
-
-bindkey '^xr' anyframe-widget-execute-history
-bindkey '^xg' anyframe-widget-cd-ghq-repository
 
 ####################
 # Misc Settings
