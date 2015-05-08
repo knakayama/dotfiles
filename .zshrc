@@ -185,6 +185,7 @@ if [[ -f "${HOME}/.zsh/plugin/antigen.zsh/antigen.zsh" ]]; then
 
   bindkey '^xr' anyframe-widget-execute-history
   bindkey '^xg' anyframe-widget-cd-ghq-repository
+  bindkey '^xt' anyframe-widget-tmux-attach
 
 fi
 
