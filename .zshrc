@@ -174,6 +174,7 @@ if [[ -f "${HOME}/.zsh/plugin/antigen.zsh/antigen.zsh" ]]; then
   # too slow
   #antigen bundle zsh-users/zsh-syntax-highlighting
   antigen bundle mollifier/anyframe
+  antigen bundle Tarrasch/zsh-bd
   antigen apply
 
   # mollifier/anyframe settings
