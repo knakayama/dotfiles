@@ -37,6 +37,8 @@ desc 'Clone some repogitories'
 task :git_clone do
   sh "git clone https://github.com/Shougo/neobundle.vim #{NEOBUNDLE_DIR}" \
     unless File.exist?(NEOBUNDLE_DIR)
+
+  FileUtils.mkdir_p("#{ENV['HOME']}/.tmux/plugins") unless File.exist?("#{ENV['HOME']}/.tmux/plugins")
   sh "git clone https://github.com/tmux-plugins/tpm.git #{TPM_DIR}" \
     unless File.exist?(TPM_DIR)
   sh "git clone https://github.com/mollifier/anyframe.git #{ANTIGEN_DIR}" \
