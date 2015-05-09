@@ -328,3 +328,8 @@ fi
 if [[ -d "${HOME}/rsense-0.3/bin" ]] && [[ "$(uname)" == "Linux" ]]; then
   echo "$PATH" | grep -q "${HOME}/rsense-0.3/bin" || export PATH="${PATH}:${HOME}/rsense-0.3/bin"
 fi
+
+# pyenv
+if type pyenv &>/dev/null; then
+  eval "$(pyenv init -)";
+fi
