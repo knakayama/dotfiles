@@ -145,6 +145,7 @@ SAVEHIST=40000
 
 # no memory duplicate history
 setopt hist_ignore_dups
+setopt hist_ignore_all_dups
 
 # delete unnececally space
 setopt hist_reduce_blanks
