@@ -175,9 +175,14 @@ if [[ -f "${HOME}/.zsh/plugin/antigen.zsh/antigen.zsh" ]]; then
 
   # too slow
   #antigen bundle zsh-users/zsh-syntax-highlighting
+  antigen bundle zsh-users/zsh-history-substring-search
   antigen bundle mollifier/anyframe
   antigen bundle Tarrasch/zsh-bd
   antigen apply
+
+  # zsh-users/zsh-history-substring-search
+  bindkey -M emacs '^P' history-substring-search-up
+  bindkey -M emacs '^N' history-substring-search-down
 
   # mollifier/anyframe settings
   zstyle ":anyframe:selector:" use peco
@@ -189,7 +194,6 @@ if [[ -f "${HOME}/.zsh/plugin/antigen.zsh/antigen.zsh" ]]; then
   bindkey '^xg' anyframe-widget-cd-ghq-repository
   bindkey '^xt' anyframe-widget-tmux-attach
   bindkey '^xb' anyframe-widget-cdr
-
 fi
 
 # cdr
