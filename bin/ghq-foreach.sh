@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # http://qiita.com/uasi/items/610ef5745fc35745fd54
 
