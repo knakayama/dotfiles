@@ -333,3 +333,8 @@ fi
 if type pyenv &>/dev/null; then
   eval "$(pyenv init -)";
 fi
+
+# phpbrew
+if [[ -f "${HOME}/.phpbrew/bashrc" ]]; then
+  source "${HOME}/.phpbrew/bashrc"
+fi
