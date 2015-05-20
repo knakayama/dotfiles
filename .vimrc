@@ -240,7 +240,6 @@ NeoBundleLazy 'supermomonga/neocomplete-rsense.vim', { 'autoload' : {
         \ 'insert' : 1,
         \ 'filetypes': 'ruby',
         \ }}
-NeoBundle 'plasticboy/vim-markdown'
 
 " You can specify revision/branch/tag.
 "NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
@@ -371,9 +370,6 @@ noremap <leader>m :PrevimOpen<CR>
 
 " tabular
 vnoremap <leader>t :'<,'>Tabularize /=<CR>
-
-" vim-markdown
-let g:vim_markdown_folding_disabled=1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " colors , fonts and gui settings
