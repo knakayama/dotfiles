@@ -545,3 +545,5 @@ autocmd BufNewFile,BufRead,BufReadPre *.coffee set filetype=coffee
 " ansible-yaml
 autocmd BufNewFile,BufRead,BufReadPre *.yml set filetype=ansible
 
+" Vagrant
+autocmd BufRead,BufNewFile Vagrantfile set filetype=ruby
