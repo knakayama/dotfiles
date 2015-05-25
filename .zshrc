@@ -39,6 +39,8 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' completer _oldlist _complete
 
 #cdpath=(~)
 
+autoload -Uz add-zsh-hook
+
 ####################
 # PROMPT
 ####################
@@ -150,12 +152,6 @@ setopt hist_reduce_blanks
 # share history file
 setopt share_history
 
-# automatical register current directory in directory stack
-setopt auto_pushd
-
-# not register duplicate directory name in directory stack
-setopt pushd_ignore_dups
-
 # history zsh start and end
 setopt EXTENDED_HISTORY
 
@@ -163,10 +159,26 @@ setopt EXTENDED_HISTORY
 setopt append_history
 
 ####################
-# antigen
+# cd
 ####################
 
-autoload -Uz add-zsh-hook
+# change directory when entering directory name only
+setopt auto_cd
+
+# automatical register current directory in directory stack
+setopt auto_pushd
+
+# not register duplicate directory name in directory stack
+setopt pushd_ignore_dups
+
+# cdr
+autoload -Uz chpwd_recent_dirs cdr
+add-zsh-hook chpwd chpwd_recent_dirs
+zstyle ':chpwd:*' recent-dirs-max 200
+
+####################
+# antigen
+####################
 
 if [[ -f "${HOME}/.zsh/plugin/antigen.zsh/antigen.zsh" ]]; then
   source "${HOME}/.zsh/plugin/antigen.zsh/antigen.zsh"
@@ -200,20 +212,15 @@ if [[ -f "${HOME}/.zsh/plugin/antigen.zsh/antigen.zsh" ]]; then
   bindkey '^xb' anyframe-widget-cdr
 fi
 
-# cdr
-autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
-add-zsh-hook chpwd chpwd_recent_dirs
-zstyle ':chpwd:*' recent-dirs-max 200
-
 ####################
 # Misc Settings
 ####################
 
 # editor
-if [[ -x "/usr/local/bin/vim" ]]; then
-  export EDITOR="/usr/local/bin/vim"
-elif [[ -x "/usr/bin/vim" ]]; then
-  export EDITOR="/usr/bin/vim"
+if type vim >/dev/null 2>&1; then
+  export EDITOR="vim"
+else
+  export EDITOR="vi"
 fi
 
 # use zed
@@ -225,9 +232,6 @@ alias zmv="noglob zmv"
 
 # use zargs
 autoload zargs
-
-# change directory when entering directory name only
-setopt auto_cd
 
 # extended globbing
 setopt extended_glob
