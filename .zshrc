@@ -29,7 +29,7 @@ fi
 autoload -Uz compinit
 compinit # also compinit -u
 
-zstyle ':completion:*' completer _oldlist _complete
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' completer _oldlist _complete
 
 # specify ignored patterns whene completing
 # fignore=(.sh)
