@@ -20,8 +20,13 @@ fi
 # Completion
 ####################
 
+# autoload func path
+if [[ -x "$(which brew 2>/dev/null)" ]]; then
+  fpath=($(brew --prefix)/share/zsh-completions(N-/) $fpath)
+fi
+
 # enable completion
-autoload -U compinit
+autoload -Uz compinit
 compinit # also compinit -u
 
 zstyle ':completion:*' completer _oldlist _complete
@@ -33,14 +38,6 @@ zstyle ':completion:*' completer _oldlist _complete
 # LISTMAX=20
 
 #cdpath=(~)
-
-# autoload func path
-if [[ -x "$(which brew 2>/dev/null)" ]]; then
-  fpath=("$(brew --prefix)/share/zsh-completions" $fpath)
-fi
-
-# remove duplicate path
-typeset -U path cdpath fpath manpath
 
 ####################
 # PROMPT
@@ -271,11 +268,6 @@ setopt numeric_glob_sort
 # [[ -n $(alias run-help) ]] && unalias run-help
 # autoload run-help
 
-# add path
-if [[ -d "${HOME}/bin" ]]; then
-  echo "$PATH" | grep -q "${HOME}/bin" || export PATH="${PATH}:${HOME}/bin"
-fi
-
 # auto-fu.zsh
 if [[ -f "${HOME}/.zsh/plugin/auto-fu.zsh/auto-fu.zsh" ]]; then
   source "${HOME}/.zsh/plugin/auto-fu.zsh/auto-fu.zsh"
@@ -295,21 +287,9 @@ if [[ -d "${HOME}/perl5/perlbrew/etc/bashrc" ]]; then
   source "${HOME}/perl5/perlbrew/etc/bashrc"
 fi
 
-# rbenv
-if [[ -d "${HOME}/.rbenv" ]]; then
-  echo "$PATH" | grep -qE "^${HOME}/.rbenv/shims" || eval "$(rbenv init -)"
-fi
-
 # direnv
 if [[ -x "/usr/local/bin/direnv" ]]; then
   eval "$(direnv hook zsh)"
-fi
-
-# go
-if [[ -x "/usr/bin/go" || -x "/usr/local/bin/go" ]]; then
-  export GOPATH="${HOME}/go/vendor"
-  [[ -d "${HOME}/go" ]] || mkdir "${HOME}/go"
-  echo "$PATH" | grep -q "${GOPATH}/bin" || export PATH="${PATH}:${GOPATH}/bin"
 fi
 
 # nvm
@@ -320,20 +300,8 @@ if [[ -f "${HOME}/.nvm/bash_completion" ]]; then
   source "${HOME}/.nvm/bash_completion"
 fi
 
-# heroku
-if [[ -x "/usr/bin/heroku" ]]; then
-  echo "$PATH" | grep -qF '/usr/local/heroku/bin/' || export PATH="/usr/local/heroku/bin:${PATH}"
-fi
-
 # ghq
-if [[ -f "${HOME}/.ghq/github.com/motemen/ghq/zsh/_ghq" ]]; then
-  fpath=($fpath "${HOME}/.ghq/github.com/motemen/ghq/zsh")
-fi
-
-# rsense
-if [[ -d "${HOME}/rsense-0.3/bin" ]] && [[ "$(uname)" == "Linux" ]]; then
-  echo "$PATH" | grep -q "${HOME}/rsense-0.3/bin" || export PATH="${PATH}:${HOME}/rsense-0.3/bin"
-fi
+fpath=($fpath ${HOME}/.ghq/github.com/motemen/ghq/zsh(N-/))
 
 # pyenv
 if type pyenv &>/dev/null; then
