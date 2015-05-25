@@ -372,6 +372,9 @@ noremap <leader>m :PrevimOpen<CR>
 " tabular
 vnoremap <leader>t :'<,'>Tabularize /=<CR>
 
+" vim-surround
+autocmd FileType markdown let b:surround_45 = "```\n\r\n```"
+
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " colors , fonts and gui settings
 """"""""""""""""""""""""""""""""""""""""""""""""""
