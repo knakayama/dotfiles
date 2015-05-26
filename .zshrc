@@ -304,9 +304,6 @@ if [[ -f "${HOME}/.nvm/bash_completion" ]]; then
   source "${HOME}/.nvm/bash_completion"
 fi
 
-# ghq
-fpath=($fpath ${HOME}/.ghq/github.com/motemen/ghq/zsh(N-/))
-
 # pyenv
 if type pyenv &>/dev/null; then
   eval "$(pyenv init -)";
