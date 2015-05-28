@@ -51,7 +51,6 @@ path=($path ${HOME}/rsense-0.3/bin(N-/))
 ####################
 
 # autoload func path
-fpath=(${HOME}/.zsh/zsh-completions/src(N-/) $fpath)
 if [[ -x "$(which brew 2>/dev/null)" ]]; then
   fpath=($(brew --prefix)/share/zsh/site-functions(N-/) $fpath)
 fi
@@ -218,6 +217,7 @@ if [[ -f "${HOME}/.zsh/plugin/antigen.zsh/antigen.zsh" ]]; then
   # too slow
   #antigen bundle zsh-users/zsh-syntax-highlighting
   antigen bundle zsh-users/zsh-history-substring-search
+  antigen bundle zsh-users/zsh-completions src
   antigen bundle mollifier/anyframe
   antigen bundle Tarrasch/zsh-bd
   antigen apply
