@@ -5,3 +5,4 @@
 .vim/bundle/*
 bin/rsense*
 .zsh/plugin/antigen.zsh
+.zsh/zsh-completions

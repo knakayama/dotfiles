@@ -8,6 +8,7 @@ FILES         = Dir.glob('*[a-z]', File::FNM_DOTMATCH).grep(/(?:\.(?!(?:md|git(?
 NEOBUNDLE_DIR = "#{ENV['HOME']}/.vim/bundle/neobundle.vim"
 TPM_DIR       = "#{ENV['HOME']}/.tmux/plugins/tpm"
 ANTIGEN_DIR   = "#{ENV['HOME']}/.zsh/plugin/antigen.zsh"
+ZSH_COMP_DIR  = "#{ENV['HOME']}/.zsh/zsh-completions"
 
 def create_symlink(src_file, dst_file)
   File.symlink(src_file, dst_file) unless File.exist?(dst_file)
@@ -44,4 +45,7 @@ task :git_clone do
 
   sh "git clone git@github.com:zsh-users/antigen.git #{ANTIGEN_DIR}" \
     unless File.exist?(ANTIGEN_DIR)
+
+  sh "git clone git@github.com:zsh-users/zsh-completions.git #{ZSH_COMP_DIR}" \
+    unless File.exist?(ZSH_COMP_DIR)
 end
