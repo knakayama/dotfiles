@@ -12,8 +12,8 @@ bindkey '^[^]' 'vi-find-prev-char'
 ####################
 # Alias
 ####################
-if [[ -f "${HOME}/.zsh_aliases" ]]; then
-  source "${HOME}/.zsh_aliases"
+if [[ -f "${HOME}/.zsh_alias" ]]; then
+  source "${HOME}/.zsh_alias"
 fi
 
 ####################
