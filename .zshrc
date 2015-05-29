@@ -315,7 +315,7 @@ if [[ -f "${HOME}/.zsh/plugin/auto-fu.zsh/auto-fu.zsh" ]]; then
 fi
 
 # w3m
-if [[ -x "$(which w3m >/dev/null 2>&1)" ]]; then
+if [[ -x "$(which w3m)" ]]; then
   export HTTP_HOME="http://www.google.com"
 fi
 
@@ -325,7 +325,7 @@ if [[ -d "${HOME}/perl5/perlbrew/etc/bashrc" ]]; then
 fi
 
 # direnv
-if [[ -x "/usr/local/bin/direnv" ]]; then
+if [[ -x "$(which direnv)" ]]; then
   eval "$(direnv hook zsh)"
 fi
 
