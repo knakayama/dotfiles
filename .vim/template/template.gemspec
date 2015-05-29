@@ -26,5 +26,3 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency ''
 end
-
-
