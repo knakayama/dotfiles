@@ -34,7 +34,7 @@ if type rbenv >/dev/null 2>&1; then
 fi
 
 # go
-if [[ -x "/usr/bin/go" ]] || [[ -x "/usr/local/bin/go" ]]; then
+if [[ -x "$(which go)" ]]; then
   export GOPATH="${HOME}/go/vendor"
   [[ -d "${HOME}/go" ]] || mkdir "${HOME}/go"
   path=($path ${GOPATH}/bin)
