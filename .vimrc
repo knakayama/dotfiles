@@ -237,6 +237,7 @@ NeoBundle 'chase/vim-ansible-yaml'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'rodjek/vim-puppet'
 NeoBundle 'godlygeek/tabular'
+NeoBundle 'markcornick/vim-terraform'
 NeoBundleLazy 'supermomonga/neocomplete-rsense.vim', { 'autoload' : {
         \ 'insert' : 1,
         \ 'filetypes': 'ruby',
