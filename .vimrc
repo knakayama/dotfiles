@@ -240,6 +240,7 @@ NeoBundle 'godlygeek/tabular'
 "NeoBundle 'markcornick/vim-terraform'
 NeoBundle 'knakayama/vim-terraform'
 NeoBundle 'jiangmiao/auto-pairs'
+NeoBundle 'elzr/vim-json'
 NeoBundleLazy 'supermomonga/neocomplete-rsense.vim', { 'autoload' : {
         \ 'insert' : 1,
         \ 'filetypes': 'ruby',
@@ -377,6 +378,9 @@ vnoremap <leader>t :'<,'>Tabularize /=<CR>
 
 " vim-surround
 autocmd FileType markdown let b:surround_45 = "```\n\r\n```"
+
+" vim-json
+let g:vim_json_syntax_conceal = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " colors , fonts and gui settings
