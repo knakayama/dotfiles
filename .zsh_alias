@@ -15,6 +15,9 @@ alias dl="sudo docker ps -l -q"
 # too long
 alias b2d="boot2docker"
 
+# writing
+alias a="vim $(date '+%Y-%m-%d').md"
+
 # create tmp dir and cd into it
 alias m="[[ -d ${HOME}/tmp/$(date '+%Y%m%d') ]] && \
   cd ${HOME}/tmp/$(date '+%Y%m%d') || \
