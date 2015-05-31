@@ -12,6 +12,9 @@ alias lsd="ls -ld *(-/DN)"
 # Print recently used docker image id
 alias dl="sudo docker ps -l -q"
 
+# too long
+alias b2d="boot2docker"
+
 # create tmp dir and cd into it
 alias m="[[ -d ${HOME}/tmp/$(date '+%Y%m%d') ]] && \
   cd ${HOME}/tmp/$(date '+%Y%m%d') || \
