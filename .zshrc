@@ -250,6 +250,11 @@ fi
 # Misc Settings
 ####################
 
+# ls color
+if [[ "$OSTYPE" =~ "darwin*" ]]; then
+  export CLICOLOR=1
+fi
+
 # editor
 if type vim >/dev/null 2>&1; then
   export EDITOR="vim"
