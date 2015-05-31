@@ -354,6 +354,6 @@ if type brew >/dev/null 2>&1 && [[ -f $(brew --prefix)/share/zsh/site-functions/
 fi
 
 # boot2docker
-if type boot2docker >/dev/null 2>&1; then
+if type boot2docker >/dev/null 2>&1 && [[ "$(boot2docker status)" == "running" ]]; then
   eval "$(boot2docker shellinit 2>/dev/null)"
 fi
