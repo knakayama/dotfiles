@@ -17,7 +17,7 @@ Name
 
 ## License
 
-[MIT](http://knakayama.mit-license.org/)
+MIT
 
 ## Author
 
