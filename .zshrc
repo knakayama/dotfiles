@@ -352,3 +352,8 @@ fi
 if type brew >/dev/null 2>&1 && [[ -f $(brew --prefix)/share/zsh/site-functions/_aws ]]; then
   source "$(brew --prefix)/share/zsh/site-functions/_aws"
 fi
+
+# boot2docker
+if type boot2docker >/dev/null 2>&1; then
+  eval "$(boot2docker shellinit 2>/dev/null)"
+fi
