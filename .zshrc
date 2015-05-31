@@ -219,6 +219,7 @@ if [[ -f "${HOME}/.zsh/plugin/antigen.zsh/antigen.zsh" ]]; then
   antigen bundle zsh-users/zsh-history-substring-search
   #antigen bundle zsh-users/zsh-completions src
   antigen bundle --url=knakayama/zsh-completions --branch=feat/add-terraform-completion --loc=src
+  antigen bundle gunzy83/packer-zsh-completion
   antigen bundle mollifier/anyframe
   antigen bundle Tarrasch/zsh-bd
   antigen apply
