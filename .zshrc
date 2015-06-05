@@ -222,7 +222,7 @@ if [[ -f "${HOME}/.zsh/plugin/antigen.zsh/antigen.zsh" ]]; then
   antigen bundle gunzy83/packer-zsh-completion
   antigen bundle mollifier/anyframe
   antigen bundle Tarrasch/zsh-bd
-  antigen bundle knakayama/cuc
+  antigen bundle knakayama/fuc
   antigen apply
 
   # zsh-users/zsh-history-substring-search
@@ -246,7 +246,7 @@ if [[ -f "${HOME}/.zsh/plugin/antigen.zsh/antigen.zsh" ]]; then
 
   bindkey '^xb' anyframe-widget-cdr
 
-  bindkey '^x^x' cuc-widget-cuc
+  bindkey '^x^x' fuc-widget-fuc
 fi
 
 ####################
