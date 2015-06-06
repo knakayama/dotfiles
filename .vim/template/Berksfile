@@ -1,2 +1,3 @@
 source 'https://supermarket.getchef.com'
 
+# vim: ft=ruby

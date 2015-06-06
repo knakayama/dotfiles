@@ -1,24 +1,24 @@
 Name
 ====
 
-## Description
+# Description
 
-## Demo
+# Demo
 
-## VS.
+# VS.
 
-## Requirements
+# Requirements
 
-## Install
+# Install
 
-## Usage
+# Usage
 
-## Contribution
+# Contribution
 
-## License
+# License
 
-MIT
+[XXX](https://github.com/knakayama/XXX/blob/master/LICENSE)
 
-## Author
+# Author
 
 [knakayama](https://github.com/knakayama)
