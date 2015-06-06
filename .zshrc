@@ -247,6 +247,7 @@ if [[ -f "${HOME}/.zsh/plugin/antigen.zsh/antigen.zsh" ]]; then
   bindkey '^xb' anyframe-widget-cdr
 
   bindkey '^x^x' fuc-widget-fuc
+  export FUC_PATH="${HOME}/.ghq/github.com/knakayama/my-fuc"
 fi
 
 ####################
