@@ -223,6 +223,7 @@ if [[ -f "${HOME}/.zsh/plugin/antigen.zsh/antigen.zsh" ]]; then
   antigen bundle mollifier/anyframe
   antigen bundle Tarrasch/zsh-bd
   antigen bundle knakayama/fuc
+  antigen bundle knakayama/gzp
   antigen apply
 
   # zsh-users/zsh-history-substring-search
@@ -249,6 +250,9 @@ if [[ -f "${HOME}/.zsh/plugin/antigen.zsh/antigen.zsh" ]]; then
   bindkey '^x^x' fuc-widget-execute-fuc
   bindkey '^x^i' fuc-widget-put-fuc
   export FUC_PATH="${HOME}/.ghq/github.com/knakayama/my-fuc"
+
+  bindkey '^x^g' gzp-widget-open-repo
+  bindkey '^x^w' gzp-widget-open-starred
 fi
 
 ####################
