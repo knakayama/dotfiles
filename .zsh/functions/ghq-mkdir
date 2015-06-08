@@ -1,0 +1,66 @@
+ghq-mkdir() {
+  -ghq-mkdir-usage() {
+    cat <<EOT
+Usage: ghq-mkdir [-u <user>] [-g <git server>] [-h] <repository>
+
+  -h              print this help.
+  -u <user>       git user name (default local user name).
+  -g <git server> git server name (default github.com).
+
+EOT
+  }
+
+  local opts OPTARG OPTIND
+  local user_name="$(whoami)"
+  local git_server="github.com"
+
+  while getopts ':u:g:h' opts; do
+    case "$opts" in
+      u)
+        user_name="$OPTARG"
+        ;;
+      g)
+        git_server="$OPTARG"
+        ;;
+      h)
+        -ghq-mkdir-usage
+        return 0
+        ;;
+      *)
+        -ghq-mkdir-usage
+        return 1
+        ;;
+    esac
+  done
+  shift $(( OPTIND - 1 ))
+
+  local repository="$1"
+  if [[ -z "$repository" ]]; then
+    -ghq-mkdir-usage
+    return 1
+  fi
+
+  if ! which ghq >/dev/null 2>&1; then
+    echo "ghq command not found in your $PATH." >&2
+    return 1
+  fi
+
+  local ghq_path="$(ghq root)/${git_server}/${user_name}/${repository}"
+
+  if [[ -d "$ghq_path" ]]; then
+    echo "${ghq_path}: already exists."
+    cd "$ghq_path"
+  else
+    mkdir -p "$ghq_path" \
+    && cd "$ghq_path"    \
+    && git init
+  fi
+}
+
+# Local Variables:
+# mode: Shell-Script
+# sh-indentation: 2
+# indent-tabs-mode: nil
+# sh-basic-offset: 2
+# End:
+# vim: ft=zsh sw=2 ts=2 et
