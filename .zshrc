@@ -56,7 +56,7 @@ if [[ -x "$(which brew 2>/dev/null)" ]]; then
 fi
 
 # original zsh completions
-fpath=(${HOME}/.zsh/completions/(N-/) $fpath)
+fpath=(${HOME}/.zsh/completions(N-/) $fpath)
 
 # enable completion
 autoload -Uz compinit
