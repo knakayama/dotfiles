@@ -58,6 +58,17 @@ fi
 # original zsh completions
 fpath=(${HOME}/.zsh/completions(N-/) $fpath)
 
+# zsh functions
+fpath=(${HOME}/.zsh/functions(N-/) $fpath)
+function() {
+  local file
+  for file in ${HOME}/.zsh/functions/*(N-.); do
+    local func_name="${file:t}"
+    autoload -Uz -- "$func_name"
+    zle -N -- "$func_name"
+  done
+}
+
 # enable completion
 autoload -Uz compinit
 compinit # also compinit -u
