@@ -55,6 +55,9 @@ if [[ -x "$(which brew 2>/dev/null)" ]]; then
   fpath=($(brew --prefix)/share/zsh/site-functions(N-/) $fpath)
 fi
 
+# original zsh completions
+fpath=(${HOME}/.zsh/completions/(N-/) $fpath)
+
 # enable completion
 autoload -Uz compinit
 compinit # also compinit -u
