@@ -42,6 +42,6 @@ task :git_clone do
   sh "git clone https://github.com/tmux-plugins/tpm.git #{TPM_DIR}" \
     unless File.exist?(TPM_DIR)
 
-  sh "git clone git@github.com:zsh-users/antigen.git #{ANTIGEN_DIR}" \
+  sh "git clone https://github.com/zsh-users/antigen.git #{ANTIGEN_DIR}" \
     unless File.exist?(ANTIGEN_DIR)
 end
