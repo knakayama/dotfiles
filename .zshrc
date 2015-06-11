@@ -372,10 +372,10 @@ if [[ -f "${HOME}/.phpbrew/bashrc" ]]; then
   source "${HOME}/.phpbrew/bashrc"
 fi
 
-# aws
-if type brew >/dev/null 2>&1 && [[ -f $(brew --prefix)/share/zsh/site-functions/_aws ]]; then
-  source "$(brew --prefix)/share/zsh/site-functions/_aws"
-fi
+## aws
+#if type brew >/dev/null 2>&1 && [[ -f $(brew --prefix)/share/zsh/site-functions/_aws ]]; then
+#  source "$(brew --prefix)/share/zsh/site-functions/_aws"
+#fi
 
 # boot2docker
 if type boot2docker >/dev/null 2>&1 && [[ "$(boot2docker status)" == "running" ]]; then
