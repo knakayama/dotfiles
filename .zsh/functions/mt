@@ -1,7 +1,7 @@
 mt() {
   -mt-usage() {
     cat <<'EOT'
-Usage: mt name
+Usage: mt dir-name
 
 EOT
   }
@@ -9,7 +9,9 @@ EOT
   local my_dir="$1"
 
   if [[ $# -eq 1 ]]; then
-    mutt -F "${HOME}/.mutt-${my_dir}/muttrc"
+    mutt \
+      -e "set my_dir = ${HOME}/.mutt-${my_dir}" \
+      -e "source ${HOME}/.mutt-${my_dir}/muttrc"
   else
     -mt-usage
     return 1
