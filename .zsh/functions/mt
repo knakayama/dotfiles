@@ -1,0 +1,25 @@
+mt() {
+  -mt-usage() {
+    cat <<'EOT'
+Usage: mt name
+
+EOT
+  }
+
+  local my_dir="$1"
+
+  if [[ $# -eq 1 ]]; then
+    mutt -F "${HOME}/.mutt-${my_dir}/muttrc"
+  else
+    -mt-usage
+    return 1
+  fi
+}
+
+# Local Variables:
+# mode: Shell-Script
+# sh-indentation: 2
+# indent-tabs-mode: nil
+# sh-basic-offset: 2
+# End:
+# vim: ft=zsh sw=2 ts=2 et
