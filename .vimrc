@@ -556,3 +556,6 @@ autocmd BufNewFile,BufRead,BufReadPre *.yml set filetype=ansible
 
 " Vagrant
 autocmd BufRead,BufNewFile Vagrantfile set filetype=ruby
+
+" mutt
+autocmd BufRead *tmp/mutt-* set tw=72
