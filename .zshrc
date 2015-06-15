@@ -166,7 +166,8 @@ setopt prompt_subst
 # %~ -> current directory(home directory is ~)
 # %(1,#,$)
 # %f%b same as %{${reset_color}%}?
-PROMPT='%n %F{blue}%~%f%b$(get_git_current_branch)$(get_git_remote_push)'$'\n''%(!,#,$) '
+#PROMPT='%n %F{blue}%~%f%b$(get_git_current_branch)$(get_git_remote_push)'$'\n''%(!,#,$) '
+PROMPT='%n %F{blue}%~%f%b $(-git-super-status)[%?]'$'\n''%(!,#,$) '
 
 ####################
 # history
@@ -238,6 +239,7 @@ if [[ -f "${HOME}/.zsh/plugin/antigen.zsh/antigen.zsh" ]]; then
   antigen bundle knakayama/fuc
   antigen bundle knakayama/gzp
   antigen bundle knakayama/ghq-util
+  antigen bundle knakayama/zsh-gp
   antigen apply
 
   # zsh-users/zsh-history-substring-search
