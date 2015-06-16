@@ -239,7 +239,7 @@ if [[ -f "${HOME}/.zsh/plugin/antigen.zsh/antigen.zsh" ]]; then
   antigen bundle knakayama/fuc
   antigen bundle knakayama/gzp
   antigen bundle knakayama/ghq-util
-  antigen bundle knakayama/zsh-gp
+  antigen bundle knakayama/zsh-git-prompt
   antigen apply
 
   # zsh-users/zsh-history-substring-search
