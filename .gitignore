@@ -2,6 +2,7 @@
 .tmux/*
 .vim/.netrwhist
 .vimperator/info
+.vimperator/colors
 .vim/bundle/*
 bin/rsense*
 .zsh/plugin/antigen.zsh
