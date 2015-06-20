@@ -69,7 +69,7 @@ set complete=sl
 " set suggestengines=google
 
 " colorscheme
-colorscheme sweets
+colorscheme indigo-fx3
 
 " ignore case
 set ignorecase
