@@ -243,6 +243,7 @@ NeoBundleLazy 'supermomonga/neocomplete-rsense.vim', { 'autoload' : {
         \ 'insert' : 1,
         \ 'filetypes': 'ruby',
         \ }}
+NeoBundle 'bling/vim-airline'
 
 " You can specify revision/branch/tag.
 "NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
@@ -379,6 +380,11 @@ autocmd FileType markdown let b:surround_45 = "```\n\r\n```"
 
 " vim-json
 let g:vim_json_syntax_conceal = 0
+
+" vim-airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = '|'
+let g:airline#extensions#tabline#left_alt_sep = ' '
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " colors , fonts and gui settings
