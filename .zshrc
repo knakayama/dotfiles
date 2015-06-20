@@ -240,6 +240,7 @@ if [[ -f "${HOME}/.zsh/plugin/antigen.zsh/antigen.zsh" ]]; then
   antigen bundle knakayama/gzp
   antigen bundle knakayama/ghq-util
   antigen bundle knakayama/zsh-git-prompt
+  antigen bundle knakayama/antigen-bundle-record-moving
   antigen apply
 
   # zsh-users/zsh-history-substring-search
@@ -266,6 +267,8 @@ if [[ -f "${HOME}/.zsh/plugin/antigen.zsh/antigen.zsh" ]]; then
 
   bindkey '^x^g' gzp-widget-open-repo
   bindkey '^x^w' gzp-widget-open-starred
+
+  bindkey '^x^a' -antigen-bundle-record-moving
 fi
 
 ####################
