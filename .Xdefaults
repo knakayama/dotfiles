@@ -1,0 +1,88 @@
+! see archwiki about urxvt
+
+! restart
+! xrdb -merge ~/.Xdefaults
+
+! name
+URxvt.termName: rxvt-unicode
+
+! scrollback buffer
+URxvt.saveLines: 20000
+
+! scroll
+! scrollbar style - rxvt(default), plain, next, or xterm
+URxvt.scrollBar: False
+!URxvt.scrollstyle: plain
+!URxvt.scrollBar_right: true
+
+!URxvt.geometry: 100x35
+
+! Font
+URxvt.font: xft:Ricty-Bold:size=12 antialias=true
+Xft*antialias: true
+URxvt.shading: 10
+
+! Perl extensions
+URxvt.perl-lib: /home/knakayama/urxvt-perls/
+!URxvt.perl-ext-common: default,matcher,clipboard,keyboard-select
+!URxvt.urlLauncher: /usr/bin/firefox
+!URxvt.matcher.button: 1
+URxvt.perl-ext-common: default,url-select,clipboard,keyboard-select
+URxvt.colorUL: $4682B4
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/open
+URxvt.url-select.autocopy: true
+URxvt.url-select.underline: true
+! Alt + Shift + c -> copy
+! Alt + Shift + v -> paste
+! Control + Shift + Alt + v -> paste escape
+URxvt.keysym.M-C: perl:clipboard:copy
+URxvt.keysym.M-V: perl:clipboard:paste
+!URxvt.keysym.C-M-v: perl:clipboard:paste_escape
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
+
+! ibus settings
+!URxvt.inputMethod: ibus
+!URxvt.preeditType: OverTheSpot
+
+! colors
+! https://gist.github.com/monokrome/2980322
+rxvt.background: #000000
+rxvt.foreground: #D3D2D3
+rxvt.color0: #000000
+rxvt.color1: #FF7768
+rxvt.color2: #ABFA68
+rxvt.color3: #FFFD88
+rxvt.color4: #98D0FE
+rxvt.color5: #FF85FD
+rxvt.color6: #CACBFE
+rxvt.color7: #EFEFEF
+rxvt.color8: #848484
+rxvt.color9: #FFBCB5
+rxvt.color10: #D1FCB1
+rxvt.color11: #FFFDD0
+rxvt.color12: #BADFFF
+rxvt.color13: #FFA9FE
+rxvt.color14: #E2E3FE
+rxvt.color15: #FFFFFF
+rxvt.scrollBar: false
+urxvt.background: #000000
+urxvt.foreground: #D3D2D3
+urxvt.color0: #000000
+urxvt.color1: #FF7768
+urxvt.color2: #ABFA68
+urxvt.color3: #FFFD88
+urxvt.color4: #98D0FE
+urxvt.color5: #FF85FD
+urxvt.color6: #CACBFE
+urxvt.color7: #EFEFEF
+urxvt.color8: #848484
+urxvt.color9: #FFBCB5
+urxvt.color10: #D1FCB1
+urxvt.color11: #FFFDD0
+urxvt.color12: #BADFFF
+urxvt.color13: #FFA9FE
+urxvt.color14: #E2E3FE
+urxvt.color15: #FFFFFF
+urxvt.scrollBar: false
