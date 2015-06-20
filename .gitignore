@@ -1,8 +1,7 @@
 .vim/bundle/.neobundle/
 .tmux/*
 .vim/.netrwhist
-.vimperator/*
-!.vimperator/plugin
+.vimperator/info
 .vim/bundle/*
 bin/rsense*
 .zsh/plugin/antigen.zsh
