@@ -3,21 +3,21 @@
 """""""""""""""""
 
 " plugin loader
-let g:plugin_loader_roots="~/.vimperator/plugin/vimperator-plugins"
-js <<EOF
-liberator.globalVariables.plugin_loader_plugins=<>
+javascript <<EOT
+liberator.globalVariables.plugin_loader_plugins = <>
     _libly
     feedSomeKeys_3
     ime_controller
-    "migemo_completion
-    "migemo_hint
+    //migemo_completion
+    //migemo_hint
     multi_requester
     readitlater
     statusline-toolbar
     escape-from-iframe
     copy
 </>.toString().split(/\s+/).filter(function(n) n);
-EOF
+EOT
+let g:plugin_loader_roots="~/.vimperator/plugin/vimperator-plugins"
 
 " nextlink.js
 let g:nextlink_follow="true"
