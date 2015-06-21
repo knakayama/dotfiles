@@ -379,6 +379,11 @@ if type pyenv &>/dev/null; then
   eval "$(pyenv init -)";
 fi
 
+# plenv
+if which plenv &>/dev/null; then
+  eval "$(plenv init -)"
+fi
+
 # phpbrew
 if [[ -f "${HOME}/.phpbrew/bashrc" ]]; then
   source "${HOME}/.phpbrew/bashrc"
