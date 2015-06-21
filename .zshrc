@@ -275,6 +275,12 @@ fi
 # Misc Settings
 ####################
 
+# locale
+if ! [[ "$(locale)" =~ 'en_US\.UTF-8' ]]; then
+  export LC_ALL="en_US.UTF-8"
+  export LANG="en_US.UTF-8"
+fi
+
 # ls color
 if [[ "$OSTYPE" =~ "darwin*" ]]; then
   export CLICOLOR=1
