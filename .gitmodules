@@ -4,6 +4,7 @@
 [submodule ".vimperator/colors"]
 	path = .vimperator/colors
 	url = https://github.com/vimpr/vimperator-colors.git
-[submodule ".vimperator/vimperator-plugins"]
-	path = .vimperator/vimperator-plugins
-	url = https://github.com/vimpr/vimperator-plugins/tree/3.6
+[submodule ".vimperator/vimpr"]
+	path = .vimperator/vimpr
+	url = https://github.com/vimpr/vimperator-plugins.git
+	branch = 3.6
