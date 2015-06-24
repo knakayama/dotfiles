@@ -269,7 +269,7 @@ fi
 # %(1,#,$)
 # %f%b same as %{${reset_color}%}?
 #PROMPT='%n %F{blue}%~%f%b$(get_git_current_branch)$(get_git_remote_push)'$'\n''%(!,#,$) '
-PROMPT='%n %F{blue}%~%f%b $(-git-status)[%?]'$'\n''%(!,#,$) '
+PROMPT='%n %F{blue}%~%f%b $(-zsh-git-prompt)[%?]'$'\n''%(!,#,$) '
 
 ####################
 # Misc Settings
