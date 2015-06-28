@@ -18,3 +18,8 @@
 	excludesfile = ~/.gitignore.global
 [init]
 	templatedir = ~/.gittemplates
+[color "status"]
+	added = green bold
+	updated = green bold
+	changed = red bold
+	untracked = red bold
