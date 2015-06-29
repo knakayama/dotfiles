@@ -1,15 +1,5 @@
 #!/usr/bin/env bash
-
 # https://github.com/y-uuki/opstools
-
-CONF_FILE="${HOME}/bin/tmux-sync-ssh.conf"
-
-if [[ -f "$CONF_FILE" ]]; then
-  source "$CONF_FILE"
-else
-  echo "$CONF_FILE not found"
-  exit 1
-fi
 
 hosts=("$@")
 session_name="tmux-ssh-$$"
@@ -18,7 +8,7 @@ tmux start-server
 
 is_first="true"
 for host in ${hosts[@]}; do
-  cmd="ssh $SSH_OPTION 'sudo ssh $host'"
+  cmd="ssh -t config 'ssh -o StrictHostKeyChecking=no root@$host'"
   if [[ "$is_first" == "true" ]]; then
     tmux new-session -d -s "$session_name" "$cmd"
 
@@ -32,3 +22,11 @@ done
 tmux set-window-option -t "$session_name" synchronize-panes on
 tmux select-pane -t 0
 tmux attach-session -t "$session_name"
+
+# Local Variables:
+# mode: Shell-Script
+# sh-indentation: 2
+# indent-tabs-mode: nil
+# sh-basic-offset: 2
+# End:
+# vim: ft=sh sw=2 ts=2 et
