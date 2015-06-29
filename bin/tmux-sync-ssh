@@ -4,11 +4,26 @@
 hosts=("$@")
 session_name="tmux-ssh-$$"
 
+while getopts ':t' args; do
+  case "$args" in
+    t)
+      tty="$OPTARG"
+      ;;
+  esac
+done
+
+[ "$tty" =~ '^(config|kero)$' ] || { echo "unknown args: $tty" 1>&2; exit 1; }
+
 tmux start-server
 
 is_first="true"
 for host in ${hosts[@]}; do
-  cmd="ssh -t config 'ssh -o StrictHostKeyChecking=no root@$host'"
+  if [[ "$tty" == "config" ]]; then
+    cmd="ssh -t config 'ssh -o StrictHostKeyChecking=no root@$host'"
+  else
+    cmd="ssh -t kero 'sudo ssh -o StrictHostKeyChecking=no $host'"
+  fi
+
   if [[ "$is_first" == "true" ]]; then
     tmux new-session -d -s "$session_name" "$cmd"
 
