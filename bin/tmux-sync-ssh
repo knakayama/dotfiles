@@ -4,15 +4,16 @@
 hosts=("$@")
 session_name="tmux-ssh-$$"
 
-while getopts ':t' args; do
+while getopts ':t:' args; do
   case "$args" in
     t)
       tty="$OPTARG"
       ;;
   esac
 done
+shift $((OPTIND - 1))
 
-[ "$tty" =~ '^(config|kero)$' ] || { echo "unknown args: $tty" 1>&2; exit 1; }
+[[ "$tty" =~ ^(config|kero)$ ]] || { echo "unknown args: $tty" 1>&2; exit 1; }
 
 tmux start-server
 
