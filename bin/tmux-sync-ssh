@@ -1,28 +1,53 @@
 #!/usr/bin/env bash
 # https://github.com/y-uuki/opstools
 
+usage() {
+  cat <<EOT
+Usage: $(basename $0) -t tty-server -f file [-h]
+
+Options:
+
+    -t tty-server  tty-server (config or kero)
+    -f file        host file
+    -h             Print this help
+EOT
+}
+
 hosts=("$@")
 session_name="tmux-ssh-$$"
 
-while getopts ':t:' args; do
+while getopts ':t:f:h' args; do
   case "$args" in
     t)
       tty="$OPTARG"
+      ;;
+    f)
+      host_lists="$OPTARG"
+      ;;
+    h)
+      usage
+      exit 0
+      ;;
+    *)
+      usage
+      exit 1
       ;;
   esac
 done
 shift $((OPTIND - 1))
 
-[[ "$tty" =~ ^(config|kero)$ ]] || { echo "unknown args: $tty" 1>&2; exit 1; }
+[[ -n "$tty" && -n "$_file" ]] || { echo "please specify -t or -f args" 1>&2; usage; exit 1; }
+[[ "$tty" =~ ^(config|kero)$ ]] || { echo "unknown args for -t : $tty" 1>&2; usage; exit 1; }
+[[ -f "$host_lists" ]] || { echo "not found: $host_list" 1>&2; usage; exit 1; }
 
 tmux start-server
 
 is_first="true"
-for host in ${hosts[@]}; do
+for _host in $(grep -vE '^(#|$)' "$host_lists"); do
   if [[ "$tty" == "config" ]]; then
-    cmd="ssh -t config 'ssh -o StrictHostKeyChecking=no root@$host'"
+    cmd="ssh -t config 'ssh -o StrictHostKeyChecking=no root@$_host'"
   else
-    cmd="ssh -t kero 'sudo ssh -o StrictHostKeyChecking=no $host'"
+    cmd="ssh -t kero 'sudo ssh -o StrictHostKeyChecking=no $_host'"
   fi
 
   if [[ "$is_first" == "true" ]]; then
