@@ -547,7 +547,7 @@ function! RTrim()
     :call setpos(".", s:cursor)
 endfunction
 
-autocmd! BufWritePre *.md :call RTrim()
+autocmd! BufWritePre * :call RTrim()
 
 " set filetype to markdown when opening .md file.
 " why not default? default syntax is modula2...
