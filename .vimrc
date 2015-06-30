@@ -73,8 +73,8 @@ set nrformats=
 "set cursorline
 
 " map leader
-let mapleader = ","
-let g:mapleader = ","
+let mapleader = "\<Space>"
+let g:mapleader = "\<Space>"
 
 " cause files to be automatically saved when you switch buffers
 " and external commands
