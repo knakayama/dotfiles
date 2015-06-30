@@ -239,6 +239,8 @@ NeoBundle 'godlygeek/tabular'
 NeoBundle 'markcornick/vim-terraform'
 NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'elzr/vim-json'
+NeoBundle 'terryma/vim-expand-region'
+NeoBundle 'mmozuras/vim-github-comment'
 NeoBundleLazy 'supermomonga/neocomplete-rsense.vim', { 'autoload' : {
         \ 'insert' : 1,
         \ 'filetypes': 'ruby',
@@ -385,6 +387,14 @@ let g:vim_json_syntax_conceal = 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = '|'
 let g:airline#extensions#tabline#left_alt_sep = ' '
+
+" terryma/vim-expand-region
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
+" mmozuras/vim-github-comment
+let g:github_user = 'knakayama'
+let g:github_comment_open_browser = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " colors , fonts and gui settings
