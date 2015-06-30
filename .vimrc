@@ -481,6 +481,9 @@ nnoremap <leader>es :source $MYVIMRC<CR>
 " ack integration with vim
 "set grepprg=ack\ -a
 
+" fast saving
+nnoremap <Leader>w :w<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Text, tab and indent related
 """"""""""""""""""""""""""""""""""""""""""""""""""
