@@ -6,7 +6,6 @@ usage() {
 Usage: $(basename $0) -t tty-server -f file [-h]
 
 Options:
-
     -t tty-server  tty-server (config or kero)
     -f file        host file
     -h             Print this help
@@ -36,7 +35,7 @@ while getopts ':t:f:h' args; do
 done
 shift $((OPTIND - 1))
 
-[[ -n "$tty" && -n "$_file" ]] || { echo "please specify -t or -f args" 1>&2; usage; exit 1; }
+[[ -n "$tty" || -n "$_file" ]] || { echo "please specify -t or -f args" 1>&2; usage; exit 1; }
 [[ "$tty" =~ ^(config|kero)$ ]] || { echo "unknown args for -t : $tty" 1>&2; usage; exit 1; }
 [[ -f "$host_lists" ]] || { echo "not found: $host_list" 1>&2; usage; exit 1; }
 
