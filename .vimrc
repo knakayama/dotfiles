@@ -372,7 +372,7 @@ let g:ansible_options = {'ignore_blank_lines': 0}
 "2. Attempt open browser with openbrowser#open()
 let g:previm_open_cmd = 'open -a Firefox'
 "let g:previm_enable_realtime = 1
-noremap <leader>m :PrevimOpen<CR>
+noremap <leader>M :PrevimOpen<CR>
 
 " tabular
 vnoremap <leader>t :'<,'>Tabularize /=<CR>
