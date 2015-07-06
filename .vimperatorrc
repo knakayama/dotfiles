@@ -124,3 +124,6 @@ ignorekeys add www\.rememberthemilk\.com -except <C-n>,<C-p>,j,k,o,t,f,:
 
 " feedly
 ignorekeys add feedly\.com -except <C-n>,<C-p>,t,f,:
+
+" chatwork
+ignorekeys add kcw\.kddi\.ne\.jp -except <C-n>,<C-p>,t,f,:
