@@ -120,7 +120,7 @@ qmark m http://mail.google.com/mail/
 ignorekeys add mail\.google\.com -except <C-n>,<C-p>,j,k,o,t,f,:
 
 " remember the milk
-ignorekeys add www\.rememberthemilk\.com -except <C-n>,<C-p>,j,k,o,t,f,:
+ignorekeys add www\.rememberthemilk\.com -except <C-n>,<C-p>,j,k,o,f,:
 
 " feedly
 ignorekeys add feedly\.com -except <C-n>,<C-p>,t,f,:
