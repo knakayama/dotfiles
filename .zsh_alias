@@ -28,7 +28,7 @@ alias m="[[ -d ${HOME}/tmp/$(date '+%Y%m%d') ]] && \
 
 # quick search word in zshall
 # http://qiita.com/mollifier/items/14bbea7503910300b3ba
-if man -aW zshall >/dev/null 2>&1; then
+if man -aW zshall &>/dev/null; then
   function zman() {
     PAGER="less --hilite-search --search-skip-screen '+/^       "$1"'" man zshall
   }
