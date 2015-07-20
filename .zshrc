@@ -29,7 +29,7 @@ path=(${HOME}/bin(N-/) $path)
 # rbenv
 path=(${HOME}/.rbenv/shims(N-/) $path)
 path=(${HOME}/.rbenv/bin(N-/) $path)
-if type rbenv >/dev/null 2>&1; then
+if type rbenv &>/dev/null; then
   eval "$(rbenv init -)"
 fi
 
@@ -237,7 +237,7 @@ if [[ "$OSTYPE" =~ "darwin*" ]]; then
 fi
 
 # editor
-if type vim >/dev/null 2>&1; then
+if type vim &>/dev/null; then
   export EDITOR="vim"
 else
   export EDITOR="vi"
@@ -340,7 +340,7 @@ if [[ -f "${HOME}/.phpbrew/bashrc" ]]; then
 fi
 
 ## aws
-#if type brew >/dev/null 2>&1 && [[ -f $(brew --prefix)/share/zsh/site-functions/_aws ]]; then
+#if type brew &>/dev/null && [[ -f $(brew --prefix)/share/zsh/site-functions/_aws ]]; then
 #  source "$(brew --prefix)/share/zsh/site-functions/_aws"
 #fi
 
