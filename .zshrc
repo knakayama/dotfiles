@@ -51,9 +51,7 @@ path=($path ${HOME}/rsense-0.3/bin(N-/))
 ####################
 
 # autoload func path
-if [[ -x "$(which brew 2>/dev/null)" ]]; then
-  fpath=($(brew --prefix)/share/zsh/site-functions(N-/) $fpath)
-fi
+fpath=($(brew --prefix)/share/zsh/site-functions(N-/) $fpath)
 
 # original zsh completions
 fpath=(${HOME}/.zsh/completions(N-/) $fpath)
