@@ -10,7 +10,8 @@ EOT
 
   if [[ $# -eq 1 ]]; then
     mutt \
-      -e "set my_dir = ${HOME}/.mutt-${my_dir}" \
+      -e "set my_dir = ${HOME}/.mutt-${my_dir}"  \
+      -e "source ${HOME}/.mutt/muttrc"           \
       -e "source ${HOME}/.mutt-${my_dir}/muttrc"
   else
     -mt-usage
