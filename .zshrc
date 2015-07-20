@@ -34,7 +34,7 @@ if type rbenv &>/dev/null; then
 fi
 
 # go
-if [[ -x "$(which go)" ]]; then
+if [[ -x "$(which go 2>/dev/null)" ]]; then
   export GOPATH="${HOME}/go/vendor"
   [[ -d "${HOME}/go" ]] || mkdir "${HOME}/go"
   path=($path ${GOPATH}/bin)
@@ -302,17 +302,12 @@ if [[ -f "${HOME}/.zsh/plugin/auto-fu.zsh/auto-fu.zsh" ]]; then
 fi
 
 # w3m
-if [[ -x "$(which w3m)" ]]; then
+if [[ -x "$(which w3m 2>/dev/null)" ]]; then
   export HTTP_HOME="http://www.google.com"
 fi
 
-# perlbrew
-if [[ -d "${HOME}/perl5/perlbrew/etc/bashrc" ]]; then
-  source "${HOME}/perl5/perlbrew/etc/bashrc"
-fi
-
 # direnv
-if [[ -x "$(which direnv)" ]]; then
+if [[ -x "$(which direnv 2>/dev/null)" ]]; then
   eval "$(direnv hook zsh)"
 fi
 
