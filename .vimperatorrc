@@ -113,6 +113,10 @@ nnoremap ! :set invusermode<CR>
 " reload .vimperatorrc
 nnoremap ,r :source ~/.vimperatorrc<CR>
 
+""""""""""""""""""
+" Misc
+""""""""""""""""""
+
 "qmark
 qmark m http://mail.google.com/mail/
 
