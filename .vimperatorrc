@@ -117,16 +117,16 @@ nnoremap ,r :source ~/.vimperatorrc<CR>
 qmark m http://mail.google.com/mail/
 
 " Gmail
-ignorekeys add mail\.google\.com -except <C-n>,<C-p>,j,k,o,t,f,:
+ignorekeys add mail\.google\.com -except <C-n>,<C-p>,t,f,:
 
 " remember the milk
 ignorekeys add www\.rememberthemilk\.com -except <C-n>,<C-p>,:
 
 " feedly
-ignorekeys add feedly\.com -except <C-n>,<C-p>,t,f,:
+ignorekeys add feedly\.com -except <C-n>,<C-p>,t,f,d,:
 
 " chatwork
 ignorekeys add kcw\.kddi\.ne\.jp -except <C-n>,<C-p>,j,k,o,t,f,:
 
 " slack
-ignorekeys add slack\.com -except <C-n>,<C-p>,j,k,o,t,f,:
+ignorekeys add slack\.com -except <C-n>,<C-p>
