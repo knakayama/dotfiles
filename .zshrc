@@ -323,7 +323,7 @@ if type pyenv &>/dev/null; then
 fi
 
 # plenv
-if which plenv &>/dev/null; then
+if type plenv &>/dev/null; then
   eval "$(plenv init -)"
 fi
 
