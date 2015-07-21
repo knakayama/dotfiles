@@ -345,8 +345,8 @@ let g:gist_detect_filetype = 1
 "" open-browser
 " If it looks like URI, open URI under the cursor
 " Otherwise, search word under the cursor
-nmap <leader>w <Plug>(openbrowser-smart-search)
-vmap <leader>w <Plug>(openbroswer-smart-search)
+nmap <leader>W <Plug>(openbrowser-smart-search)
+"vmap <leader>w <Plug>(openbroswer-smart-search)
 
 "" quickrun
 " horizontal split
