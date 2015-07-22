@@ -337,7 +337,7 @@ fi
 #  source "$(brew --prefix)/share/zsh/site-functions/_aws"
 #fi
 
-# boot2docker
-if type boot2docker >/dev/null 2>&1 && [[ "$(boot2docker status)" == "running" ]]; then
-  eval "$(boot2docker shellinit 2>/dev/null)"
-fi
+## boot2docker
+#if type boot2docker >/dev/null 2>&1 && [[ "$(boot2docker status)" == "running" ]]; then
+#  eval "$(boot2docker shellinit 2>/dev/null)"
+#fi
