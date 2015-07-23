@@ -27,8 +27,8 @@ typeset -U path cdpath fpath manpath
 path=(${HOME}/bin(N-/) $path)
 
 # rbenv
-path=(${HOME}/.rbenv/shims(N-/) $path)
-path=(${HOME}/.rbenv/bin(N-/) $path)
+#path=(${HOME}/.rbenv/shims(N-/) $path)
+#path=(${HOME}/.rbenv/bin(N-/) $path)
 if type rbenv &>/dev/null; then
   eval "$(rbenv init -)"
 fi
