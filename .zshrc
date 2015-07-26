@@ -310,24 +310,27 @@ if [[ -f "${HOME}/.nvm/bash_completion" ]]; then
   source "${HOME}/.nvm/bash_completion"
 fi
 
-# rbenv
-if type rbenv &>/dev/null; then
-  eval "$(rbenv init -)"
-fi
+# prevent duplicate path
+if [[ -n "$TMUX" ]]; then
+  # rbenv
+  if type rbenv &>/dev/null; then
+    eval "$(rbenv init -)"
+  fi
 
-# pyenv
-if type pyenv &>/dev/null; then
-  eval "$(pyenv init -)";
-fi
+  # pyenv
+  if type pyenv &>/dev/null; then
+    eval "$(pyenv init -)";
+  fi
 
-# plenv
-if type plenv &>/dev/null; then
-  eval "$(plenv init -)"
-fi
+  # plenv
+  if type plenv &>/dev/null; then
+    eval "$(plenv init -)"
+  fi
 
-# phpbrew
-if [[ -f "${HOME}/.phpbrew/bashrc" ]]; then
-  source "${HOME}/.phpbrew/bashrc"
+  # phpbrew
+  if [[ -f "${HOME}/.phpbrew/bashrc" ]]; then
+    source "${HOME}/.phpbrew/bashrc"
+  fi
 fi
 
 ## aws
