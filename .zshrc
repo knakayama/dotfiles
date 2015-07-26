@@ -26,13 +26,6 @@ typeset -U path cdpath fpath manpath
 # local utils
 path=(${HOME}/bin(N-/) $path)
 
-# rbenv
-#path=(${HOME}/.rbenv/shims(N-/) $path)
-#path=(${HOME}/.rbenv/bin(N-/) $path)
-if type rbenv &>/dev/null; then
-  eval "$(rbenv init -)"
-fi
-
 # go
 if [[ -x "$(which go 2>/dev/null)" ]]; then
   export GOPATH="${HOME}/go/vendor"
@@ -315,6 +308,11 @@ if [[ -f "${HOME}/.nvm/nvm.sh" ]]; then
 fi
 if [[ -f "${HOME}/.nvm/bash_completion" ]]; then
   source "${HOME}/.nvm/bash_completion"
+fi
+
+# rbenv
+if type rbenv &>/dev/null; then
+  eval "$(rbenv init -)"
 fi
 
 # pyenv
