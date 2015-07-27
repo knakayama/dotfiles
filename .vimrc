@@ -403,30 +403,6 @@ let g:github_comment_open_browser = 1
 syntax enable
 syntax on
 
-" :color -> confirm used color
-" must specify colorscheme after loading Vundle
-" https://github.com/gmarik/vundle/issues/14
-if has('gui_running')
-    colorscheme wombat
-" http://wildlifesanctuary.blog38.fc2.com/blog-entry-180.html
-" When colors_name is wombat, change visual mode color
-    if g:colors_name ==? 'wombat'
-        hi Visual gui=none guifg=khaki guibg=olivedrab
-    endif
-endif
-
-" Fonts
-" font_name:font_size(not windows platform)
-if has('gui_running')
-    set guifont=Ricty\ bold\ 15
-endif
-
-" GUI settings
-" Do not use GUI settings
-if has('gui_running')
-    set guioptions=
-endif
-
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Python section
 """"""""""""""""""""""""""""""""""""""""""""""""""
