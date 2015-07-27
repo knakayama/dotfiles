@@ -554,7 +554,7 @@ cnoremap <C-n> <Down>
 " remove trailing space
 function! RTrim()
     let s:cursor = getpos(".")
-    if &filetype != "markdown"
+    if &filetype != "markdown" && !match(expand("%"), "vimperator-memo")
         :%s/\s\+$//ge
     endif
     :call setpos(".", s:cursor)
