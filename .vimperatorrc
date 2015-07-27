@@ -40,7 +40,7 @@ style! -name=commandline-ime chrome://* #liberator-commandline-command input {im
 set focuscontent
 
 " editor
-"set editor="xterm -e /usr/bin/vim -f"
+set editor="/usr/local/bin/mvim -f"
 
 "Change browser title to firefox
 set titlestring=Firefox
