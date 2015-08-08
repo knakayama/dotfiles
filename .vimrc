@@ -250,6 +250,7 @@ NeoBundleLazy 'supermomonga/neocomplete-rsense.vim', { 'autoload' : {
         \ 'filetypes': 'ruby',
         \ }}
 NeoBundle 'bling/vim-airline'
+NeoBundle 'fatih/vim-go'
 
 " You can specify revision/branch/tag.
 "NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
@@ -342,6 +343,11 @@ if executable('rubocop')
   let g:syntastic_ruby_checkers = ['rubocop']
 endif
 
+" http://qiita.com/izumin5210/items/1f3c312edd7f0075b09c
+let g:syntastic_mode_map = { 'mode': 'passive',
+    \ 'active_filetypes': ['go'] }
+let g:syntastic_go_checkers = ['go', 'golint']
+
 "" gist-vim
 let g:gist_open_browser_after_post = 1
 let g:gist_detect_filetype = 1
@@ -399,6 +405,20 @@ vmap <C-v> <Plug>(expand_region_shrink)
 " mmozuras/vim-github-comment
 let g:github_user = 'knakayama'
 let g:github_comment_open_browser = 1
+
+" fatih/vim-go
+autocmd FileType go nmap <leader>r <Plug>(go-run)
+autocmd FileType go nmap <leader>b <Plug>(go-build)
+autocmd FileType go nmap <leader>t <Plug>(go-test)
+autocmd FileType go nmap <leader>c <Plug>(go-coverage)
+" highlighting
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+" By default vim-go shows errors for the fmt command, to disable it:
+let g:go_fmt_fail_silently = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " colors , fonts and gui settings
@@ -558,3 +578,6 @@ autocmd BufRead,BufNewFile Vagrantfile set filetype=ruby
 
 " mutt
 "autocmd BufRead *tmp/mutt-* set tw=72
+
+" go
+autocmd FileType go set shiftwidth=4 tabstop=4 noexpandtab
