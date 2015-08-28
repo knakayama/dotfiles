@@ -33,7 +33,7 @@ set noerrorbells
 " autoselect: visual modeでも同じ挙動にする場合
 " "*Y copy line to clipboard
 " "*p paste from clipboard
-set clipboard=unnamed,autoselect
+"set clipboard=unnamed,autoselect
 
 "show status line
 set laststatus=2
