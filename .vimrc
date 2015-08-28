@@ -354,10 +354,9 @@ let g:gist_open_browser_after_post = 1
 let g:gist_detect_filetype = 1
 
 "" open-browser
-" If it looks like URI, open URI under the cursor
-" Otherwise, search word under the cursor
-nmap <leader>W <Plug>(openbrowser-smart-search)
-"vmap <leader>w <Plug>(openbroswer-smart-search)
+" If it looks like URI, open URI under the cursor Otherwise, search word under the cursor
+nmap <leader>w <Plug>(openbrowser-smart-search)
+vmap <leader>W <Plug>(openbroswer-smart-search)
 
 "" quickrun
 " horizontal split
@@ -368,13 +367,6 @@ let g:quickrun_config['markdown'] = {
     \ 'command': 'markdown_py',
     \ 'cmdopt': '-e UTF8',
     \ }
-
-" http://tech.toshiya240.com/articles/2014/06/matchit-vim/
-source $VIMRUNTIME/macros/matchit.vim
-augroup matchit
-  autocmd!
-  autocmd FileType ruby let b:match_words = '\<\(module\|class\|def\|begin\|do\|if\|unless\|case\)\>:\<\(elsif\|when\|rescue\)\>:\<\(else\|ensure\)\>:\<end\>'
-augroup END
 
 " vim-ansible-yaml
 let g:ansible_options = {'ignore_blank_lines': 0}
@@ -520,7 +512,6 @@ set smartindent " si
 " 折り返し検索を有効にする
 "set wrapscan
 
-
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " backspace problem
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -540,11 +531,11 @@ set backspace=2
 " key mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
-nnoremap <Space>m :<C-u>marks<CR>
-nnoremap <Space>r :<C-u>registers<CR>
-nnoremap <Space>l :<C-u>ls<CR>
-nnoremap <Space>cd :<C-u>cd %:h<CR>
-nnoremap <leader>ls :<C-u>!ls -F<CR>
+"nnoremap <Space>m :<C-u>marks<CR>
+"nnoremap <Space>r :<C-u>registers<CR>
+"nnoremap <Space>l :<C-u>ls<CR>
+"nnoremap <Space>cd :<C-u>cd %:h<CR>
+"nnoremap <leader>ls :<C-u>!ls -F<CR>
 
 " Tip 34: Recall Commands from History
 cnoremap <C-p> <Up>
