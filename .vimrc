@@ -252,6 +252,8 @@ NeoBundleLazy 'supermomonga/neocomplete-rsense.vim', { 'autoload' : {
         \ }}
 NeoBundle 'bling/vim-airline'
 NeoBundle 'fatih/vim-go'
+NeoBundle 'davidhalter/jedi-vim'
+NeoBundle 'nvie/vim-flake8'
 
 " You can specify revision/branch/tag.
 "NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
@@ -423,43 +425,6 @@ syntax enable
 syntax on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
-" Python section
-""""""""""""""""""""""""""""""""""""""""""""""""""
-" fast editing
-nnoremap <leader>ph :!python % -h<CR>
-nnoremap <leader>pp :!python %<CR>
-nnoremap <leader>pf :<C-u>!flake8 %<CR>
-nnoremap <leader>pfv :<C-u>!flake8 --show-pep8 %<CR>
-nnoremap <leader>pt :call setline(".", "# coding: utf-8")<CR>
-"nnoremap <leader>ph :QuickRun python -args "-h"<CR>
-"nnoremap <leader>pp :QuickRun python<CR>
-" これだとsourceがbash commandだと解釈されてしまう〜
-"nnoremap <leader>vs :QuickRun vim
-"nnoremap <leader>vs :source %<CR>
-
-"command! -nargs=0 QuickPython call s:quick_run_python()
-"function! s:quick_run_python()
-"    let l:arg_name = input('Args: ')
-"    :QuickRun python -command 'test'
-"endfunction
-"nnoremap <leader>pr :QuickPython<CR>
-
-" http://d.hatena.ne.jp/natsumesouxx/20101229/1293609386
-" http://www.vim.org/scripts/script.php?script_id=2421
-" for pysmell completion
-"autocmd FileType python setlocal omnifunc=pysmell#Complete
-" for pythoncomplete completion
-autocmd! FileType python set omnifunc=pythoncomplete#Complete
-"" execute file on editing
-"function! s:Exec()
-"    exe "!" . &ft . " %"
-"endfunction
-"command! Exec call <SID>Exec()
-""map <silent><C-P> :call <SID>Exec()<CR>
-""nnoremap <silent><C-p> :<C-u>execute'!'&l:filetype'&'<Return>
-"nnoremap <silent> <C-p> :<C-u>execute '!' &l:filetype '%'<Return>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""
 " General, keymap
 """"""""""""""""""""""""""""""""""""""""""""""""""
 "sets how many lines of history Vim has to remenber
@@ -575,3 +540,6 @@ autocmd BufRead,BufNewFile Vagrantfile set filetype=ruby
 
 " go
 autocmd FileType go set shiftwidth=4 tabstop=4 noexpandtab
+
+" python
+autocmd BufWrite *.py :call Flake8()
