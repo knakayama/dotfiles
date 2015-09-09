@@ -542,4 +542,4 @@ autocmd BufRead,BufNewFile Vagrantfile set filetype=ruby
 autocmd FileType go set shiftwidth=4 tabstop=4 noexpandtab
 
 " python
-autocmd BufWrite *.py :call Flake8()
+autocmd BufWritePost *.py call Flake8()
