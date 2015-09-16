@@ -254,6 +254,7 @@ NeoBundle 'bling/vim-airline'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'nvie/vim-flake8'
+NeoBundle 'terryma/vim-multiple-cursors'
 
 " You can specify revision/branch/tag.
 "NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
@@ -416,6 +417,21 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 " By default vim-go shows errors for the fmt command, to disable it:
 let g:go_fmt_fail_silently = 1
+
+" vim-multiple-cursors
+" Called once right before you start selecting multiple cursors
+function! Multiple_cursors_before()
+  if exists(':NeoCompleteLock')==2
+    exe 'NeoCompleteLock'
+  endif
+endfunction
+
+" Called once only when the multiple selection is canceled (default <Esc>)
+function! Multiple_cursors_after()
+  if exists(':NeoCompleteUnlock')==2
+    exe 'NeoCompleteUnlock'
+  endif
+endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " colors , fonts and gui settings
