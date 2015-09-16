@@ -358,7 +358,7 @@ let g:gist_detect_filetype = 1
 
 "" open-browser
 " If it looks like URI, open URI under the cursor Otherwise, search word under the cursor
-nmap <leader>w <Plug>(openbrowser-smart-search)
+nmap <leader>W <Plug>(openbrowser-smart-search)
 vmap <leader>W <Plug>(openbroswer-smart-search)
 
 "" quickrun
@@ -469,6 +469,7 @@ nnoremap <leader>es :source $MYVIMRC<CR>
 
 " fast saving
 nnoremap <Leader>w :w<CR>
+nnoremap <Leader>z :wqa<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Text, tab and indent related
