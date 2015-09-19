@@ -524,6 +524,10 @@ set backspace=2
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
+" toggle paste mode
+nnoremap <Leader>p :set paste<CR>
+nnoremap <Leader>P :set nopaste<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " auto
 """"""""""""""""""""""""""""""""""""""""""""""""""
