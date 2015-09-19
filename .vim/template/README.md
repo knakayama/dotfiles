@@ -17,7 +17,7 @@ Name
 
 # License
 
-[XXX](https://github.com/knakayama/XXX/blob/master/LICENSE)
+MIT
 
 # Author
 
