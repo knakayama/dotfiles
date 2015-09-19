@@ -144,7 +144,6 @@ if [[ -f "${HOME}/.zsh/plugin/antigen.zsh/antigen.zsh" ]]; then
   antigen bundle gunzy83/packer-zsh-completion
   antigen bundle mollifier/anyframe
   antigen bundle Tarrasch/zsh-bd
-  antigen bundle knakayama/fuc
   antigen bundle knakayama/gzp
   antigen bundle knakayama/ghq-util
   antigen bundle knakayama/zsh-git-prompt
@@ -169,10 +168,6 @@ if [[ -f "${HOME}/.zsh/plugin/antigen.zsh/antigen.zsh" ]]; then
   bindkey '^xe' anyframe-widget-insert-git-branch
   bindkey '^xt' anyframe-widget-tmux-attach
   bindkey '^xb' anyframe-widget-cdr
-
-  bindkey '^x^x' fuc-widget-execute-fuc
-  bindkey '^x^i' fuc-widget-put-fuc
-  export FUC_PATH="${HOME}/.ghq/github.com/knakayama/my-fuc"
 
   bindkey '^x^g' gzp-widget-open-repo
   bindkey '^x^w' gzp-widget-open-starred
