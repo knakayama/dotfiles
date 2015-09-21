@@ -131,6 +131,3 @@ ignorekeys add feedly\.com -except <C-n>,<C-p>,t,f,d,:
 
 " chatwork
 ignorekeys add kcw\.kddi\.ne\.jp -except <C-n>,<C-p>,:
-
-" slack
-ignorekeys add slack\.com -except <C-n>,<C-p>
