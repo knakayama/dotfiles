@@ -335,3 +335,9 @@ fi
 #if type brew &>/dev/null && [[ -f $(brew --prefix)/share/zsh/site-functions/_aws ]]; then
 #  source "$(brew --prefix)/share/zsh/site-functions/_aws"
 #fi
+
+# workaround:
+# set shell environment
+if [[ -n "$TMUX" ]]; then
+  tmux set-environment -g PATH "$PATH"
+fi
