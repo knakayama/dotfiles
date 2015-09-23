@@ -176,5 +176,3 @@ ignorekeys add kcw\.kddi\.ne\.jp -except <C-n>,<C-p>,:
 """"""""""""""""""
 
 echo "~/.vimperatorrc loaded."
-
-" vim: set ft=vim :
