@@ -2,35 +2,9 @@
 " Plugin Settings
 """""""""""""""""
 
-" plugin loader
-javascript <<EOT
-liberator.globalVariables.plugin_loader_plugins = <>
-    _libly
-    feedSomeKeys_3
-    ime_controller
-    //migemo_completion
-    //migemo_hint
-    multi_requester
-    readitlater
-    statusline-toolbar
-    escape-from-iframe
-    copy
-</>.toString().split(/\s+/).filter(function(n) n);
-EOT
-let g:plugin_loader_roots="~/.vimperator/plugin/vimperator-plugins"
-
-" nextlink.js
-let g:nextlink_follow="true"
-
-" pre
-command! -nargs=+ lazy autocmd VimperatorEnter .*  <args>
-
-" ime_controller.js
-let g:ex_ime_mode="inactive"
-let g:textarea_ime_mode="inactive"
-
-" IME off on command-mode
-style! -name=commandline-ime chrome://* #liberator-commandline-command input {ime-mode: inactive;}
+source ~/.vimperator/vimppm/plugin/vimppm.js
+vimppm 'copy.js'
+vimppm 'caret-hint.js'
 
 """""""""""""""""
 " Normal Settings
@@ -59,7 +33,7 @@ set tabnumbers
 set hintchars=abcdefghijklmnopqrstuvwxyz
 
 " show tab
-set gui=noaddons,nomenu,bookmarks,navigation,tabs
+set gui=noaddons,nomenu,nobookmarks,nonavigation,tabs
 
 " items which are completed at the :open prompts
 " s search engines and keyword URLs
@@ -87,17 +61,19 @@ set newtab=all
 " Key Map Settings
 """"""""""""""""""
 
-" C-h for firefox 1.2
-noremap <C-h> <BS>
-inoremap <C-h> <BS>
-cnoremap <C-h> <BS>
+" map leader to comma
+noremap , <Leader>
 
-"j/kでのスクロール幅を1行から5行に変更
+" tweak scroll length
 noremap j 5j
 noremap k 5k
 
+" H -> left forward
+" L -> right forward
 " h -> forward
 " l -> backward
+nnoremap H 5h
+nnoremap L 5l
 nnoremap h <A-Left>
 nnoremap l <A-Right>
 
@@ -105,20 +81,63 @@ nnoremap l <A-Right>
 nnoremap U :undo<Space>
 
 " add bookmark with dialog
-nnoremap ,a <esc>:dialog addbookmark<CR>
+nnoremap <Leader>b <esc>:dialog addbookmark<CR>
+
+" easy access to downloads
+nnoremap <Leader>l :downloads<CR>
+
+" easy access to addons
+nnoremap <Leader>a :addons<CR>
+
+" easy access to preferences
+nnoremap <Leader>p :preferences<CR>
 
 " switch css style sheet with ! command
 nnoremap ! :set invusermode<CR>
 
-" reload .vimperatorrc
-nnoremap ,r :source ~/.vimperatorrc<CR>
+" http://blog.ruedap.com/2010/12/31/vimperator-caret-hint-google
+" fast search
+" note:
+" <Silent>: ommit stdout to cmd line
+vnoremap <Silent> <C-g> y<Esc><Esc>P
+
+" Restart browser
+nnoremap <C-r> :restart<CR>
+
+" Reload ~/.vimperatorrc
+nnoremap <Leader>r :source ~/.vimperatorrc<CR>
+
+" http://chroju89.hatenablog.jp/entry/2014/02/09/102914
+"js<<EOT
+"if(liberator.has("MacUnix")) {
+"  liberator.execute("nnoremap d <M-w>");
+"} else {
+"  liberator.execute("nnoremap d <C-w>");
+"}
+"EOT
 
 """"""""""""""""""
-" Misc
+" Mark
 """"""""""""""""""
 
-"qmark
-qmark m http://mail.google.com/mail/
+" Gmail
+qmark m https://mail.google.com/mail/
+
+" Dropbox
+qmark d https://www.dropbox.com
+
+" feedly
+qmark f https://feedly.com
+
+" Remember the milk
+qmark r https://www.rememberthemilk.com
+
+" My GitHub account
+qmark k https://github.com/knakayama
+
+""""""""""""""""""
+" Ignore keys
+""""""""""""""""""
 
 " Gmail
 ignorekeys add mail\.google\.com -except <C-n>,<C-p>,t,f,:
@@ -131,3 +150,31 @@ ignorekeys add feedly\.com -except <C-n>,<C-p>,t,f,d,:
 
 " chatwork
 ignorekeys add kcw\.kddi\.ne\.jp -except <C-n>,<C-p>,:
+
+""""""""""""""""""
+" about:config
+""""""""""""""""""
+" http://chroju89.hatenablog.jp/entry/2014/02/09/102914
+"
+"set! network.dns.disableIPv6=true
+"set! network.http.pipelining=true
+"set! network.http.proxy.pipelining=true
+"set! network.http.pipelining.maxrequests=8
+"set! network.http.max-connections-per-server=32
+"set! security.dialog_enable_delay=0
+"set! browser.tabs.closeWindowWithLastTab=false
+"set! browser.cache.memory.capacity=16384
+"set! browser.sessionstore.interval=500000
+"set! dom.popup_maximum=50
+"set! browser.cache.disk.enable=false
+"set! browser.cache.memory.capacity=-1
+"set! layout.spellcheckDefault=0
+"set! javascript.options.mem.high_water_mark=32
+
+""""""""""""""""""
+" about:config
+""""""""""""""""""
+
+echo "~/.vimperatorrc loaded."
+
+" vim: set ft=vim :
