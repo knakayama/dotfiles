@@ -5,6 +5,7 @@
 source ~/.vimperator/vimppm/plugin/vimppm.js
 vimppm 'copy.js'
 vimppm 'caret-hint.js'
+vimppm 'history-search-backward.js'
 
 """""""""""""""""
 " Normal Settings
@@ -78,10 +79,13 @@ nnoremap h <A-Left>
 nnoremap l <A-Right>
 
 " open web in undoes
-nnoremap U :undo<Space>
+nnoremap <Leader>u :undo<Space>
 
 " add bookmark with dialog
-nnoremap <Leader>b <esc>:dialog addbookmark<CR>
+"nnoremap <Leader>b <esc>:dialog addbookmark<CR>
+
+" fast access to bookmarks
+nnoremap <Leader>b :bmarks<Space>
 
 " easy access to downloads
 nnoremap <Leader>l :downloads<CR>
@@ -102,10 +106,16 @@ nnoremap ! :set invusermode<CR>
 vnoremap <Silent> <C-g> y<Esc><Esc>P
 
 " Restart browser
-nnoremap <C-r> :restart<CR>
+nnoremap <Leader>R :restart<CR>
 
 " Reload ~/.vimperatorrc
 nnoremap <Leader>r :source ~/.vimperatorrc<CR>
+
+" fast access to history
+nnoremap <Leader>h :history<Space>
+
+" fast save and close
+nnoremap <Leader>z :wqall<CR>
 
 " http://chroju89.hatenablog.jp/entry/2014/02/09/102914
 "js<<EOT
