@@ -259,6 +259,10 @@ NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'superbrothers/vim-vimperator'
 "NeoBundle 'sjl/gundo.vim'
 "NeoBundle 'vim-utils/vim-vertical-move'
+NeoBundle 'rhysd/github-complete.vim'
+NeoBundle 'rhysd/clever-f.vim'
+NeoBundle 'jaxbot/github-issues.vim'
+NeoBundle 'tpope/vim-fugitive'
 
 " You can specify revision/branch/tag.
 "NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
@@ -437,6 +441,9 @@ function! Multiple_cursors_after()
     exe 'NeoCompleteUnlock'
   endif
 endfunction
+
+" github-complete.vim
+let g:github_complete_emoji_japanese_workaround = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " colors , fonts and gui settings
