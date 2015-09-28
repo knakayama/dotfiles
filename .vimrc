@@ -258,6 +258,7 @@ NeoBundle 'nvie/vim-flake8'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'superbrothers/vim-vimperator'
 "NeoBundle 'sjl/gundo.vim'
+"NeoBundle 'vim-utils/vim-vertical-move'
 
 " You can specify revision/branch/tag.
 "NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
