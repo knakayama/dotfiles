@@ -159,7 +159,7 @@ ignorekeys add www\.rememberthemilk\.com -except <C-n>,<C-p>,:
 ignorekeys add feedly\.com -except <C-n>,<C-p>,t,f,d,:
 
 " chatwork
-ignorekeys add kcw\.kddi\.ne\.jp -except <C-n>,<C-p>,:
+ignorekeys add kcw\.kddi\.ne\.jp -except <C-n>,<C-p>,t,d,:
 
 """"""""""""""""""
 " about:config
