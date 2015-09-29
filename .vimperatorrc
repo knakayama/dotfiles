@@ -6,6 +6,7 @@ source ~/.vimperator/vimppm/plugin/vimppm.js
 vimppm 'copy.js'
 vimppm 'caret-hint.js'
 vimppm 'history-search-backward.js'
+vimppm 'pushfind.js'
 
 """""""""""""""""
 " Normal Settings
@@ -125,6 +126,10 @@ nnoremap <Leader>z :wqall<CR>
 "  liberator.execute("nnoremap d <C-w>");
 "}
 "EOT
+
+" search command history like emacs mode
+cnoremap <C-p> <Down>
+cnoremap <C-n> <Up>
 
 """"""""""""""""""
 " Mark
