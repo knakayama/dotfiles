@@ -115,9 +115,6 @@ nnoremap <Leader>r :source ~/.vimperatorrc<CR>
 " fast access to history
 nnoremap <Leader>h :history<Space>
 
-" fast save and close
-nnoremap <Leader>z :wqall<CR>
-
 " http://chroju89.hatenablog.jp/entry/2014/02/09/102914
 "js<<EOT
 "if(liberator.has("MacUnix")) {
