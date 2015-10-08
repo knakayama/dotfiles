@@ -131,25 +131,23 @@ add-zsh-hook chpwd chpwd_recent_dirs
 zstyle ':chpwd:*' recent-dirs-max 200
 
 ####################
-# antigen
+# antibody
 ####################
 
-if [[ -f "${HOME}/.zsh/plugin/antigen.zsh/antigen.zsh" ]]; then
-  source "${HOME}/.zsh/plugin/antigen.zsh/antigen.zsh"
+if [[ -f "${HOME}/.antibody/antibody.zsh" ]]; then
+  source "${HOME}/.antibody/antibody.zsh"
 
   # too slow
-  #antigen bundle zsh-users/zsh-syntax-highlighting
-  antigen bundle zsh-users/zsh-history-substring-search
-  antigen bundle zsh-users/zsh-completions src
-  antigen bundle gunzy83/packer-zsh-completion
-  antigen bundle mollifier/anyframe
-  antigen bundle Tarrasch/zsh-bd
-  antigen bundle knakayama/gzp
-  antigen bundle knakayama/ghq-util
-  antigen bundle knakayama/zsh-git-prompt
-  antigen bundle knakayama/antigen-bundle-record-moving
-  antigen bundle knakayama/tpm-fast-moving
-  antigen apply
+  #antibody bundle zsh-users/zsh-syntax-highlighting
+  antibody bundle zsh-users/zsh-history-substring-search
+  antibody bundle zsh-users/zsh-completions src
+  antibody bundle gunzy83/packer-zsh-completion
+  antibody bundle mollifier/anyframe
+  antibody bundle Tarrasch/zsh-bd
+  antibody bundle knakayama/gzp
+  antibody bundle knakayama/ghq-util
+  antibody bundle knakayama/zsh-git-prompt
+  antibody bundle knakayama/tpm-fast-moving
 
   # zsh-users/zsh-history-substring-search
   bindkey -M emacs '^P' history-substring-search-up
@@ -171,8 +169,6 @@ if [[ -f "${HOME}/.zsh/plugin/antigen.zsh/antigen.zsh" ]]; then
 
   bindkey '^x^g' gzp-widget-open-repo
   bindkey '^x^w' gzp-widget-open-starred
-
-  bindkey '^x^a' -antigen-bundle-record-moving
 
   bindkey '^x^f' -tpm-fast-moving
 fi
