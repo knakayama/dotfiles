@@ -134,8 +134,8 @@ zstyle ':chpwd:*' recent-dirs-max 200
 # antibody
 ####################
 
-if [[ -f "${HOME}/.antibody/antibody.zsh" ]]; then
-  source "${HOME}/.antibody/antibody.zsh"
+if [[ -f "$(brew --prefix)/share/antibody.zsh" ]]; then
+  source "$(brew --prefix)/share/antibody.zsh"
 
   # too slow
   #antibody bundle zsh-users/zsh-syntax-highlighting
