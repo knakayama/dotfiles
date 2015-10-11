@@ -305,7 +305,7 @@ if [[ -f "${HOME}/.nvm/bash_completion" ]]; then
 fi
 
 # prevent duplicate path
-if [[ -n "$TMUX" ]]; then
+if [[ -n "$TMUX" || -n "$SSH_TTY" ]]; then
   # rbenv
   if type rbenv &>/dev/null; then
     eval "$(rbenv init -)"
