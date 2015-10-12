@@ -1,5 +1,0 @@
-.envrc
-.vagrant
-.bundle
-.terraform
-vendor
