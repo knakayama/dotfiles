@@ -2,11 +2,25 @@
 " Plugin Settings
 """""""""""""""""
 
+set rtp=~/.vimperator
 source ~/.vimperator/vimppm/plugin/vimppm.js
+vimppm 'sugilog/websearch.vimpr'
 vimppm 'copy.js'
 vimppm 'caret-hint.js'
 vimppm 'history-search-backward.js'
 vimppm 'pushfind.js'
+vimppm 'slideshare.js'
+
+" sugilog/websearch.vimpr
+javascript <<EOT
+liberator.globalVariables.webSearchTemplates = [
+  { name: ['github'], description: 'search github.com', url: 'https://github.com/search?q=%KEYWORD%' }
+];
+EOT
+
+" slideshare.js
+nnoremap -urls=www\\.slideshare\\.net l :slideshare next<CR>
+nnoremap -urls=www\\.slideshare\\.net h :slideshare prev<CR>
 
 """""""""""""""""
 " Normal Settings
