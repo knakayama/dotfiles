@@ -2,9 +2,9 @@
 
 require 'rake/clean'
 
-HOME          = ENV['HOME']
-PWD           = File.dirname(__FILE__)
-FILES         = Dir.glob('*[a-z]', File::FNM_DOTMATCH).grep(/(?:\.(?!(?:md|git(?:ignore|modules)?)$)|bin)/)
+HOME  = ENV['HOME']
+PWD   = File.dirname(__FILE__)
+FILES = Dir.glob('*[a-z]', File::FNM_DOTMATCH).grep(/(?:\.(?!(?:md|git(?:ignore|modules)?)$)|bin)/)
 
 def create_symlink(src_file, dst_file)
   File.symlink(src_file, dst_file) unless File.exist?(dst_file)
