@@ -180,6 +180,10 @@ ignorekeys add feedly\.com -except <C-n>,<C-p>,t,f,d,:
 " chatwork
 ignorekeys add kcw\.kddi\.ne\.jp -except <C-n>,<C-p>,t,d,:
 
+" remarkjs
+ignorekeys add localhost:8000 -except <C-n>,<C-p>,f,:
+ignorekeys add knakayama\.github\.io -except <C-n>,<C-p>,f,:
+
 """"""""""""""""""
 " about:config
 """"""""""""""""""
