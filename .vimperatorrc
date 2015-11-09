@@ -14,13 +14,16 @@ vimppm 'slideshare.js'
 " sugilog/websearch.vimpr
 javascript <<EOT
 liberator.globalVariables.webSearchTemplates = [
-  { name: ['github'], description: 'search github.com', url: 'https://github.com/search?q=%KEYWORD%' }
+  { names: ['github'], description: 'search github.com', url: 'https://github.com/search?q=%KEYWORD%' }
 ];
 EOT
 
 " slideshare.js
 nnoremap -urls=www\\.slideshare\\.net l :slideshare next<CR>
 nnoremap -urls=www\\.slideshare\\.net h :slideshare prev<CR>
+
+" local config
+source ~/.vimperatorrc.local
 
 """""""""""""""""
 " Normal Settings
