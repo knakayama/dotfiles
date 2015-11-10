@@ -14,9 +14,19 @@ vimppm 'slideshare.js'
 " sugilog/websearch.vimpr
 javascript <<EOT
 liberator.globalVariables.webSearchTemplates = [
-  { names: ['github'], description: 'search github.com', url: 'https://github.com/search?q=%KEYWORD%' }
+  {
+    names: ['github'],
+    description: 'search github.com',
+    url: 'https://github.com/search?utf8=%E2%9C%93&q=%KEYWORD%'
+  },
+  {
+    names: ['amazon'],
+    description: 'search amazon.co.jp',
+    url: 'http://www.amazon.co.jp/s/ref=nb_sb_noss_2?__mk_ja_JP=カタカナ&url=search-alias=aps&field-keywords=%KEYWORD%&rh=i:aps,k:%KEYWORD%'
+  }
 ];
 EOT
+
 
 " slideshare.js
 nnoremap -urls=www\\.slideshare\\.net l :slideshare next<CR>
