@@ -4,7 +4,7 @@
 
 set rtp=~/.vimperator
 source ~/.vimperator/vimppm/plugin/vimppm.js
-vimppm 'sugilog/websearch.vimpr'
+vimppm 'knakayama/websearch.vimpr'
 vimppm 'copy.js'
 vimppm 'caret-hint.js'
 vimppm 'history-search-backward.js'
@@ -26,7 +26,6 @@ liberator.globalVariables.webSearchTemplates = [
   }
 ];
 EOT
-
 
 " slideshare.js
 nnoremap -urls=www\\.slideshare\\.net l :slideshare next<CR>
