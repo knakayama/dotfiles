@@ -338,3 +338,10 @@ fi
 if [[ -n "$TMUX" ]]; then
   tmux set-environment -g PATH "$PATH"
 fi
+
+# autoload general-env
+if type pyenv &>/dev/null && type pyenv-virtualenv &>/dev/null; then
+  if [[ "$(pyenv virtualenvs)" =~ 'general-env' ]]; then
+    pyenv activate general-env
+  fi
+fi
