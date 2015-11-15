@@ -144,7 +144,6 @@ if [[ -f "$(brew --prefix)/share/antibody.zsh" ]]; then
   antibody bundle gunzy83/packer-zsh-completion
   antibody bundle mollifier/anyframe
   antibody bundle Tarrasch/zsh-bd
-  antibody bundle knakayama/gzp
   antibody bundle knakayama/ghq-util
   antibody bundle knakayama/zsh-git-prompt
   antibody bundle knakayama/tpm-fast-moving
@@ -166,9 +165,6 @@ if [[ -f "$(brew --prefix)/share/antibody.zsh" ]]; then
   bindkey '^xe' anyframe-widget-insert-git-branch
   bindkey '^xt' anyframe-widget-tmux-attach
   bindkey '^xb' anyframe-widget-cdr
-
-  bindkey '^x^g' gzp-widget-open-repo
-  bindkey '^x^w' gzp-widget-open-starred
 
   bindkey '^x^f' -tpm-fast-moving
 fi
