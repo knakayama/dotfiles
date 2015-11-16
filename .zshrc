@@ -197,7 +197,7 @@ fi
 # %~ -> current directory(home directory is ~)
 # %(1,#,$)
 # %f%b same as %{${reset_color}%}?
-if [[ -n $SSH_TTY ]]; then
+if [[ -n "$SSH_TTY" ]]; then
   _ssh_tty="@$(echo "$SSH_TTY" | grep -oE 's[0-9]+')"
 fi
 PROMPT='%n${_ssh_tty} %F{blue}%~%f%b $(-zsh-git-prompt)[%?]'$'\n''%(!,#,$) '
