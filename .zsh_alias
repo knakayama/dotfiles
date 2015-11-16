@@ -12,9 +12,6 @@ alias lsd="ls -ld *(-/DN)"
 # Print recently used docker image id
 alias dl="sudo docker ps -l -q"
 
-# too long
-alias b2d="boot2docker"
-
 # writing
 alias a="vim $(date '+%Y-%m-%d').md"
 
