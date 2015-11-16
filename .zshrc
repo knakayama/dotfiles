@@ -300,6 +300,11 @@ if [[ -f "${HOME}/.nvm/bash_completion" ]]; then
   source "${HOME}/.nvm/bash_completion"
 fi
 
+# pwd.sh
+if [[ -x "$(which pwd.sh 2>/dev/null)" ]]; then
+  export PWDSH_SAFE="${HOME}/.pwd.sh.safe"
+fi
+
 # prevent duplicate path
 if [[ -n "$TMUX" || -n "$SSH_TTY" ]]; then
   # rbenv
