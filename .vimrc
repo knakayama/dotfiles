@@ -360,10 +360,10 @@ if executable('rubocop')
   let g:syntastic_ruby_checkers = ['rubocop']
 endif
 
-" http://qiita.com/izumin5210/items/1f3c312edd7f0075b09c
-let g:syntastic_mode_map = { 'mode': 'passive',
-    \ 'active_filetypes': ['go'] }
-let g:syntastic_go_checkers = ['go', 'golint']
+" Sometimes when using both vim-go and syntastic Vim will start lagging while saving and opening files.
+" The following fixes this:
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go']  }
 
 "" gist-vim
 let g:gist_open_browser_after_post = 1
