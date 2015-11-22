@@ -16,12 +16,10 @@ alias lsd="ls -ld *(-/DN)"
 alias a="vim $(date '+%Y-%m-%d').md"
 
 # create tmp dir and cd into it
-alias m="[[ -d ${HOME}/tmp/$(date '+%Y%m%d') ]] && \
-  cd ${HOME}/tmp/$(date '+%Y%m%d') || \
-  {
-    mkdir -p ${HOME}/tmp/$(date '+%Y%m%d') && \
-      cd ${HOME}/tmp/$(date '+%Y%m%d')
-  }"
+alias m="[[ -d ${HOME}/tmp/$(date '+%Y%m%d') ]] \
+  && cd ${HOME}/tmp/$(date '+%Y%m%d') \
+  || { mkdir -p ${HOME}/tmp/$(date '+%Y%m%d') && cd ${HOME}/tmp/$(date '+%Y%m%d') }
+"
 
 # quick search word in zshall
 # http://qiita.com/mollifier/items/14bbea7503910300b3ba
