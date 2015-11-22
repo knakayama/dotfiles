@@ -422,7 +422,11 @@ autocmd FileType go nmap <leader>r <Plug>(go-run)
 autocmd FileType go nmap <leader>b <Plug>(go-build)
 autocmd FileType go nmap <leader>t <Plug>(go-test)
 autocmd FileType go nmap <leader>c <Plug>(go-coverage)
-" highlighting
+autocmd FileType go nmap <Leader>go <Plug>(go-doc)
+autocmd FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+autocmd FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+autocmd FileType go nmap <Leader>i <Plug>(go-info)
+autocmd FileType go nmap <Leader>s <Plug>(go-implements)
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
@@ -430,6 +434,8 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 " By default vim-go shows errors for the fmt command, to disable it:
 let g:go_fmt_fail_silently = 1
+let g:go_fmt_command = "goimports"
+"let g:go_auto_type_info = 0
 
 " vim-multiple-cursors
 " Called once right before you start selecting multiple cursors
