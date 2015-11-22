@@ -1,9 +1,12 @@
 # ls aliases
 alias l="ls -CF"
 alias ll="ls -l"
+alias llh="ls -lh"
 alias la="ls -A"
 alias lla="ls -lA"
+alias llah="ls -lAh"
 alias lld="ls -ld"
+alias lldh="ls -ldh"
 # display only dot files
 alias lsa="ls -ld .*"
 # display only directory and directory alias
