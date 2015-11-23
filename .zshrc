@@ -150,6 +150,7 @@ if [[ -f "$(brew --prefix)/share/antibody.zsh" ]]; then
   antibody bundle knakayama/zsh-git-prompt
   antibody bundle knakayama/tpm-fast-moving
   antibody bundle knakayama/gopath-fast-moving
+  antibody bundle knakayama/gopath-util
 
   # zsh-users/zsh-history-substring-search
   bindkey -M emacs '^P' history-substring-search-up
