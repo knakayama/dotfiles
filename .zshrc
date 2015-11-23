@@ -149,6 +149,7 @@ if [[ -f "$(brew --prefix)/share/antibody.zsh" ]]; then
   antibody bundle knakayama/ghq-util
   antibody bundle knakayama/zsh-git-prompt
   antibody bundle knakayama/tpm-fast-moving
+  antibody bundle knakayama/gopath-fast-moving
 
   # zsh-users/zsh-history-substring-search
   bindkey -M emacs '^P' history-substring-search-up
@@ -169,6 +170,7 @@ if [[ -f "$(brew --prefix)/share/antibody.zsh" ]]; then
   bindkey '^xb' anyframe-widget-cdr
 
   bindkey '^x^f' -tpm-fast-moving
+  bindkey '^x^g' -gopath-fast-moving
 fi
 
 ####################
