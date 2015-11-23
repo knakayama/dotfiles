@@ -435,7 +435,9 @@ let g:go_highlight_build_constraints = 1
 " By default vim-go shows errors for the fmt command, to disable it:
 let g:go_fmt_fail_silently = 1
 let g:go_fmt_command = "goimports"
-"let g:go_auto_type_info = 0
+let g:go_auto_type_info = 1
+let g:go_snippet_engine = "neosnippet"
+"let g:go_quickfix_height = 0
 
 " vim-multiple-cursors
 " Called once right before you start selecting multiple cursors
