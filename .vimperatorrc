@@ -15,9 +15,14 @@ vimppm 'slideshare.js'
 javascript <<EOT
 liberator.globalVariables.webSearchTemplates = [
   {
-    names: ['github'],
-    description: 'search github.com',
+    names: ['ghrepo'],
+    description: 'search github.com for repository',
     url: 'https://github.com/search?utf8=%E2%9C%93&q=%KEYWORD%'
+  },
+  {
+    names: ['ghcode'],
+    description: 'search github.com for code',
+    url: 'https://github.com/search?q=%KEYWORD%&type=Code&utf8=%E2%9C%93'
   },
   {
     names: ['amazon'],
