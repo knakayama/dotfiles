@@ -342,10 +342,10 @@ if [[ -n "$TMUX" || -n "$SSH_TTY" ]]; then
 
 fi
 
-## aws
-#if type brew &>/dev/null && [[ -f $(brew --prefix)/share/zsh/site-functions/_aws ]]; then
-#  source "$(brew --prefix)/share/zsh/site-functions/_aws"
-#fi
+# aws
+if type brew &>/dev/null && [[ -f $(brew --prefix)/share/zsh/site-functions/_aws ]]; then
+  source "$(brew --prefix)/share/zsh/site-functions/_aws"
+fi
 
 # workaround:
 # set shell environment
