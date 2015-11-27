@@ -342,7 +342,7 @@ if [[ -n "$TMUX" || -n "$SSH_TTY" ]]; then
 
 fi
 
-# aws
+# awscli
 if type aws &>/dev/null && [[ -f "$(which python | sed 's/python$/aws_zsh_completer\.sh/')" ]]; then
   source "$(which python | sed 's/python$/aws_zsh_completer\.sh/')"
 fi
