@@ -347,6 +347,11 @@ if type aws &>/dev/null && [[ -f "$(which python | sed 's/python$/aws_zsh_comple
   source "$(which python | sed 's/python$/aws_zsh_completer\.sh/')"
 fi
 
+# awsebcli
+if type eb &>/dev/null && [[ -f "$(which python | sed 's/python$/eb_completion\.bash/')" ]]; then
+  source "$(which python | sed 's/python$/eb_completion\.bash/')"
+fi
+
 # workaround:
 # set shell environment
 if [[ -n "$TMUX" ]]; then
