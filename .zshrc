@@ -152,7 +152,6 @@ if [[ -f "$(brew --prefix)/share/antibody.zsh" ]]; then
   antibody bundle knakayama/tpm-fast-moving
   antibody bundle knakayama/gopath-fast-moving
   antibody bundle knakayama/gopath-util
-  antibody bundle knakayama/fuc
 
   # zsh-users/zsh-history-substring-search
   bindkey -M emacs '^P' history-substring-search-up
@@ -179,10 +178,6 @@ if [[ -f "$(brew --prefix)/share/antibody.zsh" ]]; then
 
   bindkey '^x^f' -tpm-fast-moving
   bindkey '^x^g' -gopath-fast-moving
-  bindkey '^x^x' fuc-widget-execute-fuc
-  bindkey '^x^i' fuc-widget-put-fuc
-  bindkey '^x^p' fuc-widget-copy-fuc
-  export FUC_PATH="${HOME}/.ghq/github.com/knakayama/my-fuc"
 fi
 
 ####################
