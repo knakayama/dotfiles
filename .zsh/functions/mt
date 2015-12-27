@@ -15,7 +15,6 @@ EOT
       -e "source ${HOME}/.mutt/muttrc"           \
       -e "source ${HOME}/.mutt-${my_dir}/muttrc"
   elif (( $# == 2 )); then
-    echo unko
     mutt \
       -e "set my_dir = ${HOME}/.mutt-${my_dir}"  \
       -e "set my_account = $my_account"          \
