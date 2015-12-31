@@ -327,6 +327,7 @@ if [[ -n "$TMUX" || -n "$SSH_TTY" ]]; then
   if type pyenv &>/dev/null; then
     eval "$(pyenv init -)";
     eval "$(pyenv virtualenv-init -)"
+    export PYENV_VIRTUALENV_DISABLE_PROMPT=1
   fi
 
   # plenv
