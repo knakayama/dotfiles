@@ -44,7 +44,7 @@ path=($path ${HOME}/rsense-0.3/bin(N-/))
 ####################
 
 # autoload func path
-fpath=($(brew --prefix)/share/zsh/site-functions(N-/) $fpath)
+fpath=($(brew --prefix)/share/zsh/site-functions(N-/) ${ANTIBODY_HOME}/zsh-users-zsh-completions/src(N-/) $fpath)
 
 # original zsh completions
 fpath=(${HOME}/.zsh/completions(N-/) $fpath)
