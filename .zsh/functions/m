@@ -1,0 +1,24 @@
+# create tmp dir and cd into it
+m() {
+  local prev="$1"
+  local tmp_dir="${HOME}/tmp/$(date '+%Y%m%d')"
+
+  if [[ -n "$prev" ]]; then
+    local prev_dir="${HOME}/tmp/$(date -v-${prev}d '+%Y%m%d')"
+
+    if [[ -d "$prev_dir" ]]; then
+      cd "$prev_dir"
+      return 0
+    else
+      echo "$prev_dir does not found."
+      return 1
+    fi
+  fi
+
+  if [[ -d "$tmp_dir" ]]; then
+    cd "$tmp_dir"
+  else
+    mkdir -p "$tmp_dir"
+    cd "$tmp_dir"
+  fi
+}
