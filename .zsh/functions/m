@@ -10,7 +10,7 @@ m() {
       cd "$prev_dir"
       return 0
     else
-      echo "$prev_dir does not found."
+      echo "$prev_dir does not exist."
       return 1
     fi
   fi
