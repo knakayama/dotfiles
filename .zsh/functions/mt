@@ -1,7 +1,7 @@
 mt() {
-  -mt-usage() {
+  -usage() {
     cat <<'EOT'
-Usage: mt dir-name
+Usage: mt DIR
 
 EOT
   }
@@ -21,7 +21,7 @@ EOT
       -e "source ${HOME}/.mutt/muttrc"           \
       -e "source ${HOME}/.mutt-${my_dir}/muttrc"
   else
-    -mt-usage
+    usage
     return 1
   fi
 }

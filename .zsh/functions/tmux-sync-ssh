@@ -1,14 +1,19 @@
-#!/usr/bin/env zsh
-
 tmux-sync-ssh() {
-  -tmux-sync-ssh-usage() {
-  cat <<'EOT'
-Usage: tmux-sync-ssh -f host-file [-h]
+  usage() {
+    cat <<'EOT'
+Usage: tmux-sync-ssh -f FILE [-h]
 
 Options:
-    -f host-file   host file
-    -h             Print this help
+    -f FILE   host file
+    -h        Print this help
 EOT
+  }
+
+  err() {
+    local msg="$1"
+
+    echo "$msg" 1>&2
+    usage
   }
 
   local session_name="tmux-sync-ssh-${RANDOM}"
@@ -23,11 +28,11 @@ EOT
         host_list="$OPTARG"
         ;;
       h)
-        -tmux-sync-ssh-usage
+        usage
         return 0
         ;;
       *)
-        -tmux-sync-ssh-usage
+        usage
         return 1
         ;;
     esac
@@ -35,19 +40,17 @@ EOT
   shift $((OPTIND - 1))
 
   # validate args
-  [[ -n "$host_list" ]] || \
-    { echo "please specify -f args" 1>&2; -tmux-sync-ssh-usage; return 1; }
-  [[ -f "$host_list" ]] || \
-    { echo "$host_list not found" 1>&2; -tmux-sync-ssh-usage; return 1; }
+  [[ -n "$host_list" ]] || { err "please specify -f args"; return 1; }
+  [[ -f "$host_list" ]] || { err "$host_list not found"; return 1; }
 
   tmux start-server
 
-  is_first="true"
+  is_first=true
   for host_name in $(grep -vE '^(#|$)' "$host_list"); do
-    if [[ "$is_first" == "true" ]]; then
+    if $is_first; then
       tmux new-session -d -s "$session_name" \
         ssh -t "kero" "sudo ssh -o StrictHostKeyChecking=no $host_name"
-      is_first="false"
+      is_first=false
     else
       tmux split-window -t "$session_name" \
         ssh -t "kero" "sudo ssh -o StrictHostKeyChecking=no $host_name"
