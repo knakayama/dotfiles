@@ -147,6 +147,7 @@ if [[ -f "$(brew --prefix)/share/antibody.zsh" ]]; then
   antibody bundle mollifier/anyframe
   antibody bundle Tarrasch/zsh-bd
   antibody bundle horosgrisa/zsh-dropbox
+  antibody bundle soimort/translate-shell
   antibody bundle knakayama/ghq-util
   antibody bundle knakayama/zsh-git-prompt
   antibody bundle knakayama/tpm-fast-moving
