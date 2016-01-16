@@ -5,7 +5,6 @@
 .vim/bundle/*
 bin/rsense*
 .zsh/plugin/antigen.zsh
-.zsh/zsh-completions
 .vimperator/plugin
 .zsh/completions/*
 !.zsh/completions/.gitkeep
