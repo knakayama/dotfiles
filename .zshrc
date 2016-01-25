@@ -290,7 +290,7 @@ setopt numeric_glob_sort
 # auto-fu.zsh
 if [[ -f "${HOME}/.zsh/plugin/auto-fu.zsh/auto-fu.zsh" ]]; then
   source "${HOME}/.zsh/plugin/auto-fu.zsh/auto-fu.zsh"
-  function zle-line-init() {
+  zle-line-init() {
     auto-fu-init
   }
   zle -N zle-line-init

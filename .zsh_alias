@@ -18,7 +18,7 @@ alias a="vim $(date '+%Y-%m-%d').md"
 # quick search word in zshall
 # http://qiita.com/mollifier/items/14bbea7503910300b3ba
 if man -aW zshall &>/dev/null; then
-  function zman() {
+  zman() {
     PAGER="less --hilite-search --search-skip-screen '+/^       "$1"'" man zshall
   }
 fi
