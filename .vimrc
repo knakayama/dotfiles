@@ -458,6 +458,12 @@ endfunction
 " github-complete.vim
 let g:github_complete_emoji_japanese_workaround = 1
 
+" vim-flake8
+" Don't show quickfix
+let g:flake8_show_quickfix = 0
+" Show gutter
+let g:flake8_show_in_gutter = 1
+
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " colors , fonts and gui settings
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -589,3 +595,4 @@ autocmd FileType go set shiftwidth=4 tabstop=4 noexpandtab
 
 " python
 autocmd BufWritePost *.py call Flake8()
+autocmd FileType python setlocal completeopt-=preview
