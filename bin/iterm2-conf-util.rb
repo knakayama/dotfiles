@@ -30,4 +30,3 @@ else
   puts opt.help
   exit 1
 end
-
