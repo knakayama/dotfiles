@@ -1,0 +1,18 @@
+sk() {
+  local priv_key="site_key"
+  local pub_key="${priv_key}.pub"
+
+  [[ -f "$priv_key" && -f "$pub_key" ]] \
+    || ssh-keygen -f "$priv_key" -N ''
+
+  chmod 400 "$priv_key"
+  chmod 600 "$pub_key"
+}
+
+# Local Variables:
+# mode: Shell-Script
+# sh-indentation: 2
+# indent-tabs-mode: nil
+# sh-basic-offset: 2
+# End:
+# vim: ft=zsh sw=2 ts=2 et
