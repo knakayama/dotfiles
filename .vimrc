@@ -267,6 +267,7 @@ NeoBundle 'tommcdo/vim-kangaroo'
 NeoBundle 'tommcdo/vim-lion'
 "NeoBundle 'justincampbell/vim-eighties'
 NeoBundle 'garyburd/go-explorer'
+NeoBundle 'cohama/lexima.vim'
 
 " You can specify revision/branch/tag.
 "NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
