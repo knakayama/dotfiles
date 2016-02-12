@@ -154,6 +154,7 @@ if [[ -f "$(brew --prefix)/share/antibody.zsh" ]]; then
   antibody bundle knakayama/gopath-fast-moving
   antibody bundle knakayama/gopath-util
   antibody bundle knakayama/antibody-fast-moving
+  antibody bundle knakayama/wacker
 
   # zsh-users/zsh-history-substring-search
   bindkey -M emacs '^P' history-substring-search-up
