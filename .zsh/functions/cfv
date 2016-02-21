@@ -1,8 +1,11 @@
 cfv() {
-  local template="$1"
+  local templates="$@"
+  local template
 
-  cat "$template" \
-    | xargs -0 aws cloudformation validate-template --template-body
+  for template in $(echo $templates); do
+    echo "$template" \
+      | xargs -I% -t aws cloudformation validate-template --template-body file://%
+  done
 }
 
 # Local Variables:
