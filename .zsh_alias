@@ -15,6 +15,9 @@ alias lsd="ls -ld *(-/DN)"
 # writing
 alias a="$EDITOR $(date '+%Y-%m-%d').md"
 
+# README.md
+alias e="$EDITOR README.md"
+
 # quick search word in zshall
 # http://qiita.com/mollifier/items/14bbea7503910300b3ba
 if man -aW zshall &>/dev/null; then
