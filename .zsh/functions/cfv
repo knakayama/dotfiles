@@ -4,7 +4,7 @@ cfv() {
 
   for template in $(echo $templates); do
     echo "$template" \
-      | xargs -I% -t aws-keychain exec personal aws cloudformation validate-template --template-body file://%
+      | xargs -I% -t aws cloudformation validate-template --template-body file://%
   done
 }
 
