@@ -354,14 +354,14 @@ if [[ -n "$TMUX" || -n "$SSH_TTY" ]]; then
 fi
 
 # awscli
-if type aws &>/dev/null && [[ -f "$(which python | sed 's/python$/aws_zsh_completer\.sh/')" ]]; then
-  source "$(which python | sed 's/python$/aws_zsh_completer\.sh/')"
+if type brew &>/dev/null && [[ -f "$(brew --prefix)/share/zsh/site-functions/_aws" ]]; then
+  source "$(brew --prefix)/share/zsh/site-functions/_aws"
 fi
 
-# awsebcli
-if type eb &>/dev/null && [[ -f "$(which python | sed 's/python$/eb_completion\.bash/')" ]]; then
-  source "$(which python | sed 's/python$/eb_completion\.bash/')"
-fi
+## awsebcli
+#if type eb &>/dev/null && [[ -f "$(which python | sed 's/python$/eb_completion\.bash/')" ]]; then
+#  source "$(which python | sed 's/python$/eb_completion\.bash/')"
+#fi
 
 # workaround:
 # set shell environment
