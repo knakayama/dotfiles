@@ -8,3 +8,5 @@ bin/rsense*
 .vimperator/plugin
 .zsh/completions/*
 !.zsh/completions/.gitkeep
+vendor
+.bundle
