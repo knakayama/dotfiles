@@ -146,7 +146,6 @@ if [[ -f "$(brew --prefix)/share/antibody.zsh" ]]; then
   antibody bundle gunzy83/packer-zsh-completion
   antibody bundle mollifier/anyframe
   antibody bundle Tarrasch/zsh-bd
-  antibody bundle horosgrisa/zsh-dropbox
   antibody bundle soimort/translate-shell
   antibody bundle knakayama/ghq-util
   antibody bundle knakayama/zsh-git-prompt
@@ -164,11 +163,6 @@ if [[ -f "$(brew --prefix)/share/antibody.zsh" ]]; then
   zstyle ":anyframe:selector:" use peco
   if [[ -f "${HOME}/.peco_config.json" ]]; then
     zstyle ":anyframe:selector:peco:" command "peco --rcfile=${HOME}/.peco_config.json"
-  fi
-
-  # horosgrisa/zsh-dropbox
-  if [[ -d "${ANTIBODY_HOME}/horosgrisa-zsh-dropbox/bin" ]]; then
-    path=($path "${ANTIBODY_HOME}/horosgrisa-zsh-dropbox/bin")
   fi
 
   bindkey '^xr' anyframe-widget-execute-history
