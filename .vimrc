@@ -229,7 +229,6 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'thinca/vim-template'
 NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
-NeoBundle 'mattn/vim-maketable'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tpope/vim-surround'
@@ -268,6 +267,7 @@ NeoBundle 'tommcdo/vim-lion'
 "NeoBundle 'justincampbell/vim-eighties'
 NeoBundle 'garyburd/go-explorer'
 NeoBundle 'cohama/lexima.vim'
+NeoBundle 'dhruvasagar/vim-table-mode'
 
 " You can specify revision/branch/tag.
 "NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
@@ -464,6 +464,9 @@ let g:github_complete_emoji_japanese_workaround = 1
 let g:flake8_show_quickfix = 0
 " Show gutter
 let g:flake8_show_in_gutter = 1
+
+" dhruvasagar/vim-table-mode
+let g:table_mode_corner = "|"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " colors , fonts and gui settings
