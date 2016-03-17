@@ -268,6 +268,7 @@ NeoBundle 'tommcdo/vim-lion'
 NeoBundle 'garyburd/go-explorer'
 NeoBundle 'cohama/lexima.vim'
 NeoBundle 'dhruvasagar/vim-table-mode'
+NeoBundle 'rhysd/unite-redpen.vim'
 
 " You can specify revision/branch/tag.
 "NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
