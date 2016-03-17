@@ -13,7 +13,7 @@ end
 CLEAN.concat(FILES.map { |p| File.join(HOME, p) })
 
 desc 'Setup all'
-task setup: [:symlink, :git_clone]
+task setup: [:symlink]
 
 desc 'Create symlinks'
 task :symlink do
