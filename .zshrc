@@ -282,6 +282,9 @@ setopt numeric_glob_sort
 # [[ -n $(alias run-help) ]] && unalias run-help
 # autoload run-help
 
+# show time command outputs if command executing time exceeds 1 sec
+REPORTTIME=1
+
 # auto-fu.zsh
 if [[ -f "${HOME}/.zsh/plugin/auto-fu.zsh/auto-fu.zsh" ]]; then
   source "${HOME}/.zsh/plugin/auto-fu.zsh/auto-fu.zsh"
