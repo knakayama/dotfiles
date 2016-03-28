@@ -12,13 +12,33 @@ repo = 'Shougo/vimproc'
   unix    = 'gmake'
 
 [[plugins]]
-repo = 'Shougo/neosnippet-snippets'
+repo = 'Shougo/neomru.vim'
+on_path = '.*'
 
 [[plugins]]
 repo = 'Shougo/unite.vim'
+depends = 'neomru.vim'
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+depends = ['neosnippet-snippets']
+on_i = 1
+on_ft = ['snippet']
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+if = 'has("nvim")'
+on_i = 1
 
 [[plugins]]
 repo = 'Shougo/vimfiler.vim'
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = 'toml'
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
@@ -48,16 +68,15 @@ repo = 'tpope/vim-endwise'
 repo = 'majutsushi/tagbar'
 
 [[plugins]]
-repo = 'Wombat'
-
-[[plugins]]
 repo = 'glidenote/serverspec-snippets'
 
 [[plugins]]
 repo = 'kchmck/vim-coffee-script'
+on_ft = ['coffee']
 
 [[plugins]]
 repo = 'pearofducks/ansible-vim'
+on_ft = ['yaml']
 
 [[plugins]]
 repo = 'kannokanno/previm'
@@ -82,21 +101,24 @@ repo = 'bling/vim-airline'
 
 [[plugins]]
 repo = 'fatih/vim-go'
+on_ft = ['go']
+
+[[plugins]]
+repo = 'garyburd/go-explorer'
 
 [[plugins]]
 repo = 'davidhalter/jedi-vim'
+on_ft = ['python']
 
 [[plugins]]
 repo = 'nvie/vim-flake8'
+on_ft = ['python']
 
 [[plugins]]
 repo = 'terryma/vim-multiple-cursors'
 
 [[plugins]]
 repo = 'superbrothers/vim-vimperator'
-
-[[plugins]]
-repo = 'garyburd/go-explorer'
 
 [[plugins]]
 repo = 'cohama/lexima.vim'
