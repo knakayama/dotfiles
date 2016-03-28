@@ -25,20 +25,3 @@ if man -aW zshall &>/dev/null; then
     PAGER="less --hilite-search --search-skip-screen '+/^       "$1"'" man zshall
   }
 fi
-
-# Added by termtile (https://github.com/apaszke/termtile)
-if [[ -d "${HOME}/.termtile" ]] && type osascript &>/dev/null; then
-  alias tt_ul="osascript ${HOME}/.termtile/tile.scpt up left"
-  alias tt_ur="osascript ${HOME}/.termtile/tile.scpt up right"
-  alias tt_dl="osascript ${HOME}/.termtile/tile.scpt down left"
-  alias tt_dr="osascript ${HOME}/.termtile/tile.scpt down right"
-  alias tt_ll="osascript ${HOME}/.termtile/tile.scpt left"
-  alias tt_rr="osascript ${HOME}/.termtile/tile.scpt right"
-  alias tt_up="osascript ${HOME}/.termtile/tile.scpt up"
-  alias tt_down="osascript ${HOME}/.termtile/tile.scpt down"
-  alias tt_big="osascript ${HOME}/.termtile/resize.scpt"
-  alias tt_cen="osascript ${HOME}/.termtile/center.scpt"
-  alias tt_max="osascript ${HOME}/.termtile/maximize.scpt"
-  alias tt_sn="osascript ${HOME}/.termtile/changeScreen.scpt next"
-  alias tt_fs="osascript ${HOME}/.termtile/fullscreen.scpt"
-fi
