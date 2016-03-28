@@ -227,11 +227,16 @@ if [[ "$OSTYPE" =~ "darwin*" ]]; then
 fi
 
 # editor
-if type vim &>/dev/null; then
+if type nvim &>/dev/null; then
+  export EDITOR="nvim"
+elif type vim &>/dev/null; then
   export EDITOR="vim"
 else
   export EDITOR="vi"
 fi
+
+# XDG_CONFIG
+export XDG_CONFIG_HOME="${HOME}/.config"
 
 # use zed
 autoload zed
