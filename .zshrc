@@ -39,6 +39,9 @@ path=($path /usr/local/heroku/bin(N-/))
 # rsense
 path=($path ${HOME}/rsense-0.3/bin(N-/))
 
+# /usr/local/bin
+path=($path /usr/local/bin(N-/))
+
 ####################
 # Completion
 ####################
