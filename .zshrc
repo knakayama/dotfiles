@@ -47,7 +47,10 @@ path=($path /usr/local/bin(N-/))
 ####################
 
 # autoload func path
-fpath=($(brew --prefix)/share/zsh/site-functions(N-/) ${ANTIBODY_HOME}/zsh-users-zsh-completions/src(N-/) $fpath)
+if type brew &>/dev/null; then
+  fpath=($(brew --prefix)/share/zsh/site-functions(N-/) $fpath)
+fi
+fpath=(${ANTIBODY_HOME}/zsh-users-zsh-completions/src(N-/) $fpath)
 
 # original zsh completions
 fpath=(${HOME}/.zsh/completions(N-/) $fpath)
@@ -137,7 +140,7 @@ zstyle ':chpwd:*' recent-dirs-max 200
 # antibody
 ####################
 
-if [[ -f "$(brew --prefix)/share/antibody.zsh" ]]; then
+if type brew &>/dev/null && [[ -f "$(brew --prefix)/share/antibody.zsh" ]]; then
   export ANTIBODY_HOME="${HOME}/.antibody"
   [[ -d "$ANTIBODY_HOME" ]] || mkdir "$ANTIBODY_HOME"
   source "$(brew --prefix)/share/antibody.zsh"
@@ -370,6 +373,6 @@ fi
 
 # workaround:
 # set shell environment
-if [[ -n "$TMUX" ]]; then
+if type tmux &>/dev/null && [[ -n "$TMUX" ]]; then
   tmux set-environment -g PATH "$PATH"
 fi
