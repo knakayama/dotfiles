@@ -12,6 +12,9 @@ alias lsa="ls -ld .*"
 # display only directory and directory alias
 alias lsd="ls -ld *(-/DN)"
 
+# nvim
+alias nv="nvim"
+
 # writing
 alias a="$EDITOR $(date '+%Y-%m-%d').md"
 
