@@ -128,3 +128,7 @@ repo = 'dhruvasagar/vim-table-mode'
 
 [[plugins]]
 repo = 'rhysd/unite-redpen.vim'
+
+[[plugins]]
+repo = 'tmux-plugins/vim-tmux'
+on_ft = ['tmux']
