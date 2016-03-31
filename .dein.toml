@@ -86,9 +86,11 @@ repo = 'godlygeek/tabular'
 
 [[plugins]]
 repo = 'markcornick/vim-terraform'
+on_ft = ['terraform']
 
 [[plugins]]
 repo = 'elzr/vim-json'
+on_ft = ['json']
 
 [[plugins]]
 repo = 'terryma/vim-expand-region'
