@@ -53,6 +53,9 @@ repo = 'thinca/vim-template'
 repo = 'mattn/webapi-vim'
 
 [[plugins]]
+repo = 'mattn/gist-vim'
+
+[[plugins]]
 repo = 'tyru/open-browser.vim'
 
 [[plugins]]
