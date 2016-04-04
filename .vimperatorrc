@@ -185,6 +185,9 @@ qmark k https://github.com/knakayama
 " Gmail
 ignorekeys add mail\.google\.com -except <C-n>,<C-p>,t,f,:
 
+" Google Docs
+ignorekeys add docs\.google\.com -except <C-n>,<C-p>,t,d,:
+
 " remember the milk
 ignorekeys add www\.rememberthemilk\.com -except <C-n>,<C-p>,:
 
