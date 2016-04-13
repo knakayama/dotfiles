@@ -140,10 +140,10 @@ zstyle ':chpwd:*' recent-dirs-max 200
 # antibody
 ####################
 
-if type brew &>/dev/null && [[ -f "$(brew --prefix)/share/antibody.zsh" ]]; then
+if type brew &>/dev/null && [[ -f "$(brew --prefix)/share/antibody" ]]; then
   export ANTIBODY_HOME="${HOME}/.antibody"
   [[ -d "$ANTIBODY_HOME" ]] || mkdir "$ANTIBODY_HOME"
-  source "$(brew --prefix)/share/antibody.zsh"
+  source <($(brew --prefix)/share/antibody init)
 
   # too slow
   #antibody bundle zsh-users/zsh-syntax-highlighting
