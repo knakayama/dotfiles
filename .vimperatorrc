@@ -160,7 +160,7 @@ cnoremap <C-p> <Down>
 cnoremap <C-n> <Up>
 
 " toggle gui
-nnoremap <Leader>g :set gui=all<CR>
+nnoremap <Leader>g :set gui=menu,tabs,navigation,noaddons,nobookmarks<CR>
 nnoremap <Leader>G :set gui=noaddons,nobookmarks,nomenu,nonavigation,tabs<CR>
 
 """"""""""""""""""
