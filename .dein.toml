@@ -117,7 +117,8 @@ on_ft = ['python']
 repo = 'terryma/vim-multiple-cursors'
 
 [[plugins]]
-repo = 'superbrothers/vim-vimperator'
+repo = 'vimperator/vimperator.vim'
+on_ft = ['vimperator']
 
 [[plugins]]
 repo = 'cohama/lexima.vim'
