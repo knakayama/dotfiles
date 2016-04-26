@@ -90,6 +90,9 @@ set newtab=all
 " use vim like editing mode on text area?
 "set noinsertmode
 
+" always show status line
+set statuslinevisibility=visible
+
 """"""""""""""""""
 " Key Map Settings
 """"""""""""""""""
