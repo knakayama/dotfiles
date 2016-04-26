@@ -136,3 +136,6 @@ on_ft = ['tmux']
 [[plugins]]
 repo = 'vim-jp/syntax-vim-ex'
 on_ft = ['vim']
+
+[[plugins]]
+repo = 'sickill/vim-pasta'
