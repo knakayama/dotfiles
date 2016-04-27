@@ -326,6 +326,9 @@ let g:flake8_show_in_gutter = 1
 " dhruvasagar/vim-table-mode
 let g:table_mode_corner = "|"
 
+" vim-terraform
+let g:terraform_fmt_on_save = 1
+
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " colors , fonts and gui settings
 """"""""""""""""""""""""""""""""""""""""""""""""""
