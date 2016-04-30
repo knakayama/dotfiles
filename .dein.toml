@@ -139,3 +139,6 @@ on_ft = ['vim']
 
 [[plugins]]
 repo = 'sickill/vim-pasta'
+
+[[plugins]]
+repo = 'coderifous/textobj-word-column.vim'
