@@ -42,6 +42,9 @@ path=($path ${HOME}/rsense-0.3/bin(N-/))
 # /usr/local/bin
 path=(/usr/local/bin(N-/) $path)
 
+# LaTeX
+path=($path /usr/local/texlive/2015/bin/x86_64-darwin(N-/))
+
 ####################
 # Completion
 ####################
