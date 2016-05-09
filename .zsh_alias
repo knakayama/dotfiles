@@ -28,3 +28,7 @@ if man -aW zshall &>/dev/null; then
     PAGER="less --hilite-search --search-skip-screen '+/^       "$1"'" man zshall
   }
 fi
+
+# for Sphinx
+# http://d.hatena.ne.jp/nullpobug/20120331/1333125058
+alias watchrst="watchmedo shell-command --patterns='*.rst' --recursive --wait --command='make html'"
