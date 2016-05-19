@@ -354,14 +354,6 @@ if [[ -n "$TMUX" || -n "$SSH_TTY" ]]; then
   if [[ -f "${HOME}/.phpbrew/bashrc" ]]; then
     source "${HOME}/.phpbrew/bashrc"
   fi
-
-  # autoload general-env
-  if type pyenv &>/dev/null && type pyenv-virtualenv &>/dev/null; then
-    if [[ "$(pyenv virtualenvs)" =~ 'general-env' ]]; then
-      pyenv activate general-env
-    fi
-  fi
-
 fi
 
 # awscli
