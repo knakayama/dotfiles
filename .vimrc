@@ -81,7 +81,6 @@ set nrformats=
 
 " map leader
 let mapleader = "\<Space>"
-let g:mapleader = "\<Space>"
 
 " cause files to be automatically saved when you switch buffers
 " and external commands
