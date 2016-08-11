@@ -158,10 +158,7 @@ if type brew &>/dev/null && [[ -f "$(brew --prefix)/share/antibody" ]]; then
   antibody bundle soimort/translate-shell
   antibody bundle knakayama/ghq-util
   antibody bundle knakayama/zsh-git-prompt
-  antibody bundle knakayama/tpm-fast-moving
-  antibody bundle knakayama/gopath-fast-moving
   antibody bundle knakayama/gopath-util
-  antibody bundle knakayama/antibody-fast-moving
   antibody bundle knakayama/wacker
 
   # zsh-users/zsh-history-substring-search
@@ -181,10 +178,6 @@ if type brew &>/dev/null && [[ -f "$(brew --prefix)/share/antibody" ]]; then
   bindkey '^xe' anyframe-widget-insert-git-branch
   bindkey '^xt' anyframe-widget-tmux-attach
   bindkey '^xb' anyframe-widget-cdr
-
-  bindkey '^x^f' -tpm-fast-moving
-  bindkey '^x^g' -gopath-fast-moving
-  bindkey '^x^a' -antibody-fast-moving
 fi
 
 ####################
