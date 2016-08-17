@@ -65,9 +65,6 @@ repo = 'tpope/vim-endwise'
 repo = 'majutsushi/tagbar'
 
 [[plugins]]
-repo = 'glidenote/serverspec-snippets'
-
-[[plugins]]
 repo = 'kchmck/vim-coffee-script'
 on_ft = ['coffee']
 
@@ -90,12 +87,6 @@ repo = 'elzr/vim-json'
 on_ft = ['json']
 
 [[plugins]]
-repo = 'terryma/vim-expand-region'
-
-[[plugins]]
-repo = 'mmozuras/vim-github-comment'
-
-[[plugins]]
 repo = 'bling/vim-airline'
 
 [[plugins]]
@@ -114,9 +105,6 @@ repo = 'nvie/vim-flake8'
 on_ft = ['python']
 
 [[plugins]]
-repo = 'terryma/vim-multiple-cursors'
-
-[[plugins]]
 repo = 'vimperator/vimperator.vim'
 on_ft = ['vimperator']
 
@@ -127,18 +115,5 @@ repo = 'cohama/lexima.vim'
 repo = 'dhruvasagar/vim-table-mode'
 
 [[plugins]]
-repo = 'rhysd/unite-redpen.vim'
-
-[[plugins]]
 repo = 'tmux-plugins/vim-tmux'
 on_ft = ['tmux']
-
-[[plugins]]
-repo = 'vim-jp/syntax-vim-ex'
-on_ft = ['vim']
-
-[[plugins]]
-repo = 'sickill/vim-pasta'
-
-[[plugins]]
-repo = 'coderifous/textobj-word-column.vim'

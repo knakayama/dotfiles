@@ -159,7 +159,6 @@ nnoremap <silent><buffer><expr> <C-k> unite#do_action('preview')
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-"autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd Filetype python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
@@ -235,12 +234,6 @@ vmap <leader>W <Plug>(openbroswer-smart-search)
 "" quickrun
 " horizontal split
 let g:quickrun_config={'*': {'split': ''}}
-let g:quickrun_config['markdown'] = {
-    \ 'type': 'markdown/markdown_py',
-    \ 'outputter': 'browser',
-    \ 'command': 'markdown_py',
-    \ 'cmdopt': '-e UTF8',
-    \ }
 
 " vim-ansible-yaml
 let g:ansible_options = {'ignore_blank_lines': 0}
@@ -253,9 +246,6 @@ noremap <leader>M :PrevimOpen<CR>
 
 " tabular
 vnoremap <leader>t :'<,'>Tabularize /=<CR>
-
-" vim-surround
-autocmd FileType markdown let b:surround_45 = "```\n\r\n```"
 
 " vim-json
 let g:vim_json_syntax_conceal = 0
