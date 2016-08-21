@@ -14,15 +14,6 @@ repo = 'Shougo/unite.vim'
 depends = 'neomru.vim'
 
 [[plugins]]
-repo = 'Shougo/neosnippet-snippets'
-
-[[plugins]]
-repo = 'Shougo/neosnippet.vim'
-depends = ['neosnippet-snippets']
-on_i = 1
-on_ft = ['snippet']
-
-[[plugins]]
 repo = 'Shougo/deoplete.nvim'
 if = 'has("nvim")'
 on_i = 1
@@ -39,9 +30,6 @@ repo = 'thinca/vim-quickrun'
 
 [[plugins]]
 repo = 'thinca/vim-ref'
-
-[[plugins]]
-repo = 'thinca/vim-template'
 
 [[plugins]]
 repo = 'mattn/webapi-vim'
