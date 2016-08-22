@@ -163,29 +163,10 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd Filetype python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-"" neosnippets.vim
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: "\<TAB>"
-
 " For snippet_complete marker.
 if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
-" setting example
-let g:neosnippet#snippets_directory = [
-      \'~/.vim/bundle/neosnippet-snippets',
-      \'~/.vim/bundle/serverspec-snippets',
-      \]
 
 "" vimfiler
 " use vimfiler as default filer
@@ -285,7 +266,6 @@ let g:go_fmt_fail_silently = 1
 " arbitrarily remove imports...
 "let g:go_fmt_command = "goimports"
 let g:go_auto_type_info = 1
-let g:go_snippet_engine = "neosnippet"
 "let g:go_quickfix_height = 0
 
 " vim-multiple-cursors
