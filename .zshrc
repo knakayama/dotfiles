@@ -211,7 +211,10 @@ fi
 if [[ -n "$SSH_TTY" ]]; then
   _ssh_tty="@$(echo "$SSH_TTY" | grep -oE 's[0-9]+')"
 fi
-PROMPT='%n${_ssh_tty} %F{blue}%~%f%b $(-zsh-git-prompt)[%?]'$'\n''%(!,#,$) '
+if [[ -n "$AWS_SESSION_TOKEN" ]]; then
+  _aws="aws"
+fi
+PROMPT='%n${_ssh_tty}$([[ -n "$AWS_SESSION_TOKEN" ]] && echo %{$fg_bold[red]%}@aws%{${reset_color}%}) %F{blue}%~%f%b $(-zsh-git-prompt)[%?]'$'\n''%(!,#,$) '
 
 ####################
 # Misc Settings
