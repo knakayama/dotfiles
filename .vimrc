@@ -268,24 +268,6 @@ let g:go_fmt_fail_silently = 1
 let g:go_auto_type_info = 1
 "let g:go_quickfix_height = 0
 
-" vim-multiple-cursors
-" Called once right before you start selecting multiple cursors
-function! Multiple_cursors_before()
-  if exists(':NeoCompleteLock')==2
-    exe 'NeoCompleteLock'
-  endif
-endfunction
-
-" Called once only when the multiple selection is canceled (default <Esc>)
-function! Multiple_cursors_after()
-  if exists(':NeoCompleteUnlock')==2
-    exe 'NeoCompleteUnlock'
-  endif
-endfunction
-
-" github-complete.vim
-let g:github_complete_emoji_japanese_workaround = 1
-
 " vim-flake8
 " Don't show quickfix
 let g:flake8_show_quickfix = 0
