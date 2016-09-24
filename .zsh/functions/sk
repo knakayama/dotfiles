@@ -1,5 +1,5 @@
 sk() {
-  local priv_key="site_key"
+  local priv_key="key_pair"
   local pub_key="${priv_key}.pub"
 
   [[ -f "$priv_key" && -f "$pub_key" ]] \
