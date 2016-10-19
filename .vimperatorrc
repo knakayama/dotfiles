@@ -66,7 +66,7 @@ set tabnumbers
 set hintchars=abcdefghijklmnopqrstuvwxyz
 
 " show tab
-set gui=noaddons,nomenu,nobookmarks,nonavigation,tabs
+set gui=noaddons,nomenu,nobookmarks,navigation,tabs
 
 " items which are completed at the :open prompts
 " s search engines and keyword URLs
@@ -163,8 +163,8 @@ cnoremap <C-p> <Down>
 cnoremap <C-n> <Up>
 
 " toggle gui
-nnoremap <Leader>g :set gui=menu,tabs,navigation,noaddons,nobookmarks<CR>
-nnoremap <Leader>G :set gui=noaddons,nobookmarks,nomenu,nonavigation,tabs<CR>
+nnoremap <Leader>g :set gui=nomenu,tabs,nonavigation,noaddons,nobookmarks<CR>
+nnoremap <Leader>G :set gui=nomenu,tabs,navigation,noaddons,nobookmarks<CR>
 
 """"""""""""""""""
 " Mark
