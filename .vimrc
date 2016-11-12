@@ -318,6 +318,12 @@ nnoremap <leader>es :source $MYVIMRC<CR>
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>z :wqa<CR>
 
+" swap semicolon with colon
+nnoremap ; :
+nnoremap : ;
+vnoremap ; :
+vnoremap : ;
+
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Text, tab and indent related
 """"""""""""""""""""""""""""""""""""""""""""""""""
