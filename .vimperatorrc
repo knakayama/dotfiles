@@ -173,9 +173,6 @@ nnoremap <Leader>G :set gui=nomenu,tabs,navigation,noaddons,nobookmarks<CR>
 " Gmail
 qmark m https://mail.google.com/mail/
 
-" Dropbox
-qmark d https://www.dropbox.com
-
 " feedly
 qmark f https://feedly.com
 
