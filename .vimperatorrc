@@ -166,6 +166,12 @@ cnoremap <C-n> <Up>
 nnoremap <Leader>g :set gui=nomenu,tabs,nonavigation,noaddons,nobookmarks<CR>
 nnoremap <Leader>G :set gui=nomenu,tabs,navigation,noaddons,nobookmarks<CR>
 
+" swap semicolon with colon
+nnoremap ; :
+nnoremap : ;
+vnoremap ; :
+vnoremap : ;
+
 """"""""""""""""""
 " Mark
 """"""""""""""""""
