@@ -4,13 +4,17 @@ atc() {
   local duration_seconds="3600" # 900-3600
   local account_id="$1"
   local role_name="$2"
+  local serial_number="$3"
+  local token_code="$4"
   local assume_role_arn="arn:aws:iam::${account_id}:role/${role_name}"
   local result
 
   result="$(aws sts assume-role \
     --role-arn "$assume_role_arn" \
     --role-session-name "$role_session_name" \
-    --duration-seconds "$duration_seconds")"
+    --duration-seconds "$duration_seconds" \
+    --serial-number "$serial_number"
+    --token-code "$token_code")"
 
   export AWS_ACCESS_KEY_ID="$(echo "$result" \
     | jq -r '.Credentials.AccessKeyId')"
