@@ -13,7 +13,7 @@ atc() {
     --role-arn "$assume_role_arn" \
     --role-session-name "$role_session_name" \
     --duration-seconds "$duration_seconds" \
-    --serial-number "$serial_number"
+    --serial-number "$serial_number" \
     --token-code "$token_code")"
 
   export AWS_ACCESS_KEY_ID="$(echo "$result" \
