@@ -171,6 +171,8 @@ nnoremap ; :
 nnoremap : ;
 vnoremap ; :
 vnoremap : ;
+inoremap ; :
+inoremap : ;
 
 """"""""""""""""""
 " Mark
