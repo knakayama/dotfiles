@@ -323,8 +323,6 @@ nnoremap ; :
 nnoremap : ;
 vnoremap ; :
 vnoremap : ;
-inoremap ; :
-inoremap : ;
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Text, tab and indent related
