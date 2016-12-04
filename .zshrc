@@ -27,23 +27,17 @@ typeset -U path cdpath fpath manpath
 path=(${HOME}/bin(N-/) $path)
 
 # go
-if [[ -x "$(which go 2>/dev/null)" ]]; then
+if type go &>/dev/null; then
   export GOPATH="${HOME}/.go"
   [[ -d "${HOME}/.go" ]] || mkdir "${HOME}/.go"
   path=($path ${GOPATH}/bin)
 fi
-
-# heroku
-path=($path /usr/local/heroku/bin(N-/))
 
 # rsense
 path=($path ${HOME}/rsense-0.3/bin(N-/))
 
 # /usr/local/bin
 path=(/usr/local/bin(N-/) $path)
-
-# LaTeX
-path=($path /usr/local/texlive/2015/bin/x86_64-darwin(N-/))
 
 ####################
 # Completion
@@ -143,7 +137,7 @@ zstyle ':chpwd:*' recent-dirs-max 200
 # antibody
 ####################
 
-if [[ -x "/usr/local/bin/antibody" ]]; then
+if type antibody &>/dev/null; then
   export ANTIBODY_HOME="${HOME}/.antibody"
   [[ -d "$ANTIBODY_HOME" ]] || mkdir "$ANTIBODY_HOME"
   source <(/usr/local/bin/antibody init)
@@ -159,7 +153,6 @@ if [[ -x "/usr/local/bin/antibody" ]]; then
   antibody bundle knakayama/ghq-util
   antibody bundle knakayama/zsh-git-prompt
   antibody bundle knakayama/gopath-util
-  antibody bundle knakayama/wacker
 
   # zsh-users/zsh-history-substring-search
   bindkey -M emacs '^P' history-substring-search-up
