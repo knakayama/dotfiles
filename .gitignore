@@ -9,3 +9,6 @@ bin/rsense*
 !.zsh/completions/.gitkeep
 vendor
 .bundle
+.aws/*
+.aws/*/*
+!.aws/cli/alias
