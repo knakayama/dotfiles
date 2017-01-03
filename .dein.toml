@@ -105,3 +105,6 @@ repo = 'dhruvasagar/vim-table-mode'
 [[plugins]]
 repo = 'tmux-plugins/vim-tmux'
 on_ft = ['tmux']
+
+[[plugins]]
+repo = 'editorconfig/editorconfig-vim'
