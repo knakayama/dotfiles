@@ -353,8 +353,8 @@ if [[ -n "$TMUX" || -n "$SSH_TTY" ]]; then
 fi
 
 # awscli
-if type aws &>/dev/null && [[ -f "${HOME}/.ghq/github.com/aws/aws-cli/bin/aws_zsh_completer.sh" ]]; then
-  source "${HOME}/.ghq/github.com/aws/aws-cli/bin/aws_zsh_completer.sh"
+if type aws &>/dev/null && [[ -f "${HOME}/ghq/github.com/aws/aws-cli/bin/aws_zsh_completer.sh" ]]; then
+  source "${HOME}/ghq/github.com/aws/aws-cli/bin/aws_zsh_completer.sh"
 fi
 
 # workaround:
