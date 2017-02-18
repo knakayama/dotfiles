@@ -217,7 +217,7 @@ vmap <leader>W <Plug>(openbroswer-smart-search)
 let g:quickrun_config={'*': {'split': ''}}
 
 " vim-ansible-yaml
-let g:ansible_options = {'ignore_blank_lines': 0}
+"let g:ansible_options = {'ignore_blank_lines': 0}
 
 " previm
 "2. Attempt open browser with openbrowser#open()
@@ -404,7 +404,7 @@ autocmd BufNewFile,BufRead,BufReadPre *.md set filetype=markdown
 autocmd BufNewFile,BufRead,BufReadPre *.coffee set filetype=coffee
 
 " ansible-yaml
-autocmd BufNewFile,BufRead,BufReadPre *.yml set filetype=ansible
+"autocmd BufNewFile,BufRead,BufReadPre *.yml set filetype=ansible
 
 " Vagrant
 autocmd BufRead,BufNewFile Vagrantfile set filetype=ruby
