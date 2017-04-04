@@ -149,7 +149,6 @@ if type antibody &>/dev/null; then
   antibody bundle gunzy83/packer-zsh-completion
   antibody bundle mollifier/anyframe
   antibody bundle Tarrasch/zsh-bd
-  antibody bundle soimort/translate-shell
   antibody bundle knakayama/ghq-util
   antibody bundle knakayama/zsh-git-prompt
   antibody bundle knakayama/gopath-util
