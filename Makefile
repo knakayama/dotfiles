@@ -10,4 +10,6 @@ symlink:
 		ln -sf $$PWD/$$file $$HOME/$$file; \
 	done
 
-.PHONY: clean symlink
+all: clean symlink
+
+.PHONY: clean symlink all
