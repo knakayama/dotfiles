@@ -7,7 +7,7 @@ symlink:
 	@for file in $(FILES); do \
 		echo $$HOME/$$file; \
 		[ -f $$HOME/$$file ] && [ ! -s $$HOME/$$file ] && mv -iv $$HOME/$$file $$HOME/$$file.`date '+%Y-%m-%d-%H:%M:%S'`; \
-		ln -sf $$PWD/$$file $$HOME/$$file; \
+		ln -shf $$PWD/$$file $$HOME/$$file; \
 	done
 
 all: clean symlink
