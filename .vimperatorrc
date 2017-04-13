@@ -208,8 +208,8 @@ ignorekeys add feedly\.com -except <C-n>,<C-p>,t,f,d,:
 ignorekeys add kcw\.kddi\.ne\.jp -except <C-n>,<C-p>,t,d,:
 
 " remarkjs
-ignorekeys add localhost:8000 -except <C-n>,<C-p>,r,f,d,:
-ignorekeys add knakayama\.github\.io -except <C-n>,<C-p>,r,f,d,:
+ignorekeys add localhost:8000 -except <C-n>,<C-p>,r,d,:
+ignorekeys add knakayama\.github\.io -except <C-n>,<C-p>,r,d,:
 
 " Cacoo
 ignorekeys add cacoo\.com -except <C-n>,<C-p>,:
