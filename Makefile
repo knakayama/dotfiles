@@ -10,6 +10,9 @@ symlink:
 		ln -shf $$PWD/$$file $$HOME/$$file; \
 	done
 
-all: clean symlink
+submodule:
+	@git submodule update --init --recursive
 
-.PHONY: clean symlink all
+all: symlink submodule
+
+.PHONY: clean symlink submodule all
