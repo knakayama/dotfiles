@@ -32,3 +32,6 @@ fi
 # for Sphinx
 # http://d.hatena.ne.jp/nullpobug/20120331/1333125058
 alias watchrst="watchmedo shell-command --patterns='*.rst' --recursive --wait --command='make html'"
+
+# for serverless
+alias sls="./node_modules/.bin/sls"
