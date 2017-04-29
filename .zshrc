@@ -319,6 +319,11 @@ if [[ -x "$(which pwd.sh 2>/dev/null)" ]]; then
   export PWDSH_SAFE="${HOME}/.pwd.sh.safe"
 fi
 
+# npm completion
+if type npm &>/dev/null; then
+  source <(npm completion)
+fi
+
 # prevent duplicate path
 if [[ -n "$TMUX" || -n "$SSH_TTY" ]]; then
   # rbenv
