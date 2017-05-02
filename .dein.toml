@@ -108,3 +108,7 @@ on_ft = ['tmux']
 
 [[plugins]]
 repo = 'editorconfig/editorconfig-vim'
+
+[[plugins]]
+repo = 'mtscout6/syntastic-local-eslint.vim'
+on_ft = ['javascript']

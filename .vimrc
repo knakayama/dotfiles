@@ -202,6 +202,7 @@ endif
 " The following fixes this:
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go']  }
+let g:syntastic_javascript_checkers = ['eslint']
 
 "" gist-vim
 let g:gist_open_browser_after_post = 1
