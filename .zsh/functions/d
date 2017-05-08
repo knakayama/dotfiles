@@ -1,8 +1,0 @@
-# Create tmp download directory
-d() {
-  local dir="${HOME}/Downloads/$(date '+%Y%m%d')"
-
-  [[ -d "$dir" ]] \
-    && echo "$dir already exists" \
-    || { mkdir -p "$dir"; echo "$dir created"; }
-}
