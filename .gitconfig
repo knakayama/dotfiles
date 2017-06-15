@@ -40,3 +40,5 @@
 	root = ~/prj
 	root = ~/.tmux/plugins
 	root = ~/.antibody
+[includeIf "gitdir:~/ghq/work/**"]
+	path = ~/.gitconfig-work
