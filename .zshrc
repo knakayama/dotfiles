@@ -39,6 +39,11 @@ path=($path ${HOME}/rsense-0.3/bin(N-/))
 # /usr/local/bin
 path=(/usr/local/bin(N-/) $path)
 
+# yarn
+if [[ -f "${HOME}/.yarn/bin/yarn" ]]; then
+  path=($path "$HOME/.yarn/bin")
+fi
+
 ####################
 # Completion
 ####################
