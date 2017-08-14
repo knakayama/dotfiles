@@ -28,10 +28,14 @@ liberator.globalVariables.webSearchTemplates = [
     names: ['amazon'],
     description: 'search amazon.co.jp',
     url: 'http://www.amazon.co.jp/s/ref=nb_sb_noss_2?__mk_ja_JP=カタカナ&url=search-alias=aps&field-keywords=%KEYWORD%&rh=i:aps,k:%KEYWORD%'
+  },
+  {
+    names: ['aws'],
+    description: 'search aws docs',
+    url: 'https://www.google.co.jp/search?q=site%3Ahttp%3A%2F%2Fdocs.aws.amazon.com%2Fen_us%2F+%KEYWORD%'
   }
 ];
 EOT
-
 " slideshare.js
 nnoremap -urls=www\\.slideshare\\.net l :slideshare next<CR>
 nnoremap -urls=www\\.slideshare\\.net h :slideshare prev<CR>
