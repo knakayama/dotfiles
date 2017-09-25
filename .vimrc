@@ -160,7 +160,7 @@ nnoremap <silent><buffer><expr> <C-k> unite#do_action('preview')
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd Filetype python setlocal omnifunc=pythoncomplete#Complete
+"autocmd Filetype python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " For snippet_complete marker.
