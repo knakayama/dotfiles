@@ -1,0 +1,15 @@
+atom-beautify@0.30.5
+autocomplete-python@1.10.3
+busy-signal@1.4.3
+ex-mode@0.18.0
+intentions@1.1.5
+language-docker@1.1.8
+language-gitignore@0.3.0
+language-ini@1.19.0
+linter@2.2.0
+linter-flake8@2.2.1
+linter-ui-default@1.6.10
+platformio-ide-terminal@2.7.0
+project-manager@3.3.5
+vim-mode-plus@1.11.5
+

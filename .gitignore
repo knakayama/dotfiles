@@ -12,3 +12,10 @@ vendor
 .aws/*
 .aws/*/*
 !.aws/cli/alias
+.atom/*
+!.atom/config.cson
+!.atom/init.coffee
+!.atom/keymap.cson
+!.atom/snippets.cson
+!.atom/styles.less
+!.atom/packages.txt

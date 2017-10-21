@@ -1,0 +1,28 @@
+"*":
+  "autocomplete-python":
+    useKite: false
+  core:
+    disabledPackages: [
+      "symbols-view"
+    ]
+    telemetryConsent: "no"
+  editor:
+    fontSize: 12
+    showInvisibles: true
+  "exception-reporting":
+    userId: "506913fe-3ce1-48fb-89ec-6a941f39ed2a"
+  "linter-flake8":
+    executablePath: "$PROJECT/.venv/bin/flake8"
+    projectConfigFile: [
+      "setup.cfg"
+    ]
+  "linter-ui-default":
+    showPanel: true
+  "platformio-ide-terminal":
+    core:
+      scrollback: 100000
+  "tree-view": {}
+  "vim-mode-plus":
+    notifiedCoffeeScriptNoLongerSupportedToExtendVMP: true
+  welcome:
+    showOnStartup: false
