@@ -2,12 +2,23 @@
 " Basic Settings
 """"""""""""""""""
 
-set noautofocus
+let mapleader = ","
+
+""""""""""""""""""
+" Search Engines
+""""""""""""""""""
+
+let searchengine amazon = "http://www.amazon.co.jp/s/ref=nb_sb_noss_2?__mk_ja_JP=カタカナ&url=search-alias=aps&field-keywords=%s"
+let searchengine ghcode = "https://github.com/search?type=Code&utf8=%E2%9C%93&q=%s"
+let searchengine ghrepo = "https://github.com/search?utf8=%E2%9C%93&q=%s"
+
+let completionengines = ["google", "amazon", "ghcode", "ghrepo"]
 
 """"""""""""""""""
 " Mappings
 """"""""""""""""""
 
+" nomal mappings
 map d closeTab
 map l goForward
 map h goBack
@@ -16,25 +27,59 @@ map <C-p> previousTab
 map <C-n> nextTab
 map <C-d> scrollPageUp
 map <C-e> scrollPageDown
+map <Leader>r :call :source /Users/knakayama/.cvimrc<CR>
+map ZZ quitChrome
+
+" insert mappings
+iunmap <C-y>
+iunmap <C-o>
+iunmap <C-i>
+iunmap <C-h>
+imap <C-w> deleteWord
+imap <C-k> deleteToEnd
+imap <C-h> deleteChar
 
 """"""""""""""""""
 " Mark
 """"""""""""""""""
 
-" Gmail
 let qmark m = ["https://mail.google.com/"]
-
-" feedly
 let qmark f = ["https://feedly.com"]
-
-" Remember the milk
 let qmark r = ["https://www.rememberthemilk.com"]
-
-" My GitHub account
 let qmark k = ["https://github.com/knakayama"]
 
 """"""""""""""""""
 " Black Lists
 """"""""""""""""""
 
-let blacklists = ["https://mail.google.com/*", "https://feedly.com/*"]
+site "https://feedly.com/*" {
+  unmap j
+  unmap k
+  unmap v
+  unmap ga
+}
+
+site "https://mail.google.com/*" {
+  unmap j
+  unmap k
+  unmap ga
+  unmap <C-i>
+  unmap <C-u>
+  unmap /
+}
+
+site "https://kcw.kddi.ne.jp/*" {
+  unmap j
+  unmap k
+  unmap m
+  unmap /
+}
+
+site "https://www.rememberthemilk.com" {
+  unmap j
+  unmap k
+  unmap d
+  unmap ga
+  unmap h
+  unmap u
+}
