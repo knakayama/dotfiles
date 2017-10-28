@@ -1,4 +1,6 @@
 "*":
+  "advanced-open-file":
+    createDirectories: true
   "autocomplete-python":
     useKite: false
   core:
@@ -21,7 +23,8 @@
   "platformio-ide-terminal":
     core:
       scrollback: 100000
-  "tree-view": {}
+  "tree-view":
+    hideVcsIgnoredFiles: true
   "vim-mode-plus":
     notifiedCoffeeScriptNoLongerSupportedToExtendVMP: true
   welcome:
