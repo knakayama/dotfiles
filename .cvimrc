@@ -1,0 +1,40 @@
+""""""""""""""""""
+" Basic Settings
+""""""""""""""""""
+
+set noautofocus
+
+""""""""""""""""""
+" Mappings
+""""""""""""""""""
+
+map d closeTab
+map l goForward
+map h goBack
+map u lastClosedTab
+map <C-p> previousTab
+map <C-n> nextTab
+map <C-d> scrollPageUp
+map <C-e> scrollPageDown
+
+""""""""""""""""""
+" Mark
+""""""""""""""""""
+
+" Gmail
+let qmark m = ["https://mail.google.com/"]
+
+" feedly
+let qmark f = ["https://feedly.com"]
+
+" Remember the milk
+let qmark r = ["https://www.rememberthemilk.com"]
+
+" My GitHub account
+let qmark k = ["https://github.com/knakayama"]
+
+""""""""""""""""""
+" Black Lists
+""""""""""""""""""
+
+let blacklists = ["https://mail.google.com/*", "https://feedly.com/*"]
