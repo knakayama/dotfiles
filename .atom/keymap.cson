@@ -30,11 +30,3 @@
 # If you are unfamiliar with CSON, you can read more about it in the
 # Atom Flight Manual:
 # http://flight-manual.atom.io/using-atom/sections/basic-customization/#configuring-with-cson
-
-'atom-text-editor:not([mini])':
-  'ctrl-m': 'editor:newline'
-  #'ctrl-i': [
-  #  'snippets:expand'
-  #  'snippets:next-tab-stop'
-  #  'editor:indent'
-  #]
