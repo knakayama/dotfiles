@@ -2,7 +2,8 @@
 " Basic Settings
 """"""""""""""""""
 
-let mapleader = ","
+let mapleader = "<Space>"
+set noautofocus
 
 """"""""""""""""""
 " Search Engines
@@ -75,7 +76,7 @@ site "https://kcw.kddi.ne.jp/*" {
   unmap /
 }
 
-site "https://www.rememberthemilk.com" {
+site "https://www.rememberthemilk.com/*" {
   unmap j
   unmap k
   unmap d
@@ -83,4 +84,6 @@ site "https://www.rememberthemilk.com" {
   unmap h
   unmap u
   unmap c
+  unmap i
+  unmap t
 }
