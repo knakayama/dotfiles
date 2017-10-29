@@ -24,21 +24,54 @@ map d closeTab
 map l goForward
 map h goBack
 map u lastClosedTab
+map ZZ quitChrome
+
 map <C-p> previousTab
 map <C-n> nextTab
-map <C-d> scrollPageUp
-map <C-e> scrollPageDown
-map <Leader>r :call :source /Users/knakayama/.cvimrc<CR>
-map ZZ quitChrome
+
+map <C-u> scrollPageUp
+map <C-b> scrollFullPageUp
+map <C-y> scrollUp
+map <C-d> scrollPageDown
+map <C-f> scrollFullPageDown
+map <C-e> scrollDown
+" not work
+"map <space> scrollPageDown
+
+map <Leader>s :settings<CR>
+map <Leader>h :help<CR>
+
+reloadcVimConfig -> {{
+  settings.configpath = "/Users/knakayama/.cvimrc";
+  settings.localconfig = true;
+  PORT("syncSettings", { settings: settings });
+  Status.setMessage("Reload cVim Config!");
+}}
+
+map <Leader>r :call reloadcVimConfig<CR>
+
+copyMyIp() -> {{
+  httpRequest({url: "http://api.ipify.org/?format=json", json: true},
+    function(res) {
+      Clipboard.copy(res.ip);
+      Status.setMessage("My IP: " + res.ip);
+    }
+  );
+}}
+map <Leader>i :call copyMyIp<CR>
 
 " insert mappings
 iunmap <C-y>
 iunmap <C-o>
 iunmap <C-i>
 iunmap <C-h>
+iunmap <C-p>
 imap <C-w> deleteWord
 imap <C-k> deleteToEnd
 imap <C-h> deleteChar
+" not work
+"imap <C-p> :execute <C-i>
+"imap <C-p> :execute <Shift><C-i>
 
 """"""""""""""""""
 " Mark
@@ -57,16 +90,24 @@ site "https://feedly.com/*" {
   unmap j
   unmap k
   unmap v
+  unmap g
+  unmap a
+  unmap y
+  unmap U
+  unmap h
   unmap ga
 }
 
 site "https://mail.google.com/*" {
   unmap j
   unmap k
-  unmap ga
-  unmap <C-i>
-  unmap <C-u>
+  unmap g
+  unmap a
+  unmap I
+  unmap U
   unmap /
+  unmap h
+  unmap ga
 }
 
 site "https://kcw.kddi.ne.jp/*" {
@@ -80,10 +121,13 @@ site "https://www.rememberthemilk.com/*" {
   unmap j
   unmap k
   unmap d
-  unmap ga
+  unmap g
+  unmap a
   unmap h
   unmap u
   unmap c
   unmap i
   unmap t
+  unmap y
+  unmap z
 }
