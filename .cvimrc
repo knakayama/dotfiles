@@ -82,4 +82,5 @@ site "https://www.rememberthemilk.com" {
   unmap ga
   unmap h
   unmap u
+  unmap c
 }
