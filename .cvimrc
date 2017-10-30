@@ -87,47 +87,44 @@ let qmark k = ["https://github.com/knakayama"]
 """"""""""""""""""
 
 site "https://feedly.com/*" {
-  unmap j
-  unmap k
-  unmap v
-  unmap g
-  unmap a
-  unmap y
-  unmap U
-  unmap h
-  unmap ga
+  unmapAll
+  iunmapAll
+  map <C-p> previousTab
+  map <C-n> nextTab
+  map f createHint
+  map F createTabbedHint
+  map : openCommandBar
+  map t :tabnew<Space>
 }
 
 site "https://mail.google.com/*" {
-  unmap j
-  unmap k
-  unmap g
-  unmap a
-  unmap I
-  unmap U
-  unmap /
-  unmap h
-  unmap ga
+  unmapAll
+  iunmapAll
+  map <C-p> previousTab
+  map <C-n> nextTab
+  map f createHint
+  map F createTabbedHint
+  map : openCommandBar
+  map t :tabnew<Space>
 }
 
 site "https://kcw.kddi.ne.jp/*" {
-  unmap j
-  unmap k
-  unmap m
-  unmap /
+  unmapAll
+  iunmapAll
+  map <C-p> previousTab
+  map <C-n> nextTab
+  map f createHint
+  map F createTabbedHint
+  map : openCommandBar
+  map t :tabnew<Space>
 }
 
 site "https://www.rememberthemilk.com/*" {
-  unmap j
-  unmap k
-  unmap d
-  unmap g
-  unmap a
-  unmap h
-  unmap u
-  unmap c
-  unmap i
-  unmap t
-  unmap y
-  unmap z
+  unmapAll
+  iunmapAll
+  map <C-p> previousTab
+  map <C-n> nextTab
+  map f createHint
+  map F createTabbedHint
+  map : openCommandBar
 }
