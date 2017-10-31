@@ -95,6 +95,7 @@ site "https://feedly.com/*" {
   map F createTabbedHint
   map : openCommandBar
   map t :tabnew<Space>
+  map d closeTab
 }
 
 site "https://mail.google.com/*" {
@@ -106,6 +107,7 @@ site "https://mail.google.com/*" {
   map F createTabbedHint
   map : openCommandBar
   map t :tabnew<Space>
+  map d closeTab
 }
 
 site "https://kcw.kddi.ne.jp/*" {
@@ -117,6 +119,7 @@ site "https://kcw.kddi.ne.jp/*" {
   map F createTabbedHint
   map : openCommandBar
   map t :tabnew<Space>
+  map d closeTab
 }
 
 site "https://www.rememberthemilk.com/*" {
