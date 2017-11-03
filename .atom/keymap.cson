@@ -33,4 +33,14 @@
 
 'atom-text-editor.vim-mode-plus:not(.insert-mode)':
   'space w': 'core:save'
+  'ctrl-n': 'vim-mode-plus:next-tab'
+  'ctrl-p': 'vim-mode-plus:previous-tab'
   #'ZZ': 'custom:save-and-close'
+'.platform-darwin atom-workspace':
+  'ctrl-cmd-f': 'platformio-ide-terminal:focus'
+
+'.platform-darwin':
+  'ctrl-cmd-f': 'find-and-replace:show-replace'
+
+'atom-workspace':
+  'ctrl-cmd-t': 'recent-files-fuzzy-finder:toggle-finder'
