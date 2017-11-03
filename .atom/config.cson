@@ -4,6 +4,7 @@
   "autocomplete-python":
     useKite: false
   core:
+    allowPendingPaneItems: false
     disabledPackages: [
       "symbols-view"
     ]
