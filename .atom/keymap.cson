@@ -38,6 +38,7 @@
   #'ZZ': 'custom:save-and-close'
 '.platform-darwin atom-workspace':
   'ctrl-cmd-f': 'platformio-ide-terminal:focus'
+  'ctrl-cmd-o': 'advanced-open-file:toggle'
 
 '.platform-darwin':
   'ctrl-cmd-f': 'find-and-replace:show-replace'
