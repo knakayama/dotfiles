@@ -111,7 +111,8 @@ site "https://mail.google.com/*" {
   map t :tabnew<Space>
   map d closeTab
   map r reloadTab
-  map gp pinTab
+  " ga does not work
+  "map gp pinTab
 }
 
 site "https://kcw.kddi.ne.jp/*" {
