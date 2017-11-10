@@ -14,9 +14,10 @@ language-viml@1.1.6
 linter@2.2.0
 linter-flake8@2.2.1
 linter-ui-default@1.6.10
+markdown-table-editor@0.6.4
 pdf-view@0.59.0
 platformio-ide-terminal@2.7.0
 project-manager@3.3.5
 recent-files-fuzzy-finder@0.3.2
-vim-mode-plus@1.15.0
+vim-mode-plus@1.16.0
 
