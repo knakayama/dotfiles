@@ -69,9 +69,6 @@ iunmap <C-p>
 imap <C-w> deleteWord
 imap <C-k> deleteToEnd
 imap <C-h> deleteChar
-" not work
-"imap <C-p> :execute <C-i>
-"imap <C-p> :execute <Shift><C-i>
 
 """"""""""""""""""
 " Mark
