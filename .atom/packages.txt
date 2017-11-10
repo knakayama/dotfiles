@@ -3,6 +3,7 @@ atom-beautify@0.30.6
 atom-runner@2.7.1
 autocomplete-python@1.10.3
 busy-signal@1.4.3
+cursor-history@0.12.0
 ex-mode@0.18.0
 intentions@1.1.5
 language-docker@1.1.8

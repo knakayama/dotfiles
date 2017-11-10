@@ -35,13 +35,17 @@
   'space w': 'core:save'
   'ctrl-n': 'vim-mode-plus:next-tab'
   'ctrl-p': 'vim-mode-plus:previous-tab'
-  #'ZZ': 'custom:save-and-close'
+  'ctrl-i': 'cursor-history:next'
+  'ctrl-o': 'cursor-history:prev'
+  'ctrl-cmd-i': 'cursor-history:next-within-editor'
+  'ctrl-cmd-o': 'cursor-history:prev-within-editor'
+
 '.platform-darwin atom-workspace':
   'ctrl-cmd-f': 'platformio-ide-terminal:focus'
-  'ctrl-cmd-o': 'advanced-open-file:toggle'
-
-'.platform-darwin':
-  'ctrl-cmd-f': 'find-and-replace:show-replace'
-
-'atom-workspace':
+  'ctrl-cmd-l': 'advanced-open-file:toggle'
   'ctrl-cmd-t': 'recent-files-fuzzy-finder:toggle-finder'
+
+'body atom-text-editor.autocomplete-active':
+  'ctrl-p': 'autocomplete-plus:move-up'
+  'ctrl-n': 'autocomplete-plus:move-down'
+  'ctrl-i': 'autocomplete-plus:confirm'
