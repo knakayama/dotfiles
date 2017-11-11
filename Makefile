@@ -16,10 +16,11 @@ copy_karabiner_config:
 symlink: make_directory copy_karabiner_config
 	@for dot_file in $(DOT_FILES); do \
 		[[ $$dot_file == ".aws" ]] && dot_file=".aws/cli/alias"; \
+		echo $$dot_file; \
 		dot_file_source=$$PWD/$$dot_file; \
 		dot_file_target=$$HOME/$$dot_file; \
 		[[ -f $$dot_file_target && ! -s $$dot_file_target ]] \
-			&& mv -iv $$dot_file_target $$dot_file_target.$$(date '+%Y-%m-%d-%H:%M:%S'); \
+			&& mv -v $$dot_file_target $$dot_file_target.$$(date '+%Y-%m-%d-%H:%M:%S'); \
 		ln -shf $$dot_file_source $$dot_file_target; \
 	done
 
