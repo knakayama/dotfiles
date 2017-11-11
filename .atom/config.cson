@@ -10,6 +10,9 @@
     disabledPackages: [
       "symbols-view"
     ]
+    packagesWithKeymapsDisabled: [
+      "platformio-ide-terminal"
+    ]
     telemetryConsent: "no"
   editor:
     fontSize: 12
@@ -26,6 +29,10 @@
   "platformio-ide-terminal":
     core:
       scrollback: 100000
+    toggles:
+      autoClose: true
+      runInsertedText: false
+      selectToCopy: false
   "tree-view":
     hideVcsIgnoredFiles: true
   "vim-mode-plus":
