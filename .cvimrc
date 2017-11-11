@@ -78,6 +78,7 @@ let qmark f = ["https://feedly.com"]
 let qmark r = ["https://www.rememberthemilk.com"]
 let qmark k = ["https://github.com/knakayama"]
 let qmark g = ["https://github.com/"]
+let qmark a = ["http://www.amazon.co.jp"]
 
 """"""""""""""""""
 " Black Lists
