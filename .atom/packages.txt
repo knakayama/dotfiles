@@ -1,5 +1,6 @@
 advanced-open-file@0.16.7
 atom-beautify@0.30.6
+atom-open-this@0.3.0
 atom-runner@2.7.1
 autocomplete-python@1.10.3
 busy-signal@1.4.3
