@@ -65,7 +65,6 @@ iunmap <C-y>
 iunmap <C-o>
 iunmap <C-i>
 iunmap <C-h>
-iunmap <C-p>
 imap <C-w> deleteWord
 imap <C-k> deleteToEnd
 imap <C-h> deleteChar
