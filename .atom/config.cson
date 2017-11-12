@@ -1,6 +1,7 @@
 "*":
   "advanced-open-file":
     createDirectories: true
+  "autocomplete-paths": {}
   "autocomplete-plus":
     useCoreMovementCommands: false
   "autocomplete-python":
