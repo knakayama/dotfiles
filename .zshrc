@@ -229,8 +229,8 @@ if [[ "$OSTYPE" =~ "darwin*" ]]; then
 fi
 
 # editor
-if type nvim &>/dev/null; then
-  export EDITOR="nvim"
+if type atom &>/dev/null; then
+  export EDITOR="atom"
 elif type vim &>/dev/null; then
   export EDITOR="vim"
 else
