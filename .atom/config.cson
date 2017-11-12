@@ -27,6 +27,7 @@
     projectConfigFile: [
       "setup.cfg"
     ]
+  "linter-shellcheck": {}
   "linter-ui-default":
     showPanel: true
   "platformio-ide-terminal":
