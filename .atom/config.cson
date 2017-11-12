@@ -10,6 +10,7 @@
     disabledPackages: [
       "symbols-view"
     ]
+    excludeVcsIgnoredPaths: false
     packagesWithKeymapsDisabled: [
       "platformio-ide-terminal"
     ]
