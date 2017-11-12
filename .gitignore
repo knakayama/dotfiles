@@ -9,3 +9,8 @@
 !.atom/snippets.cson
 !.atom/styles.less
 !.atom/packages.txt
+/.w3m/**
+!.w3m/config
+!.w3m/keymap
+!.w3m/mailcap
+!.w3m/mime.types
