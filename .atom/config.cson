@@ -26,7 +26,8 @@
     projectConfigFile: [
       "setup.cfg"
     ]
-  "linter-ui-default": {}
+  "linter-ui-default":
+    showPanel: true
   "platformio-ide-terminal":
     core:
       scrollback: 100000
