@@ -135,6 +135,5 @@ site "https://www.rememberthemilk.com/*" {
   map f createHint
   map F createTabbedHint
   map : openCommandBar
-  map r reloadTab
   map gp pinTab
 }
