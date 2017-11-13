@@ -1,7 +1,8 @@
 "*":
   "advanced-open-file":
     createDirectories: true
-  "autocomplete-paths": {}
+  "autocomplete-paths":
+    maxFileCount: 2000
   "autocomplete-plus":
     useCoreMovementCommands: false
   "autocomplete-python":
