@@ -29,8 +29,7 @@
       "setup.cfg"
     ]
   "linter-shellcheck": {}
-  "linter-ui-default":
-    showPanel: true
+  "linter-ui-default": {}
   "platformio-ide-terminal":
     core:
       scrollback: 100000
