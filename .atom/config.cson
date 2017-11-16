@@ -39,7 +39,7 @@
       runInsertedText: false
       selectToCopy: false
   "tree-view":
-    hideVcsIgnoredFiles: true
+    hideVcsIgnoredFiles: false
   "vim-mode-plus": {}
   welcome:
     showOnStartup: false
