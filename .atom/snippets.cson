@@ -24,3 +24,11 @@
   'shebang':
     'prefix': '!'
     'body': "#!/usr/bin/env $1"
+
+'.source.python':
+  'shebang':
+    'prefix': 'ifn'
+    'body': """
+    if __name__ == '__main__':
+        $1
+    """
