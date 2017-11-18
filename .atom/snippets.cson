@@ -20,13 +20,15 @@
 # Atom Flight Manual:
 # http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
 
-'*':
-  'shebang':
-    'prefix': '!'
-    'body': "#!/usr/bin/env $1"
-
 '.source.python':
   'shebang':
+    'prefix': '!'
+    'body': """
+    #!/usr/bin/env python
+
+    $1
+    """
+  'ifn':
     'prefix': 'ifn'
     'body': """
     if __name__ == '__main__':
