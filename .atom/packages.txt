@@ -1,6 +1,6 @@
 advanced-open-file@0.16.7
 atom-beautify@0.30.6
-atom-ide-ui@0.5.4
+atom-ide-ui@0.6.0
 atom-open-this@0.3.0
 atom-runner@2.7.1
 atom-typescript@11.0.10
