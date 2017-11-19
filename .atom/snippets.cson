@@ -20,17 +20,11 @@
 # Atom Flight Manual:
 # http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
 
-'.source.python':
-  'shebang':
-    'prefix': '!'
+'.source.shell':
+  'set':
+    'prefix': 'set'
     'body': """
-    #!/usr/bin/env python
+    set -xeuo pipefail
 
     $1
-    """
-  'ifn':
-    'prefix': 'ifn'
-    'body': """
-    if __name__ == '__main__':
-        $1
     """
