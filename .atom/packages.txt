@@ -1,5 +1,5 @@
 advanced-open-file@0.16.7
-atom-beautify@0.30.6
+atom-beautify@0.30.9
 atom-ide-ui@0.6.0
 atom-open-this@0.3.0
 atom-runner@2.7.1
@@ -8,6 +8,7 @@ autocomplete-python@1.10.5
 busy-signal@1.4.3
 cursor-history@0.12.0
 ex-mode@0.18.0
+git-projects@1.17.0
 intentions@1.1.5
 language-csv@1.1.2
 language-docker@1.1.8
@@ -26,7 +27,6 @@ linter-ui-default@1.6.10
 markdown-table-editor@1.0.1
 pdf-view@0.61.0
 platformio-ide-terminal@2.7.0
-project-manager@3.3.5
 recent-files-fuzzy-finder@0.3.2
-vim-mode-plus@1.20.0
+vim-mode-plus@1.21.0
 

@@ -16,6 +16,7 @@
     excludeVcsIgnoredPaths: false
     packagesWithKeymapsDisabled: [
       "platformio-ide-terminal"
+      "git-projects"
     ]
     telemetryConsent: "no"
   editor:
@@ -23,6 +24,10 @@
     showInvisibles: true
   "exception-reporting":
     userId: "506913fe-3ce1-48fb-89ec-6a941f39ed2a"
+  "git-projects":
+    maxDepth: 3
+    rootPath: "~/ghq"
+    showGitInfo: false
   "linter-flake8":
     executablePath: "$PROJECT/.venv/bin/flake8"
     flakeErrors: true

@@ -52,6 +52,7 @@
   'ctrl-cmd-l': 'advanced-open-file:toggle'
   'ctrl-cmd-t': 'recent-files-fuzzy-finder:toggle-finder'
   'ctrl-cmd-z': 'platformio-ide-terminal:fullscreen'
+  'ctrl-cmd-p': 'git-projects:toggle'
 
 'atom-workspace':
   'ctrl-`': 'platformio-ide-terminal:toggle'
