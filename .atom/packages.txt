@@ -8,6 +8,7 @@ autocomplete-python@1.10.5
 busy-signal@1.4.3
 cursor-history@0.12.0
 ex-mode@0.18.0
+git-plus@7.10.0
 git-projects@1.17.0
 intentions@1.1.5
 language-csv@1.1.2
@@ -28,5 +29,6 @@ markdown-table-editor@1.0.1
 pdf-view@0.61.0
 platformio-ide-terminal@2.7.0
 recent-files-fuzzy-finder@0.3.2
+script@3.17.3
 vim-mode-plus@1.21.0
 
