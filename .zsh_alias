@@ -13,10 +13,7 @@ alias lsa="ls -ld .*"
 alias lsd="ls -ld *(-/DN)"
 
 # writing
-alias a="$EDITOR $(date '+%Y-%m-%d').md"
-
-# README.md
-alias e="$EDITOR README.md"
+alias a="atom $(date '+%Y-%m-%d').md"
 
 # today tmp dir
 alias mdate="mkdir $(date '+%Y%m%d') && cd $(date '+%Y%m%d')"
