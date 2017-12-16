@@ -1,6 +1,10 @@
 "*":
   "advanced-open-file":
     createDirectories: true
+  "atom-ide-ui":
+    "atom-ide-diagnostics-ui":
+      autoVisibility: true
+      showDirectoryColumn: true
   "autocomplete-paths":
     maxFileCount: 2000
   "autocomplete-plus":
