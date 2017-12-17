@@ -36,11 +36,6 @@ fi
 # /usr/local/bin
 path=(/usr/local/bin(N-/) $path)
 
-# yarn
-if [[ -f "${HOME}/.yarn/bin/yarn" ]]; then
-  path=($path "$HOME/.yarn/bin")
-fi
-
 ####################
 # Completion
 ####################
@@ -296,11 +291,6 @@ if [[ -f "${HOME}/.zsh/plugin/auto-fu.zsh/auto-fu.zsh" ]]; then
   zle -N zle-line-init
 fi
 
-# w3m
-if [[ -x "$(which w3m 2>/dev/null)" ]]; then
-  export HTTP_HOME="http://www.google.com"
-fi
-
 # direnv
 if [[ -x "$(which direnv 2>/dev/null)" ]]; then
   eval "$(direnv hook zsh)"
@@ -324,23 +314,6 @@ if [[ -n "$TMUX" || -n "$SSH_TTY" ]]; then
   # rbenv
   if type rbenv &>/dev/null; then
     eval "$(rbenv init -)"
-  fi
-
-  # pyenv
-  if type pyenv &>/dev/null; then
-    eval "$(pyenv init -)";
-    eval "$(pyenv virtualenv-init -)"
-    export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-  fi
-
-  # plenv
-  if type plenv &>/dev/null; then
-    eval "$(plenv init -)"
-  fi
-
-  # phpbrew
-  if [[ -f "${HOME}/.phpbrew/bashrc" ]]; then
-    source "${HOME}/.phpbrew/bashrc"
   fi
 fi
 
