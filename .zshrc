@@ -33,9 +33,6 @@ if type go &>/dev/null; then
   path=($path ${GOPATH}/bin)
 fi
 
-# rsense
-path=($path ${HOME}/rsense-0.3/bin(N-/))
-
 # /usr/local/bin
 path=(/usr/local/bin(N-/) $path)
 
