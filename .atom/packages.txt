@@ -1,11 +1,12 @@
 advanced-open-file@0.16.7
 atom-beautify@0.30.9
-atom-ide-ui@0.6.0
+atom-ide-ui@0.7.1
 atom-open-this@0.3.0
 atom-runner@2.7.1
 atom-typescript@11.0.10
 autocomplete-python@1.10.5
 busy-signal@1.4.3
+choose-pane@0.8.0
 cursor-history@0.12.0
 ex-mode@0.18.0
 git-projects@1.17.0
@@ -27,6 +28,7 @@ linter-ui-default@1.6.10
 markdown-table-editor@1.0.1
 pdf-view@0.61.0
 platformio-ide-terminal@2.7.0
+recent-files-fuzzy-finder@0.4.0
 script@3.17.3
-vim-mode-plus@1.24.0
+vim-mode-plus@1.25.0
 
