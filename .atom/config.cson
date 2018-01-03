@@ -45,6 +45,7 @@
     ]
   "linter-mypy":
     executablePath: "$PROJECT_PATH/.venv/bin/python"
+    mypyIniFile: "$PROJECT_PATH/mypy.ini"
   "linter-shellcheck": {}
   "linter-ui-default": {}
   "platformio-ide-terminal":
