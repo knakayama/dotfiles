@@ -33,11 +33,11 @@ if type go &>/dev/null; then
   path=($path ${GOPATH}/bin)
 fi
 
-# anaconda
-path=($path /usr/local/anaconda3/bin(N-/))
-
 # /usr/local/bin
 path=($path /usr/local/bin(N-/))
+
+# anaconda
+path=($path /usr/local/anaconda3/bin(N-/))
 
 ####################
 # Completion
