@@ -16,6 +16,7 @@
     disabledPackages: [
       "symbols-view"
       "linter"
+      "language-python"
     ]
     excludeVcsIgnoredPaths: false
     packagesWithKeymapsDisabled: [
@@ -42,6 +43,8 @@
     projectConfigFile: [
       "setup.cfg"
     ]
+  "linter-mypy":
+    executablePath: "$PROJECT_PATH/.venv/bin/python"
   "linter-shellcheck": {}
   "linter-ui-default": {}
   "platformio-ide-terminal":
@@ -58,3 +61,6 @@
     showOnStartup: false
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
+".python.regexp.source":
+  editor:
+    preferredLineLength: 801
