@@ -24,6 +24,7 @@
       "platformio-ide-terminal"
       "git-projects"
       "script"
+      "plantuml-viewer"
     ]
     telemetryConsent: "no"
   editor:
@@ -51,6 +52,9 @@
     mypyPath: "$PROJECT_PATH"
   "linter-shellcheck": {}
   "linter-ui-default": {}
+  "plantuml-viewer":
+    charset: "UTF-8"
+    graphvizDotExecutable: "/usr/local/bin/dot"
   "platformio-ide-terminal":
     core:
       scrollback: 100000

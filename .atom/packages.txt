@@ -17,6 +17,7 @@ language-docker@1.1.8
 language-gitignore@0.3.0
 language-hcl@0.4.0
 language-ini@1.19.0
+language-plantuml@0.2.0
 language-tmux@0.4.0
 language-viml@1.1.6
 linter@2.2.0
@@ -29,6 +30,7 @@ linter-shellcheck@1.4.6
 linter-ui-default@1.6.10
 markdown-table-editor@1.0.1
 pdf-view@0.62.0
+plantuml-viewer@0.7.2
 platformio-ide-terminal@2.8.0
 recent-files-fuzzy-finder@0.4.0
 script@3.17.3

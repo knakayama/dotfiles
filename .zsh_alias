@@ -35,3 +35,6 @@ alias sls="./node_modules/.bin/sls"
 
 # e2d: epoch to date
 alias e2d="perl -le 'print scalar localtime $ARGV[0]'"
+
+# p2p: plantuml to png
+alias p2p="java -Dfile.econding=UTF-8 -jar /usr/local/Cellar/plantuml/1.2017.20/libexec/plantuml.jar -o out"

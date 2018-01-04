@@ -24,6 +24,7 @@
   'ctrl-cmd-z': 'platformio-ide-terminal:fullscreen'
   'ctrl-cmd-p': 'git-projects:toggle'
   'ctrl-cmd--': 'choose-pane:start'
+  'ctrl-cmd-u': 'plantuml-viewer:toggle'
 
 'atom-workspace':
   'ctrl-`': 'platformio-ide-terminal:toggle'
