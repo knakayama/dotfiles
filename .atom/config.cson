@@ -5,6 +5,7 @@
     "atom-ide-diagnostics-ui":
       autoVisibility: true
       showDirectoryColumn: true
+    use: {}
   "autocomplete-paths":
     maxFileCount: 2000
   "autocomplete-plus":
@@ -44,9 +45,10 @@
       "setup.cfg"
     ]
   "linter-mypy":
-    executablePath: "$PROJECT_PATH/.venv3/bin/python"
-    mypyIniFile: "$PROJECT_PATH/mypy.ini"
+    executablePath: "$PROJECT_PATH/.venv/bin/python"
+    mypyIniFile: "$PROJECT_PATH/setup.cfg"
     mypyNotifyInternalError: false
+    mypyPath: "$PROJECT_PATH"
   "linter-shellcheck": {}
   "linter-ui-default": {}
   "platformio-ide-terminal":

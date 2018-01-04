@@ -32,3 +32,6 @@ alias watchrst="watchmedo shell-command --patterns='*.rst' --recursive --wait --
 
 # for serverless
 alias sls="./node_modules/.bin/sls"
+
+# e2d: epoch to date
+alias e2d="perl -le 'print scalar localtime $ARGV[0]'"
