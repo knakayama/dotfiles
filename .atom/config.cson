@@ -18,6 +18,7 @@
       "symbols-view"
       "linter"
       "language-python"
+      "whitespace"
     ]
     excludeVcsIgnoredPaths: false
     packagesWithKeymapsDisabled: [
