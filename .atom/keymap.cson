@@ -11,6 +11,7 @@
   'ctrl-cmd-o': 'cursor-history:prev-within-editor'
   'ctrl-cmd-r': 'script:run'
   'ctrl-cmd-shift-r': 'script:close-view'
+  'ctrl-cmd-m': 'markdown-preview:toggle'
 
 'atom-text-editor.vim-mode-plus.normal-mode':
   'g f': 'open-this:here'

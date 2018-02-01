@@ -19,6 +19,7 @@
       "linter"
       "language-python"
       "whitespace"
+      "linter-mypy"
     ]
     excludeVcsIgnoredPaths: false
     packagesWithKeymapsDisabled: [
@@ -50,7 +51,7 @@
     executablePath: "$PROJECT_PATH/.venv/bin/python"
     mypyIniFile: "$PROJECT_PATH/setup.cfg"
     mypyNotifyInternalError: false
-    mypyPath: "$PROJECT_PATH"
+    mypyPath: "$PROJECT_PATH/factory_method/python:$PROJECT_PATH/part1/python:$PROJECT_PATH/prototype/python"
   "linter-shellcheck": {}
   "linter-ui-default": {}
   "plantuml-viewer":
