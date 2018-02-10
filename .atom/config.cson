@@ -20,6 +20,7 @@
       "language-python"
       "whitespace"
       "linter-mypy"
+      "tree-view"
     ]
     excludeVcsIgnoredPaths: false
     packagesWithKeymapsDisabled: [
