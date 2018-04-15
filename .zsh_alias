@@ -12,9 +12,6 @@ alias lsa="ls -ld .*"
 # display only directory and directory alias
 alias lsd="ls -ld *(-/DN)"
 
-# writing
-alias a="atom $(date '+%Y-%m-%d').md"
-
 # today tmp dir
 alias mdate="mkdir $(date '+%Y%m%d') && cd $(date '+%Y%m%d')"
 

@@ -2,13 +2,6 @@
 !/.zsh/completions/.gitkeep
 /.aws/**
 !/.aws/cli/alias
-/.atom/**
-!.atom/config.cson
-!.atom/init.coffee
-!.atom/keymap.cson
-!.atom/snippets.cson
-!.atom/styles.less
-!.atom/packages.txt
 /.w3m/**
 !.w3m/config
 !.w3m/keymap
