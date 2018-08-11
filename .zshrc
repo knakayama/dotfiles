@@ -28,8 +28,8 @@ path=(${HOME}/bin(N-/) $path)
 
 # go
 if type go &>/dev/null; then
-  export GOPATH="${HOME}/.go"
-  [[ -d "${HOME}/.go" ]] || mkdir "${HOME}/.go"
+  export GOPATH="${HOME}/go"
+  [[ -d "${HOME}/go" ]] || mkdir "${HOME}/go"
   path=($path ${GOPATH}/bin)
 fi
 
