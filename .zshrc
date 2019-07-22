@@ -330,14 +330,6 @@ if type npm &>/dev/null; then
   source <(npm completion)
 fi
 
-# prevent duplicate path
-if [[ -n "$TMUX" || -n "$SSH_TTY" ]]; then
-  # rbenv
-  if type rbenv &>/dev/null; then
-    eval "$(rbenv init -)"
-  fi
-fi
-
 # awscli
 if type aws &>/dev/null && [[ -f "${HOME}/ghq/github.com/aws/aws-cli/bin/aws_zsh_completer.sh" ]]; then
   source "${HOME}/ghq/github.com/aws/aws-cli/bin/aws_zsh_completer.sh"
