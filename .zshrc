@@ -24,17 +24,14 @@ fi
 typeset -U path cdpath fpath manpath
 
 # local utils
-path=(${HOME}/bin(N-/) $path)
+path=(${HOME}/bin(N-/) /usr/local/bin(N-/) $path)
 
 # go
 if type go &>/dev/null; then
   export GOPATH="${HOME}/go"
   [[ -d "${HOME}/go" ]] || mkdir "${HOME}/go"
-  path=($path ${GOPATH}/bin)
+  path=(${GOPATH}/bin $path)
 fi
-
-# /usr/local/bin
-path=($path /usr/local/bin(N-/))
 
 ####################
 # Completion
@@ -333,6 +330,11 @@ fi
 # awscli
 if type aws &>/dev/null && [[ -f "${HOME}/ghq/github.com/aws/aws-cli/bin/aws_zsh_completer.sh" ]]; then
   source "${HOME}/ghq/github.com/aws/aws-cli/bin/aws_zsh_completer.sh"
+fi
+
+# rbenv
+if type rbenv &>/dev/null; then
+  eval "$(rbenv init -)"
 fi
 
 # workaround:
