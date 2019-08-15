@@ -332,9 +332,9 @@ if type aws &>/dev/null && [[ -f "${HOME}/ghq/github.com/aws/aws-cli/bin/aws_zsh
   source "${HOME}/ghq/github.com/aws/aws-cli/bin/aws_zsh_completer.sh"
 fi
 
-# rbenv
-if type rbenv &>/dev/null; then
-  eval "$(rbenv init -)"
+# yarn
+if [ -f "${HOME}/.yarn/bin/yarn" ]; then
+  path=(${HOME}/.yarn/bin $path)
 fi
 
 # workaround:
