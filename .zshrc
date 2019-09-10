@@ -308,13 +308,17 @@ if type aws &>/dev/null && [[ -f "${HOME}/ghq/github.com/aws/aws-cli/bin/aws_zsh
   source "${HOME}/ghq/github.com/aws/aws-cli/bin/aws_zsh_completer.sh"
 fi
 
-# yarn
-if [ -f "${HOME}/.yarn/bin/yarn" ]; then
-  path=(${HOME}/.yarn/bin $path)
+# pipenv
+if type pipenv &>/dev/null; then
+  eval "$(pipenv --completion)"
 fi
 
-# workaround:
-# set shell environment
-if type tmux &>/dev/null && [[ -n "$TMUX" ]]; then
-  tmux set-environment -g PATH "$PATH"
+# yarn
+if [[ -f "${HOME}/.yarn/bin/yarn" ]]; then
+  path=("${HOME}/.yarn/bin" $path)
+fi
+
+# composer
+if [[ -d "${HOME}/.config/composer/vendor/bin" ]]; then
+  path=("${HOME}/.config/composer/vendor/bin" $path)
 fi
