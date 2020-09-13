@@ -33,6 +33,11 @@ if type go &>/dev/null; then
   path=(${GOPATH}/bin $path)
 fi
 
+# poetry
+if [[ -d "${HOME}/.poetry/bin" ]]; then
+  path=(${HOME}/.poetry/bin $path)
+fi
+
 ####################
 # Completion
 ####################
@@ -45,6 +50,9 @@ fpath=(${ANTIBODY_HOME}/zsh-users-zsh-completions/src(N-/) $fpath)
 
 # original zsh completions
 fpath=(${HOME}/.zsh/completions(N-/) $fpath)
+
+# Custom completions
+fpath=(${HOME}/.zfunc(N-/) $fpath)
 
 # zsh functions
 fpath=(${HOME}/.zsh/functions(N-/) $fpath)
@@ -303,22 +311,7 @@ if type npm &>/dev/null; then
   source <(npm completion)
 fi
 
-# awscli
-if type aws &>/dev/null && [[ -f "${HOME}/ghq/github.com/aws/aws-cli/bin/aws_zsh_completer.sh" ]]; then
-  source "${HOME}/ghq/github.com/aws/aws-cli/bin/aws_zsh_completer.sh"
-fi
-
-# pipenv
-if type pipenv &>/dev/null; then
-  eval "$(pipenv --completion)"
-fi
-
-# yarn
-if [[ -f "${HOME}/.yarn/bin/yarn" ]]; then
-  path=("${HOME}/.yarn/bin" $path)
-fi
-
-# composer
-if [[ -d "${HOME}/.config/composer/vendor/bin" ]]; then
-  path=("${HOME}/.config/composer/vendor/bin" $path)
+# pyenv
+if type pyenv &>/dev/null; then
+  eval "$(pyenv init -)"
 fi
