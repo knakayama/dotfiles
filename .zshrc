@@ -315,3 +315,8 @@ fi
 if type pyenv &>/dev/null; then
   eval "$(pyenv init -)"
 fi
+
+# aws
+if type aws &>/dev/null; then
+  source '/usr/local/bin/aws_zsh_completer.sh'
+fi
