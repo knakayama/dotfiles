@@ -43,9 +43,6 @@ fi
 ####################
 
 # autoload func path
-if type brew &>/dev/null; then
-  fpath=($(brew --prefix)/share/zsh/site-functions(N-/) $fpath)
-fi
 fpath=(${ANTIBODY_HOME}/zsh-users-zsh-completions/src(N-/) $fpath)
 
 # original zsh completions
@@ -313,7 +310,7 @@ fi
 
 # pyenv
 if type pyenv &>/dev/null; then
-  eval "$(pyenv init -)"
+  eval "$(pyenv init --path)"
 fi
 
 # aws

@@ -16,6 +16,7 @@
 	user = knakayama
 [init]
 	templatedir = ~/.gittemplates
+	defaultBranch = main
 [color "status"]
 	added = green bold
 	updated = green bold
@@ -40,3 +41,5 @@
 	root = ~/prj
 	root = ~/.tmux/plugins
 	root = ~/.antibody
+[pull]
+	ff = only
