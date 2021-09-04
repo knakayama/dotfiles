@@ -24,7 +24,7 @@ fi
 typeset -U path cdpath fpath manpath
 
 # local utils
-path=(${HOME}/bin(N-/) /usr/local/bin(N-/) $path)
+path=(${HOME}/bin(N-/) ${HOMEBREW_PREFIX}/bin(N-/) $path)
 
 # go
 if type go &>/dev/null; then
