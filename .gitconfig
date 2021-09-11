@@ -4,10 +4,11 @@
 [alias]
 	st = status
 	sts = status -s
-	co = commit
+	co = checkout
 	com = commit -m
 	coam = commit -am
 	l = log --graph --oneline --all --branches --decorate
+	ch = checkout
 [color]
 	ui = auto
 [grep]

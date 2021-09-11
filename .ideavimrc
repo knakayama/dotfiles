@@ -9,6 +9,10 @@ set scrolloff=5
 " Do incremental searching.
 set incsearch
 
+" Set <leader> to <space>
+let mapleader = " "
+map <leader>w :w<CR>
+
 " Don't use Ex mode, use Q for formatting.
 map Q gq
 
@@ -27,3 +31,4 @@ map Q gq
 " Find more examples here: https://jb.gg/share-ideavimrc
 
 set clipboard+=unnamed
+
