@@ -43,6 +43,11 @@ if [[ -d "/opt/homebrew/opt/postgresql@11/bin" ]]; then
   path=("/opt/homebrew/opt/postgresql@11/bin" $path)
 fi
 
+# mariadb
+if [[ -d "/opt/homebrew/opt/mariadb@10.5/bin" ]]; then
+  path=("/opt/homebrew/opt/mariadb@10.5/bin" $path)
+fi
+
 ####################
 # Completion
 ####################
