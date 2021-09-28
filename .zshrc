@@ -52,6 +52,9 @@ fi
 # Completion
 ####################
 
+# Homebrew
+fpath=($(brew --prefix)/share/zsh/site-functions(N-/) $fpath)
+
 # autoload func path
 fpath=(${ANTIBODY_HOME}/zsh-users-zsh-completions/src(N-/) $fpath)
 
