@@ -76,6 +76,8 @@ function() {
 }
 
 # enable completion
+autoload bashcompinit
+bashcompinit
 autoload -Uz compinit
 compinit # also compinit -u
 
@@ -324,4 +326,9 @@ fi
 # pyenv
 if type pyenv &>/dev/null; then
   eval "$(pyenv init --path)"
+fi
+
+# aws
+if type aws_completer &>/dev/null; then
+  complete -C '/usr/local/bin/aws_completer' aws
 fi
