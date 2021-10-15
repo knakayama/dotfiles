@@ -332,3 +332,7 @@ fi
 if type aws_completer &>/dev/null; then
   complete -C '/usr/local/bin/aws_completer' aws
 fi
+
+if type terraform &>/dev/null; then
+  complete -o nospace -C /usr/local/bin/terraform terraform
+fi
