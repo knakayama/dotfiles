@@ -33,11 +33,6 @@ if type go &>/dev/null; then
   path=(${GOPATH}/bin $path)
 fi
 
-# poetry
-if [[ -d "${HOME}/.poetry/bin" ]]; then
-  path=(${HOME}/.poetry/bin $path)
-fi
-
 # psql
 if [[ -d "/opt/homebrew/opt/postgresql@11/bin" ]]; then
   path=("/opt/homebrew/opt/postgresql@11/bin" $path)
