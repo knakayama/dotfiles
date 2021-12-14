@@ -40,18 +40,18 @@
 [pull]
 	ff = only
 
-[pager]
-	diff   = delta
-	log    = delta
-	reflog = delta
-	show   = delta
-
-[delta]
-	plus-style   = "syntax #012800"
-	minus-style  = "syntax #340001"
-	syntax-theme = Monokai Extended
-	navigate     = true
-	side-by-side = true
+[core]
+    pager = delta
 
 [interactive]
-	diffFilter = delta --color-only
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true
+    side-by-side = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
