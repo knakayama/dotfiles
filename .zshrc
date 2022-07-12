@@ -149,7 +149,7 @@ zstyle ':chpwd:*' recent-dirs-max 200
 if type antibody &>/dev/null; then
   export ANTIBODY_HOME="${HOME}/.antibody"
   [[ -d "$ANTIBODY_HOME" ]] || mkdir "$ANTIBODY_HOME"
-  source <(/opt/homebrew/bin/antibody init)
+  source <(/usr/local/bin/antibody init)
 
   # too slow
   #antibody bundle zsh-users/zsh-syntax-highlighting
