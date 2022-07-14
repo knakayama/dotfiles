@@ -332,3 +332,7 @@ fi
 if type terraform &>/dev/null; then
   complete -o nospace -C /usr/local/bin/terraform terraform
 fi
+
+if type aws-vault &>/dev/null; then
+  eval "$(aws-vault --completion-script-zsh)"
+fi
