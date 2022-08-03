@@ -308,11 +308,6 @@ if [[ -x "$(which direnv 2>/dev/null)" ]]; then
   eval "$(direnv hook zsh)"
 fi
 
-# nodenv
-if type nodenv &>/dev/null; then
-  eval "$(nodenv init -)"
-fi
-
 # npm completion
 if type npm &>/dev/null; then
   source <(npm completion)
@@ -335,4 +330,8 @@ fi
 
 if type aws-vault &>/dev/null; then
   eval "$(aws-vault --completion-script-zsh)"
+fi
+
+if type asdf &>/dev/null; then
+  source "/usr/local/opt/asdf/libexec/asdf.sh"
 fi
