@@ -313,12 +313,6 @@ if type npm &>/dev/null; then
   source <(npm completion)
 fi
 
-# pyenv
-if type pyenv &>/dev/null; then
-  eval "$(pyenv init --path)"
-  eval "$(pyenv init -)"
-fi
-
 # aws
 if type aws_completer &>/dev/null; then
   complete -C '/usr/local/bin/aws_completer' aws
