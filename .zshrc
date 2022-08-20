@@ -26,11 +26,8 @@ typeset -U path cdpath fpath manpath
 # local utils
 path=(${HOME}/bin(N-/) ${HOMEBREW_PREFIX}/bin(N-/) $path)
 
-# go
 if type go &>/dev/null; then
-  export GOPATH="${HOME}/go"
-  [[ -d "${HOME}/go" ]] || mkdir "${HOME}/go"
-  path=(${GOPATH}/bin $path)
+  path=("$(go env GOPATH)/bin" $path)
 fi
 
 # psql
