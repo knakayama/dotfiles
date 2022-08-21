@@ -27,7 +27,8 @@ typeset -U path cdpath fpath manpath
 path=(${HOME}/bin(N-/) ${HOMEBREW_PREFIX}/bin(N-/) $path)
 
 if type go &>/dev/null; then
-  path=("$(go env GOPATH)/bin" $path)
+  export GOBIN="$(go env GOPATH)/bin"
+  path=("$GOBIN" $path)
 fi
 
 # psql
