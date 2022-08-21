@@ -41,6 +41,11 @@ if [[ -d "/opt/homebrew/opt/mariadb@10.5/bin" ]]; then
   path=("/opt/homebrew/opt/mariadb@10.5/bin" $path)
 fi
 
+# poetry
+if [[ -f "${HOME}/.poetry/bin/poetry" ]]; then
+  path=("${HOME}/.poetry/bin" $path)
+fi
+
 ####################
 # Completion
 ####################
