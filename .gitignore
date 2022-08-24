@@ -1,5 +1,3 @@
-/.zsh/completions/*
-!/.zsh/completions/.gitkeep
 /.aws/**
 !/.aws/cli/alias
 /.w3m/**
