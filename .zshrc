@@ -46,6 +46,11 @@ if [[ -f "${HOME}/.poetry/bin/poetry" ]]; then
   path=("${HOME}/.poetry/bin" $path)
 fi
 
+# pipx
+if type pipx &>/dev/null; then
+  path=("${HOME}/.local/bin" $path)
+fi
+
 ####################
 # Completion
 ####################
