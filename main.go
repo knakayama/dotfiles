@@ -1,10 +1,13 @@
 package main
 
 import (
+	"bytes"
 	"flag"
+	"fmt"
 	"io"
 	"log"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"regexp"
 )
@@ -135,9 +138,26 @@ func link() {
 	copy(".config/karabiner/karabiner.json")
 }
 
+func submodule() {
+	cmd := exec.Command(
+		"git",
+		"submodule",
+		"update",
+		"--init",
+		"--recursive",
+	)
+	var out bytes.Buffer
+	cmd.Stdout = &out
+	if err := cmd.Run(); err != nil {
+		log.Fatalln(err)
+	}
+	fmt.Println(out.String())
+}
+
 func main() {
 	cleanFlag := flag.Bool("clean", false, "Clean all symbolic links that the command has created")
 	linkFlag := flag.Bool("link", false, "Create symbolic links")
+	submoduleFlag := flag.Bool("submodule", false, "Download git submodules")
 	flag.Parse()
 
 	if flag.NFlag() > 1 {
@@ -152,6 +172,11 @@ func main() {
 
 	if *linkFlag {
 		link()
+		os.Exit(0)
+	}
+
+	if *submoduleFlag {
+		submodule()
 		os.Exit(0)
 	}
 
