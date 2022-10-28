@@ -3,7 +3,7 @@
 	email = knakayama.sh@gmail.com
 
 [includeIf "gitdir:~/ghq/github.com/Pay-Baymax/"]
-    path = ~/ghq/github.com/Pay-Baymax/.gitconfig-work
+    path = ~/.gitconfig-work
 
 [alias]
 	st = status
