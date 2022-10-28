@@ -1,6 +1,10 @@
 [user]
 	name = knakayama
 	email = knakayama.sh@gmail.com
+
+[includeIf "gitdir:~/ghq/github.com/Pay-Baymax/"]
+    path = ~/ghq/github.com/Pay-Baymax/.gitconfig-work
+
 [alias]
 	st = status
 	sts = status -s

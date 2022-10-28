@@ -24,7 +24,7 @@ fi
 typeset -U path cdpath fpath manpath
 
 # local utils
-path=(${HOME}/bin(N-/) ${HOMEBREW_PREFIX}/bin(N-/) $path)
+path=(${HOME}/bin(N-/) /opt/homebrew/bin(N-/) $path)
 
 if type go &>/dev/null; then
   export GOBIN="$(go env GOPATH)/bin"
@@ -157,7 +157,7 @@ zstyle ':chpwd:*' recent-dirs-max 200
 if type antibody &>/dev/null; then
   export ANTIBODY_HOME="${HOME}/.antibody"
   [[ -d "$ANTIBODY_HOME" ]] || mkdir "$ANTIBODY_HOME"
-  source <(/usr/local/bin/antibody init)
+  source <($(brew --prefix antibody)/bin/antibody init)
 
   # too slow
   #antibody bundle zsh-users/zsh-syntax-highlighting
@@ -335,5 +335,15 @@ if type aws-vault &>/dev/null; then
 fi
 
 if type asdf &>/dev/null; then
-  source "/usr/local/opt/asdf/libexec/asdf.sh"
+  source "$(brew --prefix asdf)/libexec/asdf.sh"
+fi
+
+if type kind &>/dev/null; then
+  source <(kind completion zsh)
+fi
+
+if [[ -d "/Library/Application Support/Netskope" ]]; then
+  export REQUESTS_CA_BUNDLE="/Library/Application Support/Netskope/STAgent/download/nscacert_combined.pem"
+  export GIT_SSL_CAPATH="/Library/Application Support/Netskope/STAgent/download/nscacert_combined.pem"
+  export NODE_EXTRA_CA_CERTS="/Library/Application Support/Netskope/STAgent/download/nscacert_combined.pem"
 fi
