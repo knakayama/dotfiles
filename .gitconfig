@@ -2,8 +2,11 @@
 	name = knakayama
 	email = knakayama.sh@gmail.com
 
+[core]
+	sshCommand = "ssh -i ~/.ssh/id_ed25519-github-knakayama"
+
 [includeIf "gitdir:~/ghq/github.com/Pay-Baymax/"]
-    path = ~/.gitconfig-work
+ 	path = ~/.gitconfig-work
 
 [alias]
 	st = status
