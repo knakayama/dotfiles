@@ -327,7 +327,7 @@ if type aws_completer &>/dev/null; then
 fi
 
 if type terraform &>/dev/null; then
-  complete -o nospace -C /usr/local/bin/terraform terraform
+  complete -o nospace -C terraform terraform
 fi
 
 if type aws-vault &>/dev/null; then
