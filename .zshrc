@@ -51,6 +51,15 @@ if type pipx &>/dev/null; then
   path=("${HOME}/.local/bin" $path)
 fi
 
+# misc
+if [[ -d "/opt/homebrew/opt/unzip/bin" ]]; then
+  path=("/opt/homebrew/opt/unzip/bin" $path)
+fi
+
+if [[ -d "/opt/homebrew/opt/curl/bin" ]]; then
+  path=("/opt/homebrew/opt/curl/bin" $path)
+fi
+
 ####################
 # Completion
 ####################
