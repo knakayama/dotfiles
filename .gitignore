@@ -5,3 +5,6 @@
 !.w3m/keymap
 !.w3m/mailcap
 !.w3m/mime.types
+/.config/
+!.config/pgcli/config
+!.config/karabiner/karabiner.json
