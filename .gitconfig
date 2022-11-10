@@ -2,6 +2,9 @@
 	name = knakayama
 	email = knakayama.sh@gmail.com
 
+[github]
+	user = knakayama
+
 [core]
 	sshCommand = "ssh -i ~/.ssh/id_ed25519-github-knakayama"
 
@@ -19,8 +22,6 @@
 	ui = auto
 [grep]
 	lineNumber = true
-[github]
-	user = knakayama
 [init]
 	templateDir = ~/.git-templates/git-secrets
 	defaultBranch = main
