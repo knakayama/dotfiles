@@ -321,7 +321,7 @@ if [[ -f "${HOME}/.zsh/plugin/auto-fu.zsh/auto-fu.zsh" ]]; then
 fi
 
 # direnv
-if [[ -x "$(which direnv 2>/dev/null)" ]]; then
+if type direnv &>/dev/null; then
   eval "$(direnv hook zsh)"
 fi
 
@@ -332,7 +332,7 @@ fi
 
 # aws
 if type aws_completer &>/dev/null; then
-  complete -C '/usr/local/bin/aws_completer' aws
+  complete -C "$(asdf which aws_completer)" aws
 fi
 
 if type terraform &>/dev/null; then
@@ -349,6 +349,10 @@ fi
 
 if type kind &>/dev/null; then
   source <(kind completion zsh)
+fi
+
+if type kubectl &>/dev/null; then
+  source <(kubectl completion zsh)
 fi
 
 if [[ -d "/Library/Application Support/Netskope" ]]; then
