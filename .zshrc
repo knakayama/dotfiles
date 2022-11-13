@@ -355,6 +355,10 @@ if type kubectl &>/dev/null; then
   source <(kubectl completion zsh)
 fi
 
+if type helm &>/dev/null; then
+  source <(helm completion zsh)
+fi
+
 if [[ -d "/Library/Application Support/Netskope" ]]; then
   export REQUESTS_CA_BUNDLE="/Library/Application Support/Netskope/STAgent/download/nscacert_combined.pem"
   export GIT_SSL_CAPATH="/Library/Application Support/Netskope/STAgent/download/nscacert_combined.pem"
