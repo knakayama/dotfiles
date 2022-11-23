@@ -12,6 +12,7 @@ bindkey '^[^]' 'vi-find-prev-char'
 ####################
 # Alias
 ####################
+
 if [[ -f "${HOME}/.zsh_alias" ]]; then
   source "${HOME}/.zsh_alias"
 fi
@@ -23,61 +24,35 @@ fi
 # remove duplicate path
 typeset -U path cdpath fpath manpath
 
-# local utils
-path=(${HOME}/bin(N-/) /opt/homebrew/bin(N-/) $path)
+path=(
+  ${HOME}/bin(N-/)
+  /opt/homebrew/bin(N-/)
+  ${HOME}/.poetry/bin/poetry(N-/)
+  ${HOME}/.local/bin(N-/)
+  /opt/homebrew/opt/unzip/bin(N-/)
+  /opt/homebrew/opt/curl/bin(N-/)
+  $path
+)
 
 if type go &>/dev/null; then
   export GOBIN="$(go env GOPATH)/bin"
   path=("$GOBIN" $path)
 fi
 
-# psql
-if [[ -d "/opt/homebrew/opt/postgresql@11/bin" ]]; then
-  path=("/opt/homebrew/opt/postgresql@11/bin" $path)
-fi
-
-# mariadb
-if [[ -d "/opt/homebrew/opt/mariadb@10.5/bin" ]]; then
-  path=("/opt/homebrew/opt/mariadb@10.5/bin" $path)
-fi
-
-# poetry
-if [[ -f "${HOME}/.poetry/bin/poetry" ]]; then
-  path=("${HOME}/.poetry/bin" $path)
-fi
-
-# pipx
-if type pipx &>/dev/null; then
-  path=("${HOME}/.local/bin" $path)
-fi
-
-# misc
-if [[ -d "/opt/homebrew/opt/unzip/bin" ]]; then
-  path=("/opt/homebrew/opt/unzip/bin" $path)
-fi
-
-if [[ -d "/opt/homebrew/opt/curl/bin" ]]; then
-  path=("/opt/homebrew/opt/curl/bin" $path)
-fi
-
 ####################
 # Completion
 ####################
 
-# Homebrew
-fpath=($(brew --prefix)/share/zsh/site-functions(N-/) $fpath)
-
-# autoload func path
-fpath=(${ANTIBODY_HOME}/zsh-users-zsh-completions/src(N-/) $fpath)
-
-# original zsh completions
-fpath=(${HOME}/.zsh/completions(N-/) $fpath)
-
-# Custom completions
-fpath=(${HOME}/.zfunc(N-/) $fpath)
+fpath=(
+  $(brew --prefix)/share/zsh/site-functions(N-/)
+  ${ANTIBODY_HOME}/zsh-users-zsh-completions/src(N-/)
+  ${HOME}/.zsh/completions(N-/)
+  ${HOME}/.zfunc(N-/)
+  ${HOME}/.zsh/functions(N-/)
+  $fpath
+)
 
 # zsh functions
-fpath=(${HOME}/.zsh/functions(N-/) $fpath)
 function() {
   local file
   for file in ${HOME}/.zsh/functions/*(N-.); do
@@ -359,8 +334,6 @@ if type helm &>/dev/null; then
   source <(helm completion zsh)
 fi
 
-if [[ -d "/Library/Application Support/Netskope" ]]; then
-  export REQUESTS_CA_BUNDLE="/Library/Application Support/Netskope/STAgent/download/nscacert_combined.pem"
-  export GIT_SSL_CAPATH="/Library/Application Support/Netskope/STAgent/download/nscacert_combined.pem"
-  export NODE_EXTRA_CA_CERTS="/Library/Application Support/Netskope/STAgent/download/nscacert_combined.pem"
+if [[ -f "${HOME}/.work.env" ]]; then
+  source "${HOME}/.work.env"
 fi
