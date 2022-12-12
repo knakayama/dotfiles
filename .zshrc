@@ -1,7 +1,3 @@
-####################
-# key binding
-####################
-
 # emacs binding
 bindkey -e
 
