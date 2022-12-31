@@ -43,6 +43,9 @@ func files() []string {
 	files = append(
 		files,
 		filesFrom("./.config/*", "karabiner$")...)
+	files = append(
+		files,
+		"./.ipython/profile_default/ipython_config.py")
 
 	return files
 }
