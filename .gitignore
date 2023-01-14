@@ -1,10 +1,4 @@
 /.aws/**
 !/.aws/cli/alias
-/.w3m/**
-!.w3m/config
-!.w3m/keymap
-!.w3m/mailcap
-!.w3m/mime.types
-/.config/
-!.config/pgcli/config
-!.config/karabiner/karabiner.json
+/.config/pgcli/history
+/.config/pgcli/log
