@@ -305,9 +305,13 @@ if type npm &>/dev/null; then
   source <(npm completion)
 fi
 
+if type rtx &>/dev/null; then
+  eval "$(rtx activate zsh)"
+fi
+
 # aws
 if type aws_completer &>/dev/null; then
-  complete -C "$(asdf which aws_completer)" aws
+  complete -C "$(rtx where awscli)/bin/aws_completer" aws
 fi
 
 if type terraform &>/dev/null; then
@@ -316,10 +320,6 @@ fi
 
 if type aws-vault &>/dev/null; then
   eval "$(aws-vault --completion-script-zsh)"
-fi
-
-if type asdf &>/dev/null; then
-  source "$(brew --prefix asdf)/libexec/asdf.sh"
 fi
 
 if type kind &>/dev/null; then
