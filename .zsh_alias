@@ -23,9 +23,6 @@ fi
 # e2d: epoch to date
 alias e2d="perl -le 'print scalar localtime $ARGV[0]'"
 
-# p2p: plantuml to png
-alias p2p="java -Dfile.econding=UTF-8 -jar ${HOMEBREW_PREFIX}/Cellar/plantuml/1.2021.14/libexec/plantuml.jar -o out"
-
 alias myip="curl ifconfig.me"
 
 alias k="kubectl"
