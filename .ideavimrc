@@ -1,0 +1,6 @@
+let mapleader=" "
+set showmode
+set so=5
+set incsearch
+set nu
+set clipboard+=unnamed
