@@ -310,7 +310,7 @@ if type rtx &>/dev/null; then
 fi
 
 # aws
-if type aws_completer &>/dev/null; then
+if type rtx &>/dev/null; then
   complete -C "$(rtx where awscli)/bin/aws_completer" aws
 fi
 
