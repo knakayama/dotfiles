@@ -308,7 +308,6 @@ fi
 
 if type rtx &>/dev/null; then
   eval "$(rtx activate zsh)"
-  complete -C "$(rtx where awscli)/bin/aws_completer" aws
 fi
 
 if type terraform &>/dev/null; then
