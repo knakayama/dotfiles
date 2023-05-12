@@ -307,10 +307,6 @@ fi
 
 if type rtx &>/dev/null; then
   eval "$(rtx activate zsh)"
-fi
-
-# aws
-if type rtx &>/dev/null; then
   complete -C "$(rtx where awscli)/bin/aws_completer" aws
 fi
 
