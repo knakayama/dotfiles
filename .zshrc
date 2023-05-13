@@ -208,7 +208,11 @@ fi
 if [[ -n "$AWS_SESSION_TOKEN" ]]; then
   _aws="aws"
 fi
-PROMPT='%n${_ssh_tty}$([[ -n "$AWS_SESSION_TOKEN" ]] && echo %{$fg_bold[red]%}@aws%{${reset_color}%}) %F{blue}%~%f%b $(-zsh-git-prompt)[%?]'$'\n''%(!,#,$) '
+
+source "$(brew --prefix)/opt/kube-ps1/share/kube-ps1.sh"
+KUBE_PS1_SYMBOL_ENABLE=false
+KUBE_PS1_DIVIDER="|"
+PROMPT='%n${_ssh_tty}$([[ -n "$AWS_SESSION_TOKEN" ]] && echo %{$fg_bold[red]%}@aws%{${reset_color}%}) %F{blue}%~%f%b $(-zsh-git-prompt)$(kube_ps1)[%?]'$'\n''%(!,#,$) '
 
 ####################
 # Misc Settings
