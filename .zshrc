@@ -31,7 +31,7 @@ path=(
   ${HOME}/.local/bin(N-/)
   /opt/homebrew/opt/unzip/bin(N-/)
   /opt/homebrew/opt/curl/bin(N-/)
-  ${HOME}/.krew/bin
+  ${HOME}/.krew/bin(N-/)
   $path
 )
 
