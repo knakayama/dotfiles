@@ -26,3 +26,4 @@ alias e2d="perl -le 'print scalar localtime $ARGV[0]'"
 alias myip="curl ifconfig.me"
 
 alias k="kubectl"
+alias n="nerdctl"
