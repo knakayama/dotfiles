@@ -342,6 +342,14 @@ if [[ -f "${HOME}/.work.env" ]]; then
   source "${HOME}/.work.env"
 fi
 
+if type colima &>/dev/null; then
+  source <(colima completion zsh)
+fi
+
+if type nerdctl &>/dev/null; then
+  source <(nerdctl completion zsh)
+fi
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
