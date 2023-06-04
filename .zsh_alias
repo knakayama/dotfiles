@@ -27,3 +27,5 @@ alias myip="curl ifconfig.me"
 
 alias k="kubectl"
 alias n="nerdctl"
+alias kc='kubectx | peco | xargs kubectx'
+alias kn='kubens | peco | xargs kubens'
