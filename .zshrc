@@ -310,9 +310,10 @@ if type npm &>/dev/null; then
   source <(npm completion)
 fi
 
-if type rtx &>/dev/null; then
-  eval "$(rtx activate zsh)"
+if type mise &>/dev/null; then
+  eval "$(mise activate zsh)"
 fi
+
 
 if type terraform &>/dev/null; then
   complete -o nospace -C terraform terraform
@@ -340,7 +341,6 @@ fi
 
 if type colima &>/dev/null; then
   source <(colima completion zsh)
-  source <(nerdctl completion zsh)
 fi
 
 if type nerdctl &>/dev/null; then

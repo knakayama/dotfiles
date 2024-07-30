@@ -28,7 +28,7 @@ if has('ide')
   nmap <leader>fm <Action>(MainMenu)
   nmap <leader>fr <Action>(RecentFiles)
   nmap <leader>fp <Action>(ManageRecentProjects)
-  nmap / <Action>(Find)
+  "nmap / <Action>(Find)
   nnoremap <leader>r :source ~/.ideavimrc<CR>
   nnoremap <leader>, :edit ~/.config/nvim/init.vim<CR>
 endif
