@@ -230,10 +230,10 @@ if [[ "$OSTYPE" =~ "darwin*" ]]; then
 fi
 
 # editor
-if type vim &>/dev/null; then
-  export EDITOR="vim"
+if type nvim &>/dev/null; then
+  export EDITOR="nvim"
 else
-  export EDITOR="vi"
+  export EDITOR="vim"
 fi
 
 # XDG_CONFIG
