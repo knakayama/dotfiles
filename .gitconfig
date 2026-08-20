@@ -8,8 +8,8 @@
 [core]
 	sshCommand = "ssh -i ~/.ssh/id_ed25519-github-knakayama"
 
-[includeIf "gitdir:~/ghq/github.com/Pay-Baymax/"]
- 	path = ~/.gitconfig-work
+[include]
+	path = ~/.gitconfig.local
 
 [alias]
 	st = status
