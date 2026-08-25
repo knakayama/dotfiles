@@ -167,6 +167,15 @@ description = "peek clipboard"
 width = "80%"
 height = "60%"
 
+# tmux-urlview style: pick a URL from the pane's scrollback and open it
+[[keys.command]]
+key = "prefix+u"
+type = "popup"
+command = "url=$(\"$HERDR_BIN_PATH\" pane read \"$HERDR_ACTIVE_PANE_ID\" --source recent-unwrapped --lines 2000 | grep -oE 'https?://[^[:space:]<>\"]+' | awk '!seen[$0]++' | fzf --no-sort --tac); [ -n \"$url\" ] && open \"$url\""
+description = "pick a url from the pane"
+width = "80%"
+height = "80%"
+
 [ui]
 # Sidebar width (auto-scaled based on workspace names, this sets the default)
 # sidebar_width = 26
