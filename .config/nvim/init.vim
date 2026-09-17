@@ -8,6 +8,12 @@ set number
 set clipboard+=unnamedplus
 nnoremap <silent> <leader>w :w <CR>
 
+" Strip trailing whitespace on save (keeps cursor position)
+augroup TrimTrailingWhitespace
+  autocmd!
+  autocmd BufWritePre * let s:view = winsaveview() | keeppatterns %s/\s\+$//e | call winrestview(s:view)
+augroup END
+
 if has('ide')
   set ideajoin
   "set ideastatusicon=gray
