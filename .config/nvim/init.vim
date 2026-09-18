@@ -8,10 +8,15 @@ set number
 set clipboard+=unnamedplus
 nnoremap <silent> <leader>w :w <CR>
 
-" Strip trailing whitespace on save (keeps cursor position)
-augroup TrimTrailingWhitespace
+" Always keep a trailing newline at end of file
+set fixendofline
+
+" Clean up on save: strip trailing whitespace (keeps cursor position) and
+" force a final newline, even if the file lacked one
+augroup SaveCleanup
   autocmd!
   autocmd BufWritePre * let s:view = winsaveview() | keeppatterns %s/\s\+$//e | call winrestview(s:view)
+  autocmd BufWritePre * setlocal endofline
 augroup END
 
 if has('ide')
